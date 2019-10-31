@@ -9,7 +9,8 @@ export default class Element extends Component {
 
     render() {
         let {number, symbol, category, enabled, selected} = this.props;
-
+        const elementClass = `ptable-${category}`
+        
         let classList = ['face', 'front'];
 
         if (!enabled) {
@@ -18,8 +19,9 @@ export default class Element extends Component {
             classList.push('active');
         }
 
+        
         return (
-            <td className={category}>
+            <td className={elementClass}>
                 <div className="chip">
                     <div
                         onClick={event => this.onClick(event)}
