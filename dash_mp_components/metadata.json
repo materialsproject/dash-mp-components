@@ -1,0 +1,45 @@
+{
+  "src/lib/components/PeriodicTableInput.react.js": {
+    "description": "",
+    "displayName": "PeriodicTableInput",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "clicked": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "A list of symbols that are currently highlighted as clicked",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "A list of symbols to grey-out as disabled",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+      }
+    }
+  }
+}

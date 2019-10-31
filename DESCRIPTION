@@ -1,0 +1,15 @@
+Package: dashMpComponents
+Title: Dash components for the Materials Project
+Version: 0.0.1
+Authors @R: as.person(c(Materials Project Team <feedback@materialsproject.org>))
+Description: Dash components for the Materials Project
+Depends: R (>= 3.0.2)
+Imports: 
+Suggests: 
+License: BSD + file LICENSE
+URL: https://github.com/materialsproject/dash-mp-components
+BugReports: https://github.com/materialsproject/dash-mp-components/issues
+Encoding: UTF-8
+LazyData: true
+Author: Materials Project Team [aut]
+Maintainer: Materials Project Team <feedback@materialsproject.org>
