@@ -7,6 +7,7 @@ export default class PeriodicTableInput extends Component {
         const {id, clicked, disabled} = this.props;
         let component = (
             <PeriodicTableComponent
+                id={id}
                 updateSelected={newClicked =>
                     this.props.setProps({clicked: newClicked})
                 }

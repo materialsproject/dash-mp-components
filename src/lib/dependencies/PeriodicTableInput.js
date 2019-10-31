@@ -26,6 +26,8 @@ export default class PeriodicTableInput extends Component {
     }
 
     render() {
+        const {id, disabled} = this.props;
+        const clicked = this.state.clicked;
         let rows = [];
 
         // Main Block
@@ -36,9 +38,9 @@ export default class PeriodicTableInput extends Component {
 
                 if (index in elements) {
                     let {symbol, number, category} = elements[index];
-                    let selected = this.state.clicked.includes(symbol);
+                    let selected = clicked.includes(symbol);
                     //let selected = false
-                    let enabled = !this.props.disabled.includes(symbol);
+                    let enabled = !disabled.includes(symbol);
                     cells.push(
                         <Element
                             key={number}
@@ -76,9 +78,9 @@ export default class PeriodicTableInput extends Component {
 
                 if (index in elements) {
                     let {symbol, number, category} = elements[index];
-                    let selected = this.state.clicked.includes(symbol);
+                    let selected = clicked.includes(symbol);
                     //let selected = false
-                    let enabled = !this.props.disabled.includes(symbol);
+                    let enabled = !disabled.includes(symbol);
                     cells.push(
                         <Element
                             key={number}
@@ -104,7 +106,7 @@ export default class PeriodicTableInput extends Component {
         }
 
         return (
-            <table className="pt-wrapper">
+            <table id={id} className="ptable-input">
                 <tbody>{rows}</tbody>
             </table>
         );
@@ -112,6 +114,7 @@ export default class PeriodicTableInput extends Component {
 }
 
 PeriodicTableInput.defaultProps = {
+    id: null,
     disabled: [],
     initialClicked: [],
     updateSelected: null,
