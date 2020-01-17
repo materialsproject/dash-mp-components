@@ -1,4 +1,4 @@
-name: pytest_and_docs
+name: selenium_tests
 
 on:
   push:
@@ -29,4 +29,3 @@ jobs:
         #  PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: |
           pytest tests
-      - name: Build new docs
