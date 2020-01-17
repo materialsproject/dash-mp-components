@@ -19,11 +19,11 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className='mat-app'>
                 <PeriodicTableInput
                     setProps={this.setProps}
-                    {...this.state}
-                />
+                        {...this.state}
+                    />
             </div>
         )
     }
