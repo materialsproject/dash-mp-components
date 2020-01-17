@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@2
+        uses: actions/checkout@v2
         with:
           ref: master
       - name: Set up Python 3.7
@@ -28,4 +28,4 @@ jobs:
         #env:
         #  PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: |
-          pytest tests
+          pytest --headless tests
