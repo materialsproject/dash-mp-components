@@ -25,3 +25,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           npm i
+      - name: Build tarball
+        run: |
+          npm run build
+          python setup.py sdist
+      - name: Publish a Python distribution to test PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          repository_url: https://test.pypi.org/legacy/
+          user: __token__
+          password: ${{ secrets.PYPI_TEST_TOKEN }}

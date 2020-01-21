@@ -19,7 +19,12 @@
     "build:py_and_r": "dash-generate-components ./src/lib/components dash_mp_components -p package-info.json --r-prefix ''",
     "build:py_and_r-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py_and_r)",
     "build": "npm run build:js && npm run build:py_and_r",
-    "build:activated": "npm run build:js && npm run build:py_and_r-activated"
+    "build:activated": "npm run build:js && npm run build:py_and_r-activated",
+    "clean:python-package": "rm -rf dash_mp_components.egg-info && rm -rf dist",
+    "clean:dash": "rm -rf dash_mp_components",
+    "publish:test": "twine upload --repository-url https://test.pypi.org/legacy/ dist/*",
+    "publish:prod": "echo NOT READY"
+
   },
   "author": "Materials Project Team <feedback@materialsproject.org>",
   "license": "BSD",

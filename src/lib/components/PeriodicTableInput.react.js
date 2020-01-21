@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {SelectableTable} from "mat-periodic-table";
-import 'mat-periodic-table/index.css';
+//import 'mat-periodic-table/index.css';
 
 export default class PeriodicTableInput extends Component {
     render() {
