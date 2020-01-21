@@ -23,7 +23,8 @@
     "clean:python-package": "rm -rf dash_mp_components.egg-info && rm -rf dist",
     "clean:dash": "rm -rf dash_mp_components",
     "publish:test": "twine upload --repository-url https://test.pypi.org/legacy/ dist/*",
-    "publish:prod": "echo NOT READY"
+    "publish:prod": "echo NOT READY",
+    "postversion": "git push && git push --tags"
   },
   "author": "Materials Project Team <feedback@materialsproject.org>",
   "license": "BSD",
