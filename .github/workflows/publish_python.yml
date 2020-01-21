@@ -35,5 +35,6 @@ jobs:
           PI_PY_SECRET: ${{ secrets.PYPI_TEST_TOKEN }}
           PI_PY_USERTOKEN: __token__
         run: |
-          twine upload --repository-url https://test.pypi.org/legacy/ dist/* --user $PI_PY_USERTOKEN --password $PI_PY_SECRET_TEST }
+          echo Publishing to test repo $PI_PY_USERTOKEN
+          twine upload --repository-url https://test.pypi.org/legacy/ dist/* -u $PI_PY_USERTOKEN -p $PI_PY_SECRET_TEST
 
