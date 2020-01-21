@@ -24,7 +24,10 @@
   "author": "Materials Project Team <feedback@materialsproject.org>",
   "license": "BSD",
   "dependencies": {
-    "ramda": "^0.26.1"
+    "file-loader": "^5.0.2",
+    "mat-periodic-table": "0.0.6",
+    "ramda": "^0.26.1",
+    "url-loader": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
@@ -39,19 +42,19 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-react": "^7.14.2",
-    "npm": "^6.1.0",
+    "npm": "^6.13.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-docgen": "^4.1.1",
     "react-dom": "^16.8.6",
-    "styled-jsx": "^3.2.1",
     "style-loader": "^0.23.1",
+    "styled-jsx": "^3.2.1",
     "webpack": "4.36.1",
     "webpack-cli": "3.3.6",
     "webpack-serve": "3.1.0"
   },
   "engines": {
-    "node": ">=8.11.0",
-    "npm": ">=6.1.0"
+    "node": ">=12.12.0",
+    "npm": ">=6.5.0"
   }
 }

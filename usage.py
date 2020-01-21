@@ -5,16 +5,19 @@ import dash_html_components as html
 
 app = dash.Dash(__name__)
 
+
+print("Hello World")
 app.layout = html.Div([
     dash_mp_components.PeriodicTableInput(
-        id='input',
+        id='periodic-table',
     ),
-    html.Div(id='output')
+    html.Div(id='component')
 ])
 
 
-@app.callback(Output('output', 'children'), [Input('input', 'clicked')])
+@app.callback(Output('component', 'children'), [Input('periodic-table', 'state')])
 def display_output(value):
+    print("Hello World", value)
     return 'Clicked Elements {}'.format(value)
 
 

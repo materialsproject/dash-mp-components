@@ -9,15 +9,16 @@ class PeriodicTableInput(Component):
 
 Keyword arguments:
 - id (string; optional): The ID used to identify this component in Dash callbacks.
-- clicked (list; optional): A list of symbols that are currently highlighted as clicked
-- disabled (list; optional): A list of symbols to grey-out as disabled"""
+- state (dict; optional): A list of symbols that are currently highlighted as clicked
+- disabledElements (dict; optional): A list of symbols to grey-out as disabled
+- enabledElements (dict; optional)"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, clicked=Component.UNDEFINED, disabled=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'clicked', 'disabled']
+    def __init__(self, id=Component.UNDEFINED, state=Component.UNDEFINED, disabledElements=Component.UNDEFINED, enabledElements=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'state', 'disabledElements', 'enabledElements']
         self._type = 'PeriodicTableInput'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'clicked', 'disabled']
+        self.available_properties = ['id', 'state', 'disabledElements', 'enabledElements']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

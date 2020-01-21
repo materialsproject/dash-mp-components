@@ -10,13 +10,15 @@
 }
 
 \usage{
-periodicTableInput(id=NULL, clicked=NULL, disabled=NULL)
+periodicTableInput(id=NULL, state=NULL, disabledElements=NULL, enabledElements=NULL)
 }
 
 \arguments{
 \item{id}{Character. The ID used to identify this component in Dash callbacks.}
 
-\item{clicked}{Unnamed list. A list of symbols that are currently highlighted as clicked}
+\item{state}{Named list. A list of symbols that are currently highlighted as clicked}
 
-\item{disabled}{Unnamed list. A list of symbols to grey-out as disabled}
+\item{disabledElements}{Named list. A list of symbols to grey-out as disabled}
+
+\item{enabledElements}{Named list. }
 }
