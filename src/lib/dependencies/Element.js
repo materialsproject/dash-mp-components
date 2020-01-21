@@ -9,8 +9,8 @@ export default class Element extends Component {
 
     render() {
         let {number, symbol, category, enabled, selected} = this.props;
-        const elementClass = `ptable-${category}`
-        
+        const elementClass = `ptable-${category}`;
+
         let classList = ['face', 'front'];
 
         if (!enabled) {
@@ -19,7 +19,6 @@ export default class Element extends Component {
             classList.push('active');
         }
 
-        
         return (
             <td className={elementClass}>
                 <div className="chip">

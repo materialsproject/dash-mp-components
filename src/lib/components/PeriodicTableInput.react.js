@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {SelectableTable} from "mat-periodic-table";
+import {SelectableTable} from 'mat-periodic-table';
 //import 'mat-periodic-table/index.css';
 
 export default class PeriodicTableInput extends Component {
@@ -9,9 +9,13 @@ export default class PeriodicTableInput extends Component {
         const component = (
             <SelectableTable
                 id={id}
-                enabledElements={{}} disabledElements={{}} onStateChange={
-                (v)=>{ console.log(v); this.props.setProps({state:v})}
-            } />
+                enabledElements={{}}
+                disabledElements={{}}
+                onStateChange={v => {
+                    console.log(v);
+                    this.props.setProps({state: v});
+                }}
+            />
         );
         return component;
     }

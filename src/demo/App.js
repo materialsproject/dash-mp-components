@@ -1,14 +1,13 @@
 /* eslint no-magic-numbers: 0 */
 import React, {Component} from 'react';
 
-import { PeriodicTableInput } from '../lib';
+import {PeriodicTableInput} from '../lib';
 
 class App extends Component {
-
     constructor() {
         super();
         this.state = {
-            value: ''
+            value: '',
         };
         this.setProps = this.setProps.bind(this);
     }
@@ -19,13 +18,10 @@ class App extends Component {
 
     render() {
         return (
-            <div className='mat-app'>
-                <PeriodicTableInput
-                    setProps={this.setProps}
-                        {...this.state}
-                    />
+            <div className="mat-app">
+                <PeriodicTableInput setProps={this.setProps} {...this.state} />
             </div>
-        )
+        );
     }
 }
 
