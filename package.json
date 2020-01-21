@@ -1,6 +1,6 @@
 {
   "name": "dash_mp_components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dash components for the Materials Project",
   "repository": {
     "type": "git",
@@ -24,7 +24,6 @@
     "clean:dash": "rm -rf dash_mp_components",
     "publish:test": "twine upload --repository-url https://test.pypi.org/legacy/ dist/*",
     "publish:prod": "echo NOT READY"
-
   },
   "author": "Materials Project Team <feedback@materialsproject.org>",
   "license": "BSD",
