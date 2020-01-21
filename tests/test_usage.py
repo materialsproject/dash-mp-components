@@ -7,7 +7,7 @@ def test_render_component(dash_duo):
     app = import_app('usage')
     dash_duo.start_server(app)
 
-    my_component = dash_duo.find_element('div#output')
+    my_component = dash_duo.find_element('div.mat-element')
     my_component.click();
 
 
