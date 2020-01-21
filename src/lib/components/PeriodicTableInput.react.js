@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {SelectableTable} from 'mat-periodic-table';
-//import 'mat-periodic-table/index.css';
 
-export default class PeriodicTableInput extends Component {
+/**
+ * MpPeriodicTableInput is a component that allows user to select
+ * some components from a periodic table
+ *
+ */
+export default class MpPeriodicTableInput extends Component {
     render() {
         const {id, ...remainingProps} = this.props;
         const component = (
@@ -21,9 +25,9 @@ export default class PeriodicTableInput extends Component {
     }
 }
 
-PeriodicTableInput.defaultProps = {disabledElements: {}, enabledElements: {}};
+MpPeriodicTableInput.defaultProps = {disabledElements: {}, enabledElements: {}};
 
-PeriodicTableInput.propTypes = {
+MpPeriodicTableInput.propTypes = {
     /**
      * The ID used to identify this component in Dash callbacks.
      */

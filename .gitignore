@@ -153,6 +153,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+dash_mp_components/
 develop-eggs/
 dist/
 downloads/
@@ -273,3 +274,8 @@ bh_unicode_properties.cache
 # Sublime-github package stores a github token in this file
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
+
+#Other artifacts
+R/
+inst/
+
