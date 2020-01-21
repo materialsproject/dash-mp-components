@@ -1,40 +1,39 @@
 name: publish_python_package
 on:
-  push:
-    tags:
-      - '*'
+    push:
+        tags:
+            - '*'
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          ref: master
-      - name: Set up Python 3.7
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.7
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install twine
-          npm i
-      - name: Build tarball
-        run: |
-          npm run build
-          python setup.py sdist
-      - name: Publish a Python distribution to test PyPI
-        env:
-          PI_PY_SECRET_TEST: ${{  secrets.PYPI_TEST_TOKEN }}
-          PI_PY_SECRET: ${{ secrets.PYPI_TEST_TOKEN }}
-          PI_PY_USERTOKEN: __token__
-        run: |
-          echo Publishing to test repo $PI_PY_USERTOKEN
-          twine upload --repository-url https://test.pypi.org/legacy/ dist/* -u $PI_PY_USERTOKEN -p $PI_PY_SECRET_TEST
-
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+              with:
+                  ref: master
+            - name: Set up Python 3.7
+              uses: actions/setup-python@v1
+              with:
+                  python-version: 3.7
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: '12.x'
+            - name: Install dependencies
+              run: |
+                  sudo apt-get update
+                  python -m pip install --upgrade pip
+                  pip install -r requirements.txt
+                  pip install twine
+                  npm i
+            - name: Build tarball
+              run: |
+                  npm run build
+                  python setup.py sdist
+            - name: Publish a Python distribution to test PyPI
+              env:
+                  PI_PY_SECRET_TEST: ${{  secrets.PYPI_TEST_TOKEN }}
+                  PI_PY_SECRET: ${{ secrets.PYPI_TEST_TOKEN }}
+                  PI_PY_USERTOKEN: __token__
+              run: |
+                  echo Publishing to test repo $PI_PY_USERTOKEN
+                  twine upload --repository-url https://test.pypi.org/legacy/ dist/* -u $PI_PY_USERTOKEN -p $PI_PY_SECRET_TEST
