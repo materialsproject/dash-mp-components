@@ -7,6 +7,7 @@ import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
 # Basic test for the component rendering.
 # The dash_duo pytest fixture is installed with dash (v1.0+)
 # TODO(chab)
@@ -49,6 +50,17 @@ def test_render_component(dash_duo, mocker):
     element.click();
     dash_duo.wait_for_element_by_css_selector('.enabled')
     stub.assert_called_with({'H': True})
+
+# Test mouse hovering and detail
+    element_to_hover_over = dash_duo.find_elements("div.mat-element")[2]
+    hover = ActionChains(dash_duo.driver).move_to_element(element_to_hover_over)
+    hover.perform()
+    assert dash_duo.find_element(".detailed .number").text == "2"
+    assert dash_duo.find_element(".detailed .symbol").text == "He"
+    assert dash_duo.find_element(".detailed .name").text == 'Helium'
+# Check detail
+
+
 
 
 

@@ -25,6 +25,7 @@
         "publish:test": "twine upload --repository-url https://test.pypi.org/legacy/ dist/*",
         "publish:prod": "echo NOT READY",
         "postversion": "git push && git push --tags",
+        "test:e2e": "pytest tests",
         "format": "prettier --write \"src/**/*.{js,css}\"\n"
     },
     "author": "Materials Project Team <feedback@materialsproject.org>",
