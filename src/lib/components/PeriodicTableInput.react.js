@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {SelectableTable} from 'mat-periodic-table';
-import 'mat-periodic-table/dist/index.es.css';
+import 'mat-periodic-table/index.css';
 
 /**
  * MpPeriodicTableInput is a component that allows user to select
