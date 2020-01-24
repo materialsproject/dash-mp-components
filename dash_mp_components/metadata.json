@@ -1,63 +1,77 @@
 {
-  "src/lib/components/PeriodicTableInput.react.js": {
-    "description": "MpPeriodicTableInput is a component that allows user to select\nsome components from a periodic table",
-    "displayName": "MpPeriodicTableInput",
-    "methods": [],
-    "props": {
-      "id": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "The ID used to identify this component in Dash callbacks."
-      },
-      "state": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "A list of symbols that are currently highlighted as clicked"
-      },
-      "disabledElements": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "A list of symbols to grey-out as disabled",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
+    "src/lib/components/PeriodicFilter.react.js": {
+        "description": "This component filter an associated periodic table",
+        "displayName": "MpPeriodicFilter",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            }
         }
-      },
-      "enabledElements": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "A list of selected symbols",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
+    },
+    "src/lib/components/PeriodicTableInput.react.js": {
+        "description": "MpPeriodicTableInput is a component that allows user to select\nsome components from a periodic table",
+        "displayName": "MpPeriodicTableInput",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks."
+            },
+            "state": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "A list of symbols that are currently highlighted as clicked"
+            },
+            "disabledElements": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "A list of symbols to grey-out as disabled",
+                "defaultValue": {
+                    "value": "{}",
+                    "computed": false
+                }
+            },
+            "enabledElements": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "A list of selected symbols",
+                "defaultValue": {
+                    "value": "{}",
+                    "computed": false
+                }
+            },
+            "hiddenElements": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "A list of hidden symbols",
+                "defaultValue": {
+                    "value": "{}",
+                    "computed": false
+                }
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+            }
         }
-      },
-      "hiddenElements": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "A list of hidden symbols",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "setProps": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
-      }
     }
-  }
 }

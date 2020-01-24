@@ -1,6 +1,6 @@
 {
     "name": "dash_mp_components",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Dash components for the Materials Project",
     "repository": {
         "type": "git",
@@ -25,13 +25,14 @@
         "publish:test": "twine upload --repository-url https://test.pypi.org/legacy/ dist/*",
         "publish:prod": "echo NOT READY",
         "postversion": "git push && git push --tags",
+        "test:e2e": "pytest tests",
         "format": "prettier --write \"src/**/*.{js,css}\"\n"
     },
     "author": "Materials Project Team <feedback@materialsproject.org>",
     "license": "BSD",
     "dependencies": {
         "file-loader": "^5.0.2",
-        "mat-periodic-table": "0.0.9",
+        "mat-periodic-table": "0.0.10",
         "ramda": "^0.26.1",
         "url-loader": "^3.0.0"
     },

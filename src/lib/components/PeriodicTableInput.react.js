@@ -27,8 +27,13 @@ export default class MpPeriodicTableInput extends Component {
     }
 }
 
-MpPeriodicTableInput.defaultProps = {disabledElements: {}, enabledElements: {}, hiddenElements: {}};
+MpPeriodicTableInput.defaultProps = {
+    disabledElements: {},
+    enabledElements: {},
+    hiddenElements: {},
+};
 
+//Note(chab) dash-generate-components will break if this object is {}/null. You must provide at least id
 MpPeriodicTableInput.propTypes = {
     /**
      * The ID used to identify this component in Dash callbacks.

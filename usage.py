@@ -8,6 +8,9 @@ app = dash.Dash(__name__)
 
 print("Hello World")
 app.layout = html.Div([
+    dash_mp_components.PeriodicFilter(
+        id='periodic-filter',
+    ),
     dash_mp_components.PeriodicTableInput(
         id='periodic-table',
     ),
