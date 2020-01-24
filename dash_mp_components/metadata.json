@@ -1,7 +1,7 @@
 {
   "src/lib/components/PeriodicTableInput.react.js": {
-    "description": "",
-    "displayName": "PeriodicTableInput",
+    "description": "MpPeriodicTableInput is a component that allows user to select\nsome components from a periodic table",
+    "displayName": "MpPeriodicTableInput",
     "methods": [],
     "props": {
       "id": {
@@ -34,7 +34,18 @@
           "name": "object"
         },
         "required": false,
-        "description": "",
+        "description": "A list of selected symbols",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "hiddenElements": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "A list of hidden symbols",
         "defaultValue": {
           "value": "{}",
           "computed": false

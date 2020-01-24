@@ -42,7 +42,7 @@ If you have selected install_dependencies during the prompt, you can skip this p
     1. Build your code
         ```
         $ npm run build
-        ```
+        ``` 
     2. Run and modify the `usage.py` sample dash app:
         ```
         $ python usage.py

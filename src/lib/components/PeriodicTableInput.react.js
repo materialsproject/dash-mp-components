@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {SelectableTable} from 'mat-periodic-table';
+import 'mat-periodic-table/dist/index.es.css';
 
 /**
  * MpPeriodicTableInput is a component that allows user to select
@@ -14,6 +15,7 @@ export default class MpPeriodicTableInput extends Component {
             <SelectableTable
                 id={id}
                 enabledElements={{}}
+                hiddenElements={{}}
                 disabledElements={{}}
                 onStateChange={v => {
                     console.log(v);
@@ -25,7 +27,7 @@ export default class MpPeriodicTableInput extends Component {
     }
 }
 
-MpPeriodicTableInput.defaultProps = {disabledElements: {}, enabledElements: {}};
+MpPeriodicTableInput.defaultProps = {disabledElements: {}, enabledElements: {}, hiddenElements: {}};
 
 MpPeriodicTableInput.propTypes = {
     /**
@@ -36,13 +38,20 @@ MpPeriodicTableInput.propTypes = {
     /**
      * A list of symbols that are currently highlighted as clicked
      */
-    state: PropTypes.array,
+    state: PropTypes.object,
 
     /**
      * A list of symbols to grey-out as disabled
      */
     disabledElements: PropTypes.object,
+    /**
+     * A list of selected symbols
+     */
     enabledElements: PropTypes.object,
+    /**
+     * A list of hidden symbols
+     */
+    hiddenElements: PropTypes.object,
     /**
      * Dash-assigned callback that should be called to report property changes
      * to Dash, to make them available for callbacks.

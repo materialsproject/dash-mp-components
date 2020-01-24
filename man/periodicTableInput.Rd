@@ -6,11 +6,12 @@
 \title{PeriodicTableInput component}
 
 \description{
-
+MpPeriodicTableInput is a component that allows user to select some components from a periodic table
 }
 
 \usage{
-periodicTableInput(id=NULL, state=NULL, disabledElements=NULL, enabledElements=NULL)
+periodicTableInput(id=NULL, state=NULL, disabledElements=NULL, enabledElements=NULL,
+hiddenElements=NULL)
 }
 
 \arguments{
@@ -20,5 +21,7 @@ periodicTableInput(id=NULL, state=NULL, disabledElements=NULL, enabledElements=N
 
 \item{disabledElements}{Named list. A list of symbols to grey-out as disabled}
 
-\item{enabledElements}{Named list. }
+\item{enabledElements}{Named list. A list of selected symbols}
+
+\item{hiddenElements}{Named list. A list of hidden symbols}
 }
