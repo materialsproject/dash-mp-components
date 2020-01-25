@@ -10,15 +10,14 @@ import 'mat-periodic-table/index.css';
  */
 export default class MpPeriodicTableInput extends Component {
     render() {
-        const {id, ...remainingProps} = this.props;
         const component = (
             <SelectableTable
-                id={id}
-                enabledElements={{}}
-                hiddenElements={{}}
-                disabledElements={{}}
+                id={this.props.id}
+                enabledElements={this.props.enabledElements}
+                hiddenElements={this.props.hiddenElements}
+                disabledElements={this.props.disabledElements}
                 onStateChange={v => {
-                    console.log(v);
+                    console.log('STATE CHANGED', v);
                     this.props.setProps({state: v});
                 }}
             />

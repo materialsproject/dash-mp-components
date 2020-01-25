@@ -31,9 +31,13 @@ jobs:
                   pip install -r requirements.txt
                   pip install -r tests/requirements.txt
                   npm i
+            - name: Check files
+              run: |
+                npm run lint:yaml
             - name: Build the components
               run: |
                   npm run build
             - name: Test with pytest
               run: |
                   pytest --headless tests
+

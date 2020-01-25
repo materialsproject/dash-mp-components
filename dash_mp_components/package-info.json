@@ -1,6 +1,6 @@
 {
     "name": "dash_mp_components",
-    "version": "0.0.3",
+    "version": "0.0.5",
     "description": "Dash components for the Materials Project",
     "repository": {
         "type": "git",
@@ -26,7 +26,8 @@
         "publish:prod": "echo NOT READY",
         "postversion": "git push && git push --tags",
         "test:e2e": "pytest tests",
-        "format": "prettier --write \"src/**/*.{js,css}\"\n"
+        "format": "prettier --write \"src/**/*.{js,css}\"\n",
+        "lint:yaml": "yamllint ./.github/workflows/*.yml"
     },
     "author": "Materials Project Team <feedback@materialsproject.org>",
     "license": "BSD",
@@ -60,7 +61,8 @@
         "styled-jsx": "^3.2.1",
         "webpack": "4.36.1",
         "webpack-cli": "3.3.6",
-        "webpack-serve": "3.1.0"
+        "webpack-serve": "3.1.0",
+        "yaml-lint": "^1.2.4"
     },
     "engines": {
         "node": ">=12.12.0",
