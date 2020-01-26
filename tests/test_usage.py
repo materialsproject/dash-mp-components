@@ -61,6 +61,9 @@ def test_render_component(dash_duo, mocker):
 
     if __name__ == '__main__':
         app.run_server(debug=True)
+    print(dash_duo.driver.get_window_size())
+    dash_duo.driver.set_window_size(1920, 1080)
+    size = dash_duo.driver.get_window_size()
 
     dash_duo.start_server(app)
     periodic_table = PeriodicTable(dash_duo)
