@@ -14,6 +14,7 @@ app.layout = html.Div([
     dash_mp_components.PeriodicTableInput(
         id='periodic-table',
         disabledElements={'Na': True, 'Cl': True},
+        hiddenElements={'Fe': True, 'Dy': True},
         enabledElements={'H': True, 'O': True}
     ),
     html.Div(id='component')
