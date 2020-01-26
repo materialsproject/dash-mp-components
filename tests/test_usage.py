@@ -85,8 +85,11 @@ def test_render_component(dash_duo, mocker):
     print ('caca', periodic_table.findElement('H').get_attribute('class').split());
     print ('asda', periodic_table.findElement('H').text);
     assert ('disabled' in periodic_table.findElement('Fe').get_attribute('class').split()) == True
-    #TODO(chab) USE EC to check CSS visibility of CSS elements like .number and .symbol
-    assert ('hidden' in periodic_table.findElement('Na').get_attribute('class').split()) == True
+    hidden_element = periodic_table.findElement('Na')
+    assert ('hidden' in hidden_element.get_attribute('class').split()) == True
+    assert hidden_element.find_element_by_css_selector('.number').is_displayed() == False
+    assert hidden_element.find_element_by_css_selector('.symbol').is_displayed() == False
+
     periodic_table.check_if_element_has_class('Fe', 'disabled')
     periodic_table.check_if_element_has_class('Co', 'disabled')
 
