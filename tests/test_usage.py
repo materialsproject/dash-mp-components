@@ -25,33 +25,35 @@ class BasePage(object):
 class PeriodicTable(BasePage):
 
     def findElement(self, symbol):
-        selector = "//div[./*[normalize-space() = 'Cl']]";
+        selector = "//div[./*[normalize-space() = '" + symbol + "']]";
         return self.dash_duo.driver.find_element_by_xpath(selector)
     def checkDetailed(self, number, symbol, name):
         detailed_element = self.dash_duo.driver.find_element_by_css_selector(".detailed")
         detailed_element.find_element_by_css_selector(".number").text == number
         detailed_element.find_element_by_css_selector(".symbol").text == symbol
         detailed_element.find_element_by_css_selector(".name").text == name
-
-
+    def check_if_element_has_class(self, element_symbol, klass):
+        assert (klass in self.findElement(element_symbol).get_attribute('class').split()) == True
+    def hover_over_element(self, symbol):
+        element_to_hover_over = self.findElement(symbol)
+        hover = ActionChains(self.dash_duo.driver).move_to_element(element_to_hover_over)
+        hover.perform()
 
 def test_render_component(dash_duo, mocker):
     # Start a dash app contained as the variable `app` in `usage.py`
-
-
     app = dash.Dash(__name__)
-
-
-    print("Hello World")
     app.layout = html.Div([
-        dash_mp_components.PeriodicTableInput(
-            id='periodic-table',
-        ),
-        html.Div(id='component')
-    ])
+           dash_mp_components.PeriodicTableInput(
+               disabledElements={'Fe': True, 'Co':True},
+               enabledElements={},
+               hiddenElements={'Na': True },
+               id='periodic-table',
+           ),
+           html.Div(id='component'),
+           html.Div(id='dummy-thing')
+       ])
 
     stub = mocker.stub(name='element_state_callback')
-
     @app.callback(Output('component', 'children'), [Input('periodic-table', 'state')])
     def display_output(value):
         print("Hello World", value)
@@ -62,25 +64,41 @@ def test_render_component(dash_duo, mocker):
 
     dash_duo.start_server(app)
     periodic_table = PeriodicTable(dash_duo)
+    # wait for table to be there
+    print('Test started')
+    time.sleep(1)
+    dash_duo.wait_for_element_by_css_selector('div.mat-element')
 
-    elements = dash_duo.find_elements('div.mat-element')
+    elements = dash_duo.find_elements('div.mat-element:not(.detailed)')
     assert len(elements) == 120
 
 # Initial test
     stub.assert_called_with({})
 
-    element = dash_duo.find_element('div.mat-element');
-    element.click();
+    periodic_table.findElement('H').click();
     dash_duo.wait_for_element_by_css_selector('.enabled')
     stub.assert_called_with({'H': True})
     assert periodic_table.findElement('Cl').find_element_by_css_selector(".number").text == "17"
+    print ('caca', periodic_table.findElement('H').get_attribute('class').split());
+    print ('asda', periodic_table.findElement('H').text);
+    assert ('disabled' in periodic_table.findElement('Fe').get_attribute('class').split()) == True
+    periodic_table.check_if_element_has_class('Fe', 'disabled')
+    periodic_table.check_if_element_has_class('Co', 'disabled')
+
+    #clashes with main-pane
+    #periodic_table.check_if_element_has_class('H', 'enabled')
+    periodic_table.findElement('Dy').click();
+
+    #hover to an element to prevent two elements with the same symbol
+    element_to_hover_over = periodic_table.findElement('H')
+    periodic_table.hover_over_element('H')
+    periodic_table.check_if_element_has_class('Dy', 'enabled')
 
 # Test mouse hovering and detail
-    element_to_hover_over = dash_duo.find_elements("div.mat-element")[2]
-    hover = ActionChains(dash_duo.driver).move_to_element(element_to_hover_over)
-    hover.perform()
+    periodic_table.hover_over_element('He')
 # Check detail
     periodic_table.checkDetailed("2", "He", "Helium")
+
 
 
 
