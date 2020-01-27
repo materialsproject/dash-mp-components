@@ -104,3 +104,7 @@ repository, and push it to github. A github action will build and publish the py
         $ npm publish
         ```
         _Publishing your component to NPM will make the JavaScript bundles available on the unpkg CDN. By default, Dash serves the component library's CSS and JS locally, but if you choose to publish the package to NPM you can set `serve_locally` to `False` and you may see faster load times._
+
+The components are currently published in the test index, so you'll need to specify the url of
+the index when you install the package
+`pip install --index-url https://test.pypi.org/simple/ dash-mp-components`
