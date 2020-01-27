@@ -1,6 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+export(PeriodicElement)
 export(PeriodicFilter)
 export(PeriodicTableInput)
+export(periodicElement)
 export(periodicFilter)
 export(periodicTableInput)
