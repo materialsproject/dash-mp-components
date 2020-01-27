@@ -1,5 +1,7 @@
+// Note(chab) If you remove this import, things will fail
+import {Component} from 'react';
 import React from 'react';
-import {PeriodicElement} from 'mat-periodic-table';
+import {StandalonePeriodicComponent} from 'mat-periodic-table';
 
 import PropTypes from 'prop-types';
 
@@ -11,10 +13,12 @@ import PropTypes from 'prop-types';
 export default class MpPeriodicElement extends Component {
     render() {
         return (
-            <PeriodicElement
+            <StandalonePeriodicComponent
                 hidden={false}
                 enabled={false}
                 disabled={false}
+                size={this.props.size}
+                element={this.props.element}
                 onElementHovered={() => {}}
                 onElementClicked={() => {}}
             />
@@ -24,6 +28,8 @@ export default class MpPeriodicElement extends Component {
 
 MpPeriodicElement.propTypes = {
     id: PropTypes.string,
+    size: PropTypes.number,
+    element: PropTypes.string, // symbol of the element to be displayed
     setProps: PropTypes.func,
 };
 MpPeriodicElement.defaultProps = {};

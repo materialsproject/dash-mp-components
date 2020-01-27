@@ -17,7 +17,10 @@ app.layout = html.Div([
         hiddenElements={'Fe': True, 'Dy': True},
         enabledElements={'H': True, 'O': True}
     ),
+    html.P(''),
     dash_mp_components.PeriodicElement(
+        element='Na',
+        size=60,
         id='periodic-element'
     ),
     html.Div(id='component')
