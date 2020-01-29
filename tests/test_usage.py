@@ -33,12 +33,15 @@ class TestDashImport(unittest.TestCase):
         # Start a dash app contained as the variable `app` in `usage.py`
         app = dash.Dash(__name__)
         app.layout = html.Div([
-               dash_mp_components.PeriodicTableInput(
-                   disabledElements={'Fe': True, 'Co':True},
-                   enabledElements={},
-                   hiddenElements={'Na': True },
-                   id='periodic-table',
-               ),
+              dash_mp_components.PeriodicContext(
+                      children = [
+                          html.Div([
+                                  dash_mp_components.PeriodicTableInput(
+                                      id='periodic-table',
+                                     disabledElements={'Fe': True, 'Co':True},
+                                     enabledElements={},
+                                     hiddenElements={'Na': True }
+                                  )])]),
                html.Div(id='component'),
                html.Div(id='dummy-thing')
            ])
@@ -71,14 +74,14 @@ class TestDashImport(unittest.TestCase):
         periodic_table.findElement('H').click();
         self.dash_duo.wait_for_element_by_css_selector('.enabled')
         stub.assert_called_with({'H': True})
-        assert periodic_table.findElement('Cl').find_element_by_css_selector(".number").text == "17"
+        assert periodic_table.findElement('Cl').find_element_by_css_selector(".mat-number").text == "17"
         print ('caca', periodic_table.findElement('H').get_attribute('class').split());
         print ('asda', periodic_table.findElement('H').text);
         assert ('disabled' in periodic_table.findElement('Fe').get_attribute('class').split()) == True
         hidden_element = periodic_table.findElement('Na')
         assert ('hidden' in hidden_element.get_attribute('class').split()) == True
-        assert hidden_element.find_element_by_css_selector('.number').is_displayed() == False
-        assert hidden_element.find_element_by_css_selector('.symbol').is_displayed() == False
+        assert hidden_element.find_element_by_css_selector('.mat-number').is_displayed() == False
+        assert hidden_element.find_element_by_css_selector('.mat-symbol').is_displayed() == False
 
         periodic_table.check_if_element_has_class('Fe', 'disabled')
         periodic_table.check_if_element_has_class('Co', 'disabled')

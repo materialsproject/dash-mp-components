@@ -1,8 +1,10 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+export(PeriodicContext)
 export(PeriodicElement)
 export(PeriodicFilter)
 export(PeriodicTableInput)
+export(periodicContext)
 export(periodicElement)
 export(periodicFilter)
 export(periodicTableInput)

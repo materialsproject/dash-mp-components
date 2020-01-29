@@ -17,7 +17,6 @@ export default class MpPeriodicTableInput extends Component {
                 hiddenElements={this.props.hiddenElements}
                 disabledElements={this.props.disabledElements}
                 onStateChange={v => {
-                    console.log('STATE CHANGED', v);
                     this.props.setProps({state: v});
                 }}
             />
