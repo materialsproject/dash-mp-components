@@ -62,12 +62,8 @@ class TestDashImport(unittest.TestCase):
         periodic_table = PeriodicTable(self.dash_duo)
         # wait for table to be there
         print('Test started')
-        time.sleep(1)
-        self.dash_duo.wait_for_element_by_css_selector('div.mat-element')
-
-        elements = self.dash_duo.find_elements('div.mat-element:not(.detailed)')
-        assert len(elements) == 120
-
+        periodic_table.wait_for_table();
+        assert len(periodic_table.find_all_elements()) == 120
         # Initial test
         stub.assert_called_with({})
 
@@ -75,16 +71,14 @@ class TestDashImport(unittest.TestCase):
         self.dash_duo.wait_for_element_by_css_selector('.enabled')
         stub.assert_called_with({'H': True})
         assert periodic_table.findElement('Cl').find_element_by_css_selector(".mat-number").text == "17"
-        print ('caca', periodic_table.findElement('H').get_attribute('class').split());
-        print ('asda', periodic_table.findElement('H').text);
         assert ('disabled' in periodic_table.findElement('Fe').get_attribute('class').split()) == True
         hidden_element = periodic_table.findElement('Na')
         assert ('hidden' in hidden_element.get_attribute('class').split()) == True
         assert hidden_element.find_element_by_css_selector('.mat-number').is_displayed() == False
         assert hidden_element.find_element_by_css_selector('.mat-symbol').is_displayed() == False
 
-        periodic_table.check_if_element_has_class('Fe', 'disabled')
-        periodic_table.check_if_element_has_class('Co', 'disabled')
+        periodic_table.check_if_element_is_disabled('Fe')
+        periodic_table.check_if_element_is_disabled('Co')
 
         #clashes with main-pane
         #periodic_table.check_if_element_has_class('H', 'enabled')
@@ -93,7 +87,7 @@ class TestDashImport(unittest.TestCase):
         #hover to an element to prevent two elements with the same symbol
         element_to_hover_over = periodic_table.findElement('H')
         periodic_table.hover_over_element('H')
-        periodic_table.check_if_element_has_class('Dy', 'enabled')
+        periodic_table.check_if_element_is_enabled('Dy')
 
     # Test mouse hovering and detail
         periodic_table.hover_over_element('He')
