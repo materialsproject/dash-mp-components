@@ -25,6 +25,7 @@ app.layout = html.Div([
                             ),
                             dash_mp_components.PeriodicTableInput(
                                 id='periodic-table',
+                                maxElementSelectable=1,
                                 disabledElements={'Na': True, 'Cl': True},
                                 hiddenElements={'Fe': True, 'Dy': True},
                                 enabledElements={'H': True, 'O': True}
