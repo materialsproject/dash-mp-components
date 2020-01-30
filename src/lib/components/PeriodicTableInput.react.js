@@ -17,6 +17,7 @@ export default class MpPeriodicTableInput extends Component {
                 enabledElements={this.props.enabledElements}
                 hiddenElements={this.props.hiddenElements}
                 disabledElements={this.props.disabledElements}
+                forceTableLayout={this.props.forceTableLayout}
                 onStateChange={v => {
                     this.props.setProps({state: v});
                 }}
@@ -62,4 +63,5 @@ MpPeriodicTableInput.propTypes = {
      */
     setProps: PropTypes.func,
     maxElementSelectable: PropTypes.number,
+    forceTableLayout: PropTypes.string,
 };

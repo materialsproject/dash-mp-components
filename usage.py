@@ -26,6 +26,7 @@ app.layout = html.Div([
                             dash_mp_components.PeriodicTableInput(
                                 id='periodic-table',
                                 maxElementSelectable=3,
+                                forceTableLayout='spaced',
                                 disabledElements=['Na', 'Cl'],
                                 hiddenElements=['Fe', 'Dy'],
                                 enabledElements=['H', 'O']
@@ -45,9 +46,17 @@ app.layout = html.Div([
 
 @app.callback(Output(component_id = 'periodic-table', component_property= 'disabledElements'), [Input('RR', 'value')])
 def display_output(value):
-    print("Hello World 2", value)
     return [value]
 
+@app.callback(Output(component_id = 'periodic-table', component_property= 'forceTableLayout'), [Input('RR', 'value')])
+def display_output(value):
+    if value == 'K':
+        return 'small'
+    if value == 'Cl':
+        return 'compact'
+    if value == 'Na':
+        return 'spaced'
+    return 'map'
 
 if __name__ == '__main__':
     app.run_server(debug=True)
