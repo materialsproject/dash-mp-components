@@ -27,9 +27,9 @@ export default class MpPeriodicTableInput extends Component {
 }
 
 MpPeriodicTableInput.defaultProps = {
-    disabledElements: {},
-    enabledElements: {},
-    hiddenElements: {},
+    disabledElements: [],
+    enabledElements: [],
+    hiddenElements: [],
     maxElementSelectable: 10,
 };
 
@@ -40,22 +40,22 @@ MpPeriodicTableInput.propTypes = {
      */
     id: PropTypes.string,
     /**
-     * A dictionary of symbols that are currently highlighted as clicked
+     * This is a read-only prop that dash callback can subscribe to
      */
-    state: PropTypes.object,
+    state: PropTypes.array,
 
     /**
-     * A dictionary of symbols to grey-out as disabled
+     * A list of symbols to grey-out as disabled
      */
-    disabledElements: PropTypes.object,
+    disabledElements: PropTypes.array,
     /**
-     * A dictionary of selected symbols
+     * A list of selected symbols
      */
-    enabledElements: PropTypes.object,
+    enabledElements: PropTypes.array,
     /**
-     * A dictionary of hidden symbols
+     * A list of hidden symbols
      */
-    hiddenElements: PropTypes.object,
+    hiddenElements: PropTypes.array,
     /**
      * Dash-assigned callback that should be called to report property changes
      * to Dash, to make them available for callbacks.

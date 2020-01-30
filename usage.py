@@ -25,10 +25,10 @@ app.layout = html.Div([
                             ),
                             dash_mp_components.PeriodicTableInput(
                                 id='periodic-table',
-                                maxElementSelectable=1,
-                                disabledElements={'Na': True, 'Cl': True},
-                                hiddenElements={'Fe': True, 'Dy': True},
-                                enabledElements={'H': True, 'O': True}
+                                maxElementSelectable=3,
+                                disabledElements=['Na', 'Cl'],
+                                hiddenElements=['Fe', 'Dy'],
+                                enabledElements=['H', 'O']
                             ),
                             html.P(''),
                             dash_mp_components.PeriodicElement(
@@ -46,7 +46,7 @@ app.layout = html.Div([
 @app.callback(Output(component_id = 'periodic-table', component_property= 'disabledElements'), [Input('RR', 'value')])
 def display_output(value):
     print("Hello World 2", value)
-    return { value: True}
+    return [value]
 
 
 if __name__ == '__main__':

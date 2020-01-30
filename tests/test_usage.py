@@ -15,6 +15,9 @@ from selenium.webdriver.common.action_chains import ActionChains
 # Basic test for the component rendering.
 # The dash_duo pytest fixture is installed with dash (v1.0+)
 
+
+
+
 class TestDashImport(unittest.TestCase):
 
     # it's not possible to inject fixtures at class level, due to a limitation in pytest
@@ -33,9 +36,9 @@ class TestDashImport(unittest.TestCase):
                           html.Div([
                                   dash_mp_components.PeriodicTableInput(
                                       id='periodic-table',
-                                     disabledElements={'Fe': True, 'Co':True},
-                                     enabledElements={},
-                                     hiddenElements={'Na': True }
+                                     disabledElements=['Fe', 'Co'],
+                                     enabledElements=[],
+                                     hiddenElements=['Na']
                                   )])]),
                html.Div(id='component'),
                html.Div(id='dummy-thing')
@@ -59,7 +62,7 @@ class TestDashImport(unittest.TestCase):
 
     def test_render_component(self):
         assert len(self.periodic_table.find_all_elements()) == 120
-        self.stub.assert_called_with({})
+        self.stub.assert_called_with([])
         assert self.periodic_table.findElement('Cl').find_element_by_css_selector(".mat-number").text == "17"
 
     def test_disabled_honored(self):
@@ -77,7 +80,7 @@ class TestDashImport(unittest.TestCase):
         self.dash_duo.wait_for_element_by_css_selector('.enabled')
         self.periodic_table.hover_over_element('Pb')
         self.periodic_table.check_if_element_is_enabled('H')
-        self.stub.assert_called_with({'H': True})
+        self.stub.assert_called_with(['H'])
         dy = self.periodic_table.findElement('Dy');
         dy.click();
         self.periodic_table.hover_over_element('Pb')
