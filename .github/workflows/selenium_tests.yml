@@ -4,6 +4,7 @@ on:
     push:
         branches:
             - master
+            - E2E_TESTS
 
 jobs:
     e2e-test:
@@ -12,7 +13,7 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v2
               with:
-                  ref: master
+                  ref: ${{ github.ref }}
             - name: Set up Python 3.7
               uses: actions/setup-python@v1
               with:
@@ -33,11 +34,10 @@ jobs:
                   npm i
             - name: Check files
               run: |
-                npm run lint:yaml
+                  npm run lint:yaml
             - name: Build the components
               run: |
                   npm run build
             - name: Test with pytest
               run: |
                   pytest --headless tests
-
