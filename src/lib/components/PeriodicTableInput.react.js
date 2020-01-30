@@ -62,6 +62,12 @@ MpPeriodicTableInput.propTypes = {
      * to Dash, to make them available for callbacks.
      */
     setProps: PropTypes.func,
+    /**
+     * Maximum number of selectable elements
+     */
     maxElementSelectable: PropTypes.number,
-    forceTableLayout: PropTypes.string,
+    /**
+     * Force the table to be in a specific layout
+     */
+    forceTableLayout: PropTypes.oneOf(['spaced', 'compact', 'small', 'map']),
 };
