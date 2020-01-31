@@ -1,0 +1,169 @@
+{
+    "src/lib/components/PeriodicContext.react.js": {
+        "description": "",
+        "displayName": "MpPeriodicContext",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "children": {
+                "type": {
+                    "name": "any"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/PeriodicElement.react.js": {
+        "description": "This component displays a periodic element",
+        "displayName": "MpPeriodicElement",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "size": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "element": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/PeriodicFilter.react.js": {
+        "description": "This component filter an associated periodic table",
+        "displayName": "MpPeriodicFilter",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/PeriodicTableInput.react.js": {
+        "description": "MpPeriodicTableInput is a component that allows user to select\nsome components from a periodic table",
+        "displayName": "MpPeriodicTableInput",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks."
+            },
+            "state": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "This is a read-only prop that dash callback can subscribe to"
+            },
+            "disabledElements": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "A list of symbols to grey-out as disabled",
+                "defaultValue": {
+                    "value": "[]",
+                    "computed": false
+                }
+            },
+            "enabledElements": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "A list of selected symbols",
+                "defaultValue": {
+                    "value": "[]",
+                    "computed": false
+                }
+            },
+            "hiddenElements": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "A list of hidden symbols",
+                "defaultValue": {
+                    "value": "[]",
+                    "computed": false
+                }
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+            },
+            "maxElementSelectable": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": "Maximum number of selectable elements",
+                "defaultValue": {
+                    "value": "10",
+                    "computed": false
+                }
+            },
+            "forceTableLayout": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'spaced'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'compact'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'small'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'map'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": "Force the table to be in a specific layout"
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "name": "dash_mp_components",
+    "version": "0.0.7",
+    "description": "Dash components for the Materials Project",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/materialsproject/dash-mp-components.git"
+    },
+    "bugs": {
+        "url": "https://github.com/materialsproject/dash-mp-components/issues"
+    },
+    "homepage": "https://github.com/materialsproject/dash-mp-components",
+    "main": "build/index.js",
+    "scripts": {
+        "start": "webpack-serve --config ./webpack.serve.config.js --open",
+        "validate-init": "python _validate_init.py",
+        "prepublishOnly": "npm run validate-init",
+        "build:js": "webpack --mode production",
+        "build:py_and_r": "dash-generate-components ./src/lib/components dash_mp_components -p package-info.json --r-prefix ''",
+        "build:py_and_r-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py_and_r)",
+        "build": "npm run build:js && npm run build:py_and_r",
+        "build:activated": "npm run build:js && npm run build:py_and_r-activated",
+        "clean:python-package": "rm -rf dash_mp_components.egg-info && rm -rf dist",
+        "clean:python-component": "cd dash_mp_components ; find . ! -name '__init__.py' -type f -exec rm -f {} + ; cd ..",
+        "clean:dash": "rm -rf R && rm -rf man && rm -rf inst",
+        "publish:test": "twine upload --repository-url https://test.pypi.org/legacy/ dist/*",
+        "publish:prod": "echo NOT READY",
+        "postversion": "git push && git push --tags",
+        "test:e2e": "pytest tests",
+        "format": "prettier --write \"src/**/*.{js,css}\"\n",
+        "lint:yaml": "yamllint ./.github/workflows/*.yml"
+    },
+    "author": "Materials Project Team <feedback@materialsproject.org>",
+    "license": "BSD",
+    "dependencies": {
+        "file-loader": "^5.0.2",
+        "mat-periodic-table": "0.0.17-SNAPSHOT.1580422550",
+        "ramda": "^0.26.1",
+        "rimraf": "^3.0.0",
+        "url-loader": "^3.0.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.5.4",
+        "@babel/plugin-proposal-object-rest-spread": "^7.5.4",
+        "@babel/preset-env": "^7.5.4",
+        "@babel/preset-react": "^7.0.0",
+        "babel-eslint": "^10.0.2",
+        "babel-loader": "^8.0.6",
+        "copyfiles": "^2.1.1",
+        "css-loader": "^3.0.0",
+        "eslint": "^6.0.1",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-plugin-import": "^2.18.0",
+        "eslint-plugin-react": "^7.14.2",
+        "husky": "^4.1.0",
+        "npm": "^6.13.6",
+        "pretty-quick": "^2.0.1",
+        "prop-types": "^15.7.2",
+        "react": "^16.8.6",
+        "react-docgen": "^4.1.1",
+        "react-dom": "^16.8.6",
+        "style-loader": "^0.23.1",
+        "styled-jsx": "^3.2.1",
+        "webpack": "4.36.1",
+        "webpack-cli": "3.3.6",
+        "webpack-serve": "3.1.0",
+        "yaml-lint": "^1.2.4"
+    },
+    "engines": {
+        "node": ">=12.12.0",
+        "npm": ">=6.5.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    }
+}
