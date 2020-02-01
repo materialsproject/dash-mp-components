@@ -163,6 +163,17 @@
                 },
                 "required": false,
                 "description": "Force the table to be in a specific layout"
+            },
+            "forwardOuterChange": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Forward external changes",
+                "defaultValue": {
+                    "value": "true",
+                    "computed": false
+                }
             }
         }
     }

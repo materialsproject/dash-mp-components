@@ -44,19 +44,25 @@ app.layout = html.Div([
     html.Div(id='component')
 ])
 
-@app.callback(Output(component_id = 'periodic-table', component_property= 'disabledElements'), [Input('RR', 'value')])
+@app.callback(
+
+[
+    Output(component_id = 'periodic-table', component_property= 'disabledElements'),
+    Output(component_id = 'periodic-table', component_property= 'enabledElements')]
+, [Input('RR', 'value')])
 def display_output(value):
-    return [value]
+    return [], [value]
 
 @app.callback(Output(component_id = 'periodic-table', component_property= 'forceTableLayout'), [Input('RR', 'value')])
 def display_output(value):
+    return 'compact'
     if value == 'K':
         return 'small'
     if value == 'Cl':
         return 'compact'
     if value == 'Na':
         return 'spaced'
-    return 'map'
+    #return 'compact'
 
 if __name__ == '__main__':
     app.run_server(debug=True)

@@ -13,6 +13,8 @@ export default class MpPeriodicTableInput extends Component {
         const component = (
             <SelectableTable
                 id={this.props.id}
+                maxH
+                forwardOuterChange={this.props.forwardOuterChange}
                 maxElementSelectable={this.props.maxElementSelectable}
                 enabledElements={this.props.enabledElements}
                 hiddenElements={this.props.hiddenElements}
@@ -32,6 +34,7 @@ MpPeriodicTableInput.defaultProps = {
     enabledElements: [],
     hiddenElements: [],
     maxElementSelectable: 10,
+    forwardOuterChange: true,
 };
 
 //Note(chab) dash-generate-components will break if this object is {}/null. You must provide at least id
@@ -44,7 +47,6 @@ MpPeriodicTableInput.propTypes = {
      * This is a read-only prop that dash callback can subscribe to
      */
     state: PropTypes.array,
-
     /**
      * A list of symbols to grey-out as disabled
      */
@@ -70,4 +72,8 @@ MpPeriodicTableInput.propTypes = {
      * Force the table to be in a specific layout
      */
     forceTableLayout: PropTypes.oneOf(['spaced', 'compact', 'small', 'map']),
+    /**
+     * Forward external changes
+     */
+    forwardOuterChange: PropTypes.bool,
 };
