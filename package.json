@@ -34,7 +34,7 @@
     "license": "BSD",
     "dependencies": {
         "file-loader": "^5.0.2",
-        "mat-periodic-table": "0.0.17-SNAPSHOT.1580516385",
+        "mat-periodic-table": "0.0.17-SNAPSHOT.1580538528",
         "ramda": "^0.26.1",
         "rimraf": "^3.0.0",
         "url-loader": "^3.0.0"
