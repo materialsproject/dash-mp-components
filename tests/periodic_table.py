@@ -11,7 +11,8 @@ selectors = {
     'name': '.mat-name',
     'detailed': '.detailed',
     'disabled': '.disabled',
-    'enabled': '.enabled'
+    'enabled': '.enabled',
+    'table-container': '.table-container'
 }
 
 class BasePage(object):
@@ -21,7 +22,7 @@ class BasePage(object):
 
 class PeriodicTable(BasePage):
 
-    def __init__(self, dash_duo, id, disabledElements, enabledDelements, hiddenElements):
+    def __init__(self, dash_duo, id, disabledElements, enabledDelements, hiddenElements, layout='spaced'):
         self.table = dash_mp_components.PeriodicContext(
             children=[
                 html.Div([
@@ -29,7 +30,8 @@ class PeriodicTable(BasePage):
                         id=id,
                         disabledElements=disabledElements,
                         enabledElements=enabledDelements,
-                        hiddenElements=hiddenElements
+                        hiddenElements=hiddenElements,
+                        forceTableLayout=layout
                     )]
                 )
             ])
@@ -58,4 +60,12 @@ class PeriodicTable(BasePage):
         self.check_if_element_has_class(symbol, "enabled")
     def check_if_element_is_disabled(self, symbol):
         self.check_if_element_has_class(symbol, "disabled")
+    def check_table_layout(self, expected_layout):
+        el = self.dash_duo.find_element_by_css_selector(selectors['table-container'])
+        layouts = ['spaced', 'compact', 'small', 'map']
+        # table container should ONLY have the associated class
+        for layout in layouts:
+            assert (expected_layout in el.get_attribute('class').split()) is (i == layout)
+        # test specific rendering of elements
+
 

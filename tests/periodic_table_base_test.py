@@ -17,10 +17,7 @@ import unittest
 # Basic test for the component rendering.
 # The dash_duo pytest fixture is installed with dash (v1.0+)
 
-
-
-
-class TestDashImport(unittest.TestCase):
+class PeriodicTableBaseTest(unittest.TestCase):
 
     # it's not possible to inject fixtures at class level, due to a limitation in pytest
     @pytest.fixture(autouse=True)
@@ -30,7 +27,6 @@ class TestDashImport(unittest.TestCase):
 
     def setUp(self):
         # move to class methods
-
         self.periodic_table = PeriodicTable(self.dash_duo, 'periodic-table', ['Fe', 'Co'], [], ['Na'])
         self.app = dash.Dash(__name__)
         self.app.layout = html.Div([
@@ -76,14 +72,13 @@ class TestDashImport(unittest.TestCase):
         self.periodic_table.check_if_element_is_enabled('H')
         self.stub.assert_called_with(['H'])
         dy = self.periodic_table.findElement('Dy')
-        dy.click();
+        dy.click()
         self.periodic_table.hover_over_element('Pb')
         self.periodic_table.check_if_element_is_enabled('Dy')
 
     def check_hover_is_displayed(self):
         self.periodic_table.hover_over_element('He')
         self.periodic_table.checkDetailed("2", "He", "Helium")
-
 
 
 
