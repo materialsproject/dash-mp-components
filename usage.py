@@ -37,6 +37,14 @@ app.layout = html.Div([
                                 size=60,
                                 id='periodic-element'
                             ),
+                            dash_mp_components.PeriodicTableInput(
+                                                        id='periodic-table-b',
+                                                        maxElementSelectable=3,
+                                                        forceTableLayout='map',
+                                                        disabledElements=[],
+                                                        hiddenElements=[],
+                                                        enabledElements=[]
+                                                    ),
             ]),
 
         ]
@@ -64,5 +72,6 @@ def display_output(value):
         return 'spaced'
     #return 'compact'
 
+# use True to load a dev build of react
 if __name__ == '__main__':
     app.run_server(debug=True)
