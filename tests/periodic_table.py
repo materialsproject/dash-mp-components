@@ -1,5 +1,7 @@
 import time
 from selenium.webdriver.common.action_chains import ActionChains
+import dash_mp_components
+import dash_html_components as html
 
 
 selectors = {
@@ -19,16 +21,30 @@ class BasePage(object):
 
 class PeriodicTable(BasePage):
 
+    def __init__(self, dash_duo, id, disabledElements, enabledDelements, hiddenElements):
+        self.table = dash_mp_components.PeriodicContext(
+            children=[
+                html.Div([
+                    dash_mp_components.PeriodicTableInput(
+                        id=id,
+                        disabledElements=disabledElements,
+                        enabledElements=enabledDelements,
+                        hiddenElements=hiddenElements
+                    )]
+                )
+            ])
+        super().__init__(dash_duo)
+
     def findElement(self, symbol):
         selector = "//div[./*[normalize-space() = '" + symbol + "']]";
         return self.dash_duo.driver.find_element_by_xpath(selector)
     def checkDetailed(self, number, symbol, name):
         detailed_element = self.dash_duo.driver.find_element_by_css_selector(selectors['detailed'])
-        detailed_element.find_element_by_css_selector(selectors['number']).text == number
-        detailed_element.find_element_by_css_selector(selectors['symbol']).text == symbol
-        detailed_element.find_element_by_css_selector(selectors['name']).text == name
+        assert(detailed_element.find_element_by_css_selector(selectors['number']).text == number)
+        assert(detailed_element.find_element_by_css_selector(selectors['symbol']).text == symbol)
+        assert(detailed_element.find_element_by_css_selector(selectors['name']).text == name)
     def check_if_element_has_class(self, element_symbol, klass):
-        assert (klass in self.findElement(element_symbol).get_attribute('class').split()) == True
+        assert (klass in self.findElement(element_symbol).get_attribute('class').split()) is True
     def hover_over_element(self, symbol):
         element_to_hover_over = self.findElement(symbol)
         hover = ActionChains(self.dash_duo.driver).move_to_element(element_to_hover_over)

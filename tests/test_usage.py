@@ -1,17 +1,19 @@
 import dash_mp_components
 import dash
-import unittest
 from dash.dependencies import Input, Output
 from .periodic_table import PeriodicTable
-from .utils import resize_browser_window
 import dash_html_components as html
 from dash.testing.application_runners import import_app
-import time
-import pytest
+from .utils import resize_browser_window
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
+
+import time
+import pytest
+import unittest
 # Basic test for the component rendering.
 # The dash_duo pytest fixture is installed with dash (v1.0+)
 
@@ -29,17 +31,10 @@ class TestDashImport(unittest.TestCase):
     def setUp(self):
         # move to class methods
 
+        self.periodic_table = PeriodicTable(self.dash_duo, 'periodic-table', ['Fe', 'Co'], [], ['Na'])
         self.app = dash.Dash(__name__)
         self.app.layout = html.Div([
-              dash_mp_components.PeriodicContext(
-                      children = [
-                          html.Div([
-                                  dash_mp_components.PeriodicTableInput(
-                                      id='periodic-table',
-                                     disabledElements=['Fe', 'Co'],
-                                     enabledElements=[],
-                                     hiddenElements=['Na']
-                                  )])]),
+               self.periodic_table.table,
                html.Div(id='component'),
                html.Div(id='dummy-thing')
            ])
@@ -50,12 +45,11 @@ class TestDashImport(unittest.TestCase):
             print("Hello World", value)
             self.stub(value)
 
-        resize_browser_window(1920, 1080, self.dash_duo.driver);
+        resize_browser_window(1920, 1080, self.dash_duo.driver)
         self.dash_duo.start_server(self.app)
-        self.periodic_table = PeriodicTable(self.dash_duo)
         # wait for table to be there
-        print('Test started', __name__);
-        self.periodic_table.wait_for_table();
+        print('Test started', __name__)
+        self.periodic_table.wait_for_table()
 
     def tearDown(self):
         pass
@@ -71,9 +65,9 @@ class TestDashImport(unittest.TestCase):
 
     def test_hidden_honored(self):
         hidden_element = self.periodic_table.findElement('Na')
-        assert ('hidden' in hidden_element.get_attribute('class').split()) == True
-        assert hidden_element.find_element_by_css_selector('.mat-number').is_displayed() == False
-        assert hidden_element.find_element_by_css_selector('.mat-symbol').is_displayed() == False
+        assert ('hidden' in hidden_element.get_attribute('class').split()) is True
+        assert hidden_element.find_element_by_css_selector('.mat-number').is_displayed() is False
+        assert hidden_element.find_element_by_css_selector('.mat-symbol').is_displayed() is False
 
     def test_component_click(self):
         self.periodic_table.findElement('H').click();
@@ -81,7 +75,7 @@ class TestDashImport(unittest.TestCase):
         self.periodic_table.hover_over_element('Pb')
         self.periodic_table.check_if_element_is_enabled('H')
         self.stub.assert_called_with(['H'])
-        dy = self.periodic_table.findElement('Dy');
+        dy = self.periodic_table.findElement('Dy')
         dy.click();
         self.periodic_table.hover_over_element('Pb')
         self.periodic_table.check_if_element_is_enabled('Dy')
