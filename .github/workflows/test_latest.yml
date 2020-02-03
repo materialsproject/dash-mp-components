@@ -1,0 +1,42 @@
+name: Test New React components
+on:
+    repository_dispatch:
+        types: [new-snapshot-version]
+jobs:
+    myEvent:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.ref }}
+            - run: |
+                  echo Checking integration test with latest react components
+                  echo ${{ github.event.client_payload.sha }}
+            - name: Set up Python 3.7
+              uses: actions/setup-python@v1
+              with:
+                  python-version: 3.7
+            - uses: actions/cache@v1
+              with:
+                  path: ~/.cache/pip
+                  key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pip-
+            - name: Install dependencies
+              run: |
+                  sudo apt-get update
+                  sudo apt-get install chromium-chromedriver
+                  python -m pip install --upgrade pip
+                  pip install -r requirements.txt
+                  pip install -r tests/requirements.txt
+                  npm i
+                  npm i mat-periodic-table@next
+            - name: Check files
+              run: |
+                  npm run lint:yaml
+            - name: Build the components
+              run: |
+                  npm run build
+            - name: Test with pytest
+              run: |
+                  pytest --headless tests
