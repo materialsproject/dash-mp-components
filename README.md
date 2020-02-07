@@ -1,5 +1,6 @@
 ![selenium_tests](https://github.com/materialsproject/dash-mp-components/workflows/selenium_tests/badge.svg)
 ![publish_python_package](https://github.com/materialsproject/dash-mp-components/workflows/publish_python_package/badge.svg)
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/matproj/dash-mp-components)
 
 # Materials Project Dash Components
 
