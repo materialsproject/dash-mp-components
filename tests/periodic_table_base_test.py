@@ -47,9 +47,6 @@ class PeriodicTableBaseTest(unittest.TestCase):
         print('Test started', __name__)
         self.periodic_table.wait_for_table()
 
-    def tearDown(self):
-        pass
-
     def test_render_component(self):
         assert len(self.periodic_table.find_all_elements()) == 120
         self.stub.assert_called_with([])
@@ -66,7 +63,7 @@ class PeriodicTableBaseTest(unittest.TestCase):
         assert hidden_element.find_element_by_css_selector('.mat-symbol').is_displayed() is False
 
     def test_component_click(self):
-        self.periodic_table.findElement('H').click();
+        self.periodic_table.findElement('H').click()
         self.dash_duo.wait_for_element_by_css_selector('.enabled')
         self.periodic_table.hover_over_element('Pb')
         self.periodic_table.check_if_element_is_enabled('H')
