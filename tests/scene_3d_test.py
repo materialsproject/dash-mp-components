@@ -21,8 +21,6 @@ def check_circles(dash_duo, number_of_circles):
 
 
 class SVG3DScene(unittest.TestCase):
-
-
     @pytest.fixture(autouse=True)
     def __inject_fixtures(self, mocker, dash_duo):
         self.mocker = mocker
@@ -43,6 +41,7 @@ class SVG3DScene(unittest.TestCase):
         # wait for table to be there
         print('Test started', __name__)
         self.dash_duo.wait_for_element_by_css_selector('svg')
+        self.dash_duo.percy_snapshot("spheres")
 
     def test_basic_rendering(self):
         assert(self.dash_duo.find_element('.three-container') is not None)
