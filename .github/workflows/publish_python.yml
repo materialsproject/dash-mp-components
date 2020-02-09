@@ -29,6 +29,7 @@ jobs:
               run: |
                   npm run build
                   python setup.py sdist
+                  npm publish
             - name: Publish a Python distribution to test PyPI
               env:
                   PI_PY_SECRET_TEST: ${{  secrets.PYPI_TEST_TOKEN }}

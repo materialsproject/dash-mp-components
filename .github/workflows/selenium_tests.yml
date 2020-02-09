@@ -26,15 +26,13 @@ jobs:
             - name: Install dependencies
               run: |
                   sudo apt-get update
-                  sudo apt-get install chrom  ium-chromedriver
+                  sudo apt-get install chromium-chromedriver
                   python -m pip install --upgrade pip
                   pip install -r requirements.txt
                   pip install -r tests/requirements.txt
-                  sed -i "s/git@github.com/https:\/\/$GITHUB_TOKEN:x-oauth-basic@github.com/g" package.json
-                  cat package.json
                   npm i
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             - name: Check files
               run: |
                   npm run lint:yaml
