@@ -7,11 +7,11 @@ import dash_core_components as dcc
 app = dash.Dash(__name__)
 
 print("Hello World 2")
-app.layout = html.Div([
+app.layout = html.Div(children=[
 
     dash_mp_components.Simple3DScene(
         id='3d',
-        settings={"renderer":'svg'},
+        settings={"renderer": "svg"},
         data={
                  "name": "StructureMoleculeComponent",
                  "contents": [{

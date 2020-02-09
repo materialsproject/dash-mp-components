@@ -15,9 +15,13 @@ import unittest
 from .scene import scene
 
 
-def check_circles(dash_duo, number_of_circles):
+def check_path(dash_duo, number_of_path):
     # check if we can pass an ID to SVG element
-    assert(len(dash_duo.find_elements('path')) == number_of_circles)
+    assert(len(dash_duo.find_elements('path')) == number_of_path)
+
+def check_path_color(path_element, color):
+    # have an utility to transfer from rgba to hex and vice-versa
+    assert(path_element.value_of_css_property('fill') == color)
 
 
 class SVG3DScene(unittest.TestCase):
@@ -45,4 +49,15 @@ class SVG3DScene(unittest.TestCase):
 
     def test_basic_rendering(self):
         assert(self.dash_duo.find_element('.three-container') is not None)
-        check_circles(self.dash_duo, 7)
+        check_path(self.dash_duo, 7)
+    def test_color_rendering(self):
+         # the order of the SVG element does not match the order of the spheres defined in
+         # the JSON
+        check_path_color(self.dash_duo.find_elements('path')[0], 'rgb(255, 170, 170)')
+        check_path_color(self.dash_duo.find_elements('path')[1], 'rgb(17, 17, 17)')
+        check_path_color(self.dash_duo.find_elements('path')[2], 'rgb(255, 170, 170)')
+        check_path_color(self.dash_duo.find_elements('path')[3], 'rgb(0, 255, 221)')
+        check_path_color(self.dash_duo.find_elements('path')[4], 'rgb(255, 170, 170)')
+        check_path_color(self.dash_duo.find_elements('path')[5], 'rgb(17, 17, 17)')
+        check_path_color(self.dash_duo.find_elements('path')[6], 'rgb(255, 170, 170)')
+
