@@ -34,7 +34,7 @@
     "license": "BSD",
     "dependencies": {
         "file-loader": "^5.0.2",
-        "mat-periodic-table": "git@github.com:materialsproject/mp-react-components.git#build",
+        "mat-periodic-table": "next",
         "prettier": "^1.19.1",
         "ramda": "^0.26.1",
         "rimraf": "^3.0.0",
