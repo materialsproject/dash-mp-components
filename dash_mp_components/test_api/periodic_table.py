@@ -25,25 +25,30 @@ class BasePage(object):
         self.dash_duo = dash_duo
         self.base_selector = base_selector
 
+# We are not supposed to couple the rendering with the testing. But I acknowledge
+# that it can be useful to have a quick way to render a dash component. Therefore,
+# every testing API class will expose by convention a render method that returns
+# a dash components
 
 class PeriodicTable(BasePage):
 
-    def __init__(self, dash_duo, id, disabledElements, enabledDelements,
-                 hiddenElements, layout='spaced', base_selector=''):
-        self.table = dash_mp_components.PeriodicContext(
+    def __init__(self, dash_duo, base_selector=''):
+        super().__init__(dash_duo, base_selector)
+
+    def render(self, id, disabledElements, enabledElements, hiddenElements, layout='spaced'):
+        return dash_mp_components.PeriodicContext(
             children=[
                 html.Div(children=[
                     dash_mp_components.PeriodicTableInput(
                         id=id,
                         disabledElements=disabledElements,
-                        enabledElements=enabledDelements,
+                        enabledElements=enabledElements,
                         hiddenElements=hiddenElements,
                         maxElementSelectable=2,
                         forceTableLayout=layout
                     )], className='test-cmp'
                 )
             ])
-        super().__init__(dash_duo, base_selector)
 
     def get_table_selector(self):
         return f'{self.base_selector} {Selectors.table_container.value}'

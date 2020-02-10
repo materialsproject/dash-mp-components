@@ -21,13 +21,11 @@ class PeriodicTableBaseTest(unittest.TestCase):
 
     def setUp(self):
         # move to class methods
-        self.periodic_table = PeriodicTable(self.dash_duo,
-                                            'periodic-table', ['Fe', 'Co'], [], ['Na'],
-                                            'spaced',
-                                            DEFAULT_CONTAINER_SELECTOR)
+        self.periodic_table = PeriodicTable(self.dash_duo, DEFAULT_CONTAINER_SELECTOR)
+        component = self.periodic_table.render('periodic-table', ['Fe', 'Co'], [], ['Na'], 'spaced')
         self.app = dash.Dash(__name__)
         self.app.layout = html.Div([
-               self.periodic_table.table,
+               component,
                html.Div(id='component'),
                html.Div(id='dummy-thing')
            ])
