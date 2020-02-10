@@ -3,6 +3,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import dash_mp_components
 import dash_html_components as html
 from enum import Enum, unique
+from .utils import wait_for_element_having_class
 
 @unique
 class Selectors(Enum):
@@ -77,18 +78,27 @@ class PeriodicTable(BasePage):
         self.dash_duo.wait_for_element_by_css_selector(self.base_selector)
         self.dash_duo.wait_for_element_by_css_selector(self.get_table_selector())
 
+    # This will throw if the element is not selectable
+    def select_element(self, symbol):
+        element = self.find_element(symbol)
+        element.click()
+        wait_for_element_having_class(self.dash_duo, element, Selectors.enabled.value[1:])
+
+    def get_all_elements_selector(self):
+        return f'{self.get_table_selector()} { Selectors.element.value }:not({Selectors.detailed.value})'
+
     def find_all_elements(self):
-        return self.dash_duo.find_elements(f'{ Selectors.element.value }:not({Selectors.detailed.value})')
+        return self.dash_duo.find_elements(self.get_all_elements_selector())
+
+    def find_all_enabled_elements(self):
+        return self.dash_duo.find_elements(
+            f'{self.get_all_elements_selector()}{Selectors.enabled.value}')
 
     def check_if_element_is_enabled(self, symbol):
         self.check_if_element_has_class(symbol, Selectors.enabled.value[1:])
 
     def check_if_element_is_disabled(self, symbol):
         self.check_if_element_has_class(symbol, Selectors.disabled.value[1:])
-
-    def find_all_enabled_elements(self):
-        return self.dash_duo.find_elements(
-            f'{Selectors.element.value}:not({Selectors.detailed.value}){Selectors.enabled.value}')
 
     def check_if_element_is_hidden(self, symbol):
         hidden_element = self.periodic_table.find_element(symbol)
