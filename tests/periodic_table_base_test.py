@@ -1,7 +1,7 @@
 import dash
 from dash.dependencies import Input, Output
 import dash_html_components as html
-from dash_mp_components.test_api import PeriodicTable
+from dash_mp_components.test_api import PeriodicTable, DEFAULT_CONTAINER_SELECTOR
 from dash_mp_components.test_api import resize_browser_window
 
 import pytest
@@ -19,7 +19,10 @@ class PeriodicTableBaseTest(unittest.TestCase):
 
     def setUp(self):
         # move to class methods
-        self.periodic_table = PeriodicTable(self.dash_duo, 'periodic-table', ['Fe', 'Co'], [], ['Na'])
+        self.periodic_table = PeriodicTable(self.dash_duo,
+                                            'periodic-table', ['Fe', 'Co'], [], ['Na'],
+                                            'spaced',
+                                            DEFAULT_CONTAINER_SELECTOR)
         self.app = dash.Dash(__name__)
         self.app.layout = html.Div([
                self.periodic_table.table,
@@ -42,25 +45,25 @@ class PeriodicTableBaseTest(unittest.TestCase):
     def test_render_component(self):
         assert len(self.periodic_table.find_all_elements()) == 120
         self.stub.assert_called_with([])
-        assert self.periodic_table.findElement('Cl').find_element_by_css_selector(".mat-number").text == "17"
+        assert self.periodic_table.find_element('Cl').find_element_by_css_selector(".mat-number").text == "17"
 
     def test_disabled_honored(self):
         self.periodic_table.check_if_element_is_disabled('Fe')
         self.periodic_table.check_if_element_is_disabled('Co')
 
     def test_hidden_honored(self):
-        hidden_element = self.periodic_table.findElement('Na')
+        hidden_element = self.periodic_table.find_element('Na')
         assert ('hidden' in hidden_element.get_attribute('class').split()) is True
         assert hidden_element.find_element_by_css_selector('.mat-number').is_displayed() is False
         assert hidden_element.find_element_by_css_selector('.mat-symbol').is_displayed() is False
 
     def test_component_click(self):
-        self.periodic_table.findElement('H').click()
+        self.periodic_table.find_element('H').click()
         self.dash_duo.wait_for_element_by_css_selector('.enabled')
         self.periodic_table.hover_over_element('Pb')
         self.periodic_table.check_if_element_is_enabled('H')
         self.stub.assert_called_with(['H'])
-        dy = self.periodic_table.findElement('Dy')
+        dy = self.periodic_table.find_element('Dy')
         dy.click()
         self.periodic_table.hover_over_element('Pb')
         self.periodic_table.check_if_element_is_enabled('Dy')
