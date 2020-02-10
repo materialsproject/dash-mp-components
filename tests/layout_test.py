@@ -2,8 +2,8 @@ import pytest
 import dash
 import dash_html_components as html
 
-from .periodic_table import PeriodicTable
-from .utils import resize_browser_window
+from dash_mp_components.test_api import PeriodicTable
+from dash_mp_components.test_api import resize_browser_window
 
 # parametrize does not work with unittest
 @pytest.mark.parametrize("layout", ['spaced', 'compact', 'small', 'map'])

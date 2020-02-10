@@ -3,7 +3,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 import dash_mp_components
 import dash_html_components as html
 
-
 selectors = {
     'element': '.mat-element',
     'number': '.mat-number',

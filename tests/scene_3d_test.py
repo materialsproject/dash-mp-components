@@ -1,15 +1,8 @@
 import dash_mp_components
 import dash
 import dash_html_components as html
-from dash.testing.application_runners import import_app
-from .utils import resize_browser_window
+from dash_mp_components.test_api import resize_browser_window
 
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
-
-import time
 import pytest
 import unittest
 from .scene import scene
