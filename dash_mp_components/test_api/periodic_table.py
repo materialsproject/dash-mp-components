@@ -38,6 +38,7 @@ class PeriodicTable(BasePage):
                         disabledElements=disabledElements,
                         enabledElements=enabledDelements,
                         hiddenElements=hiddenElements,
+                        maxElementSelectable=2,
                         forceTableLayout=layout
                     )], className='test-cmp'
                 )
@@ -80,6 +81,10 @@ class PeriodicTable(BasePage):
     def check_if_element_is_disabled(self, symbol):
         self.check_if_element_has_class(symbol, Selectors.disabled.value[1:])
 
+    def find_all_enabled_elements(self):
+        return self.dash_duo.find_elements(
+            f'{Selectors.element.value}:not({Selectors.detailed.value}){Selectors.enabled.value}')
+
     def check_if_element_is_hidden(self, symbol):
         hidden_element = self.periodic_table.find_element(symbol)
         self.check_if_element_has_class(symbol, Selectors.hidden.value[1:])
@@ -88,11 +93,10 @@ class PeriodicTable(BasePage):
 
     def check_table_layout(self, expected_layout):
         table = self.dash_duo.find_element(self.get_table_selector())
-        el = table.find_element_by_css_selector(Selectors.table_container.value)
         layouts = ['spaced', 'compact', 'small', 'map']
         # table container should ONLY have the associated class
         for layout in layouts:
-            assert (expected_layout in el.get_attribute('class').split()) is (expected_layout == layout)
+            assert (layout in table.get_attribute('class').split()) is (expected_layout == layout)
         # test specific rendering of elements
 
 

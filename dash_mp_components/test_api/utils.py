@@ -1,4 +1,3 @@
 def resize_browser_window(width, height, driver):
-    print(driver.get_window_size())
-    driver.set_window_size(1920, 1080)
+    driver.set_window_size(width, height)
     size = driver.get_window_size()

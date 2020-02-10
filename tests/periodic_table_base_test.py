@@ -12,6 +12,8 @@ import unittest
 class PeriodicTableBaseTest(unittest.TestCase):
 
     # it's not possible to inject fixtures at class level, due to a limitation in pytest
+    # also, convention is to prefix your method with test.
+
     @pytest.fixture(autouse=True)
     def __inject_fixtures(self, mocker, dash_duo):
         self.mocker = mocker
@@ -68,9 +70,22 @@ class PeriodicTableBaseTest(unittest.TestCase):
         self.periodic_table.hover_over_element('Pb')
         self.periodic_table.check_if_element_is_enabled('Dy')
 
-    def check_hover_is_displayed(self):
+    def test_hover_is_displayed(self):
         self.periodic_table.hover_over_element('He')
         self.periodic_table.checkDetailed("2", "He", "Helium")
+
+    #TODO(chab) click on hidden/disabled should do nothing
+    #TODO(chab) try to update the dash propertied
+
+    def test_max_element_enabled(self):
+        self.periodic_table.find_element('H').click()
+        self.periodic_table.find_element('K').click()
+        self.periodic_table.find_element('Dy').click()
+        self.periodic_table.find_element('He').click()
+        self.periodic_table.hover_over_element('Pb')
+        assert(len(self.periodic_table.find_all_enabled_elements()) == 2)
+
+
 
 
 
