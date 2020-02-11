@@ -111,5 +111,6 @@ class PeriodicTable(BasePage):
         layouts = ['spaced', 'compact', 'small', 'map']
         # table container should ONLY have the associated class
         for layout in layouts:
-            assert layout in table.get_attribute('class').split() is (expected_layout == layout)
+            assert (layout in table.get_attribute('class').split()) is (expected_layout == layout)
+
         # test specific rendering of elements
