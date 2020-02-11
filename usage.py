@@ -8,7 +8,9 @@ app = dash.Dash(__name__)
 
 print("Hello World 2")
 app.layout = html.Div(children=[
-
+    dash_mp_components.JsonView(id='json',
+    name=False,
+    src={'a': 12, 'b':13, 'c': 'd'}),
     dash_mp_components.Simple3DScene(
         id='3d',
         settings={"renderer": "svg"},

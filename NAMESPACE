@@ -1,12 +1,16 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+export(GraphComponent)
+export(JsonView)
 export(PeriodicContext)
 export(PeriodicElement)
 export(PeriodicFilter)
 export(PeriodicTableInput)
 export(Simple3DScene)
-export(periodicContext)
-export(periodicElement)
 export(periodicFilter)
+export(periodicElement)
 export(periodicTableInput)
+export(jsonView)
+export(graphComponent)
 export(simple3DScene)
+export(periodicContext)
