@@ -62,9 +62,9 @@ class PeriodicTable(BasePage):
     def checkDetailed(self, number, symbol, name):
         table = self.dash_duo.find_element(self.get_table_selector())
         detailed_element = table.find_element_by_css_selector(Selectors.detailed.value)
-        assert(detailed_element.find_element_by_css_selector(Selectors.number.value).text == number)
-        assert(detailed_element.find_element_by_css_selector(Selectors.symbol.value).text == symbol)
-        assert(detailed_element.find_element_by_css_selector(Selectors.name.value).text == name)
+        assert detailed_element.find_element_by_css_selector(Selectors.number.value).text == number
+        assert detailed_element.find_element_by_css_selector(Selectors.symbol.value).text == symbol
+        assert detailed_element.find_element_by_css_selector(Selectors.name.value).text == name
 
     def check_if_element_has_class(self, element_symbol, klass):
         assert (klass in self.find_element(element_symbol).get_attribute('class').split()) is True
@@ -111,7 +111,5 @@ class PeriodicTable(BasePage):
         layouts = ['spaced', 'compact', 'small', 'map']
         # table container should ONLY have the associated class
         for layout in layouts:
-            assert (layout in table.get_attribute('class').split()) is (expected_layout == layout)
+            assert layout in table.get_attribute('class').split() is (expected_layout == layout)
         # test specific rendering of elements
-
-

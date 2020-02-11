@@ -16,5 +16,3 @@ def test_table_forced_layout(dash_duo, layout):
     dash_duo.start_server(app)
     periodic_table.wait_for_table()
     periodic_table.check_table_layout(layout)
-
-

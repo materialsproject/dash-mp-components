@@ -25,10 +25,10 @@ class PeriodicTableBaseTest(unittest.TestCase):
         component = self.periodic_table.render('periodic-table', ['Fe', 'Co'], [], ['Na'], 'spaced')
         self.app = dash.Dash(__name__)
         self.app.layout = html.Div([
-               component,
-               html.Div(id='component'),
-               html.Div(id='dummy-thing')
-           ])
+            component,
+            html.Div(id='component'),
+            html.Div(id='dummy-thing')
+        ])
 
         self.stub = self.mocker.stub(name='element_state_callback')
         @self.app.callback(Output('component', 'children'), [Input('periodic-table', 'state')])
@@ -81,9 +81,4 @@ class PeriodicTableBaseTest(unittest.TestCase):
         self.periodic_table.find_element('Dy').click()
         self.periodic_table.find_element('He').click()
         self.periodic_table.hover_over_element('Pb')
-        assert(len(self.periodic_table.find_all_enabled_elements()) == 2)
-
-
-
-
-
+        assert len(self.periodic_table.find_all_enabled_elements()) == 2
