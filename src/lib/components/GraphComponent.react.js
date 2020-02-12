@@ -1,4 +1,3 @@
-import {JSONViewComponent} from 'mat-periodic-table';
 import React from 'react';
 import {ReactGraphComponent} from 'mat-periodic-table';
 import {Component} from 'react';
