@@ -34,10 +34,11 @@
     "license": "BSD",
     "dependencies": {
         "file-loader": "^5.0.2",
-        "mat-periodic-table": "0.0.18-SNAPSHOT.1581546035",
+        "mat-periodic-table": "next",
         "prettier": "^1.19.1",
         "ramda": "^0.26.1",
         "rimraf": "^3.0.0",
+        "terser-webpack-plugin": "^2.3.5",
         "url-loader": "^3.0.0"
     },
     "devDependencies": {
@@ -63,6 +64,7 @@
         "style-loader": "^0.23.1",
         "styled-jsx": "^3.2.1",
         "webpack": "4.36.1",
+        "webpack-bundle-analyzer": "^3.6.0",
         "webpack-cli": "3.3.6",
         "webpack-serve": "3.1.0",
         "yaml-lint": "^1.2.4"

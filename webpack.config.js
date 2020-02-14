@@ -1,10 +1,11 @@
 const path = require('path');
 const packagejson = require('./package.json');
-
+const TerserPlugin = require('terser-webpack-plugin');
 const dashLibraryName = packagejson.name.replace(/-/g, '_');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+    .BundleAnalyzerPlugin;
 
 module.exports = (env, argv) => {
-
     let mode;
 
     const overrides = module.exports || {};
@@ -25,7 +26,7 @@ module.exports = (env, argv) => {
     }
 
     let filename = (overrides.output || {}).filename;
-    if(!filename) {
+    if (!filename) {
         const modeSuffix = mode === 'development' ? 'dev' : 'min';
         filename = `${dashLibraryName}.${modeSuffix}.js`;
     }
@@ -34,14 +35,18 @@ module.exports = (env, argv) => {
 
     const devtool = overrides.devtool || 'source-map';
 
-    const externals = ('externals' in overrides) ? overrides.externals : ({
-        react: 'React',
-        'react-dom': 'ReactDOM',
-        'plotly.js': 'Plotly',
-        'prop-types': 'PropTypes',
-    });
+    const externals =
+        'externals' in overrides
+            ? overrides.externals
+            : {
+                  react: 'React',
+                  'react-dom': 'ReactDOM',
+                  'plotly.js': 'Plotly',
+                  'prop-types': 'PropTypes',
+              };
 
     return {
+        //plugins: [new BundleAnalyzerPlugin()], uncomment to see treemap of bundle
         mode,
         entry,
         output: {
@@ -67,8 +72,8 @@ module.exports = (env, argv) => {
                         {
                             loader: 'style-loader',
                             options: {
-                                insertAt: 'top'
-                            }
+                                insertAt: 'top',
+                            },
                         },
                         {
                             loader: 'css-loader',
@@ -77,9 +82,33 @@ module.exports = (env, argv) => {
                 },
                 {
                     test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-                    loader: 'url-loader?limit=100000'
-                }
+                    loader: 'url-loader?limit=100000',
+                },
             ],
         },
-    }
+        optimization: {
+            minimizer: [
+                new TerserPlugin({
+                    sourceMap: true,
+                    parallel: true,
+                    cache: './.build_cache/terser',
+                    terserOptions: {
+                        warnings: false,
+                        ie8: false,
+                    },
+                }),
+            ],
+            splitChunks: {
+                name: true,
+                cacheGroups: {
+                    shared: {
+                        chunks: 'all',
+                        minSize: 0,
+                        minChunks: 2,
+                        name: 'dash_mp_components-shared',
+                    },
+                },
+            },
+        },
+    };
 };
