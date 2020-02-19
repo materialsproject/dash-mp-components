@@ -36,15 +36,14 @@ the structure:
 }
 - setProps (optional): Dash-assigned callback that should be called whenever any of the
 properties change
-- selectedObjectReference (optional): Reference to selected objects when clicked
-- selectedObjectCount (optional): Click count for selected object"""
+- selectedObject (optional): This points to the last clicked object. Use it in your callback"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, downloadRequest=Component.UNDEFINED, selectedObjectReference=Component.UNDEFINED, selectedObjectCount=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObjectReference', 'selectedObjectCount']
+    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, downloadRequest=Component.UNDEFINED, selectedObject=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject']
         self._type = 'Simple3DScene'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObjectReference', 'selectedObjectCount']
+        self.available_properties = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

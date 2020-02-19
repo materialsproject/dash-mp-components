@@ -3,7 +3,14 @@ import React, {Component} from 'react';
 
 export default class SceneComponent extends Component {
     render() {
-        return <Simple3DSceneComponent {...this.props} />;
+        return (
+            <Simple3DSceneComponent
+                {...this.props}
+                onObjectClicked={o => {
+                    this.props.setProps({selectedObject: o});
+                }}
+            />
+        );
     }
 }
 
@@ -59,13 +66,9 @@ SceneComponent.propTypes = {
      * properties change
      */
     setProps: PropTypes.func,
-    /**
-     * Reference to selected objects when clicked
-     */
-    selectedObjectReference: PropTypes.string,
 
     /**
-     * Click count for selected object
+     * This points to the last clicked object. Use it in your callback
      */
-    selectedObjectCount: PropTypes.number,
+    selectedObject: PropTypes.object,
 };

@@ -95,13 +95,13 @@ app.layout = html.Div(children=[
     src={'a': 12, 'b':13, 'c': 'd'}),
     dash_mp_components.Simple3DScene(
         id='3d',
-        settings={"renderer": "svg"},
         data={
                  "name": "StructureMoleculeComponent",
                  "contents": [{
                    "name": "atoms",
                    "contents": [{
                      "positions": [[-2.13336842, -1.2940969500000001, -7.74158491], [0.8064071299999997, -1.3064432600000002, -2.8524384100000004], [2.1537217799999997, 1.30644326, 2.0367080899999994], [-0.8064071300000002, 1.30644326, 2.8524384099999995], [2.13336842, 1.2940969500000001, 7.74158491], [-2.15372178, -1.3064432600000002, -2.0367080900000003], [0.7860537699999997, -1.31878957, 2.8524384099999995], [-0.7860537700000001, 1.3187895699999999, -2.8524384100000004]],
+                     "clickable": True,
                      "color": "#ffaaaa",
                      "radius": [0.5],
                      "type": "spheres",
@@ -121,6 +121,7 @@ app.layout = html.Div(children=[
                  "origin": [2.13336842, 1.2940969500000001, 7.74158491]
                }
     ),
+    html.Div(id='selected-object'),
     dcc.Dropdown(
                     id='RR',
                     options=[
@@ -184,6 +185,11 @@ def display_output(value):
     if value == 'Na':
         return 'spaced'
     #return 'compact'
+
+@app.callback(Output(component_id = 'selected-object', component_property= 'children'), [Input('3d', 'selectedObject')])
+def display_selectedObject(value):
+    print(value)
+    return f'Type {value} color {value}'
 
 # use True to load a dev build of react
 if __name__ == '__main__':

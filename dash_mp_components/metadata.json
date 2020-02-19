@@ -419,21 +419,13 @@
         "required": false,
         "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
       },
-      "selectedObjectReference": {
+      "selectedObject": {
         "type": {
           "name": "custom",
-          "raw": "PropTypes.string"
+          "raw": "PropTypes.object"
         },
         "required": false,
-        "description": "Reference to selected objects when clicked"
-      },
-      "selectedObjectCount": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.number"
-        },
-        "required": false,
-        "description": "Click count for selected object"
+        "description": "This points to the last clicked object. Use it in your callback"
       }
     }
   }
