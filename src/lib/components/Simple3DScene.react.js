@@ -68,7 +68,9 @@ SceneComponent.propTypes = {
     setProps: PropTypes.func,
 
     /**
-     * This points to the last clicked object. Use it in your callback
+     * This points to the last clicked objects. Use it in your dash callback
+     * to know which objects are currently selected in the scene
+     *
      */
-    selectedObject: PropTypes.object,
+    selectedObject: PropTypes.array,
 };

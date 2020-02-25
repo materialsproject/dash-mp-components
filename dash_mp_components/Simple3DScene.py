@@ -36,7 +36,8 @@ the structure:
 }
 - setProps (optional): Dash-assigned callback that should be called whenever any of the
 properties change
-- selectedObject (optional): This points to the last clicked object. Use it in your callback"""
+- selectedObject (optional): This points to the last clicked objects. Use it in your dash callback
+to know which objects are currently selected in the scene"""
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, downloadRequest=Component.UNDEFINED, selectedObject=Component.UNDEFINED, **kwargs):
         self._prop_names = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject']

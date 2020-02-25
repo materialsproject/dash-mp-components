@@ -1,432 +1,432 @@
 {
-  "src/lib/components/GraphComponent.react.js": {
-    "description": "",
-    "displayName": "GraphComponent",
-    "methods": [],
-    "props": {
-      "id": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.string"
-        },
-        "required": false,
-        "description": "The ID used to identify this component in Dash callbacks"
-      },
-      "graph": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.object"
-        },
-        "required": false,
-        "description": "A graph that will be displayed when this component is rendered"
-      },
-      "options": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.object"
-        },
-        "required": false,
-        "description": "Display options for the graph"
-      },
-      "setProps": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.func"
-        },
-        "required": false,
-        "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
-      }
-    }
-  },
-  "src/lib/components/JsonView.react.js": {
-    "description": "",
-    "displayName": "JsonView",
-    "methods": [],
-    "props": {
-      "id": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "The ID used to identify this component in Dash callbacks"
-      },
-      "src": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": ""
-      },
-      "name": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "bool"
+    "src/lib/components/GraphComponent.react.js": {
+        "description": "",
+        "displayName": "GraphComponent",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
             },
-            {
-              "name": "string"
+            "graph": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.object"
+                },
+                "required": false,
+                "description": "A graph that will be displayed when this component is rendered"
+            },
+            "options": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.object"
+                },
+                "required": false,
+                "description": "Display options for the graph"
+            },
+            "setProps": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
             }
-          ]
-        },
-        "required": false,
-        "description": ""
-      },
-      "theme": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
-      "style": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": ""
-      },
-      "iconStyle": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
-      "indentWidth": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": ""
-      },
-      "collapsed": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "bool"
+        }
+    },
+    "src/lib/components/JsonView.react.js": {
+        "description": "",
+        "displayName": "JsonView",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
             },
-            {
-              "name": "number"
+            "src": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": ""
+            },
+            "name": {
+                "type": {
+                    "name": "union",
+                    "value": [
+                        {
+                            "name": "bool"
+                        },
+                        {
+                            "name": "string"
+                        }
+                    ]
+                },
+                "required": false,
+                "description": ""
+            },
+            "theme": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "style": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": ""
+            },
+            "iconStyle": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "indentWidth": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "collapsed": {
+                "type": {
+                    "name": "union",
+                    "value": [
+                        {
+                            "name": "bool"
+                        },
+                        {
+                            "name": "number"
+                        }
+                    ]
+                },
+                "required": false,
+                "description": ""
+            },
+            "collapseStringsAfterLength": {
+                "type": {
+                    "name": "union",
+                    "value": [
+                        {
+                            "name": "bool"
+                        },
+                        {
+                            "name": "number"
+                        }
+                    ]
+                },
+                "required": false,
+                "description": ""
+            },
+            "groupArraysAfterLength": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "enableClipboard": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "displayObjectSize": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "displayDataTypes": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "defaultValue": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": ""
+            },
+            "sortKeys": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "validationMessage": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
             }
-          ]
-        },
-        "required": false,
-        "description": ""
-      },
-      "collapseStringsAfterLength": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "bool"
+        }
+    },
+    "src/lib/components/PeriodicContext.react.js": {
+        "description": "",
+        "displayName": "MpPeriodicContext",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
             },
-            {
-              "name": "number"
+            "children": {
+                "type": {
+                    "name": "any"
+                },
+                "required": false,
+                "description": ""
             }
-          ]
-        },
-        "required": false,
-        "description": ""
-      },
-      "groupArraysAfterLength": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": ""
-      },
-      "enableClipboard": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": ""
-      },
-      "displayObjectSize": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": ""
-      },
-      "displayDataTypes": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": ""
-      },
-      "defaultValue": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": ""
-      },
-      "sortKeys": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": ""
-      },
-      "validationMessage": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
-      "setProps": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
-      }
-    }
-  },
-  "src/lib/components/PeriodicContext.react.js": {
-    "description": "",
-    "displayName": "MpPeriodicContext",
-    "methods": [],
-    "props": {
-      "id": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
-      "children": {
-        "type": {
-          "name": "any"
-        },
-        "required": false,
-        "description": ""
-      }
-    }
-  },
-  "src/lib/components/PeriodicElement.react.js": {
-    "description": "This component displays a periodic element",
-    "displayName": "MpPeriodicElement",
-    "methods": [],
-    "props": {
-      "id": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
-      "size": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": ""
-      },
-      "element": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
-      "setProps": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": ""
-      }
-    }
-  },
-  "src/lib/components/PeriodicFilter.react.js": {
-    "description": "This component filter an associated periodic table",
-    "displayName": "MpPeriodicFilter",
-    "methods": [],
-    "props": {
-      "id": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      }
-    }
-  },
-  "src/lib/components/PeriodicTableInput.react.js": {
-    "description": "MpPeriodicTableInput is a component that allows user to select\nsome components from a periodic table",
-    "displayName": "MpPeriodicTableInput",
-    "methods": [],
-    "props": {
-      "id": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "The ID used to identify this component in Dash callbacks."
-      },
-      "state": {
-        "type": {
-          "name": "array"
-        },
-        "required": false,
-        "description": "This is a read-only prop that dash callback can subscribe to"
-      },
-      "disabledElements": {
-        "type": {
-          "name": "array"
-        },
-        "required": false,
-        "description": "A list of symbols to grey-out as disabled",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
         }
-      },
-      "enabledElements": {
-        "type": {
-          "name": "array"
-        },
-        "required": false,
-        "description": "A list of selected symbols",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
-      "hiddenElements": {
-        "type": {
-          "name": "array"
-        },
-        "required": false,
-        "description": "A list of hidden symbols",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
-      "setProps": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
-      },
-      "maxElementSelectable": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Maximum number of selectable elements",
-        "defaultValue": {
-          "value": "10",
-          "computed": false
-        }
-      },
-      "forceTableLayout": {
-        "type": {
-          "name": "enum",
-          "value": [
-            {
-              "value": "'spaced'",
-              "computed": false
+    },
+    "src/lib/components/PeriodicElement.react.js": {
+        "description": "This component displays a periodic element",
+        "displayName": "MpPeriodicElement",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
             },
-            {
-              "value": "'compact'",
-              "computed": false
+            "size": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
             },
-            {
-              "value": "'small'",
-              "computed": false
+            "element": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
             },
-            {
-              "value": "'map'",
-              "computed": false
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": ""
             }
-          ]
-        },
-        "required": false,
-        "description": "Force the table to be in a specific layout"
-      },
-      "forwardOuterChange": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Forward external changes",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
         }
-      }
+    },
+    "src/lib/components/PeriodicFilter.react.js": {
+        "description": "This component filter an associated periodic table",
+        "displayName": "MpPeriodicFilter",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/PeriodicTableInput.react.js": {
+        "description": "MpPeriodicTableInput is a component that allows user to select\nsome components from a periodic table",
+        "displayName": "MpPeriodicTableInput",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks."
+            },
+            "state": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "This is a read-only prop that dash callback can subscribe to"
+            },
+            "disabledElements": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "A list of symbols to grey-out as disabled",
+                "defaultValue": {
+                    "value": "[]",
+                    "computed": false
+                }
+            },
+            "enabledElements": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "A list of selected symbols",
+                "defaultValue": {
+                    "value": "[]",
+                    "computed": false
+                }
+            },
+            "hiddenElements": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "A list of hidden symbols",
+                "defaultValue": {
+                    "value": "[]",
+                    "computed": false
+                }
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+            },
+            "maxElementSelectable": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": "Maximum number of selectable elements",
+                "defaultValue": {
+                    "value": "10",
+                    "computed": false
+                }
+            },
+            "forceTableLayout": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'spaced'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'compact'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'small'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'map'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": "Force the table to be in a specific layout"
+            },
+            "forwardOuterChange": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Forward external changes",
+                "defaultValue": {
+                    "value": "true",
+                    "computed": false
+                }
+            }
+        }
+    },
+    "src/lib/components/Simple3DScene.react.js": {
+        "description": "",
+        "displayName": "SceneComponent",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "data": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.object"
+                },
+                "required": false,
+                "description": "Simple3DScene JSON, the easiest way to generate this is to use the Scene class\nin crystal_toolkit.core.scene and its to_json method."
+            },
+            "settings": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.object"
+                },
+                "required": false,
+                "description": "Options used for generating scene.\nSupported options and their defaults are given as follows:\n{\n   antialias: true, // set to false to improve performance\n   renderer: 'webgl', // 'svg' also an option, used for unit testing\n   transparentBackground: false, // transparent background\n   background: '#ffffff', // background color if not transparent,\n   sphereSegments: 32, // decrease to improve performance\n   cylinderSegments: 16, // decrease to improve performance\n   staticScene: true, // disable if animation required\n   defaultZoom: 0.8, // 1 will completely fill viewport with scene\n}\nThere are several additional options used for debugging and testing,\nplease consult the source code directly for these."
+            },
+            "toggleVisibility": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.object"
+                },
+                "required": false,
+                "description": "Hide/show nodes in scene by its name (key), value is 1 to show the node\nand 0 to hide it."
+            },
+            "downloadRequest": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.object"
+                },
+                "required": false,
+                "description": "Set to trigger a screenshot or scene download. Should be an object with\nthe structure:\n{\n   \"n_requests\": n_requests, // increment to trigger a new download request\n   \"filename\": request_filename, // the download filename\n   \"filetype\": \"png\", // the download format\n}"
+            },
+            "setProps": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "selectedObject": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.array"
+                },
+                "required": false,
+                "description": "This points to the last clicked objects. Use it in your dash callback\nto know which objects are currently selected in the scene"
+            }
+        }
     }
-  },
-  "src/lib/components/Simple3DScene.react.js": {
-    "description": "",
-    "displayName": "SceneComponent",
-    "methods": [],
-    "props": {
-      "id": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.string"
-        },
-        "required": false,
-        "description": "The ID used to identify this component in Dash callbacks"
-      },
-      "data": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.object"
-        },
-        "required": false,
-        "description": "Simple3DScene JSON, the easiest way to generate this is to use the Scene class\nin crystal_toolkit.core.scene and its to_json method."
-      },
-      "settings": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.object"
-        },
-        "required": false,
-        "description": "Options used for generating scene.\nSupported options and their defaults are given as follows:\n{\n   antialias: true, // set to false to improve performance\n   renderer: 'webgl', // 'svg' also an option, used for unit testing\n   transparentBackground: false, // transparent background\n   background: '#ffffff', // background color if not transparent,\n   sphereSegments: 32, // decrease to improve performance\n   cylinderSegments: 16, // decrease to improve performance\n   staticScene: true, // disable if animation required\n   defaultZoom: 0.8, // 1 will completely fill viewport with scene\n}\nThere are several additional options used for debugging and testing,\nplease consult the source code directly for these."
-      },
-      "toggleVisibility": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.object"
-        },
-        "required": false,
-        "description": "Hide/show nodes in scene by its name (key), value is 1 to show the node\nand 0 to hide it."
-      },
-      "downloadRequest": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.object"
-        },
-        "required": false,
-        "description": "Set to trigger a screenshot or scene download. Should be an object with\nthe structure:\n{\n   \"n_requests\": n_requests, // increment to trigger a new download request\n   \"filename\": request_filename, // the download filename\n   \"filetype\": \"png\", // the download format\n}"
-      },
-      "setProps": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.func"
-        },
-        "required": false,
-        "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
-      },
-      "selectedObject": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.object"
-        },
-        "required": false,
-        "description": "This points to the last clicked object. Use it in your callback"
-      }
-    }
-  }
 }

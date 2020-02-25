@@ -34,7 +34,7 @@
     "license": "BSD",
     "dependencies": {
         "file-loader": "^5.0.2",
-        "mat-periodic-table": "0.0.18-SNAPSHOT.1582155989",
+        "mat-periodic-table": "next",
         "prettier": "^1.19.1",
         "ramda": "^0.26.1",
         "rimraf": "^3.0.0",
@@ -55,7 +55,7 @@
         "eslint-plugin-import": "^2.18.0",
         "eslint-plugin-react": "^7.14.2",
         "husky": "^4.1.0",
-        "npm": "^6.13.6",
+        "npm": "^6.14.0",
         "pretty-quick": "^2.0.1",
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
