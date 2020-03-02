@@ -1,5 +1,6 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+export(CameraContext)
 export(GraphComponent)
 export(JsonView)
 export(PeriodicContext)
@@ -13,4 +14,5 @@ export(periodicTableInput)
 export(jsonView)
 export(graphComponent)
 export(simple3DScene)
+export(cameraContext)
 export(periodicContext)

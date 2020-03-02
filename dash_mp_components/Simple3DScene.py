@@ -37,14 +37,15 @@ the structure:
 - setProps (optional): Dash-assigned callback that should be called whenever any of the
 properties change
 - selectedObject (optional): This points to the last clicked objects. Use it in your dash callback
-to know which objects are currently selected in the scene"""
+to know which objects are currently selected in the scene
+- size (optional): Width / Height of the displayed component"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, downloadRequest=Component.UNDEFINED, selectedObject=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject']
+    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, downloadRequest=Component.UNDEFINED, selectedObject=Component.UNDEFINED, size=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject', 'size']
         self._type = 'Simple3DScene'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject']
+        self.available_properties = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject', 'size']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

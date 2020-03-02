@@ -1,4 +1,27 @@
 {
+    "src/lib/components/CameraContext.react.js": {
+        "description": "",
+        "displayName": "CameraContext",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "children": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.any"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
     "src/lib/components/GraphComponent.react.js": {
         "description": "",
         "displayName": "GraphComponent",
@@ -426,6 +449,14 @@
                 },
                 "required": false,
                 "description": "This points to the last clicked objects. Use it in your dash callback\nto know which objects are currently selected in the scene"
+            },
+            "size": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.number"
+                },
+                "required": false,
+                "description": "Width / Height of the displayed component"
             }
         }
     }

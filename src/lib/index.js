@@ -6,6 +6,7 @@ import PeriodicContext from './components/PeriodicContext.react';
 import Simple3DScene from './components/Simple3DScene.react';
 import GraphComponent from './components/GraphComponent.react';
 import JsonView from './components/JsonView.react';
+import CameraContext from './components/CameraContext.react';
 
 export {
     PeriodicTableInput,
@@ -15,4 +16,5 @@ export {
     Simple3DScene,
     GraphComponent,
     JsonView,
+    CameraContext,
 };

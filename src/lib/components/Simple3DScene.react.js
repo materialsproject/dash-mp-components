@@ -73,4 +73,8 @@ SceneComponent.propTypes = {
      *
      */
     selectedObject: PropTypes.array,
+    /**
+     * Width / Height of the displayed component
+     */
+    size: PropTypes.number,
 };
