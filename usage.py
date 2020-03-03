@@ -126,8 +126,9 @@ app.layout = html.Div(children=[
                         }
                  ),dash_mp_components.Simple3DScene(
                         id='3d-3',
-                        sceneSize=100,
-                        inletSize=100,
+                        sceneSize=400,
+                        inletSize=150,
+                        settings={'extractAxis': True},
                         inletPadding=0,
                         axisView='SW',
                         data={
@@ -208,7 +209,7 @@ app.layout = html.Div(children=[
                                 }],
                                 "origin": [0, 0, 0]
                             }],
-                            "origin": [2.13336842, 1.2940969500000001, 7.74158491]
+                            "origin": [-2.1, -2.1, -2.1]
                         }
                     ),
                 ])
