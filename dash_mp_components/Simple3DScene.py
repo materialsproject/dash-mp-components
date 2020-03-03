@@ -22,6 +22,7 @@ Supported options and their defaults are given as follows:
    cylinderSegments: 16, // decrease to improve performance
    staticScene: true, // disable if animation required
    defaultZoom: 0.8, // 1 will completely fill viewport with scene
+   extractAxis: false // will remove the axis from the main scene
 }
 There are several additional options used for debugging and testing,
 please consult the source code directly for these.
@@ -38,14 +39,17 @@ the structure:
 properties change
 - selectedObject (optional): This points to the last clicked objects. Use it in your dash callback
 to know which objects are currently selected in the scene
-- size (optional): Width / Height of the displayed component"""
+- sceneSize (optional): Width / Height of the displayed component
+- axisView (optional): Where is the axis displayed ( 'NW' / 'NE' / 'SE' / 'SW' / 'HIDDEN
+- inletSize (optional)
+- inletPadding (optional)"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, downloadRequest=Component.UNDEFINED, selectedObject=Component.UNDEFINED, size=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject', 'size']
+    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, downloadRequest=Component.UNDEFINED, selectedObject=Component.UNDEFINED, sceneSize=Component.UNDEFINED, axisView=Component.UNDEFINED, inletSize=Component.UNDEFINED, inletPadding=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject', 'sceneSize', 'axisView', 'inletSize', 'inletPadding']
         self._type = 'Simple3DScene'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject', 'size']
+        self.available_properties = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject', 'sceneSize', 'axisView', 'inletSize', 'inletPadding']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

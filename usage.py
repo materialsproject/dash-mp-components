@@ -97,7 +97,8 @@ app.layout = html.Div(children=[
                 html.Div([
                  dash_mp_components.Simple3DScene(
                         id='3d-2',
-                        size=150,
+                        axisView='NW',
+                        sceneSize=250,
                         data={
                                  "name": "StructureMoleculeComponent",
                                  "contents": [{
@@ -125,10 +126,65 @@ app.layout = html.Div(children=[
                         }
                  ),dash_mp_components.Simple3DScene(
                         id='3d-3',
-                        size=300,
+                        sceneSize=100,
+                        inletSize=100,
+                        inletPadding=0,
+                        axisView='SW',
                         data={
                             "name": "StructureMoleculeComponent",
-                            "contents": [{
+                            "contents": [
+                            {
+                                  'name': 'axes',
+                                  'contents': [
+                                    {
+                                      'positionPairs': [
+                                        [
+                                          [-2.1, -2.1, -2.1],
+                                          [-1.4, -1.4, -3.1]
+                                        ]
+                                      ],
+                                      'color': 'red',
+                                      'radius': 0.07, 
+                                      'headLength': 0.24,
+                                      'headWidth': 0.14,
+                                      'type': 'arrows'
+                                    },
+                                    {
+                                      'positionPairs': [
+                                        [
+                                          [-2.1, -2.1, -2.1],
+                                          [-0.1, -2.5, -1.1]
+                                        ]
+                                      ],
+                                      'color': 'green',
+                                      'radius': 0.07,
+                                      'headLength': 0.24,
+                                      'headWidth': 0.14,
+                                      'type': 'arrows'
+                                    },
+                                    {
+                                      'positionPairs': [
+                                        [
+                                          [-2.1, -2.1, -2.1],
+                                          [-1.1, -1.1, -1.1]
+                                        ]
+                                      ],
+                                      'color': 'blue',
+                                      'radius': 0.07, #// 0.37302772291498865) * 2,
+                                      'headLength': 0.24,# // / 0.37302772291498865) * 2,
+                                      'headWidth': 0.14, #// / 0.37302772291498865) * 2,
+                                      'type': 'arrows'
+                                    },
+                                    {
+                                      'positions': [[-2.1, -2.1, -2.1]],
+                                      'color': 'black',
+                                      'radius': 0.0175,
+                                      'type': 'spheres',
+                                    }
+                                  ]
+                                },
+
+                            {
                                 "name": "atoms",
                                 "contents": [{
                                     "positions": [[-2.13336842, -1.2940969500000001, -7.74158491],
