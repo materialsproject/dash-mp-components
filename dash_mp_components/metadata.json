@@ -464,7 +464,7 @@
                     "raw": "PropTypes.string"
                 },
                 "required": false,
-                "description": "Where is the axis displayed ( 'NW' / 'NE' / 'SE' / 'SW' / 'HIDDEN"
+                "description": "Where is the axis displayed ( 'NW' / 'NE' / 'SE' / 'SW' / 'HIDDEN' )"
             },
             "inletSize": {
                 "type": {
@@ -472,7 +472,7 @@
                     "raw": "PropTypes.number"
                 },
                 "required": false,
-                "description": ""
+                "description": "Size of the axis view"
             },
             "inletPadding": {
                 "type": {
@@ -480,7 +480,15 @@
                     "raw": "PropTypes.number"
                 },
                 "required": false,
-                "description": ""
+                "description": "Padding of the axis view"
+            },
+            "debug": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.bool"
+                },
+                "required": false,
+                "description": "Display a debug view"
             }
         }
     }

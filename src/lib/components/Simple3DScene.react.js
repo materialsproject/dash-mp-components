@@ -79,9 +79,19 @@ SceneComponent.propTypes = {
      */
     sceneSize: PropTypes.number,
     /**
-     * Where is the axis displayed ( 'NW' / 'NE' / 'SE' / 'SW' / 'HIDDEN
+     * Where is the axis displayed ( 'NW' / 'NE' / 'SE' / 'SW' / 'HIDDEN' )
      */
     axisView: PropTypes.string,
+    /**
+     * Size of the axis view
+     */
     inletSize: PropTypes.number,
+    /**
+     * Padding of the axis view
+     */
     inletPadding: PropTypes.number,
+    /**
+     * Display a debug view
+     */
+    debug: PropTypes.bool,
 };

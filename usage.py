@@ -127,6 +127,7 @@ app.layout = html.Div(children=[
                  ),dash_mp_components.Simple3DScene(
                         id='3d-3',
                         sceneSize=400,
+                        debug=True,
                         inletSize=150,
                         settings={'extractAxis': True},
                         inletPadding=0,
