@@ -36,7 +36,8 @@ class SVG3DScene(unittest.TestCase):
                         options=[
                             {'label': 'Scene1', 'value': scene},
                             {'label': 'Scene2', 'value': scene2},
-                            {'label': 'Scene3', 'value': 'cc'}
+                            {'label': 'Scene3', 'value': scene3},
+                            {'label': 'Scene4', 'value': 'sdf'}
                         ],
                         value=scene
                     ),
@@ -88,5 +89,17 @@ class SVG3DScene(unittest.TestCase):
         dropdown.send_keys(Keys.ENTER)
         time.sleep(1)
         check_path(self.dash_duo, 7)
+        # this will add new elements, as the name of the scene is different
+        dropdown.send_keys('Scene3')
+        dropdown.send_keys(Keys.ENTER)
+        time.sleep(1)
+        check_path(self.dash_duo, 6)
+        # test incorrect scene
+        dropdown.send_keys('Scene4')
+        dropdown.send_keys(Keys.ENTER)
+        time.sleep(1)
+        # nothing should happen
+        check_path(self.dash_duo, 6)
+        time.sleep(100)
 
 
