@@ -1,4 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
+
 
 def resize_browser_window(width, height, driver):
     driver.set_window_size(width, height)
@@ -9,6 +11,12 @@ def wait_for_element_having_class(dash_duo, el, klass):
     wait = WebDriverWait(dash_duo.driver, 10)
     wait.until(element_has_css_class(el, klass))
 
+
+def click_with_offset(driver, el, x, y):
+    action = ActionChains(driver)
+    action.move_to_element_with_offset(el, x, y)
+    action.click()
+    action.perform()
 
 # move to dedicated file
 class element_has_css_class(object):
