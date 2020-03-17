@@ -14,20 +14,23 @@ scene = {
             "color": "#ffaaaa",
             "radius": [0.5],
             "type": "spheres",
-            "clickable": True
+            "clickable": True,
+            "tooltip": 'label1',
         }, {
             "positions": [[1.1352943356867837, 0.688667561081374, 4.1197692008924705],
                           [-1.1352941382531998, -0.6886632575514795, -4.119769120104752]],
             "color": "#111111",
             "radius": [0.5],
             "type": "spheres",
-            "clickable": True
+            "clickable": True,
+            "tooltip": 'label2',
         }, {
             "positions": [[1.3132662690651387e-7, 0.000002162567968477802, -0.000004955452009625105]],
             "color": "#00ffdd",
             "radius": [0.5],
             "type": "spheres",
-            "clickable": True
+            "clickable": True,
+            "tooltip": 'label3',
         }],
         "origin": [0, 0, 0]
     }],

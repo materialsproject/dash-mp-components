@@ -1,5 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 
 
 def resize_browser_window(width, height, driver):
@@ -12,11 +13,22 @@ def wait_for_element_having_class(dash_duo, el, klass):
     wait.until(element_has_css_class(el, klass))
 
 
-def click_with_offset(driver, el, x, y):
+def click_with_offset(driver, el, x, y, useShift = False):
     action = ActionChains(driver)
     action.move_to_element_with_offset(el, x, y)
+    if useShift:
+        action.key_down(Keys.SHIFT)
     action.click()
+    if useShift:
+        action.key_up(Keys.SHIFT)
     action.perform()
+
+
+def hover_with_offset(driver, el, x, y):
+    action = ActionChains(driver)
+    action.move_to_element_with_offset(el, x, y)
+    action.perform()
+
 
 # move to dedicated file
 class element_has_css_class(object):

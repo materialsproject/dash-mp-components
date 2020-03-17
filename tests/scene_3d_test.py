@@ -100,6 +100,6 @@ class SVG3DScene(unittest.TestCase):
         time.sleep(1)
         # nothing should happen
         check_path(self.dash_duo, 6)
-        time.sleep(100)
+  
 
 
