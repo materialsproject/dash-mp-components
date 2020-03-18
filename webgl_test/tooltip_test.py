@@ -2,11 +2,8 @@ import dash_mp_components
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
-from dash_mp_components.test_api import resize_browser_window, hover_with_offset
+from dash_mp_components.test_api import resize_browser_window, hover_with_offset, SimpleScene, SceneSelectors
 from dash.dependencies import Input, Output
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import time
 
 import pytest
@@ -33,6 +30,7 @@ class SVG3DScene(unittest.TestCase):
 
     def setUp(self):
         self.app = dash.Dash(__name__)
+        self.scene = SimpleScene(self.dash_duo, settings={'renderer': 'webgl'}, scene=scene)
         resize_browser_window(1920, 1080, self.dash_duo.driver)
         self.app.layout = html.Div(
                 children=[
@@ -40,11 +38,7 @@ class SVG3DScene(unittest.TestCase):
                     html.Div(
                         style={'width': '500px', 'height': '500px'},
                         children=[
-                            dash_mp_components.Simple3DScene(
-                                id='3d',
-                                settings={},
-                                data=scene
-                            )
+                            self.scene.render()
                         ]
                     )
                 ]
@@ -55,26 +49,13 @@ class SVG3DScene(unittest.TestCase):
             # do something a bit more complex
             return f'Type {value} color {value}'
         self.dash_duo.start_server(self.app)
-        # wait for table to be there
         print('Test started', __name__)
-        self.dash_duo.wait_for_element_by_css_selector('canvas')
-        # click in the middle of the screen
-        # click somewhere else
+        self.scene.wait_for_rendering()
 
     def test_tooltip(self):
-        el = self.dash_duo.find_element('.three-container')
-        hover_with_offset(self.dash_duo.driver, el, 250, 250)
-        WebDriverWait(self.dash_duo.driver, 20).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, ".tooltiptext")))
-        assert self.dash_duo.find_element('.three-container').text == 'label3'
-        hover_with_offset(self.dash_duo.driver, el, 240, 230)
-        WebDriverWait(self.dash_duo.driver, 20).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, ".tooltiptext")))
-        assert self.dash_duo.find_element('.three-container').text == 'label1'
-        hover_with_offset(self.dash_duo.driver, el, 270, 240)
-        WebDriverWait(self.dash_duo.driver, 20).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, ".tooltiptext")))
-        assert self.dash_duo.find_element('.three-container').text == 'label2'
+        self.scene.hover_and_check_tooltip(250, 250, 'label3')
+        self.scene.hover_and_check_tooltip(240, 230, 'label1')
+        self.scene.hover_and_check_tooltip(270, 240, 'label2')
 
-        # 4 edge spheres
+
 

@@ -2,7 +2,7 @@ import dash_mp_components
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
-from dash_mp_components.test_api import resize_browser_window, click_with_offset
+from dash_mp_components.test_api import resize_browser_window, click_with_offset, SimpleScene
 from dash.dependencies import Input, Output
 import time
 
@@ -31,17 +31,16 @@ class SVG3DScene(unittest.TestCase):
     def setUp(self):
         self.app = dash.Dash(__name__)
         resize_browser_window(1920, 1080, self.dash_duo.driver)
+        self.scene = SimpleScene(self.dash_duo,
+                                 scene=scene,
+                                 settings={'isMultiSelectionEnabled': True, 'renderer': 'webgl'})
         self.app.layout = html.Div(
                 children=[
                     html.Div(id='test'),
                     html.Div(
                         style={'width': '500px', 'height': '500px'},
                         children=[
-                            dash_mp_components.Simple3DScene(
-                                id='3d',
-                                settings={'isMultiSelectionEnabled': True},
-                                data=scene
-                            )
+                            self.scene.render()
                         ]
                     )
                 ]
@@ -54,21 +53,19 @@ class SVG3DScene(unittest.TestCase):
         self.dash_duo.start_server(self.app)
         # wait for table to be there
         print('Test started', __name__)
-        self.dash_duo.wait_for_element_by_css_selector('canvas')
+        self.scene.wait_for_rendering()
 
     def test_multiple_selecting(self):
-        el = self.dash_duo.find_element('.three-container')
         # center sphere, we expect some text
-        click_with_offset(self.dash_duo.driver, el, 250, 250)
-
-        assert len(self.dash_duo.find_element('#test').text) == 342
+        self.scene.click_on_coordinate(250, 250)
+        assert len(self.dash_duo.find_element('#test').text) == 384
         # click on the black sphere without shift
-        click_with_offset(self.dash_duo.driver, el, 270, 240, False)
+        self.scene.click_on_coordinate(270, 240)
         # click on the center sphere with shift
-        assert len(self.dash_duo.find_element('#test').text) == 446
-        click_with_offset(self.dash_duo.driver, el, 1, 1, True)
+        assert len(self.dash_duo.find_element('#test').text) == 488
+        self.scene.click_on_coordinate(use_shift=True)
         # click somewhere, nothing is selected
-        assert self.dash_duo.find_element('#test').text == 'vac'
+        assert self.dash_duo.find_element('#test').text == 'Type [] color []'
 
 
 
