@@ -12,7 +12,6 @@ from .scene import scene, scene2, scene3
 from selenium.webdriver.common.keys import Keys
 
 
-
 class SVG3DScene(unittest.TestCase):
     @pytest.fixture(autouse=True)
     def __inject_fixtures(self, mocker, dash_duo):
@@ -23,8 +22,15 @@ class SVG3DScene(unittest.TestCase):
         self.scene = SimpleScene(self.dash_duo, scene)
         self.app = dash.Dash(__name__)
         resize_browser_window(1920, 1080, self.dash_duo.driver)
+        nameToVisibility = {
+            'atoms': False
+        }
         self.app.layout = html.Div(
                 children=[
+                    html.Button(
+                        '....click....',
+                        id='toggler-button'
+                    ),
                     dcc.Dropdown(
                         id='demo-dropdown',
                         options=[
@@ -44,6 +50,12 @@ class SVG3DScene(unittest.TestCase):
                 ]
             )
 
+        @self.app.callback(Output('3d', 'toggleVisibility'), [Input('toggler-button', 'n_clicks')])
+        def toggle_atoms(value):
+            nameToVisibility['atoms'] = not nameToVisibility['atoms']
+            print('love.........', nameToVisibility, value)
+            return nameToVisibility
+
         @self.app.callback(Output('3d', 'data'), [Input('demo-dropdown', 'value')])
         def display_output(value):
             print("chosen value", value)
@@ -54,9 +66,16 @@ class SVG3DScene(unittest.TestCase):
         self.scene.wait_for_rendering()
         self.dash_duo.percy_snapshot("spheres")
 
+    def test_visibility(self):
+        assert self.scene.get_container() is not None
+        self.scene.check_path(7)
+        self.dash_duo.find_element('#toggler-button').click()
+        self.scene.check_path(0)
+
     def test_basic_rendering(self):
         assert self.scene.get_container() is not None
         self.scene.check_path(7)
+
     def test_color_rendering(self):
          # the order of the SVG element does not match the order of the spheres defined in
          # the JSON
@@ -67,6 +86,7 @@ class SVG3DScene(unittest.TestCase):
         self.scene.check_path_color(self.dash_duo.find_elements('path')[4], 'rgb(255, 170, 170)')
         self.scene.check_path_color(self.dash_duo.find_elements('path')[5], 'rgb(17, 17, 17)')
         self.scene.check_path_color(self.dash_duo.find_elements('path')[6], 'rgb(255, 170, 170)')
+
     def test_scene_switcher(self):
         # check if adding a new scene clean the old one
         dropdown = self.dash_duo.find_element('#demo-dropdown input')

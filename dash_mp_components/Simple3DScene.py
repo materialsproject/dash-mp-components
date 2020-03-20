@@ -22,9 +22,8 @@ Supported options and their defaults are given as follows:
    cylinderSegments: 16, // decrease to improve performance
    staticScene: true, // disable if animation required
    defaultZoom: 0.8, // 1 will completely fill viewport with scene
-   extractAxis: false, // will remove the axis from the main scene
-   isMultiSelectionEnabled: false, // allow to use shift to select
-   secondaryObjectView: false, // Show the selected object in the secondary view
+   extractAxis: false // will remove the axis from the main scene
+   isMultiSelectionEnabled: false // allow to use shift to select
 }
 There are several additional options used for debugging and testing,
 please consult the source code directly for these.
