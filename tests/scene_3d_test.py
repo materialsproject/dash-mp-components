@@ -102,8 +102,6 @@ class SVG3DScene(unittest.TestCase):
         self.scene.check_size('500')
         self.sceneSize = 200
         self.dash_duo.find_element('#toggler-size-button').click()
-        width = self.dash_duo.find_element('svg').get_attribute('width')
-        height = self.dash_duo.find_element('svg').get_attribute('height')
         self.scene.check_size('200')
         # elastic layout
         # 1920 / 10 = 192
@@ -114,6 +112,17 @@ class SVG3DScene(unittest.TestCase):
         resize_browser_window(1500, 1080, self.dash_duo.driver)
         self.scene.check_size('150')
         #put back sceneSize to normal
+        self.sceneSize = '100%'
+        self.dash_duo.find_element('#toggler-size-button').click()
+        self.scene.check_size('500')
+        resize_browser_window(1500, 1080, self.dash_duo.driver)
+        self.scene.check_size('500')
+        self.sceneSize = '50%'
+        self.dash_duo.find_element('#toggler-size-button').click()
+        #TODO(chab) add a comment explaining why it's 125, not 250
+        self.scene.check_size('125')
+        resize_browser_window(1500, 1080, self.dash_duo.driver)
+        self.scene.check_size('125')
         self.sceneSize = 500
 
     def test_color_rendering(self):
