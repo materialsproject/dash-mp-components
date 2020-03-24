@@ -453,7 +453,7 @@
             "sceneSize": {
                 "type": {
                     "name": "custom",
-                    "raw": "PropTypes.number"
+                    "raw": "PropTypes.oneOfType([PropTypes.number, PropTypes.string])"
                 },
                 "required": false,
                 "description": "Width / Height of the displayed component"

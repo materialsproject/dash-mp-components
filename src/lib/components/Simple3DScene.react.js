@@ -78,7 +78,7 @@ SceneComponent.propTypes = {
     /**
      * Width / Height of the displayed component
      */
-    sceneSize: PropTypes.number,
+    sceneSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     /**
      * Where is the axis displayed ( 'NW' / 'NE' / 'SE' / 'SW' / 'HIDDEN' )
      */
