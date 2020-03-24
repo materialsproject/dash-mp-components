@@ -25,14 +25,15 @@ class SimpleScene(BasePage):
         self.id = id
         self.scene = scene
 
-    def render(self):
+    def render(self, scene_size):
         return html.Div(
             style={'width': '500px', 'height': '500px'},
             children=[
                 dash_mp_components.Simple3DScene(
                     id=self.id,
                     settings=self.settings,
-                    data=self.scene
+                    data=self.scene,
+                    sceneSize=scene_size
                 )
             ]
         )
@@ -43,6 +44,12 @@ class SimpleScene(BasePage):
         else:
             self.dash_duo.wait_for_element_by_css_selector(Selectors.canvas.value)
         time.sleep(1)
+
+    def get_renderer(self):
+        if self.settings['renderer'] == 'svg':
+            self.dash_duo.find_element(Selectors.svg.value)
+        else:
+            self.dash_duo.find_element(Selectors.canvas.value)
 
     def check_path(self, number_of_path):
         # check if we can pass an ID to SVG element
@@ -72,3 +79,10 @@ class SimpleScene(BasePage):
         self.hover_on_coordinate(x, y)
         self.wait_for_tooltip()
         self.check_tooltip_text(text)
+
+    def check_size(self, size):
+        width = self.dash_duo.find_element('svg').get_attribute('width')
+        height = self.dash_duo.find_element('svg').get_attribute('height')
+        print('===', size, width, height)
+        assert width == size
+        assert height == size

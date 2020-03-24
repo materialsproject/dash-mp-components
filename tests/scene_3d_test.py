@@ -12,7 +12,10 @@ from .scene import scene, scene2, scene3
 from selenium.webdriver.common.keys import Keys
 
 
+
 class SVG3DScene(unittest.TestCase):
+
+    sceneSize = 480
     @pytest.fixture(autouse=True)
     def __inject_fixtures(self, mocker, dash_duo):
         self.mocker = mocker
@@ -31,6 +34,10 @@ class SVG3DScene(unittest.TestCase):
                         '....click....',
                         id='toggler-button'
                     ),
+                    html.Button(
+                        '....click....',
+                        id='toggler-size-button'
+                    ),
                     dcc.Dropdown(
                         id='demo-dropdown',
                         options=[
@@ -44,7 +51,7 @@ class SVG3DScene(unittest.TestCase):
                     html.Div(
                         style={'width': '500px', 'height': '500px'},
                         children=[
-                            self.scene.render()
+                            self.scene.render(self.sceneSize)
                         ]
                     )
                 ]
@@ -54,6 +61,10 @@ class SVG3DScene(unittest.TestCase):
         def toggle_atoms(value):
             nameToVisibility['atoms'] = not nameToVisibility['atoms']
             return nameToVisibility
+
+        @self.app.callback(Output('3d', 'sceneSize'), [Input('toggler-size-button', 'n_clicks')])
+        def toggle_atoms(value):
+            return self.sceneSize
 
         @self.app.callback(Output('3d', 'data'), [Input('demo-dropdown', 'value')])
         def display_output(value):
@@ -76,6 +87,26 @@ class SVG3DScene(unittest.TestCase):
     def test_basic_rendering(self):
         assert self.scene.get_container() is not None
         self.scene.check_path(7)
+
+    def test_size(self):
+        # fixed size in pixel
+        self.scene.check_size('480')
+        self.sceneSize = 200
+        self.dash_duo.find_element('#toggler-size-button').click()
+        width = self.dash_duo.find_element('svg').get_attribute('width')
+        height = self.dash_duo.find_element('svg').get_attribute('height')
+        self.scene.check_size('200')
+        # elastic layout
+        # 1920 / 10 = 192
+        self.sceneSize = '10vw'
+        self.dash_duo.find_element('#toggler-size-button').click()
+        self.scene.check_size('192')
+        # check that resize works
+        resize_browser_window(1500, 1080, self.dash_duo.driver)
+        self.scene.check_size('150')
+        #put back sceneSize to normal
+        self.sceneSize = 480
+
 
     def test_color_rendering(self):
          # the order of the SVG element does not match the order of the spheres defined in
