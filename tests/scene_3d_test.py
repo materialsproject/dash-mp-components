@@ -15,7 +15,7 @@ from selenium.webdriver.common.keys import Keys
 
 class SVG3DScene(unittest.TestCase):
 
-    sceneSize = 480
+    sceneSize = 500
     @pytest.fixture(autouse=True)
     def __inject_fixtures(self, mocker, dash_duo):
         self.mocker = mocker
@@ -49,7 +49,7 @@ class SVG3DScene(unittest.TestCase):
                         value=scene
                     ),
                     html.Div(
-                        style={'width': '500px', 'height': '500px'},
+                        style={'width': '600px', 'height': '600px'},
                         children=[
                             self.scene.render(self.sceneSize)
                         ]
@@ -90,7 +90,7 @@ class SVG3DScene(unittest.TestCase):
 
     def test_size(self):
         # fixed size in pixel
-        self.scene.check_size('480')
+        self.scene.check_size('500')
         self.sceneSize = 200
         self.dash_duo.find_element('#toggler-size-button').click()
         width = self.dash_duo.find_element('svg').get_attribute('width')
@@ -105,8 +105,7 @@ class SVG3DScene(unittest.TestCase):
         resize_browser_window(1500, 1080, self.dash_duo.driver)
         self.scene.check_size('150')
         #put back sceneSize to normal
-        self.sceneSize = 480
-
+        self.sceneSize = 500
 
     def test_color_rendering(self):
          # the order of the SVG element does not match the order of the spheres defined in

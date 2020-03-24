@@ -83,6 +83,6 @@ class SimpleScene(BasePage):
     def check_size(self, size):
         width = self.dash_duo.find_element('svg').get_attribute('width')
         height = self.dash_duo.find_element('svg').get_attribute('height')
-        print('===', size, width, height)
+        # print('===', size, width, height)
         assert width == size
         assert height == size
