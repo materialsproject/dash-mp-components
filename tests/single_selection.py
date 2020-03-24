@@ -8,7 +8,7 @@ import time
 
 import pytest
 import unittest
-from .scene import scene
+from .scene import scene4 as scene
 from selenium.webdriver.common.keys import Keys
 
 
@@ -30,7 +30,7 @@ class SVG3DScene(unittest.TestCase):
 
     def setUp(self):
         self.app = dash.Dash(__name__)
-        self.scene = SimpleScene(self.dash_duo, scene=scene, settings={})
+        self.scene = SimpleScene(self.dash_duo, scene=scene, settings={'renderer':'svg'})
         resize_browser_window(1920, 1080, self.dash_duo.driver)
         self.app.layout = html.Div(
                 children=[
@@ -51,6 +51,7 @@ class SVG3DScene(unittest.TestCase):
         self.dash_duo.start_server(self.app)
         # wait for table to be there
         print('Test started', __name__)
+        self.scene.wait_for_rendering()
 
 
     def test_basic_selecting(self):

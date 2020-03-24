@@ -40,7 +40,7 @@ class SVG3DScene(unittest.TestCase):
                     html.Div(
                         style={'width': '500px', 'height': '500px'},
                         children=[
-                            self.scene.render()
+                            self.scene.render(500)
                         ]
                     )
                 ]
@@ -58,6 +58,7 @@ class SVG3DScene(unittest.TestCase):
     def test_multiple_selecting(self):
         # center sphere, we expect some text
         self.scene.click_on_coordinate(250, 250)
+
         assert len(self.dash_duo.find_element('#test').text) == 384
         # click on the black sphere without shift
         self.scene.click_on_coordinate(270, 240)

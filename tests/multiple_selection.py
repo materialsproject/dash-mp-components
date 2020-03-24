@@ -8,7 +8,7 @@ import time
 
 import pytest
 import unittest
-from .scene import scene
+from .scene import scene4 as scene
 from selenium.webdriver.common.keys import Keys
 
 
@@ -30,8 +30,10 @@ class SVG3DScene(unittest.TestCase):
 
     def setUp(self):
         self.app = dash.Dash(__name__)
-        self.scene = SimpleScene(self.dash_duo, scene=scene, settings={})
         resize_browser_window(1920, 1080, self.dash_duo.driver)
+        self.scene = SimpleScene(self.dash_duo,
+                                 scene=scene,
+                                 settings={'isMultiSelectionEnabled': True, 'renderer': 'svg'})
         self.app.layout = html.Div(
                 children=[
                     html.Div(id='test'),
@@ -51,19 +53,23 @@ class SVG3DScene(unittest.TestCase):
         self.dash_duo.start_server(self.app)
         # wait for table to be there
         print('Test started', __name__)
+        self.scene.wait_for_rendering()
 
-
-    def test_basic_selecting(self):
-
-        # click on center sphere, we expect some text
+    def test_multiple_selecting(self):
+        # center sphere, we expect some text
         self.scene.click_on_coordinate(250, 250)
+
         assert len(self.dash_duo.find_element('#test').text) == 384
-        # no selection
-        self.scene.click_on_coordinate()
-        # center sphere, we expect no elements
+        # click on the black sphere without shift
+        self.scene.click_on_coordinate(270, 240)
+        # click on the center sphere with shift
+        assert len(self.dash_duo.find_element('#test').text) == 488
+        self.scene.click_on_coordinate(use_shift=True)
+        # click somewhere, nothing is selected
         assert self.dash_duo.find_element('#test').text == 'Type [] color []'
-        self.scene.click_on_coordinate(240, 230)
-        # 6 sheres, we expect a lot of text
-        assert len(self.dash_duo.find_element('#test').text) == 1126
-        # 4 edge spheres
+
+
+
+
+
 
