@@ -63,13 +63,15 @@ class SVG3DScene(unittest.TestCase):
             return nameToVisibility
 
         @self.app.callback(Output('3d', 'sceneSize'), [Input('toggler-size-button', 'n_clicks')])
-        def toggle_atoms(value):
+        def toggle_size(value):
             return self.sceneSize
 
         @self.app.callback(Output('3d', 'data'), [Input('demo-dropdown', 'value')])
         def display_output(value):
             print("chosen value", value)
             return value
+
+
         self.dash_duo.start_server(self.app)
         # wait for table to be there
         print('Test started', __name__)
