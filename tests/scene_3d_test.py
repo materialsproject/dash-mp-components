@@ -38,6 +38,10 @@ class SVG3DScene(unittest.TestCase):
                         '....click....',
                         id='toggler-size-button'
                     ),
+                    html.Button(
+                        '....download.',
+                        id='download-button'
+                    ),
                     dcc.Dropdown(
                         id='demo-dropdown',
                         options=[
@@ -77,6 +81,9 @@ class SVG3DScene(unittest.TestCase):
         print('Test started', __name__)
         self.scene.wait_for_rendering()
         self.dash_duo.percy_snapshot("spheres")
+
+    #def test_download(self):
+    # toDataURL is not implemented for SVG
 
     def test_visibility(self):
         assert self.scene.get_container() is not None
