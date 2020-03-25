@@ -61,6 +61,17 @@ class SVG3DScene(unittest.TestCase):
                 ]
             )
 
+        @self.app.callback(Output('3d', 'downloadRequest'), [Input('download-button', 'n_clicks')])
+        def download(value):
+            value = {
+                'fileType': 'png',
+                'filename': 'test',
+                'n_requests': value
+            }
+            print("chosen value", value)
+            return value
+
+
         @self.app.callback(Output('3d', 'toggleVisibility'), [Input('toggler-button', 'n_clicks')])
         def toggle_atoms(value):
             nameToVisibility['atoms'] = not nameToVisibility['atoms']
@@ -82,8 +93,10 @@ class SVG3DScene(unittest.TestCase):
         self.scene.wait_for_rendering()
         self.dash_duo.percy_snapshot("spheres")
 
+    #figure out where chrome download its stuff
     #def test_download(self):
-    # toDataURL is not implemented for SVG
+    #    self.dash_duo.find_element('#download-button').click()
+    #    time.sleep(100)
 
     def test_visibility(self):
         assert self.scene.get_container() is not None
