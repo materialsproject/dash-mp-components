@@ -10,7 +10,7 @@ import pytest
 import unittest
 from .scene import scene, scene2, scene3
 from selenium.webdriver.common.keys import Keys
-
+from pathlib import Path
 
 
 class SVG3DScene(unittest.TestCase):
@@ -93,10 +93,14 @@ class SVG3DScene(unittest.TestCase):
         self.scene.wait_for_rendering()
         self.dash_duo.percy_snapshot("spheres")
 
-    #figure out where chrome download its stuff
+    #add toDataURL for SVG renderer
     #def test_download(self):
+    #    resize_browser_window(500, 500, self.dash_duo.driver)
     #    self.dash_duo.find_element('#download-button').click()
-    #    time.sleep(100)
+    #    time.sleep(5)
+    #    home = str(Path.home())
+    #    assert Path(home + '/downloads/test.png').is_file() is True
+
 
     def test_visibility(self):
         assert self.scene.get_container() is not None
