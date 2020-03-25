@@ -22,7 +22,9 @@ class SVG3DScene(unittest.TestCase):
         self.dash_duo = dash_duo
 
     def setUp(self):
-        self.scene = SimpleScene(self.dash_duo, scene)
+
+
+        self.scene = SimpleScene(self.dash_duo, scene, settings={'renderer':'svg'})
         self.app = dash.Dash(__name__)
         resize_browser_window(1920, 1080, self.dash_duo.driver)
         nameToVisibility = {
@@ -93,14 +95,15 @@ class SVG3DScene(unittest.TestCase):
         self.scene.wait_for_rendering()
         self.dash_duo.percy_snapshot("spheres")
 
-    #add toDataURL for SVG renderer
-    #def test_download(self):
-    #    resize_browser_window(500, 500, self.dash_duo.driver)
-    #    self.dash_duo.find_element('#download-button').click()
-    #    time.sleep(5)
-    #    home = str(Path.home())
-    #    assert Path(home + '/downloads/test.png').is_file() is True
-
+    def test_download(self):
+        # we should push that to a test configuration step
+        home = str(Path.home())
+        params = {'behavior': 'allow', 'downloadPath': home}
+        self.dash_duo.driver.execute_cdp_cmd('Page.setDownloadBehavior', params)
+        resize_browser_window(500, 500, self.dash_duo.driver)
+        self.dash_duo.find_element('#download-button').click()
+        time.sleep(5) # give time for downloading the file
+        assert Path(home + '/test.png').is_file() is True
 
     def test_visibility(self):
         assert self.scene.get_container() is not None
@@ -119,26 +122,33 @@ class SVG3DScene(unittest.TestCase):
         self.scene.check_size('500')
         self.sceneSize = 200
         self.dash_duo.find_element('#toggler-size-button').click()
+        time.sleep(1)
         self.scene.check_size('200')
         # elastic layout
         # 1920 / 10 = 192
         self.sceneSize = '10vw'
         self.dash_duo.find_element('#toggler-size-button').click()
+        time.sleep(1)
         self.scene.check_size('192')
         # check that resize works
         resize_browser_window(1500, 1080, self.dash_duo.driver)
+        time.sleep(1)
         self.scene.check_size('150')
         #put back sceneSize to normal
         self.sceneSize = '100%'
         self.dash_duo.find_element('#toggler-size-button').click()
+        time.sleep(1)
         self.scene.check_size('500')
         resize_browser_window(1500, 1080, self.dash_duo.driver)
+        time.sleep(1)
         self.scene.check_size('500')
         self.sceneSize = '50%'
         self.dash_duo.find_element('#toggler-size-button').click()
         #TODO(chab) add a comment explaining why it's 125, not 250
+        time.sleep(1)
         self.scene.check_size('125')
         resize_browser_window(1500, 1080, self.dash_duo.driver)
+        time.sleep(1)
         self.scene.check_size('125')
         self.sceneSize = 500
 
