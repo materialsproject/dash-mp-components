@@ -95,4 +95,8 @@ SceneComponent.propTypes = {
      * Display a debug view
      */
     debug: PropTypes.bool,
+    /**
+     * Animation type
+     */
+    animation: PropTypes.string,
 };
