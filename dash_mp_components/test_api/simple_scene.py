@@ -19,11 +19,12 @@ class Selectors(Enum):
 
 class SimpleScene(BasePage):
 
-    def __init__(self, dash_duo, scene, settings={'renderer': 'svg'}, id='3d'):
+    def __init__(self, dash_duo, scene, settings={'renderer': 'svg'}, id='3d', animation='none'):
         super().__init__(dash_duo, '')
         self.settings = settings
         self.id = id
         self.scene = scene
+        self.animation = animation
 
     def render(self, scene_size):
         return html.Div(
@@ -33,6 +34,7 @@ class SimpleScene(BasePage):
                     id=self.id,
                     settings=self.settings,
                     data=self.scene,
+                    animation=self.animation,
                     sceneSize=scene_size
                 )
             ]

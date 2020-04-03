@@ -8,19 +8,8 @@ import time
 
 import pytest
 import unittest
-from .scene import scene5 as scene
+from .scene import animatedScene as scene
 from selenium.webdriver.common.keys import Keys
-
-
-def check_path(dash_duo, number_of_path):
-    # check if we can pass an ID to SVG element
-    assert len(dash_duo.find_elements('path')) == number_of_path
-
-
-def check_path_color(path_element, color):
-    # have an utility to transfer from rgba to hex and vice-versa
-    assert path_element.value_of_css_property('fill') == color
-
 
 class SVG3DScene(unittest.TestCase):
     @pytest.fixture(autouse=True)
@@ -30,7 +19,10 @@ class SVG3DScene(unittest.TestCase):
 
     def setUp(self):
         self.app = dash.Dash(__name__)
-        self.scene = SimpleScene(self.dash_duo, scene=scene, settings={'renderer':'svg'})
+        self.scene = SimpleScene(self.dash_duo,
+                                 animation='play',
+                                 scene=scene,
+                                 settings={'staticScene': False, 'renderer': 'svg'})
         resize_browser_window(1920, 1080, self.dash_duo.driver)
         self.app.layout = html.Div(
                 children=[
@@ -45,10 +37,14 @@ class SVG3DScene(unittest.TestCase):
         self.dash_duo.start_server(self.app)
         # wait for table to be there
         print('Test started', __name__)
-        self.scene.wait_for_rendering()
 
-    # Note(chab) visible flag is not respected when it's for one object with a type
 
-    def test_initial_visibility(self):
-        self.scene.check_path(0)
+    # Note(chab) there is a bug somewhere, if the assertion fails, the test will not fail
+    # immediatly, but timeout
+    def test_animation(self):
+        # quite miserable, but it's a proof that it works
+        path = self.dash_duo.find_elements('path')[0].get_attribute('d')
+        time.sleep(1)
+        path2 = self.dash_duo.find_elements('path')[0].get_attribute('d')
+        assert path != path2
 

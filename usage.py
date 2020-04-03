@@ -117,7 +117,6 @@ app.layout = html.Div(children=[
                                 -0.004611219364424821]],
                         "color": "#9ee373",
                         "radius": 0.5,
-                        "animate": [2, 2, 2],
                         "type": "spheres",
                         "clickable": True},
                         {
@@ -131,7 +130,6 @@ app.layout = html.Div(children=[
                                     1.8569259826179634,
                                     1.9695971418644245]],
                             "color": "#b0b9e6",
-                            "animate": [2, 2, 2],
                             "radius": 0.5,
                             "type": "spheres",
                             "clickable": True}],
