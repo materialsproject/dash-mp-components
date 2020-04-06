@@ -22,8 +22,12 @@ class SVG3DScene(unittest.TestCase):
         self.mocker = mocker
         self.dash_duo = dash_duo
 
-    def setUp(self):
+    # Investigate if we can setup the class somehow there, that way
+    # we can choose if we want one browser for each test, or one browser for the whole suite
+    # def __init__(self, *args, **kwargs):
+    #    super(SVG3DScene, self).__init__(*args, **kwargs)
 
+    def setUp(self):
         self.scene = SimpleScene(self.dash_duo,
                                  scene,
                                  settings={'renderer': 'svg'})
