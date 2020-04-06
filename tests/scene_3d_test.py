@@ -16,6 +16,7 @@ from pathlib import Path
 class SVG3DScene(unittest.TestCase):
 
     sceneSize = 500
+
     @pytest.fixture(autouse=True)
     def __inject_fixtures(self, mocker, dash_duo):
         self.mocker = mocker
@@ -23,47 +24,40 @@ class SVG3DScene(unittest.TestCase):
 
     def setUp(self):
 
-
-        self.scene = SimpleScene(self.dash_duo, scene, settings={'renderer':'svg'})
+        self.scene = SimpleScene(self.dash_duo,
+                                 scene,
+                                 settings={'renderer': 'svg'})
         self.app = dash.Dash(__name__)
         resize_browser_window(1920, 1080, self.dash_duo.driver)
-        nameToVisibility = {
-            'atoms': False
-        }
-        self.app.layout = html.Div(
-                children=[
-                    html.Button(
-                        '....click....',
-                        id='toggler-button'
-                    ),
-                    html.Button(
-                        '....click....',
-                        id='toggler-size-button'
-                    ),
-                    html.Button(
-                        '....download.',
-                        id='download-button'
-                    ),
-                    dcc.Dropdown(
-                        id='demo-dropdown',
-                        options=[
-                            {'label': 'Scene1', 'value': scene},
-                            {'label': 'Scene2', 'value': scene2},
-                            {'label': 'Scene3', 'value': scene3},
-                            {'label': 'Scene4', 'value': 'sdf'}
-                        ],
-                        value=scene
-                    ),
-                    html.Div(
-                        style={'width': '600px', 'height': '600px'},
-                        children=[
-                            self.scene.render(self.sceneSize)
-                        ]
-                    )
-                ]
-            )
+        nameToVisibility = {'atoms': False}
+        self.app.layout = html.Div(children=[
+            html.Button('....click....', id='toggler-button'),
+            html.Button('....click....', id='toggler-size-button'),
+            html.Button('....download.', id='download-button'),
+            dcc.Dropdown(id='demo-dropdown',
+                         options=[{
+                             'label': 'Scene1',
+                             'value': scene
+                         }, {
+                             'label': 'Scene2',
+                             'value': scene2
+                         }, {
+                             'label': 'Scene3',
+                             'value': scene3
+                         }, {
+                             'label': 'Scene4',
+                             'value': 'sdf'
+                         }],
+                         value=scene),
+            html.Div(style={
+                'width': '600px',
+                'height': '600px'
+            },
+                     children=[self.scene.render(self.sceneSize)])
+        ])
 
-        @self.app.callback(Output('3d', 'downloadRequest'), [Input('download-button', 'n_clicks')])
+        @self.app.callback(Output('3d', 'downloadRequest'),
+                           [Input('download-button', 'n_clicks')])
         def download(value):
             value = {
                 'fileType': 'png',
@@ -73,21 +67,22 @@ class SVG3DScene(unittest.TestCase):
             print("chosen value", value)
             return value
 
-
-        @self.app.callback(Output('3d', 'toggleVisibility'), [Input('toggler-button', 'n_clicks')])
+        @self.app.callback(Output('3d', 'toggleVisibility'),
+                           [Input('toggler-button', 'n_clicks')])
         def toggle_atoms(value):
             nameToVisibility['atoms'] = not nameToVisibility['atoms']
             return nameToVisibility
 
-        @self.app.callback(Output('3d', 'sceneSize'), [Input('toggler-size-button', 'n_clicks')])
+        @self.app.callback(Output('3d', 'sceneSize'),
+                           [Input('toggler-size-button', 'n_clicks')])
         def toggle_size(value):
             return self.sceneSize
 
-        @self.app.callback(Output('3d', 'data'), [Input('demo-dropdown', 'value')])
+        @self.app.callback(Output('3d', 'data'),
+                           [Input('demo-dropdown', 'value')])
         def display_output(value):
             print("chosen value", value)
             return value
-
 
         self.dash_duo.start_server(self.app)
         # wait for table to be there
@@ -99,10 +94,11 @@ class SVG3DScene(unittest.TestCase):
         # we should push that to a test configuration step
         home = str(Path.home())
         params = {'behavior': 'allow', 'downloadPath': home}
-        self.dash_duo.driver.execute_cdp_cmd('Page.setDownloadBehavior', params)
+        self.dash_duo.driver.execute_cdp_cmd('Page.setDownloadBehavior',
+                                             params)
         resize_browser_window(500, 500, self.dash_duo.driver)
         self.dash_duo.find_element('#download-button').click()
-        time.sleep(5) # give time for downloading the file
+        time.sleep(5)  # give time for downloading the file
         assert Path(home + '/test.png').is_file() is True
 
     def test_visibility(self):
@@ -153,15 +149,22 @@ class SVG3DScene(unittest.TestCase):
         self.sceneSize = 500
 
     def test_color_rendering(self):
-         # the order of the SVG element does not match the order of the spheres defined in
-         # the JSON
-        self.scene.check_path_color(self.dash_duo.find_elements('path')[0], 'rgb(255, 170, 170)')
-        self.scene.check_path_color(self.dash_duo.find_elements('path')[1], 'rgb(17, 17, 17)')
-        self.scene.check_path_color(self.dash_duo.find_elements('path')[2], 'rgb(255, 170, 170)')
-        self.scene.check_path_color(self.dash_duo.find_elements('path')[3], 'rgb(0, 255, 221)')
-        self.scene.check_path_color(self.dash_duo.find_elements('path')[4], 'rgb(255, 170, 170)')
-        self.scene.check_path_color(self.dash_duo.find_elements('path')[5], 'rgb(17, 17, 17)')
-        self.scene.check_path_color(self.dash_duo.find_elements('path')[6], 'rgb(255, 170, 170)')
+        # the order of the SVG element does not match the order of the spheres defined in
+        # the JSON
+        self.scene.check_path_color(
+            self.dash_duo.find_elements('path')[0], 'rgb(255, 170, 170)')
+        self.scene.check_path_color(
+            self.dash_duo.find_elements('path')[1], 'rgb(17, 17, 17)')
+        self.scene.check_path_color(
+            self.dash_duo.find_elements('path')[2], 'rgb(255, 170, 170)')
+        self.scene.check_path_color(
+            self.dash_duo.find_elements('path')[3], 'rgb(0, 255, 221)')
+        self.scene.check_path_color(
+            self.dash_duo.find_elements('path')[4], 'rgb(255, 170, 170)')
+        self.scene.check_path_color(
+            self.dash_duo.find_elements('path')[5], 'rgb(17, 17, 17)')
+        self.scene.check_path_color(
+            self.dash_duo.find_elements('path')[6], 'rgb(255, 170, 170)')
 
     def test_scene_switcher(self):
         # check if adding a new scene clean the old one
@@ -186,6 +189,3 @@ class SVG3DScene(unittest.TestCase):
         dropdown.send_keys(Keys.ENTER)
         time.sleep(1)
         self.scene.check_path(3)
-
-
-

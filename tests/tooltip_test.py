@@ -11,6 +11,7 @@ import unittest
 from .scene import scene4 as scene
 from selenium.webdriver.common.keys import Keys
 
+
 class SVG3DScene(unittest.TestCase):
     @pytest.fixture(autouse=True)
     def __inject_fixtures(self, mocker, dash_duo):
@@ -19,24 +20,25 @@ class SVG3DScene(unittest.TestCase):
 
     def setUp(self):
         self.app = dash.Dash(__name__)
-        self.scene = SimpleScene(self.dash_duo, settings={'renderer': 'svg'}, scene=scene)
+        self.scene = SimpleScene(self.dash_duo,
+                                 settings={'renderer': 'svg'},
+                                 scene=scene)
         resize_browser_window(1920, 1080, self.dash_duo.driver)
-        self.app.layout = html.Div(
-                children=[
-                    html.Div(id='test'),
-                    html.Div(
-                        style={'width': '500px', 'height': '500px'},
-                        children=[
-                            self.scene.render(500)
-                        ]
-                    )
-                ]
-            )
+        self.app.layout = html.Div(children=[
+            html.Div(id='test'),
+            html.Div(style={
+                'width': '500px',
+                'height': '500px'
+            },
+                     children=[self.scene.render(500)])
+        ])
 
-        @self.app.callback(Output('test', 'children'), [Input('3d', 'selectedObject')])
+        @self.app.callback(Output('test', 'children'),
+                           [Input('3d', 'selectedObject')])
         def display_output(value):
             # do something a bit more complex
             return f'Type {value} color {value}'
+
         self.dash_duo.start_server(self.app)
         print('Test started', __name__)
         self.scene.wait_for_rendering()
@@ -48,6 +50,3 @@ class SVG3DScene(unittest.TestCase):
 
     #TODO(chab) test that coordinates stay the same if we resize
     #TODO(chab) test that the underlying object is darkened
-
-
-

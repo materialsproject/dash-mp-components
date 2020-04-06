@@ -7,6 +7,7 @@ class PeriodicFilter(Component):
     """A PeriodicFilter component.
 This component filter an associated periodic table
 
+
 Keyword arguments:
 - id (string; optional)"""
     @_explicitize_args
@@ -14,9 +15,9 @@ Keyword arguments:
         self._prop_names = ['id']
         self._type = 'PeriodicFilter'
         self._namespace = 'dash_mp_components'
-        self._valid_wildcard_attributes =            []
+        self._valid_wildcard_attributes = []
         self.available_properties = ['id']
-        self.available_wildcard_properties =            []
+        self.available_wildcard_properties = []
 
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
@@ -25,6 +26,6 @@ Keyword arguments:
 
         for k in []:
             if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+                raise TypeError('Required argument `' + k +
+                                '` was not specified.')
         super(PeriodicFilter, self).__init__(**args)

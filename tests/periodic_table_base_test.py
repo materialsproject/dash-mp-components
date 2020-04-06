@@ -9,6 +9,7 @@ import unittest
 # Basic test for the component rendering.
 # The dash_duo pytest fixture is installed with dash (v1.0+)
 
+
 class PeriodicTableBaseTest(unittest.TestCase):
 
     # it's not possible to inject fixtures at class level, due to a limitation in pytest
@@ -21,17 +22,20 @@ class PeriodicTableBaseTest(unittest.TestCase):
 
     def setUp(self):
         # move to class methods
-        self.periodic_table = PeriodicTable(self.dash_duo, DEFAULT_CONTAINER_SELECTOR)
-        component = self.periodic_table.render('periodic-table', ['Fe', 'Co'], [], ['Na'], 'spaced')
+        self.periodic_table = PeriodicTable(self.dash_duo,
+                                            DEFAULT_CONTAINER_SELECTOR)
+        component = self.periodic_table.render('periodic-table', ['Fe', 'Co'],
+                                               [], ['Na'], 'spaced')
         self.app = dash.Dash(__name__)
-        self.app.layout = html.Div([
-            component,
-            html.Div(id='component'),
-            html.Div(id='dummy-thing')
-        ])
+        self.app.layout = html.Div(
+            [component,
+             html.Div(id='component'),
+             html.Div(id='dummy-thing')])
 
         self.stub = self.mocker.stub(name='element_state_callback')
-        @self.app.callback(Output('component', 'children'), [Input('periodic-table', 'state')])
+
+        @self.app.callback(Output('component', 'children'),
+                           [Input('periodic-table', 'state')])
         def display_output(value):
             print("Hello World", value)
             self.stub(value)
@@ -45,7 +49,8 @@ class PeriodicTableBaseTest(unittest.TestCase):
     def test_render_component(self):
         assert len(self.periodic_table.find_all_elements()) == 120
         self.stub.assert_called_with([])
-        assert self.periodic_table.find_element('Cl').find_element_by_css_selector(".mat-number").text == "17"
+        assert self.periodic_table.find_element(
+            'Cl').find_element_by_css_selector(".mat-number").text == "17"
 
     def test_disabled_honored(self):
         self.periodic_table.check_if_element_is_disabled('Fe')
@@ -53,9 +58,12 @@ class PeriodicTableBaseTest(unittest.TestCase):
 
     def test_hidden_honored(self):
         hidden_element = self.periodic_table.find_element('Na')
-        assert ('hidden' in hidden_element.get_attribute('class').split()) is True
-        assert hidden_element.find_element_by_css_selector('.mat-number').is_displayed() is False
-        assert hidden_element.find_element_by_css_selector('.mat-symbol').is_displayed() is False
+        assert (
+            'hidden' in hidden_element.get_attribute('class').split()) is True
+        assert hidden_element.find_element_by_css_selector(
+            '.mat-number').is_displayed() is False
+        assert hidden_element.find_element_by_css_selector(
+            '.mat-symbol').is_displayed() is False
 
     def test_component_click(self):
         self.periodic_table.find_element('H').click()
