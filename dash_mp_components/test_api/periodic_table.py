@@ -44,18 +44,17 @@ class PeriodicTable(BasePage):
                enabledElements,
                hiddenElements,
                layout='spaced'):
-        return dash_mp_components.PeriodicContext(children=[
-            html.Div(children=[
-                dash_mp_components.PeriodicTableInput(
-                    id=id,
-                    disabledElements=disabledElements,
-                    enabledElements=enabledElements,
-                    hiddenElements=hiddenElements,
-                    maxElementSelectable=2,
-                    forceTableLayout=layout)
-            ],
-                     className='test-cmp')
-        ])
+        return dash_mp_components.PeriodicContext(
+            disabledElements=disabledElements,
+            enabledElements=enabledElements,
+            hiddenElements=hiddenElements,
+            children=[
+                html.Div(children=[
+                    dash_mp_components.PeriodicTableInput(
+                        id=id, maxElementSelectable=2, forceTableLayout=layout)
+                ],
+                         className='test-cmp')
+            ])
 
     def get_table_selector(self):
         return f'{self.base_selector} {Selectors.table_container.value}'

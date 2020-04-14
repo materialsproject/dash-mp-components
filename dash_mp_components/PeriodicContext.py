@@ -9,15 +9,32 @@ class PeriodicContext(Component):
 
 Keyword arguments:
 - children (boolean | number | string | dict | list; optional)
-- id (string; optional)"""
+- id (string; optional)
+- disabledElements (list; optional): A list of symbols to grey-out as disabled
+- enabledElements (list; optional): A list of selected symbols
+- hiddenElements (list; optional): A list of hidden symbols
+- forwardOuterChange (boolean; optional): Forward external changes"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id']
+    def __init__(self,
+                 children=None,
+                 id=Component.UNDEFINED,
+                 disabledElements=Component.UNDEFINED,
+                 enabledElements=Component.UNDEFINED,
+                 hiddenElements=Component.UNDEFINED,
+                 forwardOuterChange=Component.UNDEFINED,
+                 **kwargs):
+        self._prop_names = [
+            'children', 'id', 'disabledElements', 'enabledElements',
+            'hiddenElements', 'forwardOuterChange'
+        ]
         self._type = 'PeriodicContext'
         self._namespace = 'dash_mp_components'
-        self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id']
-        self.available_wildcard_properties =            []
+        self._valid_wildcard_attributes = []
+        self.available_properties = [
+            'children', 'id', 'disabledElements', 'enabledElements',
+            'hiddenElements', 'forwardOuterChange'
+        ]
+        self.available_wildcard_properties = []
 
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
@@ -26,6 +43,6 @@ Keyword arguments:
 
         for k in []:
             if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+                raise TypeError('Required argument `' + k +
+                                '` was not specified.')
         super(PeriodicContext, self).__init__(children=children, **args)

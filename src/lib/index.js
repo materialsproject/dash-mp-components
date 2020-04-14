@@ -7,6 +7,7 @@ import Simple3DScene from './components/Simple3DScene.react';
 import GraphComponent from './components/GraphComponent.react';
 import JsonView from './components/JsonView.react';
 import CameraContext from './components/CameraContext.react';
+import SearchGrid from './components/SearchGrid.react';
 
 export {
     PeriodicTableInput,
@@ -17,4 +18,5 @@ export {
     GraphComponent,
     JsonView,
     CameraContext,
+    SearchGrid
 };

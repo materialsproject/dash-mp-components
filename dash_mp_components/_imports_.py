@@ -5,15 +5,11 @@ from .PeriodicContext import PeriodicContext
 from .PeriodicElement import PeriodicElement
 from .PeriodicFilter import PeriodicFilter
 from .PeriodicTableInput import PeriodicTableInput
+from .SearchGrid import SearchGrid
 from .Simple3DScene import Simple3DScene
 
 __all__ = [
-    "CameraContext",
-    "GraphComponent",
-    "JsonView",
-    "PeriodicContext",
-    "PeriodicElement",
-    "PeriodicFilter",
-    "PeriodicTableInput",
+    "CameraContext", "GraphComponent", "JsonView", "PeriodicContext",
+    "PeriodicElement", "PeriodicFilter", "PeriodicTableInput", "SearchGrid",
     "Simple3DScene"
 ]

@@ -9,6 +9,7 @@ import dash_core_components as dcc
 app = dash.Dash(__name__)
 
 app.layout = html.Div(children=[
+    dash_mp_components.SearchGrid(id='test'),
     dash_mp_components.GraphComponent(
         graph={
             'nodes': [{
@@ -573,35 +574,33 @@ app.layout = html.Div(children=[
                      'value': 'K'
                  }],
                  value='MTL'),
-    dash_mp_components.PeriodicContext(children=[
-        html.Div([
-            dash_mp_components.PeriodicFilter(id='periodic-filter', ),
-            dash_mp_components.PeriodicTableInput(
-                id='periodic-table',
-                maxElementSelectable=3,
-                forceTableLayout='spaced',
-                disabledElements=['Na', 'Cl'],
-                hiddenElements=['Fe', 'Dy'],
-                enabledElements=['H', 'O']),
-            html.P(''),
-            dash_mp_components.PeriodicElement(
-                element='Na', size=60, id='periodic-element'),
-            dash_mp_components.PeriodicTableInput(id='periodic-table-b',
-                                                  maxElementSelectable=3,
-                                                  forceTableLayout='map',
-                                                  disabledElements=[],
-                                                  hiddenElements=[],
-                                                  enabledElements=[]),
+    dash_mp_components.PeriodicContext(
+        id='context',
+        disabledElements=['Na', 'Cl'],
+        hiddenElements=['Fe', 'Dy'],
+        enabledElements=['H', 'O'],
+        children=[
+            html.Div([
+                dash_mp_components.PeriodicFilter(id='periodic-filter', ),
+                dash_mp_components.PeriodicTableInput(
+                    id='periodic-table',
+                    maxElementSelectable=3,
+                    forceTableLayout='spaced'),
+                html.P(''),
+                dash_mp_components.PeriodicElement(
+                    element='Na', size=60, id='periodic-element'),
+                dash_mp_components.PeriodicTableInput(id='periodic-table-b',
+                                                      maxElementSelectable=3,
+                                                      forceTableLayout='map'),
+            ]),
         ]),
-    ]),
     html.Div(id='component')
 ])
 
 
 @app.callback([
-    Output(component_id='periodic-table',
-           component_property='disabledElements'),
-    Output(component_id='periodic-table', component_property='enabledElements')
+    Output(component_id='context', component_property='disabledElements'),
+    Output(component_id='context', component_property='enabledElements')
 ], [Input('RR', 'value')])
 def display_output(value):
     return [], [value]
@@ -618,7 +617,6 @@ def display_output(value):
         return 'compact'
     if value == 'Na':
         return 'spaced'
-    #return 'compact'
 
 
 @app.callback(

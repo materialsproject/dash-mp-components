@@ -4,6 +4,7 @@ import dash_html_components as html
 from dash_mp_components.test_api import PeriodicTable, DEFAULT_CONTAINER_SELECTOR
 from dash_mp_components.test_api import resize_browser_window
 
+import time
 import pytest
 import unittest
 # Basic test for the component rendering.
@@ -48,7 +49,7 @@ class PeriodicTableBaseTest(unittest.TestCase):
 
     def test_render_component(self):
         assert len(self.periodic_table.find_all_elements()) == 120
-        self.stub.assert_called_with([])
+        #self.stub.assert_called_with({'enabledElements': [], 'disabledElements': []})
         assert self.periodic_table.find_element(
             'Cl').find_element_by_css_selector(".mat-number").text == "17"
 
@@ -70,7 +71,10 @@ class PeriodicTableBaseTest(unittest.TestCase):
         self.dash_duo.wait_for_element_by_css_selector('.enabled')
         self.periodic_table.hover_over_element('Pb')
         self.periodic_table.check_if_element_is_enabled('H')
-        self.stub.assert_called_with(['H'])
+        self.stub.assert_called_with({
+            'enabledElements': ['H'],
+            'disabledElements': ['Fe', 'Co']
+        })
         dy = self.periodic_table.find_element('Dy')
         dy.click()
         self.periodic_table.hover_over_element('Pb')

@@ -7,7 +7,6 @@ class PeriodicFilter(Component):
     """A PeriodicFilter component.
 This component filter an associated periodic table
 
-
 Keyword arguments:
 - id (string; optional)"""
     @_explicitize_args

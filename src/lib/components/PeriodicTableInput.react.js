@@ -13,12 +13,7 @@ export default class MpPeriodicTableInput extends Component {
         const component = (
             <SelectableTable
                 id={this.props.id}
-                maxH
-                forwardOuterChange={this.props.forwardOuterChange}
                 maxElementSelectable={this.props.maxElementSelectable}
-                enabledElements={this.props.enabledElements}
-                hiddenElements={this.props.hiddenElements}
-                disabledElements={this.props.disabledElements}
                 forceTableLayout={this.props.forceTableLayout}
                 onStateChange={v => {
                     this.props.setProps({state: v});
@@ -30,11 +25,7 @@ export default class MpPeriodicTableInput extends Component {
 }
 
 MpPeriodicTableInput.defaultProps = {
-    disabledElements: [],
-    enabledElements: [],
-    hiddenElements: [],
-    maxElementSelectable: 10,
-    forwardOuterChange: true,
+    maxElementSelectable: 10
 };
 
 //Note(chab) dash-generate-components will break if this object is {}/null. You must provide at least id
@@ -46,19 +37,7 @@ MpPeriodicTableInput.propTypes = {
     /**
      * This is a read-only prop that dash callback can subscribe to
      */
-    state: PropTypes.array,
-    /**
-     * A list of symbols to grey-out as disabled
-     */
-    disabledElements: PropTypes.array,
-    /**
-     * A list of selected symbols
-     */
-    enabledElements: PropTypes.array,
-    /**
-     * A list of hidden symbols
-     */
-    hiddenElements: PropTypes.array,
+    state: PropTypes.object,
     /**
      * Dash-assigned callback that should be called to report property changes
      * to Dash, to make them available for callbacks.
@@ -71,9 +50,5 @@ MpPeriodicTableInput.propTypes = {
     /**
      * Force the table to be in a specific layout
      */
-    forceTableLayout: PropTypes.oneOf(['spaced', 'compact', 'small', 'map']),
-    /**
-     * Forward external changes
-     */
-    forwardOuterChange: PropTypes.bool,
+    forceTableLayout: PropTypes.oneOf(['spaced', 'compact', 'small', 'map'])
 };
