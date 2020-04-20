@@ -8,6 +8,7 @@ import GraphComponent from './components/GraphComponent.react';
 import JsonView from './components/JsonView.react';
 import CameraContext from './components/CameraContext.react';
 import SearchGrid from './components/SearchGrid.react';
+import Search from './components/Search.react';
 
 export {
     PeriodicTableInput,
@@ -18,5 +19,6 @@ export {
     GraphComponent,
     JsonView,
     CameraContext,
-    SearchGrid
+    SearchGrid,
+    Search
 };

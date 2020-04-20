@@ -373,6 +373,48 @@
       }
     }
   },
+  "src/lib/components/Search.react.js": {
+    "description": "",
+    "displayName": "Search",
+    "methods": [],
+    "props": {
+      "state": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Latest configuration of the funnel"
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+      },
+      "allDefinitions": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "An array of object describing the behavior/content of each card"
+      },
+      "initCards": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "Ids of the cards that are shown. They should match the card in allDefinitions array"
+      }
+    }
+  },
   "src/lib/components/SearchGrid.react.js": {
     "description": "",
     "displayName": "SearchGrid",
