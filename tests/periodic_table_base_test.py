@@ -36,7 +36,7 @@ class PeriodicTableBaseTest(unittest.TestCase):
         self.stub = self.mocker.stub(name='element_state_callback')
 
         @self.app.callback(Output('component', 'children'),
-                           [Input('periodic-table', 'state')])
+                           [Input('periodic-table', 'enabledElements')])
         def display_output(value):
             print("Hello World", value)
             self.stub(value)
@@ -71,10 +71,7 @@ class PeriodicTableBaseTest(unittest.TestCase):
         self.dash_duo.wait_for_element_by_css_selector('.enabled')
         self.periodic_table.hover_over_element('Pb')
         self.periodic_table.check_if_element_is_enabled('H')
-        self.stub.assert_called_with({
-            'enabledElements': ['H'],
-            'disabledElements': ['Fe', 'Co']
-        })
+        self.stub.assert_called_with(['H'])
         dy = self.periodic_table.find_element('Dy')
         dy.click()
         self.periodic_table.hover_over_element('Pb')
