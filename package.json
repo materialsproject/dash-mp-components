@@ -34,7 +34,7 @@
     "license": "BSD",
     "dependencies": {
         "file-loader": "^5.1.0",
-        "mat-periodic-table": "next",
+        "mat-periodic-table": "0.1.0-SNAPSHOT.1587546889",
         "prettier": "^1.19.1",
         "ramda": "^0.26.1",
         "rimraf": "^3.0.2",
