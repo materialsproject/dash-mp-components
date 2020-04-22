@@ -10,9 +10,9 @@ from tests.grid import grid
 app = dash.Dash(__name__)
 
 app.layout = html.Div(children=[
-    dash_mp_components.Search(
-        id='test3', allDefinitions=grid, initCards=['has_properties']),
-    #dash_mp_components.SearchGrid(id='test'),
+    #dash_mp_components.Search(
+    #    id='test3', allDefinitions=grid, initCards=['has_properties']),
+    dash_mp_components.SearchGrid(id='test'),
     dash_mp_components.GraphComponent(
         graph={
             'nodes': [{
@@ -565,6 +565,9 @@ app.layout = html.Div(children=[
         ])
     ]),
     html.Div(id='selected-object'),
+    # this can be troublesome, the table does not filter bad elements from the outside, so
+    # you can end up with some noise.
+    # e.g you pass 'MASDA' as an element, it will stay in the selection array
     dcc.Dropdown(id='RR',
                  options=[{
                      'label': 'Na',
@@ -576,29 +579,24 @@ app.layout = html.Div(children=[
                      'label': 'SF',
                      'value': 'K'
                  }],
-                 value='MTL'),
-    dash_mp_components.PeriodicContext(
-        id='context',
-        disabledElements=['Na', 'Cl'],
-        hiddenElements=['Fe', 'Dy'],
-        enabledElements=['H', 'O'],
-        children=[
-            html.Div([
-                dash_mp_components.PeriodicFilter(id='periodic-filter', ),
-                dash_mp_components.PeriodicTableInput(
-                    id='periodic-table',
-                    maxElementSelectable=3,
-                    forceTableLayout='spaced'),
-                html.P(''),
-                dash_mp_components.PeriodicElement(
-                    element='Na', size=60, id='periodic-element'),
-                dash_mp_components.PeriodicTableInput(id='periodic-table-b',
-                                                      maxElementSelectable=3,
-                                                      forceTableLayout='map'),
-            ]),
-        ]),
+                 value='Na'),
+    dash_mp_components.PeriodicContextTable(id='context',
+                                            maxElementSelectable=3,
+                                            disabledElements=['Na', 'Cl'],
+                                            hiddenElements=['Fe', 'Dy'],
+                                            enabledElements=['H', 'O']),
+    html.P(id='p'),
     html.Div(id='component')
 ])
+
+
+@app.callback([Output(component_id='p', component_property='children')],
+              [Input(component_id='context', component_property='state')])
+def display_output2(value):
+    print(value)
+    if value is None:
+        return ['']
+    return [value['enabledElements']]
 
 
 @app.callback([
@@ -610,10 +608,9 @@ def display_output(value):
 
 
 @app.callback(
-    Output(component_id='periodic-table',
-           component_property='forceTableLayout'), [Input('RR', 'value')])
+    Output(component_id='context', component_property='forceTableLayout'),
+    [Input('RR', 'value')])
 def display_output(value):
-    return 'compact'
     if value == 'K':
         return 'small'
     if value == 'Cl':
@@ -626,7 +623,6 @@ def display_output(value):
     Output(component_id='selected-object', component_property='children'),
     [Input('3d-2', 'selectedObject')])
 def display_selectedObject(value):
-    print(value)
     return f'Type {value} color {value}'
 
 

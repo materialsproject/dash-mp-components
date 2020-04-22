@@ -50,5 +50,5 @@ MpPeriodicTableInput.propTypes = {
     /**
      * Force the table to be in a specific layout
      */
-    forceTableLayout: PropTypes.oneOf(['spaced', 'compact', 'small', 'map'])
+    forceTableLayout: PropTypes.oneOf(['spaced', 'compact', 'small', 'map']),
 };

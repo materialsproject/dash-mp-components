@@ -48,6 +48,7 @@ class PeriodicTable(BasePage):
             disabledElements=disabledElements,
             enabledElements=enabledElements,
             hiddenElements=hiddenElements,
+            id=id + 'context',
             children=[
                 html.Div(children=[
                     dash_mp_components.PeriodicTableInput(

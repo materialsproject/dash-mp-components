@@ -260,6 +260,76 @@
       }
     }
   },
+  "src/lib/components/PeriodicContextTable.react.js": {
+    "description": "",
+    "displayName": "MpPeriodicContextTable",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disabledElements": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "A list of symbols to grey-out as disabled"
+      },
+      "enabledElements": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "A list of selected symbols"
+      },
+      "hiddenElements": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "A list of hidden symbols"
+      },
+      "forwardOuterChange": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Forward external changes"
+      },
+      "forceTableLayout": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Force table layout"
+      },
+      "maxElementSelectable": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The maximum number of selectable elements"
+      },
+      "state": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The state of the table, as exposed in the dash callback"
+      }
+    }
+  },
   "src/lib/components/PeriodicElement.react.js": {
     "description": "This component displays a periodic element",
     "displayName": "MpPeriodicElement",
