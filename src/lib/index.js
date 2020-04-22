@@ -9,16 +9,20 @@ import JsonView from './components/JsonView.react';
 import CameraContext from './components/CameraContext.react';
 import SearchGrid from './components/SearchGrid.react';
 import Search from './components/Search.react';
+import PeriodicContextTable from './components/PeriodicContextTable.react';
+
+//
 
 export {
     PeriodicTableInput,
     PeriodicFilter,
     PeriodicElement,
     PeriodicContext,
+    PeriodicContextTable,
     Simple3DScene,
     GraphComponent,
     JsonView,
     CameraContext,
     SearchGrid,
-    Search
+    Search,
 };

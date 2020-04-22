@@ -1,4 +1,4 @@
-// Note(chab) If you remove this import, things will fail
+    // Note(chab) If you remove this import, things will fail
 import {Component} from 'react';
 import React from 'react';
 import {StandalonePeriodicComponent} from 'mat-periodic-table';

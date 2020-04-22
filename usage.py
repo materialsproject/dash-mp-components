@@ -10,9 +10,9 @@ from tests.grid import grid
 app = dash.Dash(__name__)
 
 app.layout = html.Div(children=[
-    dash_mp_components.Search(
-        id='test3', allDefinitions=grid, initCards=['has_properties']),
-    #dash_mp_components.SearchGrid(id='test'),
+    #dash_mp_components.Search(
+    #    id='test3', allDefinitions=grid, initCards=['has_properties']),
+    dash_mp_components.SearchGrid(id='test'),
     dash_mp_components.GraphComponent(
         graph={
             'nodes': [{
@@ -577,28 +577,21 @@ app.layout = html.Div(children=[
                      'value': 'K'
                  }],
                  value='MTL'),
-    dash_mp_components.PeriodicContext(
-        id='context',
-        disabledElements=['Na', 'Cl'],
-        hiddenElements=['Fe', 'Dy'],
-        enabledElements=['H', 'O'],
-        children=[
-            html.Div([
-                dash_mp_components.PeriodicFilter(id='periodic-filter', ),
-                dash_mp_components.PeriodicTableInput(
-                    id='periodic-table',
-                    maxElementSelectable=3,
-                    forceTableLayout='spaced'),
-                html.P(''),
-                dash_mp_components.PeriodicElement(
-                    element='Na', size=60, id='periodic-element'),
-                dash_mp_components.PeriodicTableInput(id='periodic-table-b',
-                                                      maxElementSelectable=3,
-                                                      forceTableLayout='map'),
-            ]),
-        ]),
+    dash_mp_components.PeriodicContextTable(id='context',
+                                            disabledElements=['Na', 'Cl'],
+                                            hiddenElements=['Fe', 'Dy'],
+                                            enabledElements=['H', 'O']),
+    html.P(id='p'),
     html.Div(id='component')
 ])
+
+
+@app.callback(
+    [Output(component_id='p', component_property='children')],
+    [Input(component_id='context', component_property='enabledElements')])
+def display_output2(value):
+    print('mckiec', value)
+    return [value]
 
 
 @app.callback([
@@ -610,10 +603,9 @@ def display_output(value):
 
 
 @app.callback(
-    Output(component_id='periodic-table',
-           component_property='forceTableLayout'), [Input('RR', 'value')])
+    Output(component_id='context', component_property='forceTableLayout'),
+    [Input('RR', 'value')])
 def display_output(value):
-    return 'compact'
     if value == 'K':
         return 'small'
     if value == 'Cl':

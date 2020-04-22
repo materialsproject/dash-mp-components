@@ -12,22 +12,28 @@ Keyword arguments:
 - id (string; optional): The ID used to identify this component in Dash callbacks.
 - state (dict; optional): This is a read-only prop that dash callback can subscribe to
 - maxElementSelectable (number; default 10): Maximum number of selectable elements
-- forceTableLayout (a value equal to: 'spaced', 'compact', 'small', 'map'; optional): Force the table to be in a specific layout"""
+- forceTableLayout (a value equal to: 'spaced', 'compact', 'small', 'map'; optional): Force the table to be in a specific layout
+- enabledElements (list; optional)
+- disabledElements (list; optional)"""
     @_explicitize_args
     def __init__(self,
                  id=Component.UNDEFINED,
                  state=Component.UNDEFINED,
                  maxElementSelectable=Component.UNDEFINED,
                  forceTableLayout=Component.UNDEFINED,
+                 enabledElements=Component.UNDEFINED,
+                 disabledElements=Component.UNDEFINED,
                  **kwargs):
         self._prop_names = [
-            'id', 'state', 'maxElementSelectable', 'forceTableLayout'
+            'id', 'state', 'maxElementSelectable', 'forceTableLayout',
+            'enabledElements', 'disabledElements'
         ]
         self._type = 'PeriodicTableInput'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes = []
         self.available_properties = [
-            'id', 'state', 'maxElementSelectable', 'forceTableLayout'
+            'id', 'state', 'maxElementSelectable', 'forceTableLayout',
+            'enabledElements', 'disabledElements'
         ]
         self.available_wildcard_properties = []
 
