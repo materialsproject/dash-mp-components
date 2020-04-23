@@ -10,7 +10,7 @@ import CameraContext from './components/CameraContext.react';
 import SearchGrid from './components/SearchGrid.react';
 import Search from './components/Search.react';
 import PeriodicContextTable from './components/PeriodicContextTable.react';
-
+import MatSidebar from './components/MatSidebar.react';
 //
 
 export {
@@ -25,4 +25,5 @@ export {
     CameraContext,
     SearchGrid,
     Search,
+    MatSidebar
 };

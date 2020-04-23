@@ -211,6 +211,41 @@
       }
     }
   },
+  "src/lib/components/MatSidebar.react.js": {
+    "description": "",
+    "displayName": "MatSidebar",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+      },
+      "currentApp": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "state": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
   "src/lib/components/PeriodicContext.react.js": {
     "description": "",
     "displayName": "MpPeriodicContext",
