@@ -235,14 +235,14 @@
           "name": "string"
         },
         "required": false,
-        "description": ""
+        "description": "The ID of the current selected app"
       },
-      "state": {
+      "appId": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": ""
+        "description": "This is a read-only prop that dash callback can subscribe to"
       },
       "layout": {
         "type": {
@@ -259,7 +259,7 @@
           ]
         },
         "required": false,
-        "description": ""
+        "description": "The layout of the sidebar"
       }
     }
   },

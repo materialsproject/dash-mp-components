@@ -10,7 +10,7 @@ export default class MatSidebar extends Component {
            currentApp={this.props.currentApp}
            onAppSelected={(v) => {
                 console.log(v);
-                this.props.setProps({state: v});
+                this.props.setProps({appId: v});
             }}/>
         );
     }
@@ -25,7 +25,20 @@ MatSidebar.propTypes = {
      * to Dash, to make them available for callbacks.
      */
     setProps: PropTypes.func,
+    /**
+     *
+     * The ID of the current selected app
+     *
+     */
     currentApp: PropTypes.string,
-    state: PropTypes.string,
+    /**
+     * This is a read-only prop that dash callback can subscribe to
+     */
+    appId: PropTypes.string,
+    /**
+    *
+    * The layout of the sidebar
+    *
+    */
     layout: PropTypes.oneOf(['vertical', 'horizontal']),
 };

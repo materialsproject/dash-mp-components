@@ -592,9 +592,19 @@ app.layout = html.Div(children=[
                                             hiddenElements=['Fe', 'Dy'],
                                             enabledElements=['H', 'O']),
     html.P(id='p'),
+    html.P(id='p2'),
     html.Div(id='component'),
     dash_mp_components.MatSidebar(id='bar', layout='horizontal')
 ])
+
+
+@app.callback([Output(component_id='p2', component_property='children')],
+              [Input(component_id='bar', component_property='appId')])
+def display_output2(value):
+    print(value)
+    if value is None:
+        return ['']
+    return [value]
 
 
 @app.callback([Output(component_id='p', component_property='children')],
