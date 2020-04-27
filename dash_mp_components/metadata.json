@@ -239,7 +239,24 @@
       },
       "state": {
         "type": {
-          "name": "object"
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "layout": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'vertical'",
+              "computed": false
+            },
+            {
+              "value": "'horizontal'",
+              "computed": false
+            }
+          ]
         },
         "required": false,
         "description": ""

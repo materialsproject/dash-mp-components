@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
 export default class MatSidebar extends Component {
     render() {
         return (
-           <Sidebar width={100}
+           <Sidebar width={100} layout={this.props.layout}
            currentApp={this.props.currentApp}
            onAppSelected={(v) => {
-            //TODO filter state
-                //this.props.setProps({state: v});
+                console.log(v);
+                this.props.setProps({state: v});
             }}/>
         );
     }
@@ -26,5 +26,6 @@ MatSidebar.propTypes = {
      */
     setProps: PropTypes.func,
     currentApp: PropTypes.string,
-    state: PropTypes.object
+    state: PropTypes.string,
+    layout: PropTypes.oneOf(['vertical', 'horizontal']),
 };

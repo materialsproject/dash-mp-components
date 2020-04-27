@@ -593,7 +593,7 @@ app.layout = html.Div(children=[
                                             enabledElements=['H', 'O']),
     html.P(id='p'),
     html.Div(id='component'),
-    dash_mp_components.MatSidebar(id='bar')
+    dash_mp_components.MatSidebar(id='bar', layout='horizontal')
 ])
 
 
