@@ -14,6 +14,7 @@ from selenium.webdriver.common.keys import Keys
 
 def check_path(dash_duo, number_of_path):
     # check if we can pass an ID to SVG element
+    print(len(dash_duo.find_elements('path')), number_of_path)
     assert len(dash_duo.find_elements('path')) == number_of_path
 
 
@@ -32,26 +33,24 @@ class SVG3DScene(unittest.TestCase):
         self.app = dash.Dash(__name__)
         self.scene = SimpleScene(self.dash_duo, scene=scene, settings={})
         resize_browser_window(1920, 1080, self.dash_duo.driver)
-        self.app.layout = html.Div(
-                children=[
-                    html.Div(id='test'),
-                    html.Div(
-                        style={'width': '500px', 'height': '500px'},
-                        children=[
-                            self.scene.render(500)
-                        ]
-                    )
-                ]
-            )
+        self.app.layout = html.Div(children=[
+            html.Div(id='test'),
+            html.Div(style={
+                'width': '500px',
+                'height': '500px'
+            },
+                     children=[self.scene.render(500)])
+        ])
 
-        @self.app.callback(Output('test', 'children'), [Input('3d', 'selectedObject')])
+        @self.app.callback(Output('test', 'children'),
+                           [Input('3d', 'selectedObject')])
         def display_output(value):
             # do something a bit more complex
             return f'Type {value} color {value}'
+
         self.dash_duo.start_server(self.app)
         # wait for table to be there
         print('Test started', __name__)
-
 
     def test_basic_selecting(self):
 
@@ -66,4 +65,3 @@ class SVG3DScene(unittest.TestCase):
         # 6 sheres, we expect a lot of text
         assert len(self.dash_duo.find_element('#test').text) == 1126
         # 4 edge spheres
-

@@ -4,6 +4,9 @@ from dash.dependencies import Input, Output
 import dash_html_components as html
 import dash_core_components as dcc
 from tests.grid import grid
+import functools
+from dash.exceptions import PreventUpdate
+from pymatgen import MPRester
 
 #
 
@@ -12,107 +15,107 @@ app = dash.Dash(__name__)
 app.layout = html.Div(children=[
     #dash_mp_components.Search(
     #    id='test3', allDefinitions=grid, initCards=['has_properties']),
-    dash_mp_components.SearchGrid(id='test'),
-    dash_mp_components.GraphComponent(
-        graph={
-            'nodes': [{
-                'id': 0,
-                'title': 'Sn site (4 neighbors)',
-                'color': '#9a8eb9'
-            }, {
-                'id': 1,
-                'title': 'Sn site (4 neighbors)',
-                'color': '#9a8eb9'
-            }, {
-                'id': 2,
-                'title': 'Sn site (4 neighbors)',
-                'color': '#9a8eb9'
-            }, {
-                'id': 3,
-                'title': 'Ce site (12 neighbors)',
-                'color': '#ffffc7'
-            }],
-            'edges': [
-                {
-                    'from': 0,
-                    'to': 3,
-                    'arrows': '',
-                    'length': 166.88637683827804,
-                    'title': '3.34 Å between sites',
-                    'id': '82870605-7f0c-4177-a438-63be2da70eda'
-                },
-                {
-                    'from': 0,
-                    'to': 3,
-                    'arrows': 'to',
-                    'length': 166.88637683827804,
-                    'title': '3.34 Å to site at image vector (1, 0, 0)',
-                    'id': '026e7ed0-3a85-4138-9b9e-f6156d99ee58'
-                },
-                {
-                    'from': 0,
-                    'to': 3,
-                    'arrows': 'to',
-                    'length': 166.88637683827804,
-                    'title': '3.34 Å to site at image vector (1, 0, 1)',
-                    'id': 'bf2562f5-9501-4d2a-9e5c-fefecfcaddf2'
-                },
-                {
-                    'from': 0,
-                    'to': 3,
-                    'arrows': 'to',
-                    'length': 166.88637683827804,
-                    'title': '3.34 Å to site at image vector (0, 0, 1)',
-                    'id': '0b290f2b-30cd-4fe2-b168-c61fba1a9515'
-                },
-                {
-                    'from': 1,
-                    'to': 3,
-                    'arrows': 'to',
-                    'length': 166.88637683827804,
-                    'title': '3.34 Å to site at image vector (0, 1, 0)',
-                    'id': '7b877631-1bbc-4558-a4a3-872b4dcb8661'
-                },
-                {
-                    'from': 1,
-                    'to': 3,
-                    'arrows': 'to',
-                    'length': 166.88637683827804,
-                    'title': '3.34 Å to site at image vector (0, 1, 1)',
-                    'id': '63ec8d00-bdfe-4058-93eb-3f7e87d1cfbb'
-                },
-                {
-                    'from': 1,
-                    'to': 3,
-                    'arrows': '',
-                    'length': 166.88637683827804,
-                    'title': '3.34 Å between sites',
-                    'id': '2b6a4f9c-e4e1-43fb-941a-941ca3d0a034'
-                },
-                {
-                    'from': 1,
-                    'to': 3,
-                    'arrows': 'to',
-                    'length': 166.88637683827804,
-                    'title': '3.34 Å to site at image vector (0, 0, 1)',
-                    'id': 'f735e7cf-b270-481f-ba4b-8f9603abbd8e'
-                },
-                {
-                    'from': 2,
-                    'to': 3,
-                    'arrows': 'to',
-                    'length': 166.88637683827804,
-                    'title': '3.34 Å to site at image vector (0, 1, 0)',
-                    'id': '5357da7c-4a88-4219-b5c4-b93eb712e8ed'
-                },
-            ]
-        }),
-    dash_mp_components.JsonView(
-        id='json', name=False, src={
-            'a': 12,
-            'b': 13,
-            'c': 'd'
-        }),
+    # dash_mp_components.SearchGrid(id='test'),
+    # dash_mp_components.GraphComponent(
+    #     graph={
+    #         'nodes': [{
+    #             'id': 0,
+    #             'title': 'Sn site (4 neighbors)',
+    #             'color': '#9a8eb9'
+    #         }, {
+    #             'id': 1,
+    #             'title': 'Sn site (4 neighbors)',
+    #             'color': '#9a8eb9'
+    #         }, {
+    #             'id': 2,
+    #             'title': 'Sn site (4 neighbors)',
+    #             'color': '#9a8eb9'
+    #         }, {
+    #             'id': 3,
+    #             'title': 'Ce site (12 neighbors)',
+    #             'color': '#ffffc7'
+    #         }],
+    #         'edges': [
+    #             {
+    #                 'from': 0,
+    #                 'to': 3,
+    #                 'arrows': '',
+    #                 'length': 166.88637683827804,
+    #                 'title': '3.34 Å between sites',
+    #                 'id': '82870605-7f0c-4177-a438-63be2da70eda'
+    #             },
+    #             {
+    #                 'from': 0,
+    #                 'to': 3,
+    #                 'arrows': 'to',
+    #                 'length': 166.88637683827804,
+    #                 'title': '3.34 Å to site at image vector (1, 0, 0)',
+    #                 'id': '026e7ed0-3a85-4138-9b9e-f6156d99ee58'
+    #             },
+    #             {
+    #                 'from': 0,
+    #                 'to': 3,
+    #                 'arrows': 'to',
+    #                 'length': 166.88637683827804,
+    #                 'title': '3.34 Å to site at image vector (1, 0, 1)',
+    #                 'id': 'bf2562f5-9501-4d2a-9e5c-fefecfcaddf2'
+    #             },
+    #             {
+    #                 'from': 0,
+    #                 'to': 3,
+    #                 'arrows': 'to',
+    #                 'length': 166.88637683827804,
+    #                 'title': '3.34 Å to site at image vector (0, 0, 1)',
+    #                 'id': '0b290f2b-30cd-4fe2-b168-c61fba1a9515'
+    #             },
+    #             {
+    #                 'from': 1,
+    #                 'to': 3,
+    #                 'arrows': 'to',
+    #                 'length': 166.88637683827804,
+    #                 'title': '3.34 Å to site at image vector (0, 1, 0)',
+    #                 'id': '7b877631-1bbc-4558-a4a3-872b4dcb8661'
+    #             },
+    #             {
+    #                 'from': 1,
+    #                 'to': 3,
+    #                 'arrows': 'to',
+    #                 'length': 166.88637683827804,
+    #                 'title': '3.34 Å to site at image vector (0, 1, 1)',
+    #                 'id': '63ec8d00-bdfe-4058-93eb-3f7e87d1cfbb'
+    #             },
+    #             {
+    #                 'from': 1,
+    #                 'to': 3,
+    #                 'arrows': '',
+    #                 'length': 166.88637683827804,
+    #                 'title': '3.34 Å between sites',
+    #                 'id': '2b6a4f9c-e4e1-43fb-941a-941ca3d0a034'
+    #             },
+    #             {
+    #                 'from': 1,
+    #                 'to': 3,
+    #                 'arrows': 'to',
+    #                 'length': 166.88637683827804,
+    #                 'title': '3.34 Å to site at image vector (0, 0, 1)',
+    #                 'id': 'f735e7cf-b270-481f-ba4b-8f9603abbd8e'
+    #             },
+    #             {
+    #                 'from': 2,
+    #                 'to': 3,
+    #                 'arrows': 'to',
+    #                 'length': 166.88637683827804,
+    #                 'title': '3.34 Å to site at image vector (0, 1, 0)',
+    #                 'id': '5357da7c-4a88-4219-b5c4-b93eb712e8ed'
+    #             },
+    #         ]
+    #     }),
+    # dash_mp_components.JsonView(
+    #     id='json', name=False, src={
+    #         'a': 12,
+    #         'b': 13,
+    #         'c': 'd'
+    #     }),
     dash_mp_components.CameraContext(children=[
         html.Div([
             dash_mp_components.Simple3DScene(
@@ -570,71 +573,162 @@ app.layout = html.Div(children=[
                 }),
         ])
     ]),
-    html.Div(id='selected-object'),
-    # this can be troublesome, the table does not filter bad elements from the outside, so
-    # you can end up with some noise.
-    # e.g you pass 'MASDA' as an element, it will stay in the selection array
-    dcc.Dropdown(id='RR',
-                 options=[{
-                     'label': 'Na',
-                     'value': 'Na'
-                 }, {
-                     'label': 'Cl',
-                     'value': 'Cl'
-                 }, {
-                     'label': 'SF',
-                     'value': 'K'
-                 }],
-                 value='Na'),
-    dash_mp_components.PeriodicContextTable(id='context',
-                                            maxElementSelectable=3,
-                                            disabledElements=['Pb', 'K', 'Cl'],
-                                            hiddenElements=['Fe', 'Dy'],
-                                            enabledElements=['H', 'O']),
-    html.P(id='p'),
-    html.P(id='p2'),
-    html.Div(id='component'),
-    dash_mp_components.MatSidebar(id='bar', layout='horizontal')
+    # html.Div(id='selected-object'),
+    # # this can be troublesome, the table does not filter bad elements from the outside, so
+    # # you can end up with some noise.
+    # # e.g you pass 'MASDA' as an element, it will stay in the selection array
+    # dcc.Dropdown(id='RR',
+    #              options=[{
+    #                  'label': 'Na',
+    #                  'value': 'Na'
+    #              }, {
+    #                  'label': 'Cl',
+    #                  'value': 'Cl'
+    #              }, {
+    #                  'label': 'SF',
+    #                  'value': 'K'
+    #              }],
+    #              value='Na'),
+    # dash_mp_components.PeriodicContextTable(id='context',
+    #                                         maxElementSelectable=3,
+    #                                         disabledElements=['Pb', 'K', 'Cl'],
+    #                                         hiddenElements=['Fe', 'Dy'],
+    #                                         enabledElements=['H', 'O']),
+    # html.P(id='p'),
+    # html.P(id='p2'),
+    # html.Div(id='component'),
+    dash_mp_components.MatSidebar(id='bar', layout='horizontal'),
+    dash_mp_components.MatPrintViewContext(children=[
+        dash_mp_components.MatSearchGrid(id='search-table'),
+        dcc.Loading(
+            [dash_mp_components.MatMaterialsTable(id='mat-result-table')]),
+    ])
 ])
 
 
-@app.callback([Output(component_id='p2', component_property='children')],
-              [Input(component_id='bar', component_property='appId')])
-def display_output2(value):
-    print(value)
-    if value is None:
-        return ['']
-    return [value]
-
-
-@app.callback([Output(component_id='p', component_property='children')],
-              [Input(component_id='context', component_property='state')])
-def display_output2(value):
-    print(value)
-    if value is None:
-        return ['']
-    return [value['enabledElements']]
-
-
-@app.callback([
-    Output(component_id='context', component_property='disabledElements'),
-    Output(component_id='context', component_property='enabledElements')
-], [Input('RR', 'value')])
-def display_output(value):
-    return [], [value]
-
-
 @app.callback(
-    Output(component_id='context', component_property='forceTableLayout'),
-    [Input('RR', 'value')])
-def display_output(value):
-    if value == 'K':
-        return 'small'
-    if value == 'Cl':
-        return 'compact'
-    if value == 'Na':
-        return 'spaced'
+    Output(component_id='mat-result-table', component_property='data'),
+    [Input(component_id='search-table', component_property='state')])
+def display_output2(c):
+    print('UPDATE >>>>>>')
+    if c is None:
+        raise PreventUpdate
+    cards = []
+    for idx, card in enumerate(c['cardSettings']):
+        if card['state'] != 'pristine' and not (card['disabled']):
+            cards.append({'cardDef': c['cardDef'][idx], 'cardSettings': card})
 
+    if len(cards) == 0 and (not (c['heroCardSetting']
+                                 and not (c['heroCardSetting']['disabled']))):
+        raise PreventUpdate
+
+    query = {}
+    table_card = c['heroCardSetting']
+    if table_card is not None and not (
+            table_card['disabled']) and not table_card['state'] == 'pristine':
+        state = table_card['values'][0]
+        if state is not None:
+            if 'enabledElements' in state and len(
+                    state['enabledElements']) > 0:
+                query['elements'] = {'$in': state['enabledElements']}
+            if 'disabledElements' in state and len(
+                    state['disabledElements']) > 0:
+                if 'elements' in query:
+                    query['elements']['$not'] = {
+                        '$in': state['disabledElements']
+                    }
+                else:
+                    query['elements'] = {
+                        ['$not']: {
+                            '$in': state['disabledElements']
+                        }
+                    }
+
+        if len(table_card['values']) > 1 and table_card['values'][1] > 0:
+            query['nelements'] = table_card['values'][1]
+
+    for card in cards:
+        definition = card['cardDef']
+        for widgetIndex, widget in enumerate(definition['widgets']):
+            if card['cardSettings']['widgetState'][widgetIndex] == 'pristine':
+                continue
+            if widget['type'] == 'SLIDERS':
+                key = widget['id']
+                prefix = '' if definition[
+                    'bypassIdForKey'] else definition['id'] + '.'
+                query[prefix + key] = {
+                    '$gte': card['cardSettings']['values'][widgetIndex][0],
+                    '$lte': card['cardSettings']['values'][widgetIndex][1]
+                }
+            elif widget['type'] == 'TAG_SEARCH':
+                if card['cardSettings']['values'][widgetIndex] is not None:
+                    query[card['cardSettings']
+                          ['id']] = card['cardSettings']['values'][widgetIndex]
+            elif widget['type'] == 'SP_SEARCH':
+                space_groups = card['cardSettings']['values'][widgetIndex]
+                if space_groups is not None and len(space_groups) > 0:
+                    query['spacegroup.number'] = {
+                        '$in':
+                        list(
+                            map(lambda s: s['space-group.number'],
+                                space_groups))
+                    }
+            elif widget['type'] == 'CHECKBOX_LIST':
+                query['provenance'] = card['cardSettings']['values'][0]
+
+    # bypass potentially big query
+    if len((query.keys())) < 2 and 'nelements' in query:
+        raise PreventUpdatse
+
+    properties = [
+        'volume', 'band_gap.search_gap.band_gap', 'material_id',
+        'full_formula', 'theoretical', 'has_bandstructure', 'tags', 'density',
+        'e_above_hull', 'nsites'
+    ]
+    #print('QUERYING', query)
+    with MPRester("fJcpJy6hRNF3DzBo") as m:
+        q = m.query(criteria=query, properties=properties)
+
+    #print('RESULT', len(q))
+    return q
+
+
+# @app.callback([Output(component_id='p2', component_property='children')],
+#               [Input(component_id='bar', component_property='appId')])
+# def display_output2(value):
+#     print(value)
+#     if value is None:
+#         return ['']
+#     return [value]
+
+#
+# @app.callback([Output(component_id='p', component_property='children')],
+#               [Input(component_id='context', component_property='state')])
+# def display_output2(value):
+#     print(value)
+#     if value is None:
+#         return ['']
+#     return [value['enabledElements']]
+#
+#
+# @app.callback([
+#     Output(component_id='context', component_property='disabledElements'),
+#     Output(component_id='context', component_property='enabledElements')
+# ], [Input('RR', 'value')])
+# def display_output(value):
+#     return [], [value]
+#
+#
+# @app.callback(
+#     Output(component_id='context', component_property='forceTableLayout'),
+#     [Input('RR', 'value')])
+# def display_output(value):
+#     if value == 'K':
+#         return 'small'
+#     if value == 'Cl':
+#         return 'compact'
+#     if value == 'Na':
+#         return 'spaced'
 
 #
 # @app.callback(

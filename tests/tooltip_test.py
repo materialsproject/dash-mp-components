@@ -46,7 +46,7 @@ class SVG3DScene(unittest.TestCase):
     def test_tooltip(self):
         self.scene.hover_and_check_tooltip(250, 250, 'label3')
         self.scene.hover_and_check_tooltip(230, 220, 'label1')
-        self.scene.hover_and_check_tooltip(270, 240, 'label2')
+        self.scene.hover_and_check_tooltip(280, 240, 'label2')
 
     #TODO(chab) test that coordinates stay the same if we resize
     #TODO(chab) test that the underlying object is darkened
