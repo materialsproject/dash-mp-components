@@ -3,8 +3,14 @@ import {Component} from 'react';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// this is the whole search page, wrapped in a component
 
+
+/**
+ *
+ * This is the whole search page, wrapped in a component
+ *
+ *
+ */
 export default class SearchGrid extends Component {
     render() {
         return (

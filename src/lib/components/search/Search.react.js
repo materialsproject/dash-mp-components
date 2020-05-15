@@ -4,8 +4,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-// this a search funnel
-
+/**
+ *
+ *  This search grid is using the periodic context provider. This allows the grid
+ *  to be notified of changes happening in the periodic table. Use it if you intend
+ *  to use the periodic table
+ *
+ */
 export default class Search extends Component {
     render() {
         return (

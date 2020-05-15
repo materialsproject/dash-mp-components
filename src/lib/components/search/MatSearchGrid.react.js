@@ -3,6 +3,13 @@ import {MTGrid} from '@materialsproject/mp-react-components';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+
+/**
+ *
+ *  Use this search grid component if you do not use a periodic table
+ *
+ *
+ */
 export default class MatSearchGrid extends Component {
     render() {
         return (
@@ -24,11 +31,4 @@ MatSearchGrid.propTypes = {
      * to Dash, to make them available for callbacks.
      */
     setProps: PropTypes.func,
-    /**
-     * An array of object describing the behavior/content of each card
-     *
-     */
-    /**
-     * The ID used to identify this component in Dash callbacks.
-     */
 };

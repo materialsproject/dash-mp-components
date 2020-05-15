@@ -5,6 +5,13 @@ import React from 'react';
 import {MatPrintViewContext} from './MatPrintViewContext.react';
 
 const emptyArray = [];
+
+
+/**
+ *
+ *  Display a table of materials
+ *
+ */
 export default class MatMaterialsTable extends Component {
 
     render() {
