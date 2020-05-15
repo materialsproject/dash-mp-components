@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {MTGrid} from 'mat-periodic-table';
+import {MTGrid} from '@materialsproject/mp-react-components';
 import PropTypes from 'prop-types';
 import React from 'react';
 

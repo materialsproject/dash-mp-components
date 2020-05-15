@@ -1,5 +1,5 @@
 import React from 'react';
-import {ReactGraphComponent} from 'mat-periodic-table';
+import {ReactGraphComponent} from '@materialsproject/mp-react-components';
 import {Component} from 'react';
 
 export default class GraphComponent extends Component {

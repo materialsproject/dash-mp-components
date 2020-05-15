@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import {Component} from 'react';
-import {MtMaterialTable} from 'mat-periodic-table';
+import {MtMaterialTable} from '@materialsproject/mp-react-components';
 import React from 'react';
 import {MatPrintViewContext} from './MatPrintViewContext.react';
 

@@ -1,7 +1,7 @@
 // Note(chab) If you remove this import, things will fail
 import {Component} from 'react';
 import React from 'react';
-import {StandalonePeriodicComponent} from 'mat-periodic-table';
+import {StandalonePeriodicComponent} from '@materialsproject/mp-react-components';
 
 import PropTypes from 'prop-types';
 

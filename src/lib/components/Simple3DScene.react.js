@@ -1,4 +1,4 @@
-import {Simple3DSceneComponent} from 'mat-periodic-table';
+import {Simple3DSceneComponent} from '@materialsproject/mp-react-components';
 import React, {Component} from 'react';
 
 export default class SceneComponent extends Component {

@@ -1,4 +1,4 @@
-import {GridWithContext} from 'mat-periodic-table';
+import {GridWithContext} from '@materialsproject/mp-react-components';
 import {Component} from 'react';
 import React from 'react';
 import PropTypes from 'prop-types';

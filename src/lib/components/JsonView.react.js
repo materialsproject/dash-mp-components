@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
-import {JSONViewComponent} from 'mat-periodic-table';
+import {JSONViewComponent} from '@materialsproject/mp-react-components';
 import PropTypes from 'prop-types';
 
 export default class JsonView extends Component {

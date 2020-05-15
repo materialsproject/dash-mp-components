@@ -1,4 +1,4 @@
-import {Sidebar} from 'mat-periodic-table';
+import {Sidebar} from '@materialsproject/mp-react-components';
 import {Component} from 'react';
 import React from 'react';
 import PropTypes from 'prop-types';

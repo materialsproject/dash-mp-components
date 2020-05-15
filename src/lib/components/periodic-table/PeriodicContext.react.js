@@ -1,4 +1,4 @@
-import {PeriodicContext} from 'mat-periodic-table';
+import {PeriodicContext} from '@materialsproject/mp-react-components';
 import React from 'react';
 import {Component} from 'react';
 import PropTypes from 'prop-types';

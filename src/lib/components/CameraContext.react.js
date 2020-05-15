@@ -1,4 +1,4 @@
-import {CameraContextWrapper} from 'mat-periodic-table';
+import {CameraContextWrapper} from '@materialsproject/mp-react-components';
 import React from 'react';
 import {Component} from 'react';
 

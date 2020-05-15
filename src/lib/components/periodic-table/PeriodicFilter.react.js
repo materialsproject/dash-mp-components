@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {TableFilter} from 'mat-periodic-table';
+import {TableFilter} from '@materialsproject/mp-react-components';
 import React from 'react';
 import PropTypes from 'prop-types';
 

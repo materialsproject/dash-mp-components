@@ -30,7 +30,7 @@ jobs:
                   pip install -r requirements.txt
                   pip install -r tests/requirements.txt
                   npm i
-                  npm i mat-periodic-table@next
+                  npm i @materialsproject/mp-react-components@next
             - name: Check files
               run: |
                   npm run lint:yaml
