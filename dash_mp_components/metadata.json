@@ -1,6 +1,6 @@
 {
   "src/lib/components/CameraContext.react.js": {
-    "description": "",
+    "description": "Use this component to synchronize the camera of multiple\n SimpleSceneComponent",
     "displayName": "CameraContext",
     "methods": [],
     "props": {
@@ -10,7 +10,7 @@
           "raw": "PropTypes.string"
         },
         "required": false,
-        "description": ""
+        "description": "The ID used to identify this component in Dash callbacks"
       },
       "children": {
         "type": {
@@ -212,7 +212,7 @@
     }
   },
   "src/lib/components/MatSidebar.react.js": {
-    "description": "",
+    "description": "Material navigation bar",
     "displayName": "MatSidebar",
     "methods": [],
     "props": {
@@ -607,7 +607,7 @@
     }
   },
   "src/lib/components/search/MatMaterialsTable.react.js": {
-    "description": "",
+    "description": "Display a table of materials",
     "displayName": "MatMaterialsTable",
     "methods": [],
     "props": {
@@ -628,7 +628,7 @@
     }
   },
   "src/lib/components/search/MatPrintViewContext.react.js": {
-    "description": "",
+    "description": "Print view context pass a boolean prop that allows children component to know if\n they are in print-view. Those components can react in various ways ( hidding some elements, changing\n their layouts, and so on... )",
     "displayName": "MatPrintViewContext",
     "methods": [],
     "props": {
@@ -649,7 +649,7 @@
     }
   },
   "src/lib/components/search/MatSearchGrid.react.js": {
-    "description": "",
+    "description": "Use this search grid component if you do not use a periodic table",
     "displayName": "MatSearchGrid",
     "methods": [],
     "props": {
@@ -677,7 +677,7 @@
     }
   },
   "src/lib/components/search/Search.react.js": {
-    "description": "",
+    "description": "This search grid is using the periodic context provider. This allows the grid\n to be notified of changes happening in the periodic table. Use it if you intend\n to use the periodic table",
     "displayName": "Search",
     "methods": [],
     "props": {
@@ -719,7 +719,7 @@
     }
   },
   "src/lib/components/search/SearchGrid.react.js": {
-    "description": "",
+    "description": "This is the whole search page, wrapped in a component",
     "displayName": "SearchGrid",
     "methods": [],
     "props": {

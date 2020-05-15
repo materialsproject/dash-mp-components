@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class MatSearchGrid(Component):
     """A MatSearchGrid component.
-
+Use this search grid component if you do not use a periodic table
 
 Keyword arguments:
 - state (dict; optional): Latest configuration of the funnel

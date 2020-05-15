@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class SearchGrid(Component):
     """A SearchGrid component.
-
+This is the whole search page, wrapped in a component
 
 Keyword arguments:
 - id (string; optional): The ID used to identify this component in Dash callbacks."""

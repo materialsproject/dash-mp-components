@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class MatSidebar(Component):
     """A MatSidebar component.
-
+Material navigation bar
 
 Keyword arguments:
 - id (string; optional): The ID used to identify this component in Dash callbacks.

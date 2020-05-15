@@ -5,7 +5,9 @@ from dash.development.base_component import Component, _explicitize_args
 
 class MatPrintViewContext(Component):
     """A MatPrintViewContext component.
-
+Print view context pass a boolean prop that allows children component to know if
+ they are in print-view. Those components can react in various ways ( hidding some elements, changing
+ their layouts, and so on... )
 
 Keyword arguments:
 - children (boolean | number | string | dict | list; optional)

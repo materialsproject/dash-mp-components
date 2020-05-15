@@ -5,7 +5,9 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Search(Component):
     """A Search component.
-
+This search grid is using the periodic context provider. This allows the grid
+ to be notified of changes happening in the periodic table. Use it if you intend
+ to use the periodic table
 
 Keyword arguments:
 - state (dict; optional): Latest configuration of the funnel

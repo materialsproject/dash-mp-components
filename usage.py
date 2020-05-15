@@ -103,7 +103,8 @@ def display_output2(c):
         'full_formula', 'theoretical', 'has_bandstructure', 'tags', 'density',
         'e_above_hull', 'nsites'
     ]
-    #print('QUERYING', query)
+
+    # This should be setted as an env variable instead
     with MPRester("fJcpJy6hRNF3DzBo") as m:
         q = m.query(criteria=query, properties=properties)
 
