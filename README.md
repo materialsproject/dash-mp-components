@@ -113,3 +113,7 @@ repository, and push it to github. A github action will build and publish the py
 The components are currently published in the test index, so you'll need to specify the url of
 the index when you install the package
 `pip install --index-url https://test.pypi.org/simple/ dash-mp-components`
+
+
+The npm package is NOT scoped to materialsProject org.
+Dash does not build correctly component
