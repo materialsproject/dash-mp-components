@@ -15,10 +15,10 @@ app.layout = html.Div(children=[
             dash_mp_components.Simple3DScene(
                 id='3d-2',
                 axisView='NW',
-                animation='play',
+                animation='none',
                 settings={
                     'secondaryObjectView': True,
-                    'staticScene': False
+                    'staticScene': True
                 },
                 sceneSize=550,
                 data={
