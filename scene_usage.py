@@ -1,3 +1,13 @@
+import dash_mp_components
+import dash
+from dash.dependencies import Input, Output
+import dash_html_components as html
+import dash_core_components as dcc
+from tests.grid import grid
+import functools
+from dash.exceptions import PreventUpdate
+
+#investigate why it does not work
 app = dash.Dash(__name__)
 app.layout = html.Div(children=[
     dash_mp_components.CameraContext(children=[
@@ -459,3 +469,7 @@ app.layout = html.Div(children=[
     ]),
     html.Div(id='selected-object'),
 ])
+
+# use True to load a dev build of react
+if __name__ == '__main__':
+    app.run_server(debug=True)
