@@ -8,21 +8,21 @@ import functools
 from dash.exceptions import PreventUpdate
 from pymatgen import MPRester
 
-#
-
 app = dash.Dash(__name__)
 
 app.layout = html.Div(children=[
-    # dash_mp_components.Search(
-    #     id='test3', allDefinitions=grid, initCards=['has_properties']),
-    # dash_mp_components.SearchGrid(id='test'),
-    # dash_mp_components.MatSidebar(id='bar', layout='horizontal'),
     dash_mp_components.MatPrintViewContext(children=[
         dash_mp_components.MatSearchGrid(id='search-table'),
         dcc.Loading(
             [dash_mp_components.MatMaterialsTable(id='mat-result-table')]),
     ])
 ])
+
+# make a dedicated example
+# dash_mp_components.Search(
+#     id='test3', allDefinitions=grid, initCards=['has_properties']),
+# dash_mp_components.SearchGrid(id='test'),
+# dash_mp_components.MatSidebar(id='bar', layout='horizontal'),
 
 
 @app.callback(
@@ -111,50 +111,6 @@ def display_output2(c):
     #print('RESULT', len(q))
     return q
 
-
-# @app.callback([Output(component_id='p2', component_property='children')],
-#               [Input(component_id='bar', component_property='appId')])
-# def display_output2(value):
-#     print(value)
-#     if value is None:
-#         return ['']
-#     return [value]
-
-#
-# @app.callback([Output(component_id='p', component_property='children')],
-#               [Input(component_id='context', component_property='state')])
-# def display_output2(value):
-#     print(value)
-#     if value is None:
-#         return ['']
-#     return [value['enabledElements']]
-#
-#
-# @app.callback([
-#     Output(component_id='context', component_property='disabledElements'),
-#     Output(component_id='context', component_property='enabledElements')
-# ], [Input('RR', 'value')])
-# def display_output(value):
-#     return [], [value]
-#
-#
-# @app.callback(
-#     Output(component_id='context', component_property='forceTableLayout'),
-#     [Input('RR', 'value')])
-# def display_output(value):
-#     if value == 'K':
-#         return 'small'
-#     if value == 'Cl':
-#         return 'compact'
-#     if value == 'Na':
-#         return 'spaced'
-
-#
-# @app.callback(
-#     Output(component_id='selected-object', component_property='children'),
-#     [Input('3d-2', 'selectedObject')])
-# def display_selectedObject(value):
-#     return f'Type {value} color {value}'
 
 # use True to load a dev build of react
 if __name__ == '__main__':
