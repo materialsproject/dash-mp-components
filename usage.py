@@ -18,12 +18,6 @@ app.layout = html.Div(children=[
     ])
 ])
 
-# make a dedicated example
-# dash_mp_components.Search(
-#     id='test3', allDefinitions=grid, initCards=['has_properties']),
-# dash_mp_components.SearchGrid(id='test'),
-# dash_mp_components.MatSidebar(id='bar', layout='horizontal'),
-
 
 @app.callback(
     Output(component_id='mat-result-table', component_property='data'),
