@@ -39,7 +39,9 @@ SceneComponent.propTypes = {
      *    staticScene: true, // disable if animation required
      *    defaultZoom: 0.8, // 1 will completely fill viewport with scene
      *    extractAxis: false // will remove the axis from the main scene
-     *    isMultiSelectionEnabled: false // allow to use shift to select
+     *    isMultiSelectionEnabled: false // allow to use shift to select,
+     *    secondaryObjectView: true // show the selected object in a detail view
+     *    animation: 'play' | 'slider' | 'none' // choose which style of animation is use
      * }
      * There are several additional options used for debugging and testing,
      * please consult the source code directly for these.
