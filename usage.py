@@ -7,6 +7,13 @@ from tests.grid import grid
 import functools
 from dash.exceptions import PreventUpdate
 from pymatgen import MPRester
+import os
+
+try:
+    os.environ["MP_API_KEY"]
+except KeyError:
+    print("Please set the environment variable MP_API_KEY")
+    sys.exit(1)
 
 app = dash.Dash(__name__)
 
@@ -99,7 +106,7 @@ def display_output2(c):
     ]
 
     # This should be setted as an env variable instead
-    with MPRester("fJcpJy6hRNF3DzBo") as m:
+    with MPRester(os.environ["MP_API_KEY"]) as m:
         q = m.query(criteria=query, properties=properties)
 
     #print('RESULT', len(q))

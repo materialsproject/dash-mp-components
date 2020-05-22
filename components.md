@@ -26,7 +26,7 @@ PeriodicContext is a top-level that provides a model for the periodic table that
 PeriodicFilter allows you to use filter some elements on table, by groups/periods/properties.
 It updates the PeriodicContext, which in turn is mirrored on the table.
 ```
-//TODO
+//TODO example file
 ```
 
 #3D Scene
@@ -52,7 +52,7 @@ The JSON of the object will be passed as an argument
 
 ## CameraContext
 
-Camera context allows you to wire the camera of multiple SimpleScenes together.
+Camera context allows you to wire the camera of multiple SimpleScenes together. See `scene_usage.py`
 
 ```
 dash_mp_components.CameraContext(children=[
@@ -87,12 +87,15 @@ dash_mp_components.CameraContext(children=[
 
 ## SearchGrid
 
-This is the whole search interface, wrapped in a React component. Everything happens in the frontend.
+This is the whole search interface, wrapped in a React component. From a dash point of view, this
+component is opaque. Everything happens in the frontend.
 
-## MatSearchGrid / MatPrintViewContext / MAtMaterialsTable
+## MatSearchGrid / MatPrintViewContext / MatMaterialsTable
 
 This is the same interface. The search funnel and the result table are decoupled. The REST call
-happens in dash. See usage.py for more details
+happens in dash. See `usage.py`. The whole search is implemented there
+
+See `search_usage.py` for a very simple example of a card
 
 ```
 dash_mp_components.MatPrintViewContext(children=[
