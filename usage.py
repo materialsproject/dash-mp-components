@@ -9,12 +9,6 @@ from dash.exceptions import PreventUpdate
 from pymatgen import MPRester
 import os
 
-try:
-    os.environ["MP_API_KEY"]
-except KeyError:
-    print("Please set the environment variable MP_API_KEY")
-    sys.exit(1)
-
 app = dash.Dash(__name__)
 
 app.layout = html.Div(children=[
@@ -106,7 +100,7 @@ def display_output2(c):
     ]
 
     # This should be setted as an env variable instead
-    with MPRester(os.environ["MP_API_KEY"]) as m:
+    with MPRester() as m:
         q = m.query(criteria=query, properties=properties)
 
     print(q)
