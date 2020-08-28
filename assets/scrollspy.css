@@ -1,0 +1,28 @@
+.scrollspy {
+	display: inline-block;
+}
+
+.scrollspy .menu {
+	position: fixed;
+	width: 200px;
+}
+
+.scrollspy .content {
+	display: inline-block;
+	margin-left: 200px;
+	padding-left: 15px;
+}
+
+.scrollspy .content p {
+	height: 500px;
+}
+
+.scrollspy a {
+  text-decoration: none;
+  color: #000;
+}
+
+.scrollspy .is-active {
+  color: forestgreen;
+  font-weight: bold;
+}

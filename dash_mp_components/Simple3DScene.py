@@ -49,34 +49,13 @@ to know which objects are currently selected in the scene
 - debug (optional): Display a debug view
 - animation (optional): Animation type"""
     @_explicitize_args
-    def __init__(self,
-                 id=Component.UNDEFINED,
-                 data=Component.UNDEFINED,
-                 settings=Component.UNDEFINED,
-                 toggleVisibility=Component.UNDEFINED,
-                 downloadRequest=Component.UNDEFINED,
-                 selectedObject=Component.UNDEFINED,
-                 sceneSize=Component.UNDEFINED,
-                 axisView=Component.UNDEFINED,
-                 inletSize=Component.UNDEFINED,
-                 inletPadding=Component.UNDEFINED,
-                 debug=Component.UNDEFINED,
-                 animation=Component.UNDEFINED,
-                 **kwargs):
-        self._prop_names = [
-            'id', 'data', 'settings', 'toggleVisibility', 'downloadRequest',
-            'setProps', 'selectedObject', 'sceneSize', 'axisView', 'inletSize',
-            'inletPadding', 'debug', 'animation'
-        ]
+    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, downloadRequest=Component.UNDEFINED, selectedObject=Component.UNDEFINED, sceneSize=Component.UNDEFINED, axisView=Component.UNDEFINED, inletSize=Component.UNDEFINED, inletPadding=Component.UNDEFINED, debug=Component.UNDEFINED, animation=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject', 'sceneSize', 'axisView', 'inletSize', 'inletPadding', 'debug', 'animation']
         self._type = 'Simple3DScene'
         self._namespace = 'dash_mp_components'
-        self._valid_wildcard_attributes = []
-        self.available_properties = [
-            'id', 'data', 'settings', 'toggleVisibility', 'downloadRequest',
-            'setProps', 'selectedObject', 'sceneSize', 'axisView', 'inletSize',
-            'inletPadding', 'debug', 'animation'
-        ]
-        self.available_wildcard_properties = []
+        self._valid_wildcard_attributes =            []
+        self.available_properties = ['id', 'data', 'settings', 'toggleVisibility', 'downloadRequest', 'setProps', 'selectedObject', 'sceneSize', 'axisView', 'inletSize', 'inletPadding', 'debug', 'animation']
+        self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
@@ -85,6 +64,6 @@ to know which objects are currently selected in the scene
 
         for k in []:
             if k not in args:
-                raise TypeError('Required argument `' + k +
-                                '` was not specified.')
+                raise TypeError(
+                    'Required argument `' + k + '` was not specified.')
         super(Simple3DScene, self).__init__(**args)

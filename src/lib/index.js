@@ -18,6 +18,7 @@ import MatSidebar from './components/MatSidebar.react';
 import MatSearchGrid from './components/search/MatSearchGrid.react'
 import MatMaterialsTable from './components/search/MatMaterialsTable.react'
 import MatPrintViewContext from './components/search/MatPrintViewContext.react'
+import Scrollspy from './components/Scrollspy.react'
 // new search component
 
 export {
@@ -35,5 +36,6 @@ export {
     MatSidebar,
     MatPrintViewContext,
     MatMaterialsTable,
-    MatSearchGrid
+    MatSearchGrid,
+    Scrollspy
 };

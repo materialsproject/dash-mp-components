@@ -1,6 +1,6 @@
 Package: dashMpComponents
 Title: Dash components for the Materials Project
-Version: 0.0.23
+Version: 0.0.24
 Description: Dash components for the Materials Project
 Depends: R (>= 3.0.2)
 Imports: 
@@ -11,5 +11,3 @@ BugReports: https://github.com/materialsproject/dash-mp-components/issues
 Encoding: UTF-8
 LazyData: true
 KeepSource: true
-Author: Materials Project Team [aut]
-Maintainer: Materials Project Team <feedback@materialsproject.org>

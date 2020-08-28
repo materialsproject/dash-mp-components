@@ -25,7 +25,6 @@ app.layout = html.Div(children=[
     ])
 ])
 
-
 @app.callback(
     Output(component_id='mat-result-table', component_property='data'),
     [Input(component_id='search-table', component_property='state')])
@@ -33,6 +32,7 @@ def display_output2(c):
     if c is None:
         raise PreventUpdate
     cards = []
+    print(c)
     for idx, card in enumerate(c['cardSettings']):
         if card['state'] != 'pristine' and not (card['disabled']):
             cards.append({'cardDef': c['cardDef'][idx], 'cardSettings': card})
@@ -109,6 +109,7 @@ def display_output2(c):
     with MPRester(os.environ["MP_API_KEY"]) as m:
         q = m.query(criteria=query, properties=properties)
 
+    print(q)
     #print('RESULT', len(q))
     return q
 

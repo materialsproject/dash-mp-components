@@ -14,22 +14,13 @@ Keyword arguments:
 - maxElementSelectable (number; default 10): Maximum number of selectable elements
 - forceTableLayout (a value equal to: 'spaced', 'compact', 'small', 'map'; optional): Force the table to be in a specific layout"""
     @_explicitize_args
-    def __init__(self,
-                 id=Component.UNDEFINED,
-                 state=Component.UNDEFINED,
-                 maxElementSelectable=Component.UNDEFINED,
-                 forceTableLayout=Component.UNDEFINED,
-                 **kwargs):
-        self._prop_names = [
-            'id', 'state', 'maxElementSelectable', 'forceTableLayout'
-        ]
+    def __init__(self, id=Component.UNDEFINED, state=Component.UNDEFINED, maxElementSelectable=Component.UNDEFINED, forceTableLayout=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'state', 'maxElementSelectable', 'forceTableLayout']
         self._type = 'PeriodicTableInput'
         self._namespace = 'dash_mp_components'
-        self._valid_wildcard_attributes = []
-        self.available_properties = [
-            'id', 'state', 'maxElementSelectable', 'forceTableLayout'
-        ]
-        self.available_wildcard_properties = []
+        self._valid_wildcard_attributes =            []
+        self.available_properties = ['id', 'state', 'maxElementSelectable', 'forceTableLayout']
+        self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
@@ -38,6 +29,6 @@ Keyword arguments:
 
         for k in []:
             if k not in args:
-                raise TypeError('Required argument `' + k +
-                                '` was not specified.')
+                raise TypeError(
+                    'Required argument `' + k + '` was not specified.')
         super(PeriodicTableInput, self).__init__(**args)
