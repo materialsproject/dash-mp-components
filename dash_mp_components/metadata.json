@@ -264,58 +264,58 @@
     }
   },
   "src/lib/components/Scrollspy.react.js": {
-    "description": "",
+    "description": "Component for building in-page navigation menus with scrollspy functionality",
     "displayName": "Scrollspy",
     "methods": [],
     "props": {
-      "className": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
       "menuGroups": {
         "type": {
           "name": "array"
         },
         "required": false,
-        "description": ""
+        "description": "An array of MenuGroup items that is used to build the menu and its links.\nEach MenuGroup has an optional label and a required 'items' array of MenuItems.\nEach MenuItem has a label that is rendered in the menu and a targetId that is the id of the element it should link to.\nDo not include '#' in targetId.\nexample:\n      [\n        {label: '...', items: [\n          {label: '...', targetId: '...'}, \n          {label: '...', targetId: '...', items: [\n            {label: '...', targetId: '...'}\n          }]\n        ]}\n      ]"
       },
-      "activeItemClassName": {
+      "activeClassName": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": ""
+        "description": "Class name applied to active links in the menu (default: 'is-active')"
       },
-      "offset": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": ""
-      },
-      "menuLabelClassName": {
+      "menuClassName": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": ""
+        "description": "Class name applied to the <aside> that contains the whole menu (default: 'menu')"
       },
-      "menuContainerClassName": {
+      "menuGroupLabelClassName": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": ""
+        "description": "Class name applied to all menu group labels (default: 'menu-label')"
+      },
+      "menuItemContainerClassName": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Class name applied to each <ul> of menu items (default: 'menu-list')"
       },
       "menuItemClassName": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": ""
+        "description": "Class name applied to the <li> of each menu item (default: '')"
+      },
+      "offset": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "An integer to determine the scroll offset from an item that will trigger it active (default: -20)"
       }
     }
   },

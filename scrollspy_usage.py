@@ -8,9 +8,9 @@ app = dash.Dash(__name__)
 app.layout = html.Div(className='scrollspy', children=[
   dash_mp_components.Scrollspy(
     menuGroups=[{'label': 'Table of Contents', 'items': [{'label': 'One', 'targetId': 'one'}, {'label': 'Two', 'targetId': 'two'}, {'label': 'Three', 'targetId': 'three'}]}],
-    className="menu",
-    menuContainerClassName="menu-list",
-    activeItemClassName="is-active",
+    menuClassName="menu",
+    menuItemContainerClassName="menu-list",
+    activeClassName="is-active",
     offset=0
   ),
   html.Div(className='content', children=[
