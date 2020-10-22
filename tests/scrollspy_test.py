@@ -1,6 +1,10 @@
 import dash
 import dash_html_components as html
 import dash_mp_components
+import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 """
 Tests the basic scrollspy functionality
@@ -34,9 +38,16 @@ def test_scrollspy_menu(dash_duo):
     ])
     dash_duo.start_server(app)
     dash_duo.driver.set_window_size(1920, 1080)
+    body = WebDriverWait(dash_duo.driver, 10).until(
+        EC.visibility_of_element_located((By.TAG_NAME, "a"))
+    )
+    dash_duo.driver.execute_script("window.scrollTo(0, 0);")
     links = dash_duo.find_elements('a')
     assert links[0].text == 'One'
     assert links[0].get_attribute('class') == 'is-active'
     second_block = dash_duo.find_element('#two')
     dash_duo.driver.execute_script("arguments[0].scrollIntoView();", second_block)
-    assert links[1].get_attribute('class') == 'is-active'
+    second_link_active = WebDriverWait(dash_duo.driver, 10).until(
+        EC.visibility_of_element_located((By.CSS_SELECTOR, "a.is-active:nth-child(1)"))
+    )
+    assert second_link_active.text == 'Two'
