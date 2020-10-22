@@ -1,112 +1,100 @@
 import dash_mp_components
 import dash
-from dash.dependencies import Input, Output
 import dash_html_components as html
 import dash_core_components as dcc
-from tests.grid import grid
-import functools
-from dash.exceptions import PreventUpdate
-from pymatgen import MPRester
 import os
 
 app = dash.Dash(__name__)
 
-app.layout = html.Div(children=[
-    dash_mp_components.MatPrintViewContext(children=[
-        dash_mp_components.MatSearchGrid(id='search-table'),
-        dcc.Loading(
-            [dash_mp_components.MatMaterialsTable(id='mat-result-table')]),
-    ])
-])
+columns = [
+  {
+    'name': 'Material Id',
+    'selector': 'task_id',
+    'sortable': True
+  },
+  {
+    'name': 'Formula',
+    'selector': 'formula_pretty',
+    'sortable': True,
+    'format': 'FORMULA'
+  },
+  {
+    'name': 'Volume',
+    'selector': 'volume',
+    'sortable': True,
+    'format': 'SIGNIFICANT_FIGURES',
+    'formatArg': 5
+  },
+  {
+    'name': 'Density',
+    'selector': 'density',
+    'sortable': True,
+    'format': 'FIXED_DECIMAL',
+    'formatArg': 5
+  }
+]
 
-@app.callback(
-    Output(component_id='mat-result-table', component_property='data'),
-    [Input(component_id='search-table', component_property='state')])
-def display_output2(c):
-    if c is None:
-        raise PreventUpdate
-    cards = []
-    print(c)
-    for idx, card in enumerate(c['cardSettings']):
-        if card['state'] != 'pristine' and not (card['disabled']):
-            cards.append({'cardDef': c['cardDef'][idx], 'cardSettings': card})
-
-    if len(cards) == 0 and (not (c['heroCardSetting']
-                                 and not (c['heroCardSetting']['disabled']))):
-        raise PreventUpdate
-
-    query = {}
-    table_card = c['heroCardSetting']
-    if table_card is not None and not (
-            table_card['disabled']) and not table_card['state'] == 'pristine':
-        state = table_card['values'][0]
-        if state is not None:
-            if 'enabledElements' in state and len(
-                    state['enabledElements']) > 0:
-                query['elements'] = {'$in': state['enabledElements']}
-            if 'disabledElements' in state and len(
-                    state['disabledElements']) > 0:
-                if 'elements' in query:
-                    query['elements']['$not'] = {
-                        '$in': state['disabledElements']
-                    }
-                else:
-                    query['elements'] = {
-                        ['$not']: {
-                            '$in': state['disabledElements']
-                        }
-                    }
-
-        if len(table_card['values']) > 1 and table_card['values'][1] > 0:
-            query['nelements'] = table_card['values'][1]
-
-    for card in cards:
-        definition = card['cardDef']
-        for widgetIndex, widget in enumerate(definition['widgets']):
-            if card['cardSettings']['widgetState'][widgetIndex] == 'pristine':
-                continue
-            if widget['type'] == 'SLIDERS':
-                key = widget['id']
-                prefix = '' if definition[
-                    'bypassIdForKey'] else definition['id'] + '.'
-                query[prefix + key] = {
-                    '$gte': card['cardSettings']['values'][widgetIndex][0],
-                    '$lte': card['cardSettings']['values'][widgetIndex][1]
-                }
-            elif widget['type'] == 'TAG_SEARCH':
-                if card['cardSettings']['values'][widgetIndex] is not None:
-                    query[card['cardSettings']
-                          ['id']] = card['cardSettings']['values'][widgetIndex]
-            elif widget['type'] == 'SP_SEARCH':
-                space_groups = card['cardSettings']['values'][widgetIndex]
-                if space_groups is not None and len(space_groups) > 0:
-                    query['spacegroup.number'] = {
-                        '$in':
-                        list(
-                            map(lambda s: s['space-group.number'],
-                                space_groups))
-                    }
-            elif widget['type'] == 'CHECKBOX_LIST':
-                query['provenance'] = card['cardSettings']['values'][0]
-
-    # bypass potentially big query
-    if len((query.keys())) < 2 and 'nelements' in query:
-        raise PreventUpdatse
-
-    properties = [
-        'volume', 'band_gap.search_gap.band_gap', 'material_id',
-        'full_formula', 'theoretical', 'has_bandstructure', 'tags', 'density',
-        'e_above_hull', 'nsites'
+filterGroups = [
+  {
+    'name': 'Material',
+    'collapsed': False,
+    'filters': [
+      {
+        'name': 'ID',
+        'id': 'task_ids',
+        'type': 'TEXT_INPUT',
+      },
+      {
+        'name': 'Elements',
+        'id': 'elements',
+        'type': 'MATERIALS_INPUT',
+        'props': {
+          'field': 'elements',
+        }
+      },
+      {
+        'name': 'Formula',
+        'id': 'formula',
+        'type': 'MATERIALS_INPUT',
+        'props': {
+          'field': 'formula',
+        }
+      }
     ]
+  },
+  {
+    'name': 'Properties',
+    'collapsed': False,
+    'filters': [
+      {
+        'name': 'Volume',
+        'id': 'volume',
+        'type': 'SLIDER',
+        'props': {
+          'domain': [0, 200]
+        }
+      },
+      {
+        'name': 'Density',
+        'id': 'density',
+        'type': 'SLIDER',
+        'props': {
+          'domain': [0, 200]
+        }
+      }
+    ]
+  }
+]
 
-    # This should be setted as an env variable instead
-    with MPRester() as m:
-        q = m.query(criteria=query, properties=properties)
+app.layout = html.Div(children=[
+  dash_mp_components.SearchUI(
+    columns=columns,
+    filterGroups=filterGroups,
+    baseURL="https://api.materialsproject.org/materials/",
+    apiKey=os.environ['MP_API_KEY']
 
-    print(q)
-    #print('RESULT', len(q))
-    return q
-
+  )
+])
 
 # use True to load a dev build of react
 if __name__ == '__main__':

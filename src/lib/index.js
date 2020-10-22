@@ -11,15 +11,16 @@ import CameraContext from './components/CameraContext.react';
 import GraphComponent from './components/GraphComponent.react';
 import JsonView from './components/JsonView.react';
 // search grid components
-import SearchGrid from './components/search/SearchGrid.react';
-import Search from './components/search/Search.react';
+// import SearchGrid from './components/search/SearchGrid.react';
+// import Search from './components/search/Search.react';
 // navbar
 import MatSidebar from './components/MatSidebar.react';
-import MatSearchGrid from './components/search/MatSearchGrid.react'
-import MatMaterialsTable from './components/search/MatMaterialsTable.react'
-import MatPrintViewContext from './components/search/MatPrintViewContext.react'
-import Scrollspy from './components/Scrollspy.react'
+// import MatSearchGrid from './components/search/MatSearchGrid.react'
+// import MatMaterialsTable from './components/search/MatMaterialsTable.react'
+// import MatPrintViewContext from './components/search/MatPrintViewContext.react'
+import Scrollspy from './components/Scrollspy.react';
 // new search component
+import SearchUI from './components/search/SearchUI.react';
 
 export {
     PeriodicTableInput,
@@ -31,11 +32,12 @@ export {
     GraphComponent,
     JsonView,
     CameraContext,
-    SearchGrid,
-    Search,
+    // SearchGrid,
+    // Search,
     MatSidebar,
-    MatPrintViewContext,
-    MatMaterialsTable,
-    MatSearchGrid,
-    Scrollspy
+    // MatPrintViewContext,
+    // MatMaterialsTable,
+    // MatSearchGrid,
+    Scrollspy,
+    SearchUI,
 };

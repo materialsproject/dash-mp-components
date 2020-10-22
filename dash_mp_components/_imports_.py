@@ -9,11 +9,7 @@ from .PeriodicContextTable import PeriodicContextTable
 from .PeriodicElement import PeriodicElement
 from .PeriodicFilter import PeriodicFilter
 from .PeriodicTableInput import PeriodicTableInput
-from .MatMaterialsTable import MatMaterialsTable
-from .MatPrintViewContext import MatPrintViewContext
-from .MatSearchGrid import MatSearchGrid
-from .Search import Search
-from .SearchGrid import SearchGrid
+from .SearchUI import SearchUI
 
 __all__ = [
     "CameraContext",
@@ -27,9 +23,5 @@ __all__ = [
     "PeriodicElement",
     "PeriodicFilter",
     "PeriodicTableInput",
-    "MatMaterialsTable",
-    "MatPrintViewContext",
-    "MatSearchGrid",
-    "Search",
-    "SearchGrid"
+    "SearchUI"
 ]

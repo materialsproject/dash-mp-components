@@ -61,8 +61,10 @@ class SimpleScene(BasePage):
 
     def check_path(self, number_of_path):
         # check if we can pass an ID to SVG element
+        print('ACTUAL NUMBER OF PATHS')
         print(len(self.dash_duo.find_elements(Selectors.path.value)),
               number_of_path)
+        print('ASSERTION')
         assert len(self.dash_duo.find_elements(
             Selectors.path.value)) == number_of_path
 
