@@ -37,7 +37,8 @@ SceneComponent.propTypes = {
      *    sphereSegments: 32, // decrease to improve performance
      *    cylinderSegments: 16, // decrease to improve performance
      *    staticScene: true, // disable if animation required
-     *    defaultZoom: 0.8, // 1 will completely fill viewport with scene
+     *    defaultZoom: 1, // 1 will zoom to fit object exactly, <1 will add padding between object and box bounds
+     *    zoomToFit2D: false // if true, will zoom to fit object only along the X and Y axes (not Z)
      *    extractAxis: false // will remove the axis from the main scene
      *    isMultiSelectionEnabled: false // allow to use shift to select,
      *    secondaryObjectView: true // show the selected object in a detail view

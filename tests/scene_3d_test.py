@@ -30,7 +30,7 @@ class SVG3DScene(unittest.TestCase):
     def setUp(self):
         self.scene = SimpleScene(self.dash_duo,
                                  scene,
-                                 settings={'renderer': 'svg'})
+                                 settings={'renderer': 'svg', 'defaultZoom': 0.8})
         self.app = dash.Dash(__name__)
         resize_browser_window(1920, 1080, self.dash_duo.driver)
         nameToVisibility = {'atoms': False}
@@ -187,9 +187,9 @@ class SVG3DScene(unittest.TestCase):
         dropdown.send_keys(Keys.ENTER)
         time.sleep(1)
         # investigate... this seems fine with webgl and
-        self.scene.check_path(381)
+        self.scene.check_path(343)
         # test incorrect scene
         dropdown.send_keys('Scene4')
         dropdown.send_keys(Keys.ENTER)
         time.sleep(1)
-        self.scene.check_path(381)
+        self.scene.check_path(343)
