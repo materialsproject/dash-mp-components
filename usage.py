@@ -10,7 +10,8 @@ columns = [
   {
     'name': 'Material Id',
     'selector': 'task_id',
-    'sortable': True
+    'format': 'LINK',
+    'formatArg': '/materials/'
   },
   {
     'name': 'Formula',
@@ -30,7 +31,7 @@ columns = [
     'selector': 'density',
     'sortable': True,
     'format': 'FIXED_DECIMAL',
-    'formatArg': 5
+    'formatArg': 2
   }
 ]
 
