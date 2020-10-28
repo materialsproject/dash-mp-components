@@ -1,6 +1,6 @@
 Package: dashMpComponents
 Title: Dash components for the Materials Project
-Version: 0.1.1
+Version: 0.1.2
 Description: Dash components for the Materials Project
 Depends: R (>= 3.0.2)
 Imports: 
