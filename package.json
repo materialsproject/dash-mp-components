@@ -33,7 +33,7 @@
     "author": "Materials Project Team <feedback@materialsproject.org>",
     "license": "BSD",
     "dependencies": {
-        "@materialsproject/mp-react-components": "^0.1.2-SNAPSHOT.1603910887",
+        "@materialsproject/mp-react-components": "^0.1.2-SNAPSHOT.1604357607",
         "file-loader": "^5.1.0",
         "prettier": "^1.19.1",
         "ramda": "^0.26.1",
