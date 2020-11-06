@@ -221,7 +221,7 @@ filterGroups = [
       }
     ]
   }
-];
+]
 
 app.layout = html.Div(children=[
   dash_mp_components.SearchUI(
