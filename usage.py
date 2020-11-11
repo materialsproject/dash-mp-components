@@ -44,7 +44,7 @@ columns = [
     'name': 'Formation Energy',
     'selector': 'formation_energy_per_atom',
     'format': 'SIGNIFICANT_FIGURES',
-    'formatArg': 4
+    'formatArg': 7
   },
   {
     'name': 'Is Stable',
@@ -54,7 +54,8 @@ columns = [
   },
   {
     'name': 'Spacegroup Symbol',
-    'selector': 'symmetry.symbol'
+    'selector': 'symmetry.symbol',
+    'format': 'SPACEGROUP_SYMBOL'
   },
   {
     'name': 'Spacegroup Number',
