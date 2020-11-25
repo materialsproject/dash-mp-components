@@ -81,15 +81,17 @@ example:
       }
     ]
 - baseURL (string; optional): The base URL to the API that this search UI should query
-e.g. "https://api.materialsproject.org/materials/"
+e.g. "https://api.materialsproject.org/search/"
+- autocompleteFormulaUrl (string; optional): Optional URL endpoint for fetching formula autocompletion results
+e.g. "https://api.materialsproject.org/materials/formula_autocomplete/"
 - apiKey (string; optional): API key (if needed) that will be used when making queries"""
     @_explicitize_args
-    def __init__(self, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, apiKey=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['columns', 'filterGroups', 'baseURL', 'apiKey']
+    def __init__(self, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey']
         self._type = 'SearchUI'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['columns', 'filterGroups', 'baseURL', 'apiKey']
+        self.available_properties = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

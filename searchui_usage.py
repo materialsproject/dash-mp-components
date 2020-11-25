@@ -91,6 +91,7 @@ app.layout = html.Div(children=[
     columns=columns,
     filterGroups=filterGroups,
     baseURL="https://api.materialsproject.org/materials/",
+    autocompleteFormulaUrl="https://api.materialsproject.org/materials/formula_autocomplete/",
     apiKey=os.environ['MP_API_KEY']
 
   )

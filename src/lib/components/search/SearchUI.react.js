@@ -94,9 +94,14 @@ SearchUI.propTypes = {
     filterGroups: PropTypes.array,
     /**
      * The base URL to the API that this search UI should query
-     * e.g. "https://api.materialsproject.org/materials/"
+     * e.g. "https://api.materialsproject.org/search/"
      */
     baseURL: PropTypes.string,
+    /**
+     * Optional URL endpoint for fetching formula autocompletion results
+     * e.g. "https://api.materialsproject.org/materials/formula_autocomplete/"
+     */
+    autocompleteFormulaUrl: PropTypes.string,
     /**
      * API key (if needed) that will be used when making queries
      */

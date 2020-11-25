@@ -686,7 +686,14 @@
                     "name": "string"
                 },
                 "required": false,
-                "description": "The base URL to the API that this search UI should query\ne.g. \"https://api.materialsproject.org/materials/\""
+                "description": "The base URL to the API that this search UI should query\ne.g. \"https://api.materialsproject.org/search/\""
+            },
+            "autocompleteFormulaUrl": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Optional URL endpoint for fetching formula autocompletion results\ne.g. \"https://api.materialsproject.org/materials/formula_autocomplete/\""
             },
             "apiKey": {
                 "type": {
