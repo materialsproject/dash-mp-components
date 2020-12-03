@@ -701,6 +701,13 @@
                 },
                 "required": false,
                 "description": "API key (if needed) that will be used when making queries"
+            },
+            "resultLabel": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "A noun in singular form to describe what a result represents (default: \"result\")\ne.g. \"material\"\nNote that only some special plural mappings are handled automatically (e.g. battery -> batteries)\nIn all other cases, an \"s\" is appended to resultLabel"
             }
         }
     }

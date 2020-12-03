@@ -90,10 +90,10 @@ app.layout = html.Div(children=[
   dash_mp_components.SearchUI(
     columns=columns,
     filterGroups=filterGroups,
-    baseURL="https://api.materialsproject.org/materials/",
+    baseURL="https://api.materialsproject.org/material/",
     autocompleteFormulaUrl="https://api.materialsproject.org/materials/formula_autocomplete/",
-    apiKey=os.environ['MP_API_KEY']
-
+    apiKey=os.environ['MP_API_KEY'],
+    resultLabel="material"
   )
 ])
 

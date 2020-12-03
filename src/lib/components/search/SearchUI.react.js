@@ -106,4 +106,11 @@ SearchUI.propTypes = {
      * API key (if needed) that will be used when making queries
      */
     apiKey: PropTypes.string,
+    /**
+     * A noun in singular form to describe what a result represents (default: "result")
+     * e.g. "material"
+     * Note that only some special plural mappings are handled automatically (e.g. battery -> batteries)
+     * In all other cases, an "s" is appended to resultLabel
+     */
+    resultLabel: PropTypes.string,
 };

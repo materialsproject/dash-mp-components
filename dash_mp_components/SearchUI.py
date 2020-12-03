@@ -84,14 +84,18 @@ example:
 e.g. "https://api.materialsproject.org/search/"
 - autocompleteFormulaUrl (string; optional): Optional URL endpoint for fetching formula autocompletion results
 e.g. "https://api.materialsproject.org/materials/formula_autocomplete/"
-- apiKey (string; optional): API key (if needed) that will be used when making queries"""
+- apiKey (string; optional): API key (if needed) that will be used when making queries
+- resultLabel (string; optional): A noun in singular form to describe what a result represents (default: "result")
+e.g. "material"
+Note that only some special plural mappings are handled automatically (e.g. battery -> batteries)
+In all other cases, an "s" is appended to resultLabel"""
     @_explicitize_args
-    def __init__(self, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey']
+    def __init__(self, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel']
         self._type = 'SearchUI'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey']
+        self.available_properties = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
