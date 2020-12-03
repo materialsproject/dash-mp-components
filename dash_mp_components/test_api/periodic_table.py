@@ -62,7 +62,7 @@ class PeriodicTable(BasePage):
 
     def find_element(self, symbol):
         table = self.dash_duo.find_element(self.get_table_selector())
-        selector = ".//div[./*[normalize-space() = '" + symbol + "']]"
+        selector = ".//button[./*[normalize-space() = '" + symbol + "']]"
         return table.find_element_by_xpath(selector)
 
     def checkDetailed(self, number, symbol, name):
