@@ -48,7 +48,15 @@ e.g.
             selector: 'is_stable',
             format: 'BOOLEAN',
             formatArg: ['yes', 'no'] // sets display values for truthy and falsy values
-          }
+          },
+          {
+            name: 'Energy Above Hull',
+            selector: 'e_above_hull',
+            format: 'FIXED_DECIMAL',
+            formatArg: 2,
+            units: 'meV/atom', // unit label string to show under column header
+            conversionFactor: 1000, // number by which to multiply result values in this columm
+          },
       ]
 - filterGroups (list; optional): An array of filter groups and their respective array of filters.
 A filter group is a collapsible section of the filters panel that contains one or more filters.
@@ -85,6 +93,8 @@ e.g.
               name: 'Volume',
               id: 'volume',
               type: 'SLIDER', // a dual range slider for setting a min and max value (must have two query params equal to <id>_min and <id>_max)
+              units: 'kg', // (optional) unit label string to show next to filter label
+              conversionFactor: 0.001, // (optional) number by which to multiply filter values for api queries
               props: {
                 domain: [0, 200] // sets the min and max values of the slider
               }
@@ -161,9 +171,9 @@ Note that only some special plural mappings are handled automatically (e.g. batt
 In all other cases, an "s" is appended to resultLabel
 - searchBarTooltip (string; optional): Optionally add a help icon with a tooltip in the search bar
 This should be used to provide instructions on how to use the search bar
-e.g. 
- 'Type in a comma-separated list of element symbols (e.g. Ga, N), 
- a chemical formula (e.g. C3N), or a material id (e.g. mp-10152). 
+e.g.
+ 'Type in a comma-separated list of element symbols (e.g. Ga, N),
+ a chemical formula (e.g. C3N), or a material id (e.g. mp-10152).
  You can also click elements on the periodic table to add them to your search.'"""
     @_explicitize_args
     def __init__(self, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, **kwargs):

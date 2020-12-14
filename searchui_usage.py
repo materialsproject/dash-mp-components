@@ -23,7 +23,8 @@ columns = [
     'selector': 'volume',
     'sortable': True,
     'format': 'SIGNIFICANT_FIGURES',
-    'formatArg': 5
+    'formatArg': 5,
+    'units': 'units'
   },
   {
     'name': 'Density',

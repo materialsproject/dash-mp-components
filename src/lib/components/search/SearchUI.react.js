@@ -55,7 +55,15 @@ SearchUI.propTypes = {
             selector: 'is_stable',
             format: 'BOOLEAN',
             formatArg: ['yes', 'no'] // sets display values for truthy and falsy values
-          }
+          },
+          {
+            name: 'Energy Above Hull',
+            selector: 'e_above_hull',
+            format: 'FIXED_DECIMAL',
+            formatArg: 2,
+            units: 'meV/atom', // unit label string to show under column header
+            conversionFactor: 1000, // number by which to multiply result values in this columm
+          },
       ]
     */
     columns: PropTypes.array,
@@ -95,6 +103,8 @@ SearchUI.propTypes = {
               name: 'Volume',
               id: 'volume',
               type: 'SLIDER', // a dual range slider for setting a min and max value (must have two query params equal to <id>_min and <id>_max)
+              units: 'kg', // (optional) unit label string to show next to filter label
+              conversionFactor: 0.001, // (optional) number by which to multiply filter values for api queries
               props: {
                 domain: [0, 200] // sets the min and max values of the slider
               }
