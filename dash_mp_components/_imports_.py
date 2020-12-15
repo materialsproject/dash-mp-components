@@ -9,6 +9,7 @@ from .PeriodicContextTable import PeriodicContextTable
 from .PeriodicElement import PeriodicElement
 from .PeriodicFilter import PeriodicFilter
 from .PeriodicTableInput import PeriodicTableInput
+from .GlobalSearchBar import GlobalSearchBar
 from .SearchUI import SearchUI
 
 __all__ = [
@@ -23,5 +24,6 @@ __all__ = [
     "PeriodicElement",
     "PeriodicFilter",
     "PeriodicTableInput",
+    "GlobalSearchBar",
     "SearchUI"
 ]
