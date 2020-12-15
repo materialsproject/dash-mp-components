@@ -88,6 +88,13 @@ filterGroups = [
 ]
 
 app.layout = html.Div(children=[
+  dash_mp_components.GlobalSearchBar(
+      redirectRoute="/materials",
+      hidePeriodicTable=False,
+      autocompleteFormulaUrl="https://api.materialsproject.org/materials/formula_autocomplete/",
+      apiKey=os.environ['MP_API_KEY'],
+      tooltip="Type in a comma-separated list of element symbols (e.g. Ga, N), a chemical formula (e.g. C3N), or a material id (e.g. mp-10152). You can also click elements on the periodic table to add them to your search."
+  ),
   dash_mp_components.SearchUI(
     columns=columns,
     filterGroups=filterGroups,

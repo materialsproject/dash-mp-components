@@ -21,6 +21,7 @@ import MatSidebar from './components/MatSidebar.react';
 import Scrollspy from './components/Scrollspy.react';
 // new search component
 import SearchUI from './components/search/SearchUI.react';
+import GlobalSearchBar from './components/search/GlobalSearchBar.react';
 
 export {
     PeriodicTableInput,
@@ -40,4 +41,5 @@ export {
     // MatSearchGrid,
     Scrollspy,
     SearchUI,
+    GlobalSearchBar,
 };
