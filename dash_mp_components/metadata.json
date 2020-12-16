@@ -809,8 +809,7 @@
             },
             "sortAscending": {
                 "type": {
-                    "name": "custom",
-                    "raw": "PropTypes.boolean"
+                    "name": "bool"
                 },
                 "required": false,
                 "description": "If including a sortField, set whether it should ascend by default\nTrue for ascending, False for descending"
