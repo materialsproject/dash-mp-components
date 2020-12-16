@@ -19,14 +19,15 @@ This should be used to provide instructions on how to use the search bar
 e.g.
  'Type in a comma-separated list of element symbols (e.g. Ga, N),
  a chemical formula (e.g. C3N), or a material id (e.g. mp-10152).
- You can also click elements on the periodic table to add them to your search.'"""
+ You can also click elements on the periodic table to add them to your search.'
+- placeholder (string; optional): Optionally add a string of text to show up in the top-level search bar"""
     @_explicitize_args
-    def __init__(self, redirectRoute=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, hidePeriodicTable=Component.UNDEFINED, tooltip=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['redirectRoute', 'autocompleteFormulaUrl', 'apiKey', 'hidePeriodicTable', 'tooltip']
+    def __init__(self, redirectRoute=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, hidePeriodicTable=Component.UNDEFINED, tooltip=Component.UNDEFINED, placeholder=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['redirectRoute', 'autocompleteFormulaUrl', 'apiKey', 'hidePeriodicTable', 'tooltip', 'placeholder']
         self._type = 'GlobalSearchBar'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['redirectRoute', 'autocompleteFormulaUrl', 'apiKey', 'hidePeriodicTable', 'tooltip']
+        self.available_properties = ['redirectRoute', 'autocompleteFormulaUrl', 'apiKey', 'hidePeriodicTable', 'tooltip', 'placeholder']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

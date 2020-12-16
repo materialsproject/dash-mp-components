@@ -174,14 +174,19 @@ This should be used to provide instructions on how to use the search bar
 e.g.
  'Type in a comma-separated list of element symbols (e.g. Ga, N),
  a chemical formula (e.g. C3N), or a material id (e.g. mp-10152).
- You can also click elements on the periodic table to add them to your search.'"""
+ You can also click elements on the periodic table to add them to your search.'
+- searchBarPlaceholder (string; optional): Optionally add a string of text to show up in the top-level search bar
+- sortField (string; optional): Optionally include a field to sort by on initial load
+Must be a valid field and included in your list of columns
+- sortAscending (optional): If including a sortField, set whether it should ascend by default
+True for ascending, False for descending"""
     @_explicitize_args
-    def __init__(self, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip']
+    def __init__(self, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip', 'searchBarPlaceholder', 'sortField', 'sortAscending']
         self._type = 'SearchUI'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip']
+        self.available_properties = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip', 'searchBarPlaceholder', 'sortField', 'sortAscending']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

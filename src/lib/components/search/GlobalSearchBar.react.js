@@ -41,4 +41,8 @@ GlobalSearchBar.propTypes = {
      *  You can also click elements on the periodic table to add them to your search.'
      */
     tooltip: PropTypes.string,
+    /**
+     * Optionally add a string of text to show up in the top-level search bar
+     */
+    placeholder: PropTypes.string,
 };

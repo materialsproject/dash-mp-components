@@ -202,4 +202,18 @@ SearchUI.propTypes = {
      *  You can also click elements on the periodic table to add them to your search.'
      */
     searchBarTooltip: PropTypes.string,
+    /**
+     * Optionally add a string of text to show up in the top-level search bar
+     */
+    searchBarPlaceholder: PropTypes.string,
+    /**
+     * Optionally include a field to sort by on initial load
+     * Must be a valid field and included in your list of columns
+     */
+    sortField: PropTypes.string,
+    /**
+     * If including a sortField, set whether it should ascend by default
+     * True for ascending, False for descending
+     */
+    sortAscending: PropTypes.boolean,
 };

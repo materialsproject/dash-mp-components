@@ -263,62 +263,6 @@
             }
         }
     },
-    "src/lib/components/Scrollspy.react.js": {
-        "description": "Component for building in-page navigation menus with scrollspy functionality",
-        "displayName": "Scrollspy",
-        "methods": [],
-        "props": {
-            "menuGroups": {
-                "type": {
-                    "name": "array"
-                },
-                "required": false,
-                "description": "An array of MenuGroup items that is used to build the menu and its links.\nEach MenuGroup has an optional label and a required 'items' array of MenuItems.\nEach MenuItem has a label that is rendered in the menu and a targetId that is the id of the element it should link to.\nDo not include '#' in targetId.\nexample:\n      [\n        {label: '...', items: [\n          {label: '...', targetId: '...'}, \n          {label: '...', targetId: '...', items: [\n            {label: '...', targetId: '...'}\n          }]\n        ]}\n      ]"
-            },
-            "activeClassName": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": "Class name applied to active links in the menu (default: 'is-active')"
-            },
-            "menuClassName": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": "Class name applied to the <aside> that contains the whole menu (default: 'menu')"
-            },
-            "menuGroupLabelClassName": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": "Class name applied to all menu group labels (default: 'menu-label')"
-            },
-            "menuItemContainerClassName": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": "Class name applied to each <ul> of menu items (default: 'menu-list')"
-            },
-            "menuItemClassName": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": "Class name applied to the <li> of each menu item (default: '')"
-            },
-            "offset": {
-                "type": {
-                    "name": "number"
-                },
-                "required": false,
-                "description": "An integer to determine the scroll offset from an item that will trigger it active (default: -20)"
-            }
-        }
-    },
     "src/lib/components/Simple3DScene.react.js": {
         "description": "",
         "displayName": "SceneComponent",
@@ -427,6 +371,90 @@
                 },
                 "required": false,
                 "description": "Animation type"
+            }
+        }
+    },
+    "src/lib/components/navigation/NavbarDropdown.react.js": {
+        "description": "Component for including dropdown menus inside a bulma navbar\nIncludes all of the default bulma classes for a navbar-dropdown",
+        "displayName": "NavbarDropdown",
+        "methods": [],
+        "props": {
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Extra class name applied to top level navbar-item\nThe \"navbar-item\" and \"has-dropdown\" classes are added automatically"
+            },
+            "label": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Text to include in the dropdown trigger item\nThis item automatically has the \"navbar-link\" class"
+            },
+            "items": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "An array of navbar-items to show in the dropdown when hovering over the label.\nAn item can be a link, a menu label, or a divider\nEach item can support the following properties:\n-- text: string (the text to show in the item)\n-- href: string (the href value for link items, ignored if item is menu label)\n-- isMenuLabel: boolean (sets this item as a label with the \"menu-label\" class)\n-- isDivider: boolean (sets this item as just a horizontal rule with the \"navbar-divider\" class)\ne.g.\n      [\n        {\n          text: \"Materials\",\n          href: \"/materials\"\n        },\n        {\n          text: \"Molecules\",\n          href: \"/molecules\"\n        },\n        {\n          isDivider: true\n        },\n        {\n          isMenuLabel: true,\n          text: \"Other\"\n        },\n        {\n          text: \"Different\",\n          href: \"/different\"\n        }\n      ]"
+            }
+        }
+    },
+    "src/lib/components/navigation/Scrollspy.react.js": {
+        "description": "Component for building in-page navigation menus with scrollspy functionality",
+        "displayName": "Scrollspy",
+        "methods": [],
+        "props": {
+            "menuGroups": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "An array of MenuGroup items that is used to build the menu and its links.\nEach MenuGroup has an optional label and a required 'items' array of MenuItems.\nEach MenuItem has a label that is rendered in the menu and a targetId that is the id of the element it should link to.\nDo not include '#' in targetId.\nexample:\n      [\n        {label: '...', items: [\n          {label: '...', targetId: '...'}, \n          {label: '...', targetId: '...', items: [\n            {label: '...', targetId: '...'}\n          }]\n        ]}\n      ]"
+            },
+            "activeClassName": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name applied to active links in the menu (default: 'is-active')"
+            },
+            "menuClassName": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name applied to the <aside> that contains the whole menu (default: 'menu')"
+            },
+            "menuGroupLabelClassName": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name applied to all menu group labels (default: 'menu-label')"
+            },
+            "menuItemContainerClassName": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name applied to each <ul> of menu items (default: 'menu-list')"
+            },
+            "menuItemClassName": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name applied to the <li> of each menu item (default: '')"
+            },
+            "offset": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": "An integer to determine the scroll offset from an item that will trigger it active (default: -20)"
             }
         }
     },
@@ -701,6 +729,13 @@
                 },
                 "required": false,
                 "description": "Optionally add a help icon with a tooltip in the search bar\nThis should be used to provide instructions on how to use the search bar\ne.g.\n 'Type in a comma-separated list of element symbols (e.g. Ga, N),\n a chemical formula (e.g. C3N), or a material id (e.g. mp-10152).\n You can also click elements on the periodic table to add them to your search.'"
+            },
+            "placeholder": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Optionally add a string of text to show up in the top-level search bar"
             }
         }
     },
@@ -757,6 +792,28 @@
                 },
                 "required": false,
                 "description": "Optionally add a help icon with a tooltip in the search bar\nThis should be used to provide instructions on how to use the search bar\ne.g.\n 'Type in a comma-separated list of element symbols (e.g. Ga, N),\n a chemical formula (e.g. C3N), or a material id (e.g. mp-10152).\n You can also click elements on the periodic table to add them to your search.'"
+            },
+            "searchBarPlaceholder": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Optionally add a string of text to show up in the top-level search bar"
+            },
+            "sortField": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Optionally include a field to sort by on initial load\nMust be a valid field and included in your list of columns"
+            },
+            "sortAscending": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.boolean"
+                },
+                "required": false,
+                "description": "If including a sortField, set whether it should ascend by default\nTrue for ascending, False for descending"
             }
         }
     }

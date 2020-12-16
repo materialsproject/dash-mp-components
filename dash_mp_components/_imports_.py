@@ -2,8 +2,9 @@ from .CameraContext import CameraContext
 from .GraphComponent import GraphComponent
 from .JsonView import JsonView
 from .MatSidebar import MatSidebar
-from .Scrollspy import Scrollspy
 from .Simple3DScene import Simple3DScene
+from .NavbarDropdown import NavbarDropdown
+from .Scrollspy import Scrollspy
 from .PeriodicContext import PeriodicContext
 from .PeriodicContextTable import PeriodicContextTable
 from .PeriodicElement import PeriodicElement
@@ -17,8 +18,9 @@ __all__ = [
     "GraphComponent",
     "JsonView",
     "MatSidebar",
-    "Scrollspy",
     "Simple3DScene",
+    "NavbarDropdown",
+    "Scrollspy",
     "PeriodicContext",
     "PeriodicContextTable",
     "PeriodicElement",

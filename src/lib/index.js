@@ -18,10 +18,11 @@ import MatSidebar from './components/MatSidebar.react';
 // import MatSearchGrid from './components/search/MatSearchGrid.react'
 // import MatMaterialsTable from './components/search/MatMaterialsTable.react'
 // import MatPrintViewContext from './components/search/MatPrintViewContext.react'
-import Scrollspy from './components/Scrollspy.react';
+import Scrollspy from './components/navigation/Scrollspy.react';
 // new search component
 import SearchUI from './components/search/SearchUI.react';
 import GlobalSearchBar from './components/search/GlobalSearchBar.react';
+import NavbarDropdown from './components/navigation/NavbarDropdown.react';
 
 export {
     PeriodicTableInput,
@@ -42,4 +43,5 @@ export {
     Scrollspy,
     SearchUI,
     GlobalSearchBar,
+    NavbarDropdown,
 };
