@@ -215,5 +215,5 @@ SearchUI.propTypes = {
      * If including a sortField, set whether it should ascend by default
      * True for ascending, False for descending
      */
-    sortAscending: PropTypes.boolean,
+    sortAscending: PropTypes.bool,
 };
