@@ -1,7 +1,6 @@
-import {CameraContextWrapper} from '@materialsproject/mp-react-components';
+import * as mp from '@materialsproject/mp-react-components';
 import React from 'react';
 import {Component} from 'react';
-
 
 /**
  *
@@ -10,13 +9,13 @@ import {Component} from 'react';
  *
  *
  */
-export default class CameraContext extends Component {
+export default class CameraContextProvider extends Component {
     render() {
         if (!!this.props.children) {
             return (
-                <CameraContextWrapper>
+                <mp.CameraContextProvider>
                     {this.props.children}
-                </CameraContextWrapper>
+                </mp.CameraContextProvider>
             );
         } else {
             return <div>NO SCENE PASSED</div>;
@@ -24,11 +23,11 @@ export default class CameraContext extends Component {
     }
 }
 
-CameraContext.propTypes = {
+CameraContextProvider.propTypes = {
     /**
      * The ID used to identify this component in Dash callbacks
      */
     id: PropTypes.string,
     children: PropTypes.any,
 };
-CameraContext.defaultProps = {};
+CameraContextProvider.defaultProps = {};

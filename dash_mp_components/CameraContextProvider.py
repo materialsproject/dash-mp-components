@@ -3,8 +3,8 @@
 from dash.development.base_component import Component, _explicitize_args
 
 
-class CameraContext(Component):
-    """A CameraContext component.
+class CameraContextProvider(Component):
+    """A CameraContextProvider component.
 Use this component to synchronize the camera of multiple
  SimpleSceneComponent
 
@@ -14,7 +14,7 @@ Keyword arguments:
     @_explicitize_args
     def __init__(self, children=None, id=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'id']
-        self._type = 'CameraContext'
+        self._type = 'CameraContextProvider'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
         self.available_properties = ['children', 'id']
@@ -29,4 +29,4 @@ Keyword arguments:
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')
-        super(CameraContext, self).__init__(children=children, **args)
+        super(CameraContextProvider, self).__init__(children=children, **args)

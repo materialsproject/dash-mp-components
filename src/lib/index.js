@@ -5,10 +5,10 @@ import PeriodicElement from './components/periodic-table/PeriodicElement.react';
 import PeriodicContext from './components/periodic-table/PeriodicContext.react';
 import PeriodicContextTable from './components/periodic-table/PeriodicContextTable.react';
 // three components
-import Simple3DScene from './components/Simple3DScene.react';
-import CameraContext from './components/CameraContext.react';
+import CrystalToolkitScene from './components/crystal-toolkit/CrystalToolkitScene.react';
+import CameraContextProvider from './components/crystal-toolkit/CameraContextProvider.react';
 // other ct components
-import GraphComponent from './components/GraphComponent.react';
+import GraphComponent from './components/crystal-toolkit/GraphComponent.react';
 import JsonView from './components/JsonView.react';
 // search grid components
 // import SearchGrid from './components/search/SearchGrid.react';
@@ -30,10 +30,10 @@ export {
     PeriodicElement,
     PeriodicContext,
     PeriodicContextTable,
-    Simple3DScene,
+    CrystalToolkitScene,
     GraphComponent,
     JsonView,
-    CameraContext,
+    CameraContextProvider,
     // SearchGrid,
     // Search,
     MatSidebar,

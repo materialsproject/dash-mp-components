@@ -10,9 +10,9 @@ from dash.exceptions import PreventUpdate
 #investigate why it does not work
 app = dash.Dash(__name__)
 app.layout = html.Div(children=[
-    dash_mp_components.CameraContext(children=[
+    dash_mp_components.CameraContextProvider(children=[
         html.Div([
-            dash_mp_components.Simple3DScene(
+            dash_mp_components.CrystalToolkitScene(
                 id='3d-2',
                 axisView='NW',
                 animation='none',
@@ -21,6 +21,12 @@ app.layout = html.Div(children=[
                     'staticScene': True
                 },
                 sceneSize=550,
+                imageRequest={
+                    "n_requests": 4,
+                    "filename": "test",
+                    "filetype": "png",
+                },
+                imageData="blarb",
                 data={
                     "name":
                     "_ct_StructureMoleculeComponent_1",
@@ -296,7 +302,7 @@ app.layout = html.Div(children=[
                     "visible":
                     True
                 }),
-            dash_mp_components.Simple3DScene(
+            dash_mp_components.CrystalToolkitScene(
                 id='3d-3',
                 sceneSize=800,
                 debug=True,
@@ -468,7 +474,16 @@ app.layout = html.Div(children=[
         ])
     ]),
     html.Div(id='selected-object'),
+    html.Div(id='image-data-output'),
 ])
+
+@app.callback(
+    Output('image-data-output', 'children'),
+    [Input('3d-2', 'imageData')]
+)
+def update_graph(image_data):
+    print(len(image_data))
+    return len(image_data)
 
 # use True to load a dev build of react
 if __name__ == '__main__':
