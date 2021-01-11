@@ -2,6 +2,7 @@ from .JsonView import JsonView
 from .MatSidebar import MatSidebar
 from .CameraContextProvider import CameraContextProvider
 from .CrystalToolkitScene import CrystalToolkitScene
+from .Download import Download
 from .GraphComponent import GraphComponent
 from .NavbarDropdown import NavbarDropdown
 from .Scrollspy import Scrollspy
@@ -18,6 +19,7 @@ __all__ = [
     "MatSidebar",
     "CameraContextProvider",
     "CrystalToolkitScene",
+    "Download",
     "GraphComponent",
     "NavbarDropdown",
     "Scrollspy",

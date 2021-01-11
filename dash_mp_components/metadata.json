@@ -343,6 +343,61 @@
             }
         }
     },
+    "src/lib/components/crystal-toolkit/Download.react.js": {
+        "description": "",
+        "displayName": "Download",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks."
+            },
+            "data": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.object"
+                },
+                "required": false,
+                "description": "When set, a download is invoked using a Blob.\nAccepts an object with the following structure:\n      {\n        filename: string;\n        content: any;\n        isBase64: boolean (optional);\n        isDataURL: boolean (optional);\n        mimeType: string (optional, default: 'text/plan');\n      }\nProperties in data object take precedent over component props"
+            },
+            "isBase64": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.bool"
+                },
+                "required": false,
+                "description": "Set to true if data.content is a base64 string"
+            },
+            "isDataURL": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.bool"
+                },
+                "required": false,
+                "description": "Set to true if data.content is a data url"
+            },
+            "mimeType": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.string"
+                },
+                "required": false,
+                "description": "Default value for mimeType."
+            },
+            "setProps": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+            }
+        }
+    },
     "src/lib/components/crystal-toolkit/GraphComponent.react.js": {
         "description": "",
         "displayName": "GraphComponent",

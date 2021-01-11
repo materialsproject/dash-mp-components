@@ -7,6 +7,7 @@ import PeriodicContextTable from './components/periodic-table/PeriodicContextTab
 // three components
 import CrystalToolkitScene from './components/crystal-toolkit/CrystalToolkitScene.react';
 import CameraContextProvider from './components/crystal-toolkit/CameraContextProvider.react';
+import Download from './components/crystal-toolkit/Download.react';
 // other ct components
 import GraphComponent from './components/crystal-toolkit/GraphComponent.react';
 import JsonView from './components/JsonView.react';
@@ -44,4 +45,5 @@ export {
     SearchUI,
     GlobalSearchBar,
     NavbarDropdown,
+    Download,
 };

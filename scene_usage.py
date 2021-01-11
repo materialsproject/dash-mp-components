@@ -474,16 +474,22 @@ app.layout = html.Div(children=[
         ])
     ]),
     html.Div(id='selected-object'),
-    html.Div(id='image-data-output'),
+    dash_mp_components.Download(id='image-data-download'),
 ])
 
 @app.callback(
-    Output('image-data-output', 'children'),
+    Output('image-data-download', 'data'),
     [Input('3d-2', 'imageData')]
 )
-def update_graph(image_data):
+def download_scene(image_data):
     print(len(image_data))
-    return len(image_data)
+    data = {
+        'filename': 'scene',
+        'content': image_data,
+        'mimeType': 'image/png',
+        'isDataURL': True,
+    }
+    return data
 
 # use True to load a dev build of react
 if __name__ == '__main__':
