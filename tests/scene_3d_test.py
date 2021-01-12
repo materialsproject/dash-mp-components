@@ -69,6 +69,7 @@ class SVG3DScene(unittest.TestCase):
                 'filename': 'test',
                 'n_requests': value
             }
+            print(image_request)
             return image_request
 
         @self.app.callback(Output('scene-download', 'data'),
