@@ -1,6 +1,6 @@
 import dash_mp_components
 import dash
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 import dash_html_components as html
 import dash_core_components as dcc
 from tests.grid import grid
@@ -12,8 +12,10 @@ app = dash.Dash(__name__)
 app.layout = html.Div(children=[
     dash_mp_components.CameraContextProvider(children=[
         html.Div([
+            html.Button('download', id='download-button'),
+            dash_mp_components.Download(id='scene-download'),
             dash_mp_components.CrystalToolkitScene(
-                id='3d-2',
+                id='3d',
                 axisView='NW',
                 animation='none',
                 settings={
@@ -21,12 +23,6 @@ app.layout = html.Div(children=[
                     'staticScene': True
                 },
                 sceneSize=550,
-                imageRequest={
-                    "n_requests": 4,
-                    "filename": "test",
-                    "filetype": "png",
-                },
-                imageData="blarb",
                 data={
                     "name":
                     "_ct_StructureMoleculeComponent_1",
@@ -303,7 +299,7 @@ app.layout = html.Div(children=[
                     True
                 }),
             dash_mp_components.CrystalToolkitScene(
-                id='3d-3',
+                id='3d-2',
                 sceneSize=800,
                 debug=True,
                 inletSize=150,
@@ -473,23 +469,35 @@ app.layout = html.Div(children=[
                 }),
         ])
     ]),
-    html.Div(id='selected-object'),
-    dash_mp_components.Download(id='image-data-download'),
+    html.Div(id='selected-object')
 ])
 
 @app.callback(
-    Output('image-data-download', 'data'),
-    [Input('3d-2', 'imageData')]
+    Output('3d', 'imageRequest'),
+    [Input('download-button', 'n_clicks')]
 )
-def download_scene(image_data):
-    print(len(image_data))
-    data = {
-        'filename': 'scene',
-        'content': image_data,
-        'mimeType': 'image/png',
-        'isDataURL': True,
+def download_click(value):
+    value = {
+        'filetype': 'png',
+        'filename': 'test',
+        'n_requests': value
     }
-    return data
+    return value
+
+@app.callback(
+    Output('scene-download', 'data'),
+    [Input('3d', 'imageData'), Input('3d', 'imageRequest')]
+)
+def download_scene(image_data, image_request):
+    if image_data is None:
+        return None
+    else:
+        data = {
+            'filename': image_request['filename'] + '.' + image_request['filetype'],
+            'content': image_data,
+            'isDataURL': True,
+        }
+        return data
 
 # use True to load a dev build of react
 if __name__ == '__main__':

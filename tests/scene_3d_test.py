@@ -38,6 +38,7 @@ class SVG3DScene(unittest.TestCase):
             html.Button('....click....', id='toggler-button'),
             html.Button('....click....', id='toggler-size-button'),
             html.Button('....download.', id='download-button'),
+            dash_mp_components.Download(id='scene-download'),
             dcc.Dropdown(id='demo-dropdown',
                          options=[{
                              'label': 'Scene1',
@@ -60,7 +61,7 @@ class SVG3DScene(unittest.TestCase):
                      children=[self.scene.render(self.sceneSize)])
         ])
 
-        @self.app.callback(Output('3d', 'downloadRequest'),
+        @self.app.callback(Output('3d', 'imageRequest'),
                            [Input('download-button', 'n_clicks')])
         def download(value):
             value = {
@@ -70,6 +71,19 @@ class SVG3DScene(unittest.TestCase):
             }
             print("chosen value", value)
             return value
+
+        @self.app.callback(Output('scene-download', 'data'),
+                            [Input('3d', 'imageData'), Input('3d', 'imageRequest')])
+        def download_scene(image_data, image_request):
+            if image_data is None:
+                return None
+            else:
+                data = {
+                    'filename': image_request['filename'] + '.' + image_request['filetype'],
+                    'content': image_data,
+                    'isDataURL': True,
+                }
+                return data
 
         @self.app.callback(Output('3d', 'toggleVisibility'),
                            [Input('toggler-button', 'n_clicks')])
