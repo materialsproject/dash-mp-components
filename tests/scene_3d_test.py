@@ -63,14 +63,13 @@ class SVG3DScene(unittest.TestCase):
 
         @self.app.callback(Output('3d', 'imageRequest'),
                            [Input('download-button', 'n_clicks')])
-        def download(value):
-            value = {
+        def download_click(value):
+            image_request = {
                 'fileType': 'png',
                 'filename': 'test',
                 'n_requests': value
             }
-            print("chosen value", value)
-            return value
+            return image_request
 
         @self.app.callback(Output('scene-download', 'data'),
                             [Input('3d', 'imageData'), Input('3d', 'imageRequest')])
@@ -116,7 +115,7 @@ class SVG3DScene(unittest.TestCase):
                                              params)
         resize_browser_window(500, 500, self.dash_duo.driver)
         self.dash_duo.find_element('#download-button').click()
-        time.sleep(5)  # give time for downloading the file
+        time.sleep(7)  # give time for downloading the file
         assert Path(home + '/test.png').is_file() is True
 
     def test_visibility(self):
