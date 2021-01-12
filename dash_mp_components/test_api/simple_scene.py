@@ -37,7 +37,7 @@ class SimpleScene(BasePage):
             'height': '500px'
         },
                         children=[
-                            dash_mp_components.Simple3DScene(
+                            dash_mp_components.CrystalToolkitScene(
                                 id=self.id,
                                 settings=self.settings,
                                 data=self.scene,
