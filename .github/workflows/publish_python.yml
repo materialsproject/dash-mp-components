@@ -17,7 +17,11 @@ jobs:
                   python-version: 3.7
             - uses: actions/setup-node@v1
               with:
-                  node-version: '12.x'
+                  node-version: 12.x
+                  registry-url: https://registry.npmjs.org/
+                  scope: '@mat-github-ci'
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
             - name: Install dependencies
               run: |
                   sudo apt-get update
@@ -32,8 +36,6 @@ jobs:
             - name: Publish package to NPM
               run: |
                   npm publish
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
             - name: Publish a Python distribution to test PyPI
               env:
                   PI_PY_SECRET: ${{ secrets.PYPI_TOKEN }}
