@@ -14,27 +14,27 @@ app.layout = html.Div(className='scrollspy', children=[
     offset=0
   ),
   html.Div(className='content', children=[
-      html.Div(id='one', children=[
-          html.H1('One'),
-          html.P('lorem ipsum'),
-      ]),
-      html.Div(id='two', children=[
-          html.H1('Two'),
-          html.P('lorem ipsum'),
-      ]),
-      html.Div(id='three', children=[
-          html.H1('Three'),
-          html.P('lorem ipsum'),
-      ]),
-      dash_mp_components.Select(
-          options=[
-              {'label': 'One', 'value': 1},
-              {'label': 'Two', 'value': 2}
-          ],
-          value=2,
-          isClearable=True,
-          arbitraryProps={'closeMenuOnSelect': False}
-      )
+    html.Div(id='one', children=[
+        html.H1('One'),
+        html.P('lorem ipsum'),
+    ]),
+    html.Div(id='two', children=[
+        html.H1('Two'),
+        html.P('lorem ipsum'),
+    ]),
+    html.Div(id='three', children=[
+        html.H1('Three'),
+        html.P('lorem ipsum'),
+    ]),
+    dash_mp_components.Select(
+      options=[
+          {'label': 'One', 'value': 1},
+          {'label': 'Two', 'value': 2}
+      ],
+      value=2,
+      isClearable=True,
+      arbitraryProps={'closeMenuOnSelect': False}
+    )
   ])
 ])
 
