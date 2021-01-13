@@ -29,7 +29,11 @@ jobs:
               run: |
                   npm run build
                   python setup.py sdist
-                  # npm publish
+            - name: Publish package to NPM
+              run: |
+                  npm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
             - name: Publish a Python distribution to test PyPI
               env:
                   PI_PY_SECRET: ${{ secrets.PYPI_TOKEN }}
