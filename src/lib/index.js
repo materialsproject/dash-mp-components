@@ -11,6 +11,8 @@ import Download from './components/crystal-toolkit/Download.react';
 // other ct components
 import GraphComponent from './components/crystal-toolkit/GraphComponent.react';
 import JsonView from './components/JsonView.react';
+import Select from './components/search/Select.react';
+
 // search grid components
 // import SearchGrid from './components/search/SearchGrid.react';
 // import Search from './components/search/Search.react';
@@ -46,4 +48,5 @@ export {
     GlobalSearchBar,
     NavbarDropdown,
     Download,
+    Select,
 };

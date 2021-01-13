@@ -13,6 +13,7 @@ from .PeriodicFilter import PeriodicFilter
 from .PeriodicTableInput import PeriodicTableInput
 from .GlobalSearchBar import GlobalSearchBar
 from .SearchUI import SearchUI
+from .Select import Select
 
 __all__ = [
     "JsonView",
@@ -29,5 +30,6 @@ __all__ = [
     "PeriodicFilter",
     "PeriodicTableInput",
     "GlobalSearchBar",
-    "SearchUI"
+    "SearchUI",
+    "Select"
 ]

@@ -26,6 +26,15 @@ app.layout = html.Div(className='scrollspy', children=[
           html.H1('Three'),
           html.P('lorem ipsum'),
       ]),
+      dash_mp_components.Select(
+          options=[
+              {'label': 'One', 'value': 1},
+              {'label': 'Two', 'value': 2}
+          ],
+          value=2,
+          isClearable=True,
+          arbitraryProps={'closeMenuOnSelect': False}
+      )
   ])
 ])
 

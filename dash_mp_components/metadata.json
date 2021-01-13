@@ -878,5 +878,68 @@
                 "description": "If including a sortField, set whether it should ascend by default\nTrue for ascending, False for descending"
             }
         }
+    },
+    "src/lib/components/search/Select.react.js": {
+        "description": "Wrapper component for react-select\nThis can be used as an alternative to dcc.Dropdown\nAutomatically adds the wrapper class \"react-select-container\"\nand the class prefix \"react-select-\" to all the elements created by react-select",
+        "displayName": "Select",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "options": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "List of objects to be used as options in the dropdown\ne.g.\n        [\n          {\n            'label': 'One',\n            'value': 1\n          },\n          {\n            'label': 'Two',\n            'value': 2\n          }\n        ]"
+            },
+            "value": {
+                "type": {
+                    "name": "any"
+                },
+                "required": false,
+                "description": "The value of the select dropdown.\nAccepts either the value itself or the an entire object from the options array.\ne.g. 1 or {'label': 'One', 'value': 1}"
+            },
+            "defaultValue": {
+                "type": {
+                    "name": "any"
+                },
+                "required": false,
+                "description": "The default value of the select dropdown.\nAccepts either the value itself or the selected object from the options array.\ne.g. 1 or {'label': 'One', 'value': 1}"
+            },
+            "isClearable": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Determines if dropdown has an 'x' icon for\nclearing the current value.\n(default: False)"
+            },
+            "isMulti": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true if select should allow multiple\noptions to be selected.\n(default: False)"
+            },
+            "arbitraryProps": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "Object for placing all other props that\nare supported by react-select but are not\nexplicitly defined here.\nSee https://react-select.com/props\n\nThis is a workaround because Dash components\ncannot accept props that aren't explicitly defined.\ne.g.\n        {\n          'closeMenuOnSelect': False,\n          'escapeClearsValue': True \n        }"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            }
+        }
     }
 }
