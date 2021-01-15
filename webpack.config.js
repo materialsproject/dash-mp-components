@@ -1,9 +1,14 @@
 const path = require('path');
 const packagejson = require('./package.json');
 const TerserPlugin = require('terser-webpack-plugin');
-const dashLibraryName = packagejson.name.replace(/-/g, '_');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
     .BundleAnalyzerPlugin;
+
+// Remove scope name from package
+// and replace '-' with '_'
+const packageNameSplit = packagejson.name.split('/');
+const packageNameWithoutScope = packageNameSplit[packageNameSplit.length - 1];
+dashLibraryName = packageNameWithoutScope.replace(/-/g, '_');
 
 module.exports = (env, argv) => {
     let mode;

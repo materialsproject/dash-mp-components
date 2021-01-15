@@ -27,9 +27,8 @@ e.g.
 - value (boolean | number | string | dict | list; optional): The value of the select dropdown.
 Accepts either the value itself or the an entire object from the options array.
 e.g. 1 or {'label': 'One', 'value': 1}
-- defaultValue (boolean | number | string | dict | list; optional): The default value of the select dropdown.
-Accepts either the value itself or the selected object from the options array.
-e.g. 1 or {'label': 'One', 'value': 1}
+- defaultValue (boolean | number | string | dict | list; optional): The default value assigned if no selection is made.
+(default: null)
 - isClearable (boolean; optional): Determines if dropdown has an 'x' icon for
 clearing the current value.
 (default: False)

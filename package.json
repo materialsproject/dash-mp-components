@@ -1,5 +1,5 @@
 {
-    "name": "dash-mp-components",
+    "name": "@materialsproject/dash-mp-components",
     "version": "0.1.30",
     "description": "Dash components for the Materials Project",
     "repository": {

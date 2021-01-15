@@ -910,7 +910,7 @@
                     "name": "any"
                 },
                 "required": false,
-                "description": "The default value of the select dropdown.\nAccepts either the value itself or the selected object from the options array.\ne.g. 1 or {'label': 'One', 'value': 1}"
+                "description": "The default value assigned if no selection is made.\n(default: null)"
             },
             "isClearable": {
                 "type": {

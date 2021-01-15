@@ -23,7 +23,9 @@ _filepath = _os.path.abspath(_os.path.join(_basepath, 'package-info.json'))
 with open(_filepath) as f:
     package = json.load(f)
 
-package_name = package['name'].replace(' ', '_').replace('-', '_')
+package_name_split = package['name'].split('/')
+package_name_without_scope = package_name_split[len(package_name_split) - 1]
+package_name = package_name_without_scope.replace(' ', '_').replace('-', '_')
 __version__ = package['version']
 
 _current_path = _os.path.dirname(_os.path.abspath(__file__))
@@ -36,14 +38,14 @@ _js_dist = [
         'dash_mp_components.min.js',
         'external_url':
         'https://unpkg.com/{0}@{2}/{1}/{1}.min.js'.format(
-            package_name, __name__, __version__),
+            package['name'], __name__, __version__),
         'namespace':
         package_name
     },
     {
         'relative_package_path': 'dash_mp_components.min.js.map',
         'external_url': 'https://unpkg.com/{0}@{2}/{1}/{1}.min.js.map'.format(
-            package_name, __name__, __version__),
+            package['name'], __name__, __version__),
         'namespace': package_name,
         'dynamic': True
     }
