@@ -3,7 +3,7 @@ import dash
 import dash_html_components as html
 import dash_core_components as dcc
 from dash_mp_components.test_api import resize_browser_window, SimpleScene
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 import time
 
 import pytest
@@ -62,25 +62,21 @@ class SVG3DScene(unittest.TestCase):
         ])
 
         @self.app.callback(Output('3d', 'imageRequest'),
-                           [Input('download-button', 'n_clicks')])
+                           [Input('download-button', 'n_clicks')], prevent_initial_call=True)
         def download_click(value):
-            image_request = {
-                'filetype': 'png',
-                'filename': 'test',
-                'n_requests': value
-            }
+            image_request = {'filetype': 'png'}
             return image_request
 
         @self.app.callback(Output('scene-download', 'data'),
-                            [Input('3d', 'imageData'), Input('3d', 'imageRequest')])
-        def download_scene(image_data, image_request):
+                            Input('3d', 'imageDataTimestamp'), State('3d', 'imageData'), State('3d', 'imageRequest'))
+        def download_scene(image_data_timestamp, image_data, image_request):
             if image_data is None:
                 return None
             else:
                 data = {
-                    'filename': image_request['filename'] + '.' + image_request['filetype'],
+                    'filename': 'test.' + image_request['filetype'],
                     'content': image_data,
-                    'isDataURL': True,
+                    'isDataURL': True
                 }
                 return data
 

@@ -56,13 +56,14 @@ CrystalToolkitScene.propTypes = {
     toggleVisibility: PropTypes.object,
 
     /**
-     * Set to trigger a screenshot or scene download. Should be an object with
-     * the structure:
+     * Set to trigger a screenshot or scene download.
+     * Must be an object with the following structure:
      * {
-     *    "n_requests": n_requests, // increment to trigger a new download request
-     *    "filename": request_filename, // the download filename
-     *    "filetype": "png", // the download format
+     *    "filetype": "png" // the image format ("png", "dae")
      * }
+     * Passing this prop as an object ensures that
+     * new requests are triggered any time the prop
+     * is set.
      */
     imageRequest: PropTypes.object,
 
@@ -72,6 +73,14 @@ CrystalToolkitScene.propTypes = {
      * This string can be downloaded as the filetype specified in your imageRequest object
      */
     imageData: PropTypes.string,
+
+    /**
+     * THIS PROP IS SET AUTOMATICALLY
+     * Date string that represents the time imageData was set.
+     * This is to prevent race conditions between imageRequest and imageData
+     * when being used in dash callbacks.
+     */
+    imageDataTimestamp: PropTypes.number,
 
     /**
      * Dash-assigned callback that should be called whenever any of the

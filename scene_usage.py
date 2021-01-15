@@ -474,26 +474,25 @@ app.layout = html.Div(children=[
 
 @app.callback(
     Output('3d', 'imageRequest'),
-    [Input('download-button', 'n_clicks')]
+    Input('download-button', 'n_clicks'),
+    prevent_initial_call=True
 )
 def download_click(value):
-    value = {
-        'filetype': 'png',
-        'filename': 'test',
-        'n_requests': value
-    }
-    return value
+    image_request = {'filetype': 'png'}
+    return image_request
 
 @app.callback(
     Output('scene-download', 'data'),
-    [Input('3d', 'imageData'), Input('3d', 'imageRequest')]
+    Input('3d', 'imageDataTimestamp'),
+    State('3d', 'imageData'),
+    State('3d', 'imageRequest')
 )
-def download_scene(image_data, image_request):
+def download_scene(image_data_timestamp, image_data, image_request):
     if image_data is None:
         return None
     else:
         data = {
-            'filename': image_request['filename'] + '.' + image_request['filetype'],
+            'filename': 'test.' + image_request['filetype'],
             'content': image_data,
             'isDataURL': True,
         }
