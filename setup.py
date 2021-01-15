@@ -6,16 +6,18 @@ from setuptools import setup
 with open('package.json') as f:
     package = json.load(f)
 
-# package_name = package["name"].replace(" ", "_").replace("-", "_")
+package_name_split = package['name'].split('/')
+package_name_without_scope = package_name_split[len(package_name_split) - 1]
+package_name = package_name_without_scope.replace(' ', '_').replace('-', '_')
 
 setup(
-    name=package["name"],
+    name=package_name,
     version=package["version"],
     author=package['author'],
-    packages=[package["name"]],
+    packages=[package_name],
     include_package_data=True,
     license=package['license'],
-    description=package.get('description', package["name"]),
+    description=package.get('description', package_name),
     install_requires=[],
     classifiers = [
         'Framework :: Dash',
