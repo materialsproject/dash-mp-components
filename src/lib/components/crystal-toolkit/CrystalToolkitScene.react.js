@@ -118,4 +118,28 @@ CrystalToolkitScene.propTypes = {
      * Animation type
      */
     animation: PropTypes.string,
+    /**
+     * THIS PROP IS SET AUTOMATICALLY
+     * Object that maintains the current state of the camera.
+     * e.g.
+     * {
+     *   position: {x: 0, y: 0, z: 0},
+     *   quarternion: {x: 0, y: 0, z: 0, w: 0},
+     *   zoom: 1,
+     *   setByComponentId: "1",
+     *   following: true
+     * }
+     */
+    currentCameraState: PropTypes.object,
+    /**
+     * Object for setting the scene to a custom camera state.
+     * When modified, the camera will update to new custom state.
+     * e.g.
+     * {
+     *   position: {x: 0, y: 0, z: 0},
+     *   quarternion: {x: 0, y: 0, z: 0, w: 0},
+     *   zoom: 1
+     * }
+     */
+    customCameraState: PropTypes.object,
 };

@@ -13,6 +13,14 @@ app.layout = html.Div(children=[
     dash_mp_components.CameraContextProvider(children=[
         html.Div([
             html.Button('download', id='download-button'),
+            dcc.Dropdown(
+                id='camera-dropdown',
+                options=[
+                    {'label': 'Camera 1', 'value': '1'},
+                    {'label': 'Camera 2', 'value': '2'}
+                ],
+                value=None
+            ),
             dash_mp_components.Download(id='scene-download'),
             dash_mp_components.CrystalToolkitScene(
                 id='3d',
@@ -301,7 +309,6 @@ app.layout = html.Div(children=[
             dash_mp_components.CrystalToolkitScene(
                 id='3d-2',
                 sceneSize=800,
-                debug=True,
                 inletSize=150,
                 settings={'extractAxis': True},
                 inletPadding=0,
@@ -469,13 +476,14 @@ app.layout = html.Div(children=[
                 }),
         ])
     ]),
-    html.Div(id='selected-object')
+    html.Div(id='selected-object'),
+    html.Div(id='camera-state')
 ])
 
 @app.callback(
     Output('3d', 'imageRequest'),
     Input('download-button', 'n_clicks'),
-    prevent_initial_call=True
+    prevent_initial_call = True
 )
 def download_click(value):
     image_request = {'filetype': 'png'}
@@ -497,6 +505,28 @@ def download_scene(image_data_timestamp, image_data, image_request):
             'isDataURL': True,
         }
         return data
+
+@app.callback(
+    Output('camera-state', 'children'),
+    Input('3d', 'currentCameraState')
+)
+def displayCameraState(cameraState):
+    return str(cameraState)
+
+@app.callback(
+    Output('3d', 'customCameraState'),
+    Input('camera-dropdown', 'value'),
+    prevent_initial_call = True
+)
+def setCameraState(value):
+    camera1 = {'quaternion': {'x': 0.45323322248063663, 'y': -0.19211399660364464, 'z': -0.04059530657140626, 'w': 0.8694963366416021}, 'position': {'x': -3.1285286932473033, 'y': -6.516909748108364, 'z': 4.347104346539403}, 'zoom': 4}
+    camera2 = {'quaternion': {'x': 0.3254391314224242, 'y': -0.6580540026853074, 'z': 0.30271759909375007, 'w': 0.6077963116766826}, 'position': {'x': -5.085615562776471, 'y': -6.697755737091662, 'z': -0.6570411578164062}, 'zoom': 4}
+    if value == '1':
+        return camera1
+    elif value == '2':
+        return camera2
+    else:
+        return None
 
 # use True to load a dev build of react
 if __name__ == '__main__':

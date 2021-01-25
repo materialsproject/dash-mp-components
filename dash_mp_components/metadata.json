@@ -348,6 +348,22 @@
                 },
                 "required": false,
                 "description": "Animation type"
+            },
+            "currentCameraState": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.object"
+                },
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nObject that maintains the current state of the camera.\ne.g.\n{\n  position: {x: 0, y: 0, z: 0},\n  quarternion: {x: 0, y: 0, z: 0, w: 0},\n  zoom: 1,\n  setByComponentId: \"1\",\n  following: true\n}"
+            },
+            "customCameraState": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.object"
+                },
+                "required": false,
+                "description": "Object for setting the scene to a custom camera state.\nWhen modified, the camera will update to new custom state.\ne.g.\n{\n  position: {x: 0, y: 0, z: 0},\n  quarternion: {x: 0, y: 0, z: 0, w: 0},\n  zoom: 1\n}"
             }
         }
     },

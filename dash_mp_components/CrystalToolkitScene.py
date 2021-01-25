@@ -56,14 +56,32 @@ to know which objects are currently selected in the scene
 - inletSize (optional): Size of the axis view
 - inletPadding (optional): Padding of the axis view
 - debug (optional): Display a debug view
-- animation (optional): Animation type"""
+- animation (optional): Animation type
+- currentCameraState (optional): THIS PROP IS SET AUTOMATICALLY
+Object that maintains the current state of the camera.
+e.g.
+{
+  position: {x: 0, y: 0, z: 0},
+  quarternion: {x: 0, y: 0, z: 0, w: 0},
+  zoom: 1,
+  setByComponentId: "1",
+  following: true
+}
+- customCameraState (optional): Object for setting the scene to a custom camera state.
+When modified, the camera will update to new custom state.
+e.g.
+{
+  position: {x: 0, y: 0, z: 0},
+  quarternion: {x: 0, y: 0, z: 0, w: 0},
+  zoom: 1
+}"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, imageRequest=Component.UNDEFINED, imageData=Component.UNDEFINED, imageDataTimestamp=Component.UNDEFINED, selectedObject=Component.UNDEFINED, sceneSize=Component.UNDEFINED, axisView=Component.UNDEFINED, inletSize=Component.UNDEFINED, inletPadding=Component.UNDEFINED, debug=Component.UNDEFINED, animation=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'data', 'settings', 'toggleVisibility', 'imageRequest', 'imageData', 'imageDataTimestamp', 'setProps', 'selectedObject', 'sceneSize', 'axisView', 'inletSize', 'inletPadding', 'debug', 'animation']
+    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, imageRequest=Component.UNDEFINED, imageData=Component.UNDEFINED, imageDataTimestamp=Component.UNDEFINED, selectedObject=Component.UNDEFINED, sceneSize=Component.UNDEFINED, axisView=Component.UNDEFINED, inletSize=Component.UNDEFINED, inletPadding=Component.UNDEFINED, debug=Component.UNDEFINED, animation=Component.UNDEFINED, currentCameraState=Component.UNDEFINED, customCameraState=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'data', 'settings', 'toggleVisibility', 'imageRequest', 'imageData', 'imageDataTimestamp', 'setProps', 'selectedObject', 'sceneSize', 'axisView', 'inletSize', 'inletPadding', 'debug', 'animation', 'currentCameraState', 'customCameraState']
         self._type = 'CrystalToolkitScene'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'data', 'settings', 'toggleVisibility', 'imageRequest', 'imageData', 'imageDataTimestamp', 'setProps', 'selectedObject', 'sceneSize', 'axisView', 'inletSize', 'inletPadding', 'debug', 'animation']
+        self.available_properties = ['id', 'data', 'settings', 'toggleVisibility', 'imageRequest', 'imageData', 'imageDataTimestamp', 'setProps', 'selectedObject', 'sceneSize', 'axisView', 'inletSize', 'inletPadding', 'debug', 'animation', 'currentCameraState', 'customCameraState']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

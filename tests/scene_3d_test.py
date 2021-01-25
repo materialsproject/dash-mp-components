@@ -54,6 +54,15 @@ class SVG3DScene(unittest.TestCase):
                              'value': 'sdf'
                          }],
                          value=scene),
+            dcc.Dropdown(
+                id='camera-dropdown',
+                options=[
+                    {'label': 'Camera 1', 'value': '1'},
+                    {'label': 'Camera 2', 'value': '2'}
+                ],
+                value=None
+            ),
+            html.Div(id='camera-state'),
             html.Div(style={
                 'width': '600px',
                 'height': '600px'
@@ -96,6 +105,28 @@ class SVG3DScene(unittest.TestCase):
         def display_output(value):
             print("chosen value", value)
             return value
+
+        @self.app.callback(
+            Output('camera-state', 'children'),
+            Input('3d', 'currentCameraState')
+        )
+        def displayCameraState(cameraState):
+            return str(cameraState)
+
+        @self.app.callback(
+            Output('3d', 'customCameraState'),
+            [Input('camera-dropdown', 'value')],
+            prevent_initial_call = True
+        )
+        def setCameraState(value):
+            camera1 = {'quaternion': {'x': 0.45323322248063663, 'y': -0.19211399660364464, 'z': -0.04059530657140626, 'w': 0.8694963366416021}, 'position': {'x': -3.1285286932473033, 'y': -6.516909748108364, 'z': 4.347104346539403}, 'zoom': 4}
+            camera2 = {'quaternion': {'x': 0.3254391314224242, 'y': -0.6580540026853074, 'z': 0.30271759909375007, 'w': 0.6077963116766826}, 'position': {'x': -5.085615562776471, 'y': -6.697755737091662, 'z': -0.6570411578164062}, 'zoom': 4}
+            if value == '1':
+                return camera1
+            elif value == '2':
+                return camera2
+            else:
+                return None
 
         self.dash_duo.start_server(self.app)
         # wait for table to be there
@@ -202,3 +233,12 @@ class SVG3DScene(unittest.TestCase):
         dropdown.send_keys(Keys.ENTER)
         time.sleep(1)
         self.scene.check_path(343)
+
+    def test_camera_state(self):
+        # Select Camera 2 from dropdown
+        self.dash_duo.find_element('#camera-dropdown').click()
+        self.dash_duo.driver.find_element_by_xpath("//*[contains(text(), 'Camera 2')]").click()
+        # Get text that displays currentCameraState json as a string
+        camera_state = self.dash_duo.find_element('#camera-state').text
+        # Assert that camera state changed to new position
+        self.assertTrue("position': {'x': -5.085615562776471" in camera_state)
