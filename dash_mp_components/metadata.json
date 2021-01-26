@@ -363,7 +363,7 @@
                     "raw": "PropTypes.object"
                 },
                 "required": false,
-                "description": "Object for setting the scene to a custom camera state.\nWhen modified, the camera will update to new custom state.\ne.g.\n{\n  position: {x: 0, y: 0, z: 0},\n  quarternion: {x: 0, y: 0, z: 0, w: 0},\n  zoom: 1\n}"
+                "description": "Object for setting the scene to a custom camera state.\nWhen modified, the camera will update to new custom state.\ne.g.\n{\n  position: {x: 0, y: 0, z: 0},\n  quarternion: {x: 0, y: 0, z: 0, w: 0}, (optional)\n  zoom: 1 (optional)\n}"
             }
         }
     },

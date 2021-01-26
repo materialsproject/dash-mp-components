@@ -72,8 +72,8 @@ When modified, the camera will update to new custom state.
 e.g.
 {
   position: {x: 0, y: 0, z: 0},
-  quarternion: {x: 0, y: 0, z: 0, w: 0},
-  zoom: 1
+  quarternion: {x: 0, y: 0, z: 0, w: 0}, (optional)
+  zoom: 1 (optional)
 }"""
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, imageRequest=Component.UNDEFINED, imageData=Component.UNDEFINED, imageDataTimestamp=Component.UNDEFINED, selectedObject=Component.UNDEFINED, sceneSize=Component.UNDEFINED, axisView=Component.UNDEFINED, inletSize=Component.UNDEFINED, inletPadding=Component.UNDEFINED, debug=Component.UNDEFINED, animation=Component.UNDEFINED, currentCameraState=Component.UNDEFINED, customCameraState=Component.UNDEFINED, **kwargs):

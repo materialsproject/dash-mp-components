@@ -313,6 +313,7 @@ app.layout = html.Div(children=[
                 settings={'extractAxis': True},
                 inletPadding=0,
                 axisView='SW',
+                debug=True,
                 data={
                     "name":
                     "StructureMoleculeComponent",
