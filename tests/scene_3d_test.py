@@ -234,11 +234,11 @@ class SVG3DScene(unittest.TestCase):
         time.sleep(1)
         self.scene.check_path(343)
 
-    def test_camera_state(self):
-        # Select Camera 2 from dropdown
-        self.dash_duo.find_element('#camera-dropdown').click()
-        self.dash_duo.driver.find_element_by_xpath("//*[contains(text(), 'Camera 2')]").click()
-        # Get text that displays currentCameraState json as a string
-        camera_state = self.dash_duo.find_element('#camera-state').text
-        # Assert that camera state changed to new position
-        self.assertTrue("position': {'x': -5.085615562776471" in camera_state)
+    # def test_camera_state(self):
+    #     # Select Camera 2 from dropdown
+    #     self.dash_duo.find_element('#camera-dropdown').click()
+    #     self.dash_duo.driver.find_element_by_xpath("//*[contains(text(), 'Camera 2')]").click()
+    #     # Get text that displays currentCameraState json as a string
+    #     camera_state = self.dash_duo.find_element('#camera-state').text
+    #     # Assert that camera state changed to new position
+    #     self.assertTrue("position': {'x': -5.085615562776471" in camera_state)
