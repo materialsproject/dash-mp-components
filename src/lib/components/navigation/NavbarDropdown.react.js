@@ -15,15 +15,20 @@ export default class NavbarDropdown extends Component {
 
 NavbarDropdown.propTypes = {
     /**
+     * Use the children prop to set the dropdown trigger content
+     * This can be simple text or a component
+     * The trigger will automatically be wrapped with the "navbar-link" class
+     */
+    children: PropTypes.node,
+    /**
      * Extra class name applied to top level navbar-item
      * The "navbar-item" and "has-dropdown" classes are added automatically
      */
     className: PropTypes.string,
     /**
-     * Text to include in the dropdown trigger item
-     * This item automatically has the "navbar-link" class
+     * Set to true to hide the default angle down arrow created by bulma
      */
-    label: PropTypes.string,
+    isArrowless: PropTypes.bool,
     /**
    * An array of navbar-items to show in the dropdown when hovering over the label.
    * An item can be a link, a menu label, or a divider
@@ -32,6 +37,7 @@ NavbarDropdown.propTypes = {
    * -- href: string (the href value for link items, ignored if item is menu label)
    * -- isMenuLabel: boolean (sets this item as a label with the "menu-label" class)
    * -- isDivider: boolean (sets this item as just a horizontal rule with the "navbar-divider" class)
+   * -- openInNewTab: boolean (will open link in a new tab, only works if href is a full url)
    * e.g.
       [
         {
@@ -50,10 +56,11 @@ NavbarDropdown.propTypes = {
           text: "Other"
         },
         {
-          text: "Different",
-          href: "/different"
+          text: "External Site",
+          href: "https://externalsite.com",
+          openInNewTab: true
         }
       ]
-   */
+  */
     items: PropTypes.array,
 };

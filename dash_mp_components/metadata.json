@@ -466,6 +466,13 @@
         "displayName": "NavbarDropdown",
         "methods": [],
         "props": {
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Use the children prop to set the dropdown trigger content\nThis can be simple text or a component\nThe trigger will automatically be wrapped with the \"navbar-link\" class"
+            },
             "className": {
                 "type": {
                     "name": "string"
@@ -473,19 +480,19 @@
                 "required": false,
                 "description": "Extra class name applied to top level navbar-item\nThe \"navbar-item\" and \"has-dropdown\" classes are added automatically"
             },
-            "label": {
+            "isArrowless": {
                 "type": {
-                    "name": "string"
+                    "name": "bool"
                 },
                 "required": false,
-                "description": "Text to include in the dropdown trigger item\nThis item automatically has the \"navbar-link\" class"
+                "description": "Set to true to hide the default angle down arrow created by bulma"
             },
             "items": {
                 "type": {
                     "name": "array"
                 },
                 "required": false,
-                "description": "An array of navbar-items to show in the dropdown when hovering over the label.\nAn item can be a link, a menu label, or a divider\nEach item can support the following properties:\n-- text: string (the text to show in the item)\n-- href: string (the href value for link items, ignored if item is menu label)\n-- isMenuLabel: boolean (sets this item as a label with the \"menu-label\" class)\n-- isDivider: boolean (sets this item as just a horizontal rule with the \"navbar-divider\" class)\ne.g.\n      [\n        {\n          text: \"Materials\",\n          href: \"/materials\"\n        },\n        {\n          text: \"Molecules\",\n          href: \"/molecules\"\n        },\n        {\n          isDivider: true\n        },\n        {\n          isMenuLabel: true,\n          text: \"Other\"\n        },\n        {\n          text: \"Different\",\n          href: \"/different\"\n        }\n      ]"
+                "description": "An array of navbar-items to show in the dropdown when hovering over the label.\nAn item can be a link, a menu label, or a divider\nEach item can support the following properties:\n-- text: string (the text to show in the item)\n-- href: string (the href value for link items, ignored if item is menu label)\n-- isMenuLabel: boolean (sets this item as a label with the \"menu-label\" class)\n-- isDivider: boolean (sets this item as just a horizontal rule with the \"navbar-divider\" class)\n-- openInNewTab: boolean (will open link in a new tab, only works if href is a full url)\ne.g.\n      [\n        {\n          text: \"Materials\",\n          href: \"/materials\"\n        },\n        {\n          text: \"Molecules\",\n          href: \"/molecules\"\n        },\n        {\n          isDivider: true\n        },\n        {\n          isMenuLabel: true,\n          text: \"Other\"\n        },\n        {\n          text: \"External Site\",\n          href: \"https://externalsite.com\",\n          openInNewTab: true\n        }\n      ]"
             }
         }
     },

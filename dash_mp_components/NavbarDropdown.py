@@ -9,10 +9,12 @@ Component for including dropdown menus inside a bulma navbar
 Includes all of the default bulma classes for a navbar-dropdown
 
 Keyword arguments:
+- children (a list of or a singular dash component, string or number; optional): Use the children prop to set the dropdown trigger content
+This can be simple text or a component
+The trigger will automatically be wrapped with the "navbar-link" class
 - className (string; optional): Extra class name applied to top level navbar-item
 The "navbar-item" and "has-dropdown" classes are added automatically
-- label (string; optional): Text to include in the dropdown trigger item
-This item automatically has the "navbar-link" class
+- isArrowless (boolean; optional): Set to true to hide the default angle down arrow created by bulma
 - items (list; optional): An array of navbar-items to show in the dropdown when hovering over the label.
 An item can be a link, a menu label, or a divider
 Each item can support the following properties:
@@ -20,6 +22,7 @@ Each item can support the following properties:
 -- href: string (the href value for link items, ignored if item is menu label)
 -- isMenuLabel: boolean (sets this item as a label with the "menu-label" class)
 -- isDivider: boolean (sets this item as just a horizontal rule with the "navbar-divider" class)
+-- openInNewTab: boolean (will open link in a new tab, only works if href is a full url)
 e.g.
       [
         {
@@ -38,17 +41,18 @@ e.g.
           text: "Other"
         },
         {
-          text: "Different",
-          href: "/different"
+          text: "External Site",
+          href: "https://externalsite.com",
+          openInNewTab: true
         }
       ]"""
     @_explicitize_args
-    def __init__(self, className=Component.UNDEFINED, label=Component.UNDEFINED, items=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['className', 'label', 'items']
+    def __init__(self, children=None, className=Component.UNDEFINED, isArrowless=Component.UNDEFINED, items=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'className', 'isArrowless', 'items']
         self._type = 'NavbarDropdown'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['className', 'label', 'items']
+        self.available_properties = ['children', 'className', 'isArrowless', 'items']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
@@ -60,4 +64,4 @@ e.g.
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')
-        super(NavbarDropdown, self).__init__(**args)
+        super(NavbarDropdown, self).__init__(children=children, **args)
