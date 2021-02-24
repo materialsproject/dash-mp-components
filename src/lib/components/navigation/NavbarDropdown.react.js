@@ -30,37 +30,42 @@ NavbarDropdown.propTypes = {
      */
     isArrowless: PropTypes.bool,
     /**
-   * An array of navbar-items to show in the dropdown when hovering over the label.
-   * An item can be a link, a menu label, or a divider
-   * Each item can support the following properties:
-   * -- text: string (the text to show in the item)
-   * -- href: string (the href value for link items, ignored if item is menu label)
-   * -- isMenuLabel: boolean (sets this item as a label with the "menu-label" class)
-   * -- isDivider: boolean (sets this item as just a horizontal rule with the "navbar-divider" class)
-   * -- openInNewTab: boolean (will open link in a new tab, only works if href is a full url)
-   * e.g.
-      [
-        {
-          text: "Materials",
-          href: "/materials"
-        },
-        {
-          text: "Molecules",
-          href: "/molecules"
-        },
-        {
-          isDivider: true
-        },
-        {
-          isMenuLabel: true,
-          text: "Other"
-        },
-        {
-          text: "External Site",
-          href: "https://externalsite.com",
-          openInNewTab: true
-        }
-      ]
-  */
+     * Set to true to apply bulma's "is-right" class to the navbar-dropdown
+     * This aligns the dropdown menu with the right side of the trigger
+     */
+    isRight: PropTypes.bool,
+    /**
+     * An array of navbar-items to show in the dropdown when hovering over the label.
+     * An item can be a link, a menu label, or a divider
+     * Each item can support the following properties:
+     * -- text: string (the text to show in the item)
+     * -- href: string (the href value for link items, ignored if item is menu label)
+     * -- isMenuLabel: boolean (sets this item as a label with the "menu-label" class)
+     * -- isDivider: boolean (sets this item as just a horizontal rule with the "navbar-divider" class)
+     * -- openInNewTab: boolean (will open link in a new tab, only works if href is a full url)
+     * e.g.
+        [
+          {
+            text: "Materials",
+            href: "/materials"
+          },
+          {
+            text: "Molecules",
+            href: "/molecules"
+          },
+          {
+            isDivider: true
+          },
+          {
+            isMenuLabel: true,
+            text: "Other"
+          },
+          {
+            text: "External Site",
+            href: "https://externalsite.com",
+            openInNewTab: true
+          }
+        ]
+    */
     items: PropTypes.array,
 };

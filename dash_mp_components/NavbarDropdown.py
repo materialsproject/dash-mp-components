@@ -15,6 +15,8 @@ The trigger will automatically be wrapped with the "navbar-link" class
 - className (string; optional): Extra class name applied to top level navbar-item
 The "navbar-item" and "has-dropdown" classes are added automatically
 - isArrowless (boolean; optional): Set to true to hide the default angle down arrow created by bulma
+- isRight (boolean; optional): Set to true to apply bulma's "is-right" class to the navbar-dropdown 
+This aligns the dropdown menu with the right side of the trigger
 - items (list; optional): An array of navbar-items to show in the dropdown when hovering over the label.
 An item can be a link, a menu label, or a divider
 Each item can support the following properties:
@@ -24,35 +26,35 @@ Each item can support the following properties:
 -- isDivider: boolean (sets this item as just a horizontal rule with the "navbar-divider" class)
 -- openInNewTab: boolean (will open link in a new tab, only works if href is a full url)
 e.g.
-      [
-        {
-          text: "Materials",
-          href: "/materials"
-        },
-        {
-          text: "Molecules",
-          href: "/molecules"
-        },
-        {
-          isDivider: true
-        },
-        {
-          isMenuLabel: true,
-          text: "Other"
-        },
-        {
-          text: "External Site",
-          href: "https://externalsite.com",
-          openInNewTab: true
-        }
-      ]"""
+        [
+          {
+            text: "Materials",
+            href: "/materials"
+          },
+          {
+            text: "Molecules",
+            href: "/molecules"
+          },
+          {
+            isDivider: true
+          },
+          {
+            isMenuLabel: true,
+            text: "Other"
+          },
+          {
+            text: "External Site",
+            href: "https://externalsite.com",
+            openInNewTab: true
+          }
+        ]"""
     @_explicitize_args
-    def __init__(self, children=None, className=Component.UNDEFINED, isArrowless=Component.UNDEFINED, items=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'className', 'isArrowless', 'items']
+    def __init__(self, children=None, className=Component.UNDEFINED, isArrowless=Component.UNDEFINED, isRight=Component.UNDEFINED, items=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'className', 'isArrowless', 'isRight', 'items']
         self._type = 'NavbarDropdown'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'className', 'isArrowless', 'items']
+        self.available_properties = ['children', 'className', 'isArrowless', 'isRight', 'items']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

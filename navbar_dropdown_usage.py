@@ -9,7 +9,8 @@ app.layout = html.Div([
   html.Div(className='navbar-menu', children=[
     html.Div(className='navbar-start', children=[
       dash_mp_components.NavbarDropdown(
-        html.H2("Test"), 
+        html.H2("Test"),
+        isRight=True,
         items=[
           {'text': 'One', 'href': '/one'},
           {'text': 'Two', 'href': '#two'},
