@@ -15,7 +15,7 @@ The trigger will automatically be wrapped with the "navbar-link" class
 - className (string; optional): Extra class name applied to top level navbar-item
 The "navbar-item" and "has-dropdown" classes are added automatically
 - isArrowless (boolean; optional): Set to true to hide the default angle down arrow created by bulma
-- isRight (boolean; optional): Set to true to apply bulma's "is-right" class to the navbar-dropdown 
+- isRight (boolean; optional): Set to true to apply bulma's "is-right" class to the navbar-dropdown
 This aligns the dropdown menu with the right side of the trigger
 - items (list; optional): An array of navbar-items to show in the dropdown when hovering over the label.
 An item can be a link, a menu label, or a divider

@@ -492,7 +492,7 @@
                     "name": "bool"
                 },
                 "required": false,
-                "description": "Set to true to apply bulma's \"is-right\" class to the navbar-dropdown \nThis aligns the dropdown menu with the right side of the trigger"
+                "description": "Set to true to apply bulma's \"is-right\" class to the navbar-dropdown\nThis aligns the dropdown menu with the right side of the trigger"
             },
             "items": {
                 "type": {
