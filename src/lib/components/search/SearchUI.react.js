@@ -216,4 +216,9 @@ SearchUI.propTypes = {
      * True for ascending, False for descending
      */
     sortAscending: PropTypes.bool,
+    /**
+     * Optionally include/exclude the top search bar
+     * Defaults to true (i.e. include search bar)
+     */
+    hasSearchBar: PropTypes.bool,
 };
