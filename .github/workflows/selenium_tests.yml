@@ -3,7 +3,7 @@ name: selenium_tests
 on:
     push:
         branches:
-            - master
+            - main
             - E2E_TESTS
 jobs:
     e2e-test:
