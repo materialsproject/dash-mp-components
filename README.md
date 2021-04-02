@@ -114,6 +114,24 @@ The components are currently published in the test index, so you'll need to spec
 the index when you install the package
 `pip install --index-url https://test.pypi.org/simple/ dash-mp-components`
 
-
 The npm package is NOT scoped to materialsProject org.
 Dash does not build correctly component
+
+## Components Usage
+
+### SearchUI
+
+Component for rendering advanced search interfaces for data in an API. Renders results in a data table alongside a set of filters that map to properties in the data.
+
+#### columns.format
+
+| Value               | formatArg | Description |
+| ------------------- | --------- | ----------- |
+| FIXED_DECIMAL       |
+| SIGNIFICANT_FIGURES |
+| FORMULA             |
+| LINK                |
+| BOOLEAN             |
+| BOOLEAN_CLASS       |
+| SPACEGROUP_SYMBOL   |
+| POINTGROUP          |

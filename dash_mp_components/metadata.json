@@ -921,6 +921,13 @@
                 },
                 "required": false,
                 "description": "Optionally include/exclude the top search bar\nDefaults to true (i.e. include search bar)"
+            },
+            "conditionalRowStyles": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "List of conditions for styling rows based on a property (selector) and a value\nAccepts a list of \"condition\" objects which must specify a...\n selector: the name of the data property to use for the condition\n value: the value that meets the condition\n style: object of styles supplied in \"CSS-in-JS\" format\nNote that this prop currently only supports checking for \nvalue equivalence (i.e. row[selector] === value)\nexample:\n      [\n        {\n          selector: \"myProperty\",\n          value: true,\n          style: {\n            backgroundColor: \"#ddd\"\n          }\n        }\n      ]"
             }
         }
     },

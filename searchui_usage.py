@@ -32,6 +32,12 @@ columns = [
     'sortable': True,
     'format': 'FIXED_DECIMAL',
     'formatArg': 5
+  },
+  {
+    'name': 'Is Stable',
+    'selector': 'is_stable',
+    'sortable': True,
+    'format': 'BOOLEAN'
   }
 ]
 
@@ -105,7 +111,17 @@ app.layout = html.Div(children=[
     apiKey=os.environ['MP_API_KEY'],
     resultLabel="material",
     searchBarTooltip="Test",
-    hasSearchBar=False
+    hasSearchBar=False,
+    conditionalRowStyles=[
+      {
+        'selector': 'is_stable',
+        'value': True,
+        'style': {
+          'backgroundColor': '#DBE2FA',
+          'boxShadow': '4px 0px 0px 0px #000 inset',
+        },
+      },
+    ]
   )
 ])
 

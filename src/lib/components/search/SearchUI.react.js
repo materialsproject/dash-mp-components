@@ -221,4 +221,24 @@ SearchUI.propTypes = {
      * Defaults to true (i.e. include search bar)
      */
     hasSearchBar: PropTypes.bool,
+    /**
+     * List of conditions for styling rows based on a property (selector) and a value
+     * Accepts a list of "condition" objects which must specify a...
+     *  selector: the name of the data property to use for the condition
+     *  value: the value that meets the condition
+     *  style: object of styles supplied in "CSS-in-JS" format
+     * Note that this prop currently only supports checking for 
+     * value equivalence (i.e. row[selector] === value)
+     * example:
+      [
+        {
+          selector: "myProperty",
+          value: true,
+          style: {
+            backgroundColor: "#ddd"
+          }
+        }
+      ]
+     */
+    conditionalRowStyles: PropTypes.array,
 };

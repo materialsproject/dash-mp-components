@@ -181,14 +181,31 @@ Must be a valid field and included in your list of columns
 - sortAscending (boolean; optional): If including a sortField, set whether it should ascend by default
 True for ascending, False for descending
 - hasSearchBar (boolean; optional): Optionally include/exclude the top search bar
-Defaults to true (i.e. include search bar)"""
+Defaults to true (i.e. include search bar)
+- conditionalRowStyles (list; optional): List of conditions for styling rows based on a property (selector) and a value
+Accepts a list of "condition" objects which must specify a...
+ selector: the name of the data property to use for the condition
+ value: the value that meets the condition
+ style: object of styles supplied in "CSS-in-JS" format
+Note that this prop currently only supports checking for 
+value equivalence (i.e. row[selector] === value)
+example:
+      [
+        {
+          selector: "myProperty",
+          value: true,
+          style: {
+            backgroundColor: "#ddd"
+          }
+        }
+      ]"""
     @_explicitize_args
-    def __init__(self, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip', 'searchBarPlaceholder', 'sortField', 'sortAscending', 'hasSearchBar']
+    def __init__(self, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip', 'searchBarPlaceholder', 'sortField', 'sortAscending', 'hasSearchBar', 'conditionalRowStyles']
         self._type = 'SearchUI'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip', 'searchBarPlaceholder', 'sortField', 'sortAscending', 'hasSearchBar']
+        self.available_properties = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip', 'searchBarPlaceholder', 'sortField', 'sortAscending', 'hasSearchBar', 'conditionalRowStyles']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
