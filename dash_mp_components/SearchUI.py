@@ -9,6 +9,7 @@ Component for rendering advanced search interfaces for data in an API
 Renders results in a data table alongside a set of filters that map to properties in the data.
 
 Keyword arguments:
+- id (string; optional): The ID used to identify this component in Dash callbacks
 - columns (list; optional): An array of column definitions for the results in the SearchUIDataTable
 Column properties are based on the react-data-table column settings (https://github.com/jbetancur/react-data-table-component#columns)
 The "format" property must match one of these pre-defined strings: 
@@ -198,14 +199,18 @@ example:
             backgroundColor: "#ddd"
           }
         }
-      ]"""
+      ]
+- selectableRows (boolean; optional): Set to true to show a checkbox next to each row
+- selectedRows (list; optional): Array of selected rows.
+This prop is dynamically updated using setProps
+and can be accessed via dash callback"""
     @_explicitize_args
-    def __init__(self, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip', 'searchBarPlaceholder', 'sortField', 'sortAscending', 'hasSearchBar', 'conditionalRowStyles']
+    def __init__(self, id=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip', 'searchBarPlaceholder', 'sortField', 'sortAscending', 'hasSearchBar', 'conditionalRowStyles', 'selectableRows', 'selectedRows']
         self._type = 'SearchUI'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip', 'searchBarPlaceholder', 'sortField', 'sortAscending', 'hasSearchBar', 'conditionalRowStyles']
+        self.available_properties = ['id', 'columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip', 'searchBarPlaceholder', 'sortField', 'sortAscending', 'hasSearchBar', 'conditionalRowStyles', 'selectableRows', 'selectedRows']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

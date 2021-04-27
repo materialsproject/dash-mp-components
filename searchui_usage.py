@@ -1,8 +1,11 @@
+import os
+
 import dash_mp_components
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
-import os
+from dash.exceptions import PreventUpdate
+from dash.dependencies import Input, Output, State
 
 app = dash.Dash(__name__)
 
@@ -94,6 +97,7 @@ filterGroups = [
 ]
 
 app.layout = html.Div(children=[
+  html.Div(id="selected-rows"),
   html.Div(
     dash_mp_components.GlobalSearchBar(
         redirectRoute="/materials",
@@ -104,6 +108,7 @@ app.layout = html.Div(children=[
     className="mp-home"
   ),
   dash_mp_components.SearchUI(
+    id="search-ui-demo",
     columns=columns,
     filterGroups=filterGroups,
     baseURL="https://api.materialsproject.org/search/",
@@ -112,6 +117,7 @@ app.layout = html.Div(children=[
     resultLabel="material",
     searchBarTooltip="Test",
     hasSearchBar=False,
+    selectableRows=True,
     conditionalRowStyles=[
       {
         'selector': 'is_stable',
@@ -124,6 +130,15 @@ app.layout = html.Div(children=[
     ]
   )
 ])
+
+@app.callback(
+    Output('selected-rows', 'children'),
+    Input('search-ui-demo', 'selectedRows')
+)
+def showNumberOfSelectedRows(selectedRows):
+    if not selectedRows:
+      raise PreventUpdate
+    return f"Selected rows: {str(len(selectedRows))}"
 
 # use True to load a dev build of react
 if __name__ == '__main__':

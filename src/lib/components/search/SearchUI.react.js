@@ -16,6 +16,17 @@ export default class SearchUI extends Component {
 
 SearchUI.propTypes = {
     /**
+     * The ID used to identify this component in Dash callbacks
+     */
+    id: PropTypes.string,
+
+    /**
+     * Dash-assigned callback that should be called whenever any of the
+     * properties change
+     */
+    setProps: PropTypes.func,
+
+    /**
      * An array of column definitions for the results in the SearchUIDataTable
      * Column properties are based on the react-data-table column settings (https://github.com/jbetancur/react-data-table-component#columns)
      * The "format" property must match one of these pre-defined strings: 
@@ -67,6 +78,7 @@ SearchUI.propTypes = {
       ]
     */
     columns: PropTypes.array,
+
     /**
      * An array of filter groups and their respective array of filters.
      * A filter group is a collapsible section of the filters panel that contains one or more filters.
@@ -172,20 +184,24 @@ SearchUI.propTypes = {
       ]
     */
     filterGroups: PropTypes.array,
+
     /**
      * The base URL to the API that this search UI should query
      * e.g. "https://api.materialsproject.org/search/"
      */
     baseURL: PropTypes.string,
+
     /**
      * Optional URL endpoint for fetching formula autocompletion results
      * e.g. "https://api.materialsproject.org/materials/formula_autocomplete/"
      */
     autocompleteFormulaUrl: PropTypes.string,
+
     /**
      * API key (if needed) that will be used when making queries
      */
     apiKey: PropTypes.string,
+
     /**
      * A noun in singular form to describe what a result represents (default: "result")
      * e.g. "material"
@@ -193,6 +209,7 @@ SearchUI.propTypes = {
      * In all other cases, an "s" is appended to resultLabel
      */
     resultLabel: PropTypes.string,
+
     /**
      * Optionally add a help icon with a tooltip in the search bar
      * This should be used to provide instructions on how to use the search bar
@@ -202,25 +219,30 @@ SearchUI.propTypes = {
      *  You can also click elements on the periodic table to add them to your search.'
      */
     searchBarTooltip: PropTypes.string,
+
     /**
      * Optionally add a string of text to show up in the top-level search bar
      */
     searchBarPlaceholder: PropTypes.string,
+
     /**
      * Optionally include a field to sort by on initial load
      * Must be a valid field and included in your list of columns
      */
     sortField: PropTypes.string,
+
     /**
      * If including a sortField, set whether it should ascend by default
      * True for ascending, False for descending
      */
     sortAscending: PropTypes.bool,
+
     /**
      * Optionally include/exclude the top search bar
      * Defaults to true (i.e. include search bar)
      */
     hasSearchBar: PropTypes.bool,
+
     /**
      * List of conditions for styling rows based on a property (selector) and a value
      * Accepts a list of "condition" objects which must specify a...
@@ -241,4 +263,16 @@ SearchUI.propTypes = {
       ]
      */
     conditionalRowStyles: PropTypes.array,
+
+    /**
+     * Set to true to show a checkbox next to each row
+     */
+    selectableRows: PropTypes.bool,
+
+    /**
+     * Array of selected rows.
+     * This prop is dynamically updated using setProps
+     * and can be accessed via dash callback
+     */
+    selectedRows: PropTypes.array,
 };

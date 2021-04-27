@@ -845,6 +845,20 @@
         "displayName": "SearchUI",
         "methods": [],
         "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
             "columns": {
                 "type": {
                     "name": "array"
@@ -928,6 +942,20 @@
                 },
                 "required": false,
                 "description": "List of conditions for styling rows based on a property (selector) and a value\nAccepts a list of \"condition\" objects which must specify a...\n selector: the name of the data property to use for the condition\n value: the value that meets the condition\n style: object of styles supplied in \"CSS-in-JS\" format\nNote that this prop currently only supports checking for \nvalue equivalence (i.e. row[selector] === value)\nexample:\n      [\n        {\n          selector: \"myProperty\",\n          value: true,\n          style: {\n            backgroundColor: \"#ddd\"\n          }\n        }\n      ]"
+            },
+            "selectableRows": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true to show a checkbox next to each row"
+            },
+            "selectedRows": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "Array of selected rows.\nThis prop is dynamically updated using setProps\nand can be accessed via dash callback"
             }
         }
     },
