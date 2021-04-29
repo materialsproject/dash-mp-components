@@ -57,6 +57,7 @@ filterGroups = [
       {
         'name': 'Elements',
         'id': 'elements',
+        'tooltip': 'test',
         'type': 'MATERIALS_INPUT',
         'props': {
           'field': 'elements',
