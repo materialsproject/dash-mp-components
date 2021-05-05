@@ -12,7 +12,7 @@ app = dash.Dash(__name__)
 columns = [
   {
     'name': 'Material Id',
-    'selector': 'task_id',
+    'selector': 'material_id',
     'sortable': True
   },
   {
@@ -51,7 +51,7 @@ filterGroups = [
     'filters': [
       {
         'name': 'ID',
-        'id': 'task_ids',
+        'id': 'material_ids',
         'type': 'TEXT_INPUT',
       },
       {
@@ -60,7 +60,7 @@ filterGroups = [
         'tooltip': 'test',
         'type': 'MATERIALS_INPUT',
         'props': {
-          'field': 'elements',
+          'inputType': 'elements',
         }
       },
       {
@@ -68,7 +68,7 @@ filterGroups = [
         'id': 'formula',
         'type': 'MATERIALS_INPUT',
         'props': {
-          'field': 'formula',
+          'inputType': 'formula',
         }
       }
     ]
