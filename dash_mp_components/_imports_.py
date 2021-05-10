@@ -11,6 +11,8 @@ from .PeriodicContextTable import PeriodicContextTable
 from .PeriodicElement import PeriodicElement
 from .PeriodicFilter import PeriodicFilter
 from .PeriodicTableInput import PeriodicTableInput
+from .BibjsonCard import BibjsonCard
+from .BibjsonFilter import BibjsonFilter
 from .GlobalSearchBar import GlobalSearchBar
 from .SearchUI import SearchUI
 from .Select import Select
@@ -29,6 +31,8 @@ __all__ = [
     "PeriodicElement",
     "PeriodicFilter",
     "PeriodicTableInput",
+    "BibjsonCard",
+    "BibjsonFilter",
     "GlobalSearchBar",
     "SearchUI",
     "Select"

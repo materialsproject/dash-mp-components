@@ -791,6 +791,111 @@
             }
         }
     },
+    "src/lib/components/search/BibjsonCard.react.js": {
+        "description": "Component for rendering and filtering a list of citations in bibjson format\nExpects bibjson in the format output by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)",
+        "displayName": "BibjsonCard",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "bibjsonEntry": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "A single bib object in bibjson format\nOnly the following bib properties are used by this component:\n - title\n - author (as a list or string)\n - year\n - doi\n - journal\nIf any of those properties are missing, that property will be omitted from the bibjson result card.\nAny extra properties are simply ignored.\ne.g.\n        {\n          \"journal\": \"Physical Review X\",\n          \"year\": \"2015\",\n          \"issn\": \"21603308\",\n          \"isbn\": \"2160-3308\",\n          \"doi\": \"10.1103/PhysRevX.5.011006\",\n          \"author\": [\"Agapito, Luis A.\", \"Curtarolo, Stefano\", \"Nardelli, Marco Buongiorno\"],\n          \"title\": \"Reformulation of DFT + U as a Pseudohybrid Hubbard Density Functional for Accelerated Materials Discovery\",\n          \"ENTRYTYPE\": \"article\",\n          \"ID\": \"agapito2015\"\n        }"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class to add to the top-level element of the component\nNote: the class \"mpc-bibjson-card\" is always added to the top-level element by default"
+            }
+        }
+    },
+    "src/lib/components/search/BibjsonFilter.react.js": {
+        "description": "Component for rendering, sorting, and filtering a list of citations in bibjson format\nExpects bibjson in the format output by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)",
+        "displayName": "BibjsonFilter",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "bibjson": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "List of bib objects in bibjson format\nOnly the following bib properties are used by this component:\n - title\n - author (as a list or string)\n - year\n - doi\n - journal\nIf any of those properties are missing, that property will be omitted from the bibjson result card.\nAny extra properties are simply ignored.\ne.g.\n        [\n          {\n            \"journal\": \"Physical Review X\",\n            \"year\": \"2015\",\n            \"issn\": \"21603308\",\n            \"isbn\": \"2160-3308\",\n            \"doi\": \"10.1103/PhysRevX.5.011006\",\n            \"author\": [\"Agapito, Luis A.\", \"Curtarolo, Stefano\", \"Nardelli, Marco Buongiorno\"],\n            \"title\": \"Reformulation of DFT + U as a Pseudohybrid Hubbard Density Functional for Accelerated Materials Discovery\",\n            \"ENTRYTYPE\": \"article\",\n            \"ID\": \"agapito2015\"\n          },\n          {\n            \"journal\": \"Physical Review B\",\n            \"year\": \"2017\",\n            \"issn\": \"24699969\",\n            \"doi\": \"10.1103/PhysRevB.95.174110\",\n            \"author\": [\"Angsten, Thomas\", \"Martin, Lane W.\", \"Asta, Mark\"],\n            \"title\": \"Orientation-Dependent Properties of Epitaxially Strained Perovskite Oxide Thin Films: Insights from First-Principles Calculations\",\n            \"ENTRYTYPE\": \"article\",\n            \"ID\": \"angsten2017\"\n          }\n        ]"
+            },
+            "sortField": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'year'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'author'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'title'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": "Name of property to initially sort bibjson entries by\n(default: \"year\")"
+            },
+            "ascending": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true to have the initial sorting direction be ascending\n(default: false)"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class to add to the top-level element of the component\nNote: the class \"mpc-bibjson-filter\" is always added to the top-level element by default"
+            },
+            "resultClassName": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class to add to individual result cards\nNote: the class \"mpc-bibjson-card\" is always added to each result by default"
+            }
+        }
+    },
     "src/lib/components/search/GlobalSearchBar.react.js": {
         "description": "Component for rendering advanced search interfaces for data in an API\nRenders results in a data table alongside a set of filters that map to properties in the data.",
         "displayName": "GlobalSearchBar",
