@@ -21,6 +21,8 @@ import GlobalSearchBar from './components/search/GlobalSearchBar.react';
 import NavbarDropdown from './components/navigation/NavbarDropdown.react';
 import BibjsonCard from './components/search/BibjsonCard.react';
 import BibjsonFilter from './components/search/BibjsonFilter.react';
+import DownloadButton from './components/search/DownloadButton.react';
+import DownloadDropdown from './components/search/DownloadDropdown.react';
 
 export {
     PeriodicTableInput,
@@ -41,4 +43,6 @@ export {
     Select,
     BibjsonCard,
     BibjsonFilter,
+    DownloadButton,
+    DownloadDropdown,
 };

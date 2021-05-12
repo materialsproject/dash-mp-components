@@ -1,6 +1,6 @@
 {
     "name": "@materialsproject/dash-mp-components",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "description": "Dash components for the Materials Project",
     "repository": {
         "type": "git",
@@ -33,7 +33,7 @@
     "author": "Materials Project Team <feedback@materialsproject.org>",
     "license": "BSD",
     "dependencies": {
-        "@materialsproject/mp-react-components": "^0.1.8-SNAPSHOT.1620674962",
+        "@materialsproject/mp-react-components": "^0.1.8-SNAPSHOT.1620845666",
         "file-loader": "^5.1.0",
         "prettier": "^1.19.1",
         "ramda": "^0.26.1",

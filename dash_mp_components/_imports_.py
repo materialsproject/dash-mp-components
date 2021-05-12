@@ -13,6 +13,8 @@ from .PeriodicFilter import PeriodicFilter
 from .PeriodicTableInput import PeriodicTableInput
 from .BibjsonCard import BibjsonCard
 from .BibjsonFilter import BibjsonFilter
+from .DownloadButton import DownloadButton
+from .DownloadDropdown import DownloadDropdown
 from .GlobalSearchBar import GlobalSearchBar
 from .SearchUI import SearchUI
 from .Select import Select
@@ -33,6 +35,8 @@ __all__ = [
     "PeriodicTableInput",
     "BibjsonCard",
     "BibjsonFilter",
+    "DownloadButton",
+    "DownloadDropdown",
     "GlobalSearchBar",
     "SearchUI",
     "Select"

@@ -896,6 +896,148 @@
             }
         }
     },
+    "src/lib/components/search/DownloadButton.react.js": {
+        "description": "Button for exporting arrays or objects to files",
+        "displayName": "DownloadButton",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Use the children prop to set the button content\nThis can be simple text or a component"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class(es) to add to the top-level element of the component\nNote: the class \"mpc-download-button\" is always added"
+            },
+            "data": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.array | PropTypes.object"
+                },
+                "required": false,
+                "description": "Array or object (list or dictionary) to be downloaded\nIf downloading as csv or xlsx, data must be an array/list"
+            },
+            "filename": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Name of the file WITHOUT the extension\n(default: \"export\")"
+            },
+            "filetype": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'json'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'csv'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'xlsx'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": "File type to be downloaded\nThis is also the extension that will be appended to the filename\n(default: \"json\")"
+            },
+            "tooltip": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Optional tooltip to display above the button on hover"
+            }
+        }
+    },
+    "src/lib/components/search/DownloadDropdown.react.js": {
+        "description": "Dropdown for exporting arrays/lists to json, csv, or xlsx files\nThe dropdown options are prepopulated as JSON, CSV, EXCEL\nThis dropdown contains all the classes used in bulma dropdown",
+        "displayName": "DownloadButton",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Use the children prop to set the content for the dropdown button label\nThis can be simple text or a component"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class(es) to add to the top-level element of the component\nNote: the classes \"mpc-download-dropdown dropdown is-active\" are already added by default"
+            },
+            "buttonClassName": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class(es) to add to the button element of the component\nNote: the class \"button\" is already added by default"
+            },
+            "data": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.array | PropTypes.object"
+                },
+                "required": false,
+                "description": "Array/list to be downloaded"
+            },
+            "filename": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Name of the file WITHOUT the extension\n(default: \"export\")"
+            },
+            "tooltip": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Optional tooltip to display above the button on hover"
+            }
+        }
+    },
     "src/lib/components/search/GlobalSearchBar.react.js": {
         "description": "Component for rendering advanced search interfaces for data in an API\nRenders results in a data table alongside a set of filters that map to properties in the data.",
         "displayName": "GlobalSearchBar",
