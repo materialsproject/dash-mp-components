@@ -44,11 +44,11 @@ def test_bibjson(dash_duo):
     dash_duo.start_server(app)
     dash_duo.driver.implicitly_wait(10)
     dash_duo.find_element('.mpc-bibjson-filter-input').send_keys('Reformulation of DFT')
-    assert len(dash_duo.find_elements('.mpc-bibjson-card')) == 1
+    assert len(dash_duo.find_elements('.mpc-bib-card')) == 1
     dash_duo.find_element('.mpc-bibjson-filter-input').clear()
     dash_duo.find_element('.mpc-bibjson-filter-input').send_keys(' ')
     dash_duo.find_element('.mpc-bibjson-filter-input').clear()
-    assert len(dash_duo.find_elements('.mpc-bibjson-card')) == 2
+    assert len(dash_duo.find_elements('.mpc-bib-card')) == 2
     dash_duo.find_element('.mpc-bibjson-filter-sort-button').click()
-    first_result = dash_duo.find_elements('.mpc-bibjson-card')[0]
-    assert first_result.find_element_by_css_selector('.mpc-bibjson-card-year').text == '2015'
+    first_result = dash_duo.find_elements('.mpc-bib-card')[0]
+    assert first_result.find_element_by_css_selector('.mpc-bib-card-year').text == '2015'
