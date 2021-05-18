@@ -4,8 +4,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /**
- * Component for rendering and filtering a list of citations in bibjson format
- * Expects bibjson in the format output by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)
+ * Parses a bibjson entry and renders a BibCard
+ * Expects bibjsonEntry in the format used by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)
  */
 
 export default class BibjsonCard extends Component {
@@ -25,6 +25,12 @@ BibjsonCard.propTypes = {
      * properties change
      */
     setProps: PropTypes.func,
+
+    /**
+     * Class to add to the top-level element of the component
+     * Note: the class "mpc-bibjson-card" is always added to the top-level element by default
+     */
+    className: PropTypes.string,
 
     /**
      * A single bib object in bibjson format
@@ -52,8 +58,10 @@ BibjsonCard.propTypes = {
     bibjsonEntry: PropTypes.array,
 
     /**
-     * Class to add to the top-level element of the component
-     * Note: the class "mpc-bibjson-card" is always added to the top-level element by default
+     * Set to true to dynamically fetch a link to a free PDF of
+     * the reference (using the bibjsonEntry doi field)
+     * NOTE: the open access URL can also be included in the bibjsonEntry
+     * in the "openAccessUrl" property. If set, the URL will not be fetched.
      */
-    className: PropTypes.string,
+    fetchOpenAccessUrl: PropTypes.bool,
 };

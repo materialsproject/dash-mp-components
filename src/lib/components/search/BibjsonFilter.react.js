@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 
 /**
  * Component for rendering, sorting, and filtering a list of citations in bibjson format
- * Expects bibjson in the format output by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)
+ * List of bibjson entries are parsed and rendered as BibCards
+ * Expects bibjson in the format used by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)
  */
 
 export default class BibjsonFilter extends Component {
@@ -86,4 +87,12 @@ BibjsonFilter.propTypes = {
      * Note: the class "mpc-bibjson-card" is always added to each result by default
      */
     resultClassName: PropTypes.string,
+
+    /**
+     * Set to true to dynamically fetch a link to a free PDF of
+     * each reference (using the "doi" field for individual bibjson entry)
+     * NOTE: the open access URL can also be included in a bibjson entry
+     * in the "openAccessUrl" property. If set, the URL will not be fetched.
+     */
+    fetchOpenAccessUrl: PropTypes.bool,
 };

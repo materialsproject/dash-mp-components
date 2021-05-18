@@ -791,8 +791,86 @@
             }
         }
     },
+    "src/lib/components/search/BibCard.react.js": {
+        "description": "Render bibliographic information in a formatted card view",
+        "displayName": "BibCard",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class to add to the top-level element of the component\nNote: the class \"mpc-bib-card\" is always added to the top-level element by default"
+            },
+            "title": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Title of the reference\nWill render as a link if doi is supplied"
+            },
+            "author": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Authors of the reference\nThis string will render as is, so any formatting must be done beforehand"
+            },
+            "year": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.oneOfType[(PropTypes.string, PropTypes.number)]"
+                },
+                "required": false,
+                "description": "Year of the reference as either a string or number"
+            },
+            "journal": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Name of the journal or publisher of the reference"
+            },
+            "doi": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The DOI (Digital Object Identifier) of the reference\nThis identifier is used to generate links to the reference's\nonline publication, open access PDF, and bibtex"
+            },
+            "fetchOpenAccessUrl": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true to dynamically fetch a link to a free PDF of\nthe reference (using the doi prop)\n(default: false)"
+            },
+            "openAccessUrl": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Directly supply the URL to an accessible PDF of the reference\nIf supplied, the component will not try to fetch an open access URL\n(default: undefined)"
+            }
+        }
+    },
     "src/lib/components/search/BibjsonCard.react.js": {
-        "description": "Component for rendering and filtering a list of citations in bibjson format\nExpects bibjson in the format output by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)",
+        "description": "Parses a bibjson entry and renders a BibCard\nExpects bibjsonEntry in the format used by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)",
         "displayName": "BibjsonCard",
         "methods": [],
         "props": {
@@ -810,6 +888,13 @@
                 "required": false,
                 "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
             },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class to add to the top-level element of the component\nNote: the class \"mpc-bibjson-card\" is always added to the top-level element by default"
+            },
             "bibjsonEntry": {
                 "type": {
                     "name": "array"
@@ -817,17 +902,17 @@
                 "required": false,
                 "description": "A single bib object in bibjson format\nOnly the following bib properties are used by this component:\n - title\n - author (as a list or string)\n - year\n - doi\n - journal\nIf any of those properties are missing, that property will be omitted from the bibjson result card.\nAny extra properties are simply ignored.\ne.g.\n        {\n          \"journal\": \"Physical Review X\",\n          \"year\": \"2015\",\n          \"issn\": \"21603308\",\n          \"isbn\": \"2160-3308\",\n          \"doi\": \"10.1103/PhysRevX.5.011006\",\n          \"author\": [\"Agapito, Luis A.\", \"Curtarolo, Stefano\", \"Nardelli, Marco Buongiorno\"],\n          \"title\": \"Reformulation of DFT + U as a Pseudohybrid Hubbard Density Functional for Accelerated Materials Discovery\",\n          \"ENTRYTYPE\": \"article\",\n          \"ID\": \"agapito2015\"\n        }"
             },
-            "className": {
+            "fetchOpenAccessUrl": {
                 "type": {
-                    "name": "string"
+                    "name": "bool"
                 },
                 "required": false,
-                "description": "Class to add to the top-level element of the component\nNote: the class \"mpc-bibjson-card\" is always added to the top-level element by default"
+                "description": "Set to true to dynamically fetch a link to a free PDF of\nthe reference (using the bibjsonEntry doi field)\nNOTE: the open access URL can also be included in the bibjsonEntry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched."
             }
         }
     },
     "src/lib/components/search/BibjsonFilter.react.js": {
-        "description": "Component for rendering, sorting, and filtering a list of citations in bibjson format\nExpects bibjson in the format output by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)",
+        "description": "Component for rendering, sorting, and filtering a list of citations in bibjson format\nList of bibjson entries are parsed and rendered as BibCards\nExpects bibjson in the format used by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)",
         "displayName": "BibjsonFilter",
         "methods": [],
         "props": {
@@ -893,6 +978,13 @@
                 },
                 "required": false,
                 "description": "Class to add to individual result cards\nNote: the class \"mpc-bibjson-card\" is always added to each result by default"
+            },
+            "fetchOpenAccessUrl": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true to dynamically fetch a link to a free PDF of\neach reference (using the \"doi\" field for individual bibjson entry)\nNOTE: the open access URL can also be included in a bibjson entry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched."
             }
         }
     },
@@ -1084,6 +1176,55 @@
                 },
                 "required": false,
                 "description": "Optionally add a string of text to show up in the top-level search bar"
+            }
+        }
+    },
+    "src/lib/components/search/OpenAccessLink.react.js": {
+        "description": "Render bibliographic information in a formatted card view",
+        "displayName": "OpenAccessLink",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class to add to the top-level element of the component"
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Use the children prop to set the inner link content\nThis can be simple text or a component"
+            },
+            "doi": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The DOI (Digital Object Identifier) of the reference\nto attempt to fetch an open access PDF link for"
+            },
+            "url": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Directly supply the URL to an accessible PDF of the reference\nIf supplied, the component will not try to fetch an open access URL\n(default: undefined)"
+            },
+            "showLoadingText": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true to show the text \"Loading...\" inside the link\nwhile the URL is being fetched.\nIf false, the is-loading is applied to the link while loading.\nIf supplying the Bulma button class, this will show a spinner icon.\n(default: false)"
             }
         }
     },

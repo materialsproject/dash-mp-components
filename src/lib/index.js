@@ -21,6 +21,8 @@ import GlobalSearchBar from './components/search/GlobalSearchBar.react';
 import NavbarDropdown from './components/navigation/NavbarDropdown.react';
 import BibjsonCard from './components/search/BibjsonCard.react';
 import BibjsonFilter from './components/search/BibjsonFilter.react';
+import BibCard from './components/search/BibCard.react';
+import OpenAccessLink from './components/search/OpenAccessLink.react';
 import DownloadButton from './components/search/DownloadButton.react';
 import DownloadDropdown from './components/search/DownloadDropdown.react';
 
@@ -43,6 +45,8 @@ export {
     Select,
     BibjsonCard,
     BibjsonFilter,
+    BibCard,
+    OpenAccessLink,
     DownloadButton,
     DownloadDropdown,
 };

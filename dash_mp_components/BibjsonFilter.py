@@ -6,7 +6,8 @@ from dash.development.base_component import Component, _explicitize_args
 class BibjsonFilter(Component):
     """A BibjsonFilter component.
 Component for rendering, sorting, and filtering a list of citations in bibjson format
-Expects bibjson in the format output by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)
+List of bibjson entries are parsed and rendered as BibCards
+Expects bibjson in the format used by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)
 
 Keyword arguments:
 - id (string; optional): The ID used to identify this component in Dash callbacks
@@ -50,14 +51,18 @@ e.g.
 - className (string; optional): Class to add to the top-level element of the component
 Note: the class "mpc-bibjson-filter" is always added to the top-level element by default
 - resultClassName (string; optional): Class to add to individual result cards
-Note: the class "mpc-bibjson-card" is always added to each result by default"""
+Note: the class "mpc-bibjson-card" is always added to each result by default
+- fetchOpenAccessUrl (boolean; optional): Set to true to dynamically fetch a link to a free PDF of
+each reference (using the "doi" field for individual bibjson entry)
+NOTE: the open access URL can also be included in a bibjson entry
+in the "openAccessUrl" property. If set, the URL will not be fetched."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, bibjson=Component.UNDEFINED, sortField=Component.UNDEFINED, ascending=Component.UNDEFINED, className=Component.UNDEFINED, resultClassName=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'bibjson', 'sortField', 'ascending', 'className', 'resultClassName']
+    def __init__(self, id=Component.UNDEFINED, bibjson=Component.UNDEFINED, sortField=Component.UNDEFINED, ascending=Component.UNDEFINED, className=Component.UNDEFINED, resultClassName=Component.UNDEFINED, fetchOpenAccessUrl=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'bibjson', 'sortField', 'ascending', 'className', 'resultClassName', 'fetchOpenAccessUrl']
         self._type = 'BibjsonFilter'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'bibjson', 'sortField', 'ascending', 'className', 'resultClassName']
+        self.available_properties = ['id', 'bibjson', 'sortField', 'ascending', 'className', 'resultClassName', 'fetchOpenAccessUrl']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
