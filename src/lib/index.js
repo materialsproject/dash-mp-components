@@ -19,12 +19,15 @@ import Scrollspy from './components/navigation/Scrollspy.react';
 import SearchUI from './components/search/SearchUI.react';
 import GlobalSearchBar from './components/search/GlobalSearchBar.react';
 import NavbarDropdown from './components/navigation/NavbarDropdown.react';
+import CrossrefCard from './components/search/CrossrefCard.react';
 import BibjsonCard from './components/search/BibjsonCard.react';
-import BibjsonFilter from './components/search/BibjsonFilter.react';
+import BibFilter from './components/search/BibFilter.react';
 import BibCard from './components/search/BibCard.react';
-import OpenAccessLink from './components/search/OpenAccessLink.react';
+import BibtexButton from './components/search/BibtexButton.react';
+import OpenAccessButton from './components/search/OpenAccessButton.react';
 import DownloadButton from './components/search/DownloadButton.react';
 import DownloadDropdown from './components/search/DownloadDropdown.react';
+import MaterialsInput from './components/search/MaterialsInput.react';
 
 export {
     PeriodicTableInput,
@@ -44,9 +47,12 @@ export {
     Download,
     Select,
     BibjsonCard,
-    BibjsonFilter,
+    CrossrefCard,
+    BibFilter,
     BibCard,
-    OpenAccessLink,
+    OpenAccessButton,
+    BibtexButton,
     DownloadButton,
     DownloadDropdown,
+    MaterialsInput,
 };

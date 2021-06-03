@@ -815,7 +815,7 @@
                     "name": "string"
                 },
                 "required": false,
-                "description": "Class to add to the top-level element of the component\nNote: the class \"mpc-bib-card\" is always added to the top-level element by default"
+                "description": "Class name(s) to append to the component's default class (mpc-bib-card)"
             },
             "title": {
                 "type": {
@@ -858,14 +858,108 @@
                     "name": "bool"
                 },
                 "required": false,
-                "description": "Set to true to dynamically fetch a link to a free PDF of\nthe reference (using the doi prop)\n(default: false)"
+                "description": "Set to true to dynamically fetch a link to a free PDF of\nthe reference (using the doi prop)\n@default false"
             },
             "openAccessUrl": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
-                "description": "Directly supply the URL to an accessible PDF of the reference\nIf supplied, the component will not try to fetch an open access URL\n(default: undefined)"
+                "description": "Directly supply the URL to an accessible PDF of the reference\nIf supplied, the component will not try to fetch an open access URL\n@default undefined"
+            }
+        }
+    },
+    "src/lib/components/search/BibFilter.react.js": {
+        "description": "Component for rendering and filtering a list of citations in bibjson or crossref format\nExpects bibjson in the format output by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)\nExpects crossref in the format returned by the Crossref API",
+        "displayName": "BibFilter",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-bib-filter)"
+            },
+            "format": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'bibjson'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'crossref'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": "Format of the bibliographoc objects supplied in bibEntries\n@default 'bibjson'"
+            },
+            "bibEntries": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "List of bib objects in bibjson or crossref format\nOnly the following bib properties are used by this component:\n - title\n - author (as a list or string)\n - year\n - doi\n - journal\nIf any of those properties are missing, that property will be omitted from the bibjson result card.\nAny extra properties are simply ignored."
+            },
+            "sortField": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'year'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'author'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'title'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": "Name of property to initially sort entries by\n@default 'year'"
+            },
+            "ascending": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true to have the initial sorting direction be ascending\n@default false"
+            },
+            "resultClassName": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name(s) to append to individual result cards' default class (mpc-bib-card)"
+            },
+            "fetchOpenAccessUrl": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true to dynamically fetch a link to a free PDF of\neach reference (using the \"doi\" field for individual bibjson entry)\nNOTE: the open access URL can also be included in a bibjson entry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched.\n@default false"
             }
         }
     },
@@ -893,14 +987,14 @@
                     "name": "string"
                 },
                 "required": false,
-                "description": "Class to add to the top-level element of the component\nNote: the class \"mpc-bibjson-card\" is always added to the top-level element by default"
+                "description": "Class name(s) to append to the component's default class"
             },
             "bibjsonEntry": {
                 "type": {
-                    "name": "array"
+                    "name": "any"
                 },
                 "required": false,
-                "description": "A single bib object in bibjson format\nOnly the following bib properties are used by this component:\n - title\n - author (as a list or string)\n - year\n - doi\n - journal\nIf any of those properties are missing, that property will be omitted from the bibjson result card.\nAny extra properties are simply ignored.\ne.g.\n        {\n          \"journal\": \"Physical Review X\",\n          \"year\": \"2015\",\n          \"issn\": \"21603308\",\n          \"isbn\": \"2160-3308\",\n          \"doi\": \"10.1103/PhysRevX.5.011006\",\n          \"author\": [\"Agapito, Luis A.\", \"Curtarolo, Stefano\", \"Nardelli, Marco Buongiorno\"],\n          \"title\": \"Reformulation of DFT + U as a Pseudohybrid Hubbard Density Functional for Accelerated Materials Discovery\",\n          \"ENTRYTYPE\": \"article\",\n          \"ID\": \"agapito2015\"\n        }"
+                "description": "A single bib object in bibjson format\nOnly the following bib properties are used by this component: title, author (as a list or string), year, doi, journal.\nIf any of those properties are missing, that property will be omitted from the bibjson result card.\nAny extra properties are simply ignored.\ne.g.\n      {\n        \"journal\": \"Physical Review X\",\n        \"year\": \"2015\",\n        \"issn\": \"21603308\",\n        \"isbn\": \"2160-3308\",\n        \"doi\": \"10.1103/PhysRevX.5.011006\",\n        \"author\": [\"Agapito, Luis A.\", \"Curtarolo, Stefano\", \"Nardelli, Marco Buongiorno\"],\n        \"title\": \"Reformulation of DFT + U as a Pseudohybrid Hubbard Density Functional for Accelerated Materials Discovery\",\n        \"ENTRYTYPE\": \"article\",\n        \"ID\": \"agapito2015\"\n      }"
             },
             "fetchOpenAccessUrl": {
                 "type": {
@@ -911,9 +1005,51 @@
             }
         }
     },
-    "src/lib/components/search/BibjsonFilter.react.js": {
-        "description": "Component for rendering, sorting, and filtering a list of citations in bibjson format\nList of bibjson entries are parsed and rendered as BibCards\nExpects bibjson in the format used by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)",
-        "displayName": "BibjsonFilter",
+    "src/lib/components/search/BibtexButton.react.js": {
+        "description": "Standardized button for linking to BibTeX.\nIf no url prop is supplied, a link will be generated\nusing the doi prop and doi2bib.org.",
+        "displayName": "BibtexButton",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-bibtex-button)\n@default 'button is-small'"
+            },
+            "doi": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The DOI (Digital Object Identifier) of the reference\nto pass to doi2bib.org."
+            },
+            "url": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Directly supply the URL to a reference's bibtex.\nIf supplied, the component will not generate its own link using the doi prop."
+            },
+            "target": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Value to add to the anchor tag's target attribute\n@default '_blank'"
+            }
+        }
+    },
+    "src/lib/components/search/CrossrefCard.react.js": {
+        "description": "Parses a crossref entry or fetches a reference from the crossref API and renders a BibCard.",
+        "displayName": "CrossrefCard",
         "methods": [],
         "props": {
             "id": {
@@ -930,61 +1066,40 @@
                 "required": false,
                 "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
             },
-            "bibjson": {
-                "type": {
-                    "name": "array"
-                },
-                "required": false,
-                "description": "List of bib objects in bibjson format\nOnly the following bib properties are used by this component:\n - title\n - author (as a list or string)\n - year\n - doi\n - journal\nIf any of those properties are missing, that property will be omitted from the bibjson result card.\nAny extra properties are simply ignored.\ne.g.\n        [\n          {\n            \"journal\": \"Physical Review X\",\n            \"year\": \"2015\",\n            \"issn\": \"21603308\",\n            \"isbn\": \"2160-3308\",\n            \"doi\": \"10.1103/PhysRevX.5.011006\",\n            \"author\": [\"Agapito, Luis A.\", \"Curtarolo, Stefano\", \"Nardelli, Marco Buongiorno\"],\n            \"title\": \"Reformulation of DFT + U as a Pseudohybrid Hubbard Density Functional for Accelerated Materials Discovery\",\n            \"ENTRYTYPE\": \"article\",\n            \"ID\": \"agapito2015\"\n          },\n          {\n            \"journal\": \"Physical Review B\",\n            \"year\": \"2017\",\n            \"issn\": \"24699969\",\n            \"doi\": \"10.1103/PhysRevB.95.174110\",\n            \"author\": [\"Angsten, Thomas\", \"Martin, Lane W.\", \"Asta, Mark\"],\n            \"title\": \"Orientation-Dependent Properties of Epitaxially Strained Perovskite Oxide Thin Films: Insights from First-Principles Calculations\",\n            \"ENTRYTYPE\": \"article\",\n            \"ID\": \"angsten2017\"\n          }\n        ]"
-            },
-            "sortField": {
-                "type": {
-                    "name": "enum",
-                    "value": [
-                        {
-                            "value": "'year'",
-                            "computed": false
-                        },
-                        {
-                            "value": "'author'",
-                            "computed": false
-                        },
-                        {
-                            "value": "'title'",
-                            "computed": false
-                        }
-                    ]
-                },
-                "required": false,
-                "description": "Name of property to initially sort bibjson entries by\n(default: \"year\")"
-            },
-            "ascending": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": "Set to true to have the initial sorting direction be ascending\n(default: false)"
-            },
             "className": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
-                "description": "Class to add to the top-level element of the component\nNote: the class \"mpc-bibjson-filter\" is always added to the top-level element by default"
+                "description": "Class name(s) to append to the component's default class"
             },
-            "resultClassName": {
+            "crossrefEntry": {
+                "type": {
+                    "name": "any"
+                },
+                "required": false,
+                "description": "A single bib object in crossref format.\nIf a crossEntry is supplied, a request will not be made to the crossref API.\nThe following bib values are parsed from a Crossref API response: title, authors, year, doi, journal."
+            },
+            "identifier": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
-                "description": "Class to add to individual result cards\nNote: the class \"mpc-bibjson-card\" is always added to each result by default"
+                "description": "Either a DOI or bibtex string to use to search against the Crossref /works endpoint.\nAn identifier must be supplied if you are not supplying the crossrefEntry directly."
+            },
+            "errorMessage": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Error message to show inside the card if the crossref request fails\n@default 'Could not find reference'"
             },
             "fetchOpenAccessUrl": {
                 "type": {
                     "name": "bool"
                 },
                 "required": false,
-                "description": "Set to true to dynamically fetch a link to a free PDF of\neach reference (using the \"doi\" field for individual bibjson entry)\nNOTE: the open access URL can also be included in a bibjson entry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched."
+                "description": "Set to true to dynamically fetch a link to a free PDF of\nthe reference (using the bibjsonEntry doi field).\nNOTE: the open access URL can also be included in the bibjsonEntry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched."
             }
         }
     },
@@ -1179,9 +1294,164 @@
             }
         }
     },
-    "src/lib/components/search/OpenAccessLink.react.js": {
-        "description": "Render bibliographic information in a formatted card view",
-        "displayName": "OpenAccessLink",
+    "src/lib/components/search/MaterialsInput.react.js": {
+        "description": "An input field component for searching by mp-id, elements, formula, smiles, or text.\nRenders a text input and a periodic table within a PeriodicContext to support two-way binding between the input and periodic table.\ni.e. when elements are typed into the field, they are selected in the table,\nand when elements are selected in the table, they are appended to the field's input.",
+        "displayName": "MaterialsInput",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "value": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "inputType": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'elements'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'formula'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'mpid'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'smiles'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'text'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": ""
+            },
+            "allowedInputTypes": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": ""
+            },
+            "showInputTypeDropdown": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "isChemSys": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "allowSmiles": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "placeholder": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "errorMessage": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "debounce": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "periodicTableMode": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'toggle'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'focus'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'none'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": ""
+            },
+            "hidePeriodicTable": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "autocompleteFormulaUrl": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "autocompleteApiKey": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "tooltip": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/search/OpenAccessButton.react.js": {
+        "description": "Standardized button for linking to an Open Access PDF.\nIf no url prop is supplied, a PDF link will be fetched\nfrom the Open Access Button API using the doi prop.",
+        "displayName": "OpenAccessButton",
         "methods": [],
         "props": {
             "id": {
@@ -1196,35 +1466,35 @@
                     "name": "string"
                 },
                 "required": false,
-                "description": "Class to add to the top-level element of the component"
-            },
-            "children": {
-                "type": {
-                    "name": "node"
-                },
-                "required": false,
-                "description": "Use the children prop to set the inner link content\nThis can be simple text or a component"
+                "description": "Class name(s) to append to the component's default class (mpc-open-access-button)\n@default 'button is-small'"
             },
             "doi": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
-                "description": "The DOI (Digital Object Identifier) of the reference\nto attempt to fetch an open access PDF link for"
+                "description": "The DOI (Digital Object Identifier) of the reference\nto attempt to fetch an open access PDF link for."
             },
             "url": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
-                "description": "Directly supply the URL to an accessible PDF of the reference\nIf supplied, the component will not try to fetch an open access URL\n(default: undefined)"
+                "description": "Directly supply the URL to an accessible PDF of the reference.\nIf supplied, the component will not try to fetch an open access URL."
             },
             "showLoadingText": {
                 "type": {
                     "name": "bool"
                 },
                 "required": false,
-                "description": "Set to true to show the text \"Loading...\" inside the link\nwhile the URL is being fetched.\nIf false, the is-loading is applied to the link while loading.\nIf supplying the Bulma button class, this will show a spinner icon.\n(default: false)"
+                "description": "Set to true to show the text \"Loading...\" inside the link\nwhile the URL is being fetched.\nIf false, the is-loading is applied to the link while loading.\nIf supplying the Bulma button class, this will show a spinner icon.\n@default false"
+            },
+            "target": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Value to add to the anchor tag's target attribute\n@default '_blank'"
             }
         }
     },

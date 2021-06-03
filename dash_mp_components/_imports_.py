@@ -12,12 +12,15 @@ from .PeriodicElement import PeriodicElement
 from .PeriodicFilter import PeriodicFilter
 from .PeriodicTableInput import PeriodicTableInput
 from .BibCard import BibCard
+from .BibFilter import BibFilter
 from .BibjsonCard import BibjsonCard
-from .BibjsonFilter import BibjsonFilter
+from .BibtexButton import BibtexButton
+from .CrossrefCard import CrossrefCard
 from .DownloadButton import DownloadButton
 from .DownloadDropdown import DownloadDropdown
 from .GlobalSearchBar import GlobalSearchBar
-from .OpenAccessLink import OpenAccessLink
+from .MaterialsInput import MaterialsInput
+from .OpenAccessButton import OpenAccessButton
 from .SearchUI import SearchUI
 from .Select import Select
 
@@ -36,12 +39,15 @@ __all__ = [
     "PeriodicFilter",
     "PeriodicTableInput",
     "BibCard",
+    "BibFilter",
     "BibjsonCard",
-    "BibjsonFilter",
+    "BibtexButton",
+    "CrossrefCard",
     "DownloadButton",
     "DownloadDropdown",
     "GlobalSearchBar",
-    "OpenAccessLink",
+    "MaterialsInput",
+    "OpenAccessButton",
     "SearchUI",
     "Select"
 ]

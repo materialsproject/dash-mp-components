@@ -9,8 +9,7 @@ Render bibliographic information in a formatted card view
 
 Keyword arguments:
 - id (string; optional): The ID used to identify this component in Dash callbacks
-- className (string; optional): Class to add to the top-level element of the component
-Note: the class "mpc-bib-card" is always added to the top-level element by default
+- className (string; optional): Class name(s) to append to the component's default class (mpc-bib-card)
 - title (string; optional): Title of the reference
 Will render as a link if doi is supplied
 - author (string; optional): Authors of the reference
@@ -22,10 +21,10 @@ This identifier is used to generate links to the reference's
 online publication, open access PDF, and bibtex
 - fetchOpenAccessUrl (boolean; optional): Set to true to dynamically fetch a link to a free PDF of
 the reference (using the doi prop)
-(default: false)
+@default false
 - openAccessUrl (string; optional): Directly supply the URL to an accessible PDF of the reference
 If supplied, the component will not try to fetch an open access URL
-(default: undefined)"""
+@default undefined"""
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, title=Component.UNDEFINED, author=Component.UNDEFINED, year=Component.UNDEFINED, journal=Component.UNDEFINED, doi=Component.UNDEFINED, fetchOpenAccessUrl=Component.UNDEFINED, openAccessUrl=Component.UNDEFINED, **kwargs):
         self._prop_names = ['id', 'className', 'title', 'author', 'year', 'journal', 'doi', 'fetchOpenAccessUrl', 'openAccessUrl']

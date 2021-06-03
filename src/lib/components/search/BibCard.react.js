@@ -26,8 +26,7 @@ BibCard.propTypes = {
     setProps: PropTypes.func,
 
     /**
-     * Class to add to the top-level element of the component
-     * Note: the class "mpc-bib-card" is always added to the top-level element by default
+     * Class name(s) to append to the component's default class (mpc-bib-card)
      */
     className: PropTypes.string,
 
@@ -63,14 +62,14 @@ BibCard.propTypes = {
     /**
      * Set to true to dynamically fetch a link to a free PDF of
      * the reference (using the doi prop)
-     * (default: false)
+     * @default false
      */
     fetchOpenAccessUrl: PropTypes.bool,
 
     /**
      * Directly supply the URL to an accessible PDF of the reference
      * If supplied, the component will not try to fetch an open access URL
-     * (default: undefined)
+     * @default undefined
      */
     openAccessUrl: PropTypes.string,
 };
