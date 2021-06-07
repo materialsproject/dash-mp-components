@@ -211,6 +211,12 @@ SearchUI.propTypes = {
     resultLabel: PropTypes.string,
 
     /**
+     * Optionally include/exclude the top search bar
+     * @default true
+     */
+    hasSearchBar: PropTypes.bool,
+
+    /**
      * Optionally add a help icon with a tooltip in the search bar
      * This should be used to provide instructions on how to use the search bar
      * e.g.
@@ -224,6 +230,47 @@ SearchUI.propTypes = {
      * Optionally add a string of text to show up in the top-level search bar
      */
     searchBarPlaceholder: PropTypes.string,
+
+    /**
+     * Custom error message to display with the top-level search bar
+     * if the user types an invalid value
+     */
+    searchBarErrorMessage: PropTypes.string,
+
+    /**
+     * Object with keys of allowed input types for the top-level search bar.
+     * Keys must be one of these supported input types: "elements", "formula", "mpid", "smiles", "text"
+     * Each key object must have a "field" property which maps the input type
+     * to a valid data filter field in the API.
+     * e.g.
+      {
+        formula: {
+          field: 'formula'
+        },
+        elements: {
+          field: 'elements'
+        },
+        mpid: {
+          field: 'material_ids'
+        }
+      }
+    */
+    searchBarAllowedInputTypesMap: PropTypes.object,
+
+    /**
+     * Modes for showing the periodic table with the top search bar
+     * "toggle": render a button for toggling visibility of periodic table
+     * "focus": show periodic table when input is focuses, hide on blur
+     * "none": never show the periodic table for this input
+     * @default 'toggle'
+     */
+    searchBarPeriodicTableMode: PropTypes.oneOf(['toggle', 'focus', 'none']),
+
+    /**
+     * Optionally include/exclude the menu for dynamically controlling sort options
+     * @default true
+     */
+    hasSortMenu: PropTypes.bool,
 
     /**
      * Optionally include a field to sort by on initial load
@@ -275,4 +322,39 @@ SearchUI.propTypes = {
      * and can be accessed via dash callback
      */
     selectedRows: PropTypes.array,
+
+    /**
+     * Set the initial results view to one of the preset
+     * SearchUI views: 'table', 'cards', or 'synthesis'
+     *
+     * To add a new view type, head to SearchUI/types and add the name of the type to the
+     * SearchUIViewType enum, then add a property in searchUIViewsMap using the same name
+     * you used for the type, then provide your custom view component as the value.
+     * The view component should consume the SearchUIContext state using the useSearchUIContext hook.
+     * See SearchUIDataTable or SearchUIDataCards for example view components.
+     * @default 'table'
+     */
+    view: PropTypes.oneOf(['table', 'cards', 'synthesis']),
+
+    /**
+     * Optionally enable/disable switching between SearchUI result views
+     */
+    allowViewSwitching: PropTypes.bool,
+
+    /**
+     * Set of options for configuring what is displayed in the result cards
+     * when in the cards view.
+     * Must be an object with the following properties:
+      {
+        imageBaseURL: '', // Base of the URL to use to get images for the left side of the card
+        imageKey: 'material_id', // Data key to use to append value to the base URL (i.e. the name of the image file). The .png extension is added automatically.
+        levelOneKey: 'material_id', // Data key to use for the first line of text on the card
+        levelTwoKey: 'formula_pretty', // Data key to use for the second line of text on the card
+        levelThreeKeys: [ // List of data keys and labels to display under the first and second line of text
+          { key: 'energy_above_hull', label: 'Energy Above Hull' },
+          { key: 'formation_energy_per_atom', label: 'Formation Energy' },
+        ],
+      }
+    */
+    cardOptions: PropTypes.object,
 };
