@@ -170,6 +170,8 @@ e.g. "https://api.materialsproject.org/materials/formula_autocomplete/"
 e.g. "material"
 Note that only some special plural mappings are handled automatically (e.g. battery -> batteries)
 In all other cases, an "s" is appended to resultLabel
+- hasSearchBar (boolean; optional): Optionally include/exclude the top search bar
+@default true
 - searchBarTooltip (string; optional): Optionally add a help icon with a tooltip in the search bar
 This should be used to provide instructions on how to use the search bar
 e.g.
@@ -177,12 +179,35 @@ e.g.
  a chemical formula (e.g. C3N), or a material id (e.g. mp-10152).
  You can also click elements on the periodic table to add them to your search.'
 - searchBarPlaceholder (string; optional): Optionally add a string of text to show up in the top-level search bar
+- searchBarErrorMessage (string; optional): Custom error message to display with the top-level search bar
+if the user types an invalid value
+- searchBarAllowedInputTypesMap (dict; optional): Object with keys of allowed input types for the top-level search bar.
+Keys must be one of these supported input types: "elements", "formula", "mpid", "smiles", "text"
+Each key object must have a "field" property which maps the input type
+to a valid data filter field in the API.
+e.g.
+      {
+        formula: {
+          field: 'formula'
+        },
+        elements: {
+          field: 'elements'
+        },
+        mpid: {
+          field: 'material_ids'
+        }
+      }
+- searchBarPeriodicTableMode (a value equal to: 'toggle', 'focus', 'none'; optional): Modes for showing the periodic table with the top search bar
+"toggle": render a button for toggling visibility of periodic table
+"focus": show periodic table when input is focuses, hide on blur
+"none": never show the periodic table for this input
+@default 'toggle'
+- hasSortMenu (boolean; optional): Optionally include/exclude the menu for dynamically controlling sort options
+@default true
 - sortField (string; optional): Optionally include a field to sort by on initial load
 Must be a valid field and included in your list of columns
 - sortAscending (boolean; optional): If including a sortField, set whether it should ascend by default
 True for ascending, False for descending
-- hasSearchBar (boolean; optional): Optionally include/exclude the top search bar
-Defaults to true (i.e. include search bar)
 - conditionalRowStyles (list; optional): List of conditions for styling rows based on a property (selector) and a value
 Accepts a list of "condition" objects which must specify a...
  selector: the name of the data property to use for the condition
@@ -203,14 +228,37 @@ example:
 - selectableRows (boolean; optional): Set to true to show a checkbox next to each row
 - selectedRows (list; optional): Array of selected rows.
 This prop is dynamically updated using setProps
-and can be accessed via dash callback"""
+and can be accessed via dash callback
+- view (a value equal to: 'table', 'cards', 'synthesis'; optional): Set the initial results view to one of the preset
+SearchUI views: 'table', 'cards', or 'synthesis'
+
+To add a new view type, head to SearchUI/types and add the name of the type to the
+SearchUIViewType enum, then add a property in searchUIViewsMap using the same name
+you used for the type, then provide your custom view component as the value.
+The view component should consume the SearchUIContext state using the useSearchUIContext hook.
+See SearchUIDataTable or SearchUIDataCards for example view components.
+@default 'table'
+- allowViewSwitching (boolean; optional): Optionally enable/disable switching between SearchUI result views
+- cardOptions (dict; optional): Set of options for configuring what is displayed in the result cards
+when in the cards view.
+Must be an object with the following properties:
+      {
+        imageBaseURL: '', // Base of the URL to use to get images for the left side of the card
+        imageKey: 'material_id', // Data key to use to append value to the base URL (i.e. the name of the image file). The .png extension is added automatically.
+        levelOneKey: 'material_id', // Data key to use for the first line of text on the card
+        levelTwoKey: 'formula_pretty', // Data key to use for the second line of text on the card
+        levelThreeKeys: [ // List of data keys and labels to display under the first and second line of text
+          { key: 'energy_above_hull', label: 'Energy Above Hull' },
+          { key: 'formation_energy_per_atom', label: 'Formation Energy' },
+        ],
+      }"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip', 'searchBarPlaceholder', 'sortField', 'sortAscending', 'hasSearchBar', 'conditionalRowStyles', 'selectableRows', 'selectedRows']
+    def __init__(self, id=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, searchBarErrorMessage=Component.UNDEFINED, searchBarAllowedInputTypesMap=Component.UNDEFINED, searchBarPeriodicTableMode=Component.UNDEFINED, hasSortMenu=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, view=Component.UNDEFINED, allowViewSwitching=Component.UNDEFINED, cardOptions=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'hasSortMenu', 'sortField', 'sortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'allowViewSwitching', 'cardOptions']
         self._type = 'SearchUI'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'searchBarTooltip', 'searchBarPlaceholder', 'sortField', 'sortAscending', 'hasSearchBar', 'conditionalRowStyles', 'selectableRows', 'selectedRows']
+        self.available_properties = ['id', 'columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'hasSortMenu', 'sortField', 'sortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'allowViewSwitching', 'cardOptions']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

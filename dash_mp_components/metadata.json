@@ -1559,6 +1559,13 @@
                 "required": false,
                 "description": "A noun in singular form to describe what a result represents (default: \"result\")\ne.g. \"material\"\nNote that only some special plural mappings are handled automatically (e.g. battery -> batteries)\nIn all other cases, an \"s\" is appended to resultLabel"
             },
+            "hasSearchBar": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Optionally include/exclude the top search bar\n@default true"
+            },
             "searchBarTooltip": {
                 "type": {
                     "name": "string"
@@ -1573,6 +1580,48 @@
                 "required": false,
                 "description": "Optionally add a string of text to show up in the top-level search bar"
             },
+            "searchBarErrorMessage": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Custom error message to display with the top-level search bar\nif the user types an invalid value"
+            },
+            "searchBarAllowedInputTypesMap": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "Object with keys of allowed input types for the top-level search bar.\nKeys must be one of these supported input types: \"elements\", \"formula\", \"mpid\", \"smiles\", \"text\"\nEach key object must have a \"field\" property which maps the input type\nto a valid data filter field in the API.\ne.g.\n      {\n        formula: {\n          field: 'formula'\n        },\n        elements: {\n          field: 'elements'\n        },\n        mpid: {\n          field: 'material_ids'\n        }\n      }"
+            },
+            "searchBarPeriodicTableMode": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'toggle'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'focus'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'none'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": "Modes for showing the periodic table with the top search bar\n\"toggle\": render a button for toggling visibility of periodic table\n\"focus\": show periodic table when input is focuses, hide on blur\n\"none\": never show the periodic table for this input\n@default 'toggle'"
+            },
+            "hasSortMenu": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Optionally include/exclude the menu for dynamically controlling sort options\n@default true"
+            },
             "sortField": {
                 "type": {
                     "name": "string"
@@ -1586,13 +1635,6 @@
                 },
                 "required": false,
                 "description": "If including a sortField, set whether it should ascend by default\nTrue for ascending, False for descending"
-            },
-            "hasSearchBar": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": "Optionally include/exclude the top search bar\nDefaults to true (i.e. include search bar)"
             },
             "conditionalRowStyles": {
                 "type": {
@@ -1614,6 +1656,41 @@
                 },
                 "required": false,
                 "description": "Array of selected rows.\nThis prop is dynamically updated using setProps\nand can be accessed via dash callback"
+            },
+            "view": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'table'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'cards'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'synthesis'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": "Set the initial results view to one of the preset\nSearchUI views: 'table', 'cards', or 'synthesis'\n\nTo add a new view type, head to SearchUI/types and add the name of the type to the\nSearchUIViewType enum, then add a property in searchUIViewsMap using the same name\nyou used for the type, then provide your custom view component as the value.\nThe view component should consume the SearchUIContext state using the useSearchUIContext hook.\nSee SearchUIDataTable or SearchUIDataCards for example view components.\n@default 'table'"
+            },
+            "allowViewSwitching": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Optionally enable/disable switching between SearchUI result views"
+            },
+            "cardOptions": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "Set of options for configuring what is displayed in the result cards\nwhen in the cards view.\nMust be an object with the following properties:\n      {\n        imageBaseURL: '', // Base of the URL to use to get images for the left side of the card\n        imageKey: 'material_id', // Data key to use to append value to the base URL (i.e. the name of the image file). The .png extension is added automatically.\n        levelOneKey: 'material_id', // Data key to use for the first line of text on the card\n        levelTwoKey: 'formula_pretty', // Data key to use for the second line of text on the card\n        levelThreeKeys: [ // List of data keys and labels to display under the first and second line of text\n          { key: 'energy_above_hull', label: 'Energy Above Hull' },\n          { key: 'formation_energy_per_atom', label: 'Formation Energy' },\n        ],\n      }"
             }
         }
     },
