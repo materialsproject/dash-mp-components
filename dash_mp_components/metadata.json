@@ -1103,6 +1103,48 @@
             }
         }
     },
+    "src/lib/components/search/DataBlock.react.js": {
+        "description": "Display a single record of data in a horizontal block element\nwith an optional expanded view to show additional data columns.",
+        "displayName": "DataBlock",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-data-block)"
+            },
+            "data": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "Object (i.e. dictionary) of data to be displayed in the block"
+            },
+            "columns": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "Optional configuration for the columns in the data object.\nFollows the same format as the columns prop in the SearchUI component."
+            }
+        }
+    },
     "src/lib/components/search/DownloadButton.react.js": {
         "description": "Button for exporting arrays or objects to files",
         "displayName": "DownloadButton",
@@ -1754,6 +1796,164 @@
                 },
                 "required": false,
                 "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            }
+        }
+    },
+    "src/lib/components/search/Tooltip.react.js": {
+        "description": "Tooltip component based on react-tooltip (https://github.com/wwayne/react-tooltip).\nTo attach a Tooltip component to a trigger element, \nadd the attributes \"data-tip\" and \"data-for\" to the trigger element.\nThe \"data-for\" attribute's value should be equal to the id of the Tooltip\ncomponent you want to connect it to.",
+        "displayName": "Tooltip",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.function"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Use the children prop to set the content of the tooltip.\nThis can be simple text or a component"
+            },
+            "place": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.Place"
+                },
+                "required": false,
+                "description": ""
+            },
+            "type": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.Type"
+                },
+                "required": false,
+                "description": ""
+            },
+            "effect": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.Effect"
+                },
+                "required": false,
+                "description": ""
+            },
+            "event": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "eventOff": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "globalEventOff": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "isCapture": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "offset": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": ""
+            },
+            "multiline": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "html": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "delayHide": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "delayShow": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "delayUpdate": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "border": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "disable": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "scrollHide": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "clickable": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
             }
         }
     }

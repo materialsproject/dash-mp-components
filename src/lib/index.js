@@ -28,6 +28,8 @@ import OpenAccessButton from './components/search/OpenAccessButton.react';
 import DownloadButton from './components/search/DownloadButton.react';
 import DownloadDropdown from './components/search/DownloadDropdown.react';
 import MaterialsInput from './components/search/MaterialsInput.react';
+import DataBlock from './components/search/DataBlock.react';
+import Tooltip from './components/search/Tooltip.react';
 
 export {
     PeriodicTableInput,
@@ -55,4 +57,6 @@ export {
     DownloadButton,
     DownloadDropdown,
     MaterialsInput,
+    DataBlock,
+    Tooltip,
 };

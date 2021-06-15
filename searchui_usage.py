@@ -26,7 +26,9 @@ columns = [
     'selector': 'volume',
     'sortable': True,
     'format': 'SIGNIFICANT_FIGURES',
-    'formatArg': 5,
+    "formatOptions": {
+      "sigFigs": 5
+    },
     'units': 'units'
   },
   {
@@ -34,7 +36,9 @@ columns = [
     'selector': 'density',
     'sortable': True,
     'format': 'FIXED_DECIMAL',
-    'formatArg': 5
+    "formatOptions": {
+      "decimals": 2
+    },
   },
   {
     'name': 'Is Stable',
