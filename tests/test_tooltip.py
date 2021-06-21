@@ -22,8 +22,7 @@ def test_tooltip(dash_duo):
       ),
       dash_mp_components.Tooltip(
         'test tooltip',
-        id='tooltip-1',
-        effect='solid'
+        id='tooltip-1'
       )
     ])
     dash_duo.start_server(app)

@@ -24,12 +24,13 @@ import BibjsonCard from './components/search/BibjsonCard.react';
 import BibFilter from './components/search/BibFilter.react';
 import BibCard from './components/search/BibCard.react';
 import BibtexButton from './components/search/BibtexButton.react';
-import OpenAccessButton from './components/search/OpenAccessButton.react';
+import PublicationButton from './components/search/PublicationButton.react';
 import DownloadButton from './components/search/DownloadButton.react';
 import DownloadDropdown from './components/search/DownloadDropdown.react';
 import MaterialsInput from './components/search/MaterialsInput.react';
 import DataBlock from './components/search/DataBlock.react';
 import Tooltip from './components/search/Tooltip.react';
+import Formula from './components/search/Formula.react';
 
 export {
     PeriodicTableInput,
@@ -52,11 +53,12 @@ export {
     CrossrefCard,
     BibFilter,
     BibCard,
-    OpenAccessButton,
+    PublicationButton,
     BibtexButton,
     DownloadButton,
     DownloadDropdown,
     MaterialsInput,
     DataBlock,
     Tooltip,
+    Formula,
 };

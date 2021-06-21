@@ -69,11 +69,11 @@ BibFilter.propTypes = {
     resultClassName: PropTypes.string,
 
     /**
-     * Set to true to dynamically fetch a link to a free PDF of
-     * each reference (using the "doi" field for individual bibjson entry)
-     * NOTE: the open access URL can also be included in a bibjson entry
+     * Set to true to prevent dynamically fetching a link to a free PDF of
+     * each reference (using the "doi" field for individual bib entry).
+     * NOTE: the open access URL can also be included in a bib entry
      * in the "openAccessUrl" property. If set, the URL will not be fetched.
      * @default false
      */
-    fetchOpenAccessUrl: PropTypes.bool,
+    preventOpenAccessFetch: PropTypes.bool,
 };

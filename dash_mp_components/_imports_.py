@@ -19,9 +19,10 @@ from .CrossrefCard import CrossrefCard
 from .DataBlock import DataBlock
 from .DownloadButton import DownloadButton
 from .DownloadDropdown import DownloadDropdown
+from .Formula import Formula
 from .GlobalSearchBar import GlobalSearchBar
 from .MaterialsInput import MaterialsInput
-from .OpenAccessButton import OpenAccessButton
+from .PublicationButton import PublicationButton
 from .SearchUI import SearchUI
 from .Select import Select
 from .Tooltip import Tooltip
@@ -48,9 +49,10 @@ __all__ = [
     "DataBlock",
     "DownloadButton",
     "DownloadDropdown",
+    "Formula",
     "GlobalSearchBar",
     "MaterialsInput",
-    "OpenAccessButton",
+    "PublicationButton",
     "SearchUI",
     "Select",
     "Tooltip"

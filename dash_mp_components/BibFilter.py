@@ -28,18 +28,18 @@ Any extra properties are simply ignored.
 - ascending (boolean; optional): Set to true to have the initial sorting direction be ascending
 @default false
 - resultClassName (string; optional): Class name(s) to append to individual result cards' default class (mpc-bib-card)
-- fetchOpenAccessUrl (boolean; optional): Set to true to dynamically fetch a link to a free PDF of
-each reference (using the "doi" field for individual bibjson entry)
-NOTE: the open access URL can also be included in a bibjson entry
+- preventOpenAccessFetch (boolean; optional): Set to true to prevent dynamically fetching a link to a free PDF of
+each reference (using the "doi" field for individual bib entry).
+NOTE: the open access URL can also be included in a bib entry
 in the "openAccessUrl" property. If set, the URL will not be fetched.
 @default false"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, format=Component.UNDEFINED, bibEntries=Component.UNDEFINED, sortField=Component.UNDEFINED, ascending=Component.UNDEFINED, resultClassName=Component.UNDEFINED, fetchOpenAccessUrl=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'className', 'format', 'bibEntries', 'sortField', 'ascending', 'resultClassName', 'fetchOpenAccessUrl']
+    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, format=Component.UNDEFINED, bibEntries=Component.UNDEFINED, sortField=Component.UNDEFINED, ascending=Component.UNDEFINED, resultClassName=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'className', 'format', 'bibEntries', 'sortField', 'ascending', 'resultClassName', 'preventOpenAccessFetch']
         self._type = 'BibFilter'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'className', 'format', 'bibEntries', 'sortField', 'ascending', 'resultClassName', 'fetchOpenAccessUrl']
+        self.available_properties = ['id', 'className', 'format', 'bibEntries', 'sortField', 'ascending', 'resultClassName', 'preventOpenAccessFetch']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

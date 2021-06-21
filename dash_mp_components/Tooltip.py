@@ -6,7 +6,7 @@ from dash.development.base_component import Component, _explicitize_args
 class Tooltip(Component):
     """A Tooltip component.
 Tooltip component based on react-tooltip (https://github.com/wwayne/react-tooltip).
-To attach a Tooltip component to a trigger element, 
+To attach a Tooltip component to a trigger element,
 add the attributes "data-tip" and "data-for" to the trigger element.
 The "data-for" attribute's value should be equal to the id of the Tooltip
 component you want to connect it to.

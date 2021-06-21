@@ -27,17 +27,18 @@ e.g.
         "ENTRYTYPE": "article",
         "ID": "agapito2015"
       }
-- fetchOpenAccessUrl (boolean; optional): Set to true to dynamically fetch a link to a free PDF of
-the reference (using the bibjsonEntry doi field)
-NOTE: the open access URL can also be included in the bibjsonEntry
-in the "openAccessUrl" property. If set, the URL will not be fetched."""
+- preventOpenAccessFetch (boolean; optional): Set to true to prevent dynamically fetching a link to a free PDF of
+each reference (using the "doi" field for individual bib entry).
+NOTE: the open access URL can also be included in a bib entry
+in the "openAccessUrl" property. If set, the URL will not be fetched.
+@default false"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, bibjsonEntry=Component.UNDEFINED, fetchOpenAccessUrl=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'className', 'bibjsonEntry', 'fetchOpenAccessUrl']
+    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, bibjsonEntry=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'className', 'bibjsonEntry', 'preventOpenAccessFetch']
         self._type = 'BibjsonCard'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'className', 'bibjsonEntry', 'fetchOpenAccessUrl']
+        self.available_properties = ['id', 'className', 'bibjsonEntry', 'preventOpenAccessFetch']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

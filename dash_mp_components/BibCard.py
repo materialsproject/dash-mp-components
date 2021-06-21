@@ -19,19 +19,21 @@ This string will render as is, so any formatting must be done beforehand
 - doi (string; optional): The DOI (Digital Object Identifier) of the reference
 This identifier is used to generate links to the reference's
 online publication, open access PDF, and bibtex
-- fetchOpenAccessUrl (boolean; optional): Set to true to dynamically fetch a link to a free PDF of
-the reference (using the doi prop)
+- preventOpenAccessFetch (boolean; optional): Set to true to prevent dynamically fetching a link to a free PDF of
+each reference (using the "doi" field for individual bib entry).
+NOTE: the open access URL can also be included in a bib entry
+in the "openAccessUrl" property. If set, the URL will not be fetched.
 @default false
 - openAccessUrl (string; optional): Directly supply the URL to an accessible PDF of the reference
 If supplied, the component will not try to fetch an open access URL
 @default undefined"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, title=Component.UNDEFINED, author=Component.UNDEFINED, year=Component.UNDEFINED, journal=Component.UNDEFINED, doi=Component.UNDEFINED, fetchOpenAccessUrl=Component.UNDEFINED, openAccessUrl=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'className', 'title', 'author', 'year', 'journal', 'doi', 'fetchOpenAccessUrl', 'openAccessUrl']
+    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, title=Component.UNDEFINED, author=Component.UNDEFINED, year=Component.UNDEFINED, journal=Component.UNDEFINED, doi=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, openAccessUrl=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'className', 'title', 'author', 'year', 'journal', 'doi', 'preventOpenAccessFetch', 'openAccessUrl']
         self._type = 'BibCard'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'className', 'title', 'author', 'year', 'journal', 'doi', 'fetchOpenAccessUrl', 'openAccessUrl']
+        self.available_properties = ['id', 'className', 'title', 'author', 'year', 'journal', 'doi', 'preventOpenAccessFetch', 'openAccessUrl']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

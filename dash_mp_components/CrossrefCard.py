@@ -17,17 +17,18 @@ The following bib values are parsed from a Crossref API response: title, authors
 An identifier must be supplied if you are not supplying the crossrefEntry directly.
 - errorMessage (string; optional): Error message to show inside the card if the crossref request fails
 @default 'Could not find reference'
-- fetchOpenAccessUrl (boolean; optional): Set to true to dynamically fetch a link to a free PDF of
-the reference (using the bibjsonEntry doi field).
-NOTE: the open access URL can also be included in the bibjsonEntry
-in the "openAccessUrl" property. If set, the URL will not be fetched."""
+- preventOpenAccessFetch (boolean; optional): Set to true to prevent dynamically fetching a link to a free PDF of
+each reference (using the "doi" field for individual bib entry).
+NOTE: the open access URL can also be included in a bib entry
+in the "openAccessUrl" property. If set, the URL will not be fetched.
+@default false"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, crossrefEntry=Component.UNDEFINED, identifier=Component.UNDEFINED, errorMessage=Component.UNDEFINED, fetchOpenAccessUrl=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'className', 'crossrefEntry', 'identifier', 'errorMessage', 'fetchOpenAccessUrl']
+    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, crossrefEntry=Component.UNDEFINED, identifier=Component.UNDEFINED, errorMessage=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'className', 'crossrefEntry', 'identifier', 'errorMessage', 'preventOpenAccessFetch']
         self._type = 'CrossrefCard'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'className', 'crossrefEntry', 'identifier', 'errorMessage', 'fetchOpenAccessUrl']
+        self.available_properties = ['id', 'className', 'crossrefEntry', 'identifier', 'errorMessage', 'preventOpenAccessFetch']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

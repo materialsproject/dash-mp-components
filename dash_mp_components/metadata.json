@@ -853,12 +853,12 @@
                 "required": false,
                 "description": "The DOI (Digital Object Identifier) of the reference\nThis identifier is used to generate links to the reference's\nonline publication, open access PDF, and bibtex"
             },
-            "fetchOpenAccessUrl": {
+            "preventOpenAccessFetch": {
                 "type": {
                     "name": "bool"
                 },
                 "required": false,
-                "description": "Set to true to dynamically fetch a link to a free PDF of\nthe reference (using the doi prop)\n@default false"
+                "description": "Set to true to prevent dynamically fetching a link to a free PDF of\neach reference (using the \"doi\" field for individual bib entry).\nNOTE: the open access URL can also be included in a bib entry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched.\n@default false"
             },
             "openAccessUrl": {
                 "type": {
@@ -954,12 +954,12 @@
                 "required": false,
                 "description": "Class name(s) to append to individual result cards' default class (mpc-bib-card)"
             },
-            "fetchOpenAccessUrl": {
+            "preventOpenAccessFetch": {
                 "type": {
                     "name": "bool"
                 },
                 "required": false,
-                "description": "Set to true to dynamically fetch a link to a free PDF of\neach reference (using the \"doi\" field for individual bibjson entry)\nNOTE: the open access URL can also be included in a bibjson entry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched.\n@default false"
+                "description": "Set to true to prevent dynamically fetching a link to a free PDF of\neach reference (using the \"doi\" field for individual bib entry).\nNOTE: the open access URL can also be included in a bib entry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched.\n@default false"
             }
         }
     },
@@ -996,12 +996,12 @@
                 "required": false,
                 "description": "A single bib object in bibjson format\nOnly the following bib properties are used by this component: title, author (as a list or string), year, doi, journal.\nIf any of those properties are missing, that property will be omitted from the bibjson result card.\nAny extra properties are simply ignored.\ne.g.\n      {\n        \"journal\": \"Physical Review X\",\n        \"year\": \"2015\",\n        \"issn\": \"21603308\",\n        \"isbn\": \"2160-3308\",\n        \"doi\": \"10.1103/PhysRevX.5.011006\",\n        \"author\": [\"Agapito, Luis A.\", \"Curtarolo, Stefano\", \"Nardelli, Marco Buongiorno\"],\n        \"title\": \"Reformulation of DFT + U as a Pseudohybrid Hubbard Density Functional for Accelerated Materials Discovery\",\n        \"ENTRYTYPE\": \"article\",\n        \"ID\": \"agapito2015\"\n      }"
             },
-            "fetchOpenAccessUrl": {
+            "preventOpenAccessFetch": {
                 "type": {
                     "name": "bool"
                 },
                 "required": false,
-                "description": "Set to true to dynamically fetch a link to a free PDF of\nthe reference (using the bibjsonEntry doi field)\nNOTE: the open access URL can also be included in the bibjsonEntry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched."
+                "description": "Set to true to prevent dynamically fetching a link to a free PDF of\neach reference (using the \"doi\" field for individual bib entry).\nNOTE: the open access URL can also be included in a bib entry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched.\n@default false"
             }
         }
     },
@@ -1094,12 +1094,12 @@
                 "required": false,
                 "description": "Error message to show inside the card if the crossref request fails\n@default 'Could not find reference'"
             },
-            "fetchOpenAccessUrl": {
+            "preventOpenAccessFetch": {
                 "type": {
                     "name": "bool"
                 },
                 "required": false,
-                "description": "Set to true to dynamically fetch a link to a free PDF of\nthe reference (using the bibjsonEntry doi field).\nNOTE: the open access URL can also be included in the bibjsonEntry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched."
+                "description": "Set to true to prevent dynamically fetching a link to a free PDF of\neach reference (using the \"doi\" field for individual bib entry).\nNOTE: the open access URL can also be included in a bib entry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched.\n@default false"
             }
         }
     },
@@ -1284,6 +1284,42 @@
                 },
                 "required": false,
                 "description": "Optional tooltip to display above the button on hover"
+            }
+        }
+    },
+    "src/lib/components/search/Formula.react.js": {
+        "description": "Render formula strings with proper subscripts.\nNote that this component expects the string to be\na valid formula.",
+        "displayName": "Formula",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.function"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-formula)"
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Use the children prop to set the content of the formula.\nMust be a simple string."
             }
         }
     },
@@ -1491,9 +1527,9 @@
             }
         }
     },
-    "src/lib/components/search/OpenAccessButton.react.js": {
-        "description": "Standardized button for linking to an Open Access PDF.\nIf no url prop is supplied, a PDF link will be fetched\nfrom the Open Access Button API using the doi prop.",
-        "displayName": "OpenAccessButton",
+    "src/lib/components/search/PublicationButton.react.js": {
+        "description": "Standardized button for linking to a publication.\nIf a doi prop or doi.org link is supplied, an open access link\nwill also be generated next to the publication link.",
+        "displayName": "PublicationButton",
         "methods": [],
         "props": {
             "id": {
@@ -1503,33 +1539,33 @@
                 "required": false,
                 "description": "The ID used to identify this component in Dash callbacks"
             },
-            "className": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": "Class name(s) to append to the component's default class (mpc-open-access-button)\n@default 'button is-small'"
-            },
             "doi": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
-                "description": "The DOI (Digital Object Identifier) of the reference\nto attempt to fetch an open access PDF link for."
+                "description": "The DOI (Digital Object Identifier) of the publication\nWill be used to generate a doi.org link and to fetch an open access PDF link."
             },
             "url": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
-                "description": "Directly supply the URL to an accessible PDF of the reference.\nIf supplied, the component will not try to fetch an open access URL."
+                "description": "Directly supply the URL to the publication.\nIf a doi.org url is supplied, this component will automatically\nparse the url for the doi and use that to fetch an open access link."
             },
-            "showLoadingText": {
+            "openAccessUrl": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Directly supply the URL to an openly accessible PDF of the reference.\nIf supplied, the component will not try to fetch an open access URL."
+            },
+            "preventOpenAccessFetch": {
                 "type": {
                     "name": "bool"
                 },
                 "required": false,
-                "description": "Set to true to show the text \"Loading...\" inside the link\nwhile the URL is being fetched.\nIf false, the is-loading is applied to the link while loading.\nIf supplying the Bulma button class, this will show a spinner icon.\n@default false"
+                "description": "Set to true to prevent any requests to the open access api.\nNote that if you supply your own openAccessUrl, this prop is not necessary."
             },
             "target": {
                 "type": {
@@ -1800,7 +1836,7 @@
         }
     },
     "src/lib/components/search/Tooltip.react.js": {
-        "description": "Tooltip component based on react-tooltip (https://github.com/wwayne/react-tooltip).\nTo attach a Tooltip component to a trigger element, \nadd the attributes \"data-tip\" and \"data-for\" to the trigger element.\nThe \"data-for\" attribute's value should be equal to the id of the Tooltip\ncomponent you want to connect it to.",
+        "description": "Tooltip component based on react-tooltip (https://github.com/wwayne/react-tooltip).\nTo attach a Tooltip component to a trigger element,\nadd the attributes \"data-tip\" and \"data-for\" to the trigger element.\nThe \"data-for\" attribute's value should be equal to the id of the Tooltip\ncomponent you want to connect it to.",
         "displayName": "Tooltip",
         "methods": [],
         "props": {
