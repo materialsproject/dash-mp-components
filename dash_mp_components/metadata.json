@@ -1142,6 +1142,14 @@
                 },
                 "required": false,
                 "description": "Optional configuration for the columns in the data object.\nFollows the same format as the columns prop in the SearchUI component."
+            },
+            "expanded": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.boolean"
+                },
+                "required": false,
+                "description": "Control the initial expanded state of the block.\n@default false"
             }
         }
     },
@@ -1832,6 +1840,41 @@
                 },
                 "required": false,
                 "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            }
+        }
+    },
+    "src/lib/components/search/SynthesisRecipeCard.react.js": {
+        "description": "Display synthesis recipe data in a standardized card view.",
+        "displayName": "SynthesisRecipeCard",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-data-block)"
+            },
+            "data": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "Object (i.e. dictionary) of data to be displayed in the block.\nData should be in the format returned for a single result from the synthesis API endpoint."
             }
         }
     },

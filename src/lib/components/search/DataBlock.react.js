@@ -41,4 +41,10 @@ DataBlock.propTypes = {
      * Follows the same format as the columns prop in the SearchUI component.
      */
     columns: PropTypes.array,
+
+    /**
+     * Control the initial expanded state of the block.
+     * @default false
+     */
+    expanded: PropTypes.boolean,
 };

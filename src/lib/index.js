@@ -31,6 +31,7 @@ import MaterialsInput from './components/search/MaterialsInput.react';
 import DataBlock from './components/search/DataBlock.react';
 import Tooltip from './components/search/Tooltip.react';
 import Formula from './components/search/Formula.react';
+import SynthesisRecipeCard from './components/search/SynthesisRecipeCard.react';
 
 export {
     PeriodicTableInput,
@@ -61,4 +62,5 @@ export {
     DataBlock,
     Tooltip,
     Formula,
+    SynthesisRecipeCard,
 };

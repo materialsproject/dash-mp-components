@@ -25,6 +25,7 @@ from .MaterialsInput import MaterialsInput
 from .PublicationButton import PublicationButton
 from .SearchUI import SearchUI
 from .Select import Select
+from .SynthesisRecipeCard import SynthesisRecipeCard
 from .Tooltip import Tooltip
 
 __all__ = [
@@ -55,5 +56,6 @@ __all__ = [
     "PublicationButton",
     "SearchUI",
     "Select",
+    "SynthesisRecipeCard",
     "Tooltip"
 ]
