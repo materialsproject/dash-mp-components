@@ -1,6 +1,6 @@
 {
     "name": "@materialsproject/dash-mp-components",
-    "version": "0.3.17",
+    "version": "0.3.18",
     "description": "Dash components for the Materials Project",
     "repository": {
         "type": "git",
