@@ -1145,8 +1145,7 @@
             },
             "expanded": {
                 "type": {
-                    "name": "custom",
-                    "raw": "PropTypes.boolean"
+                    "name": "bool"
                 },
                 "required": false,
                 "description": "Control the initial expanded state of the block.\n@default false"

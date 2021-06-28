@@ -46,5 +46,5 @@ DataBlock.propTypes = {
      * Control the initial expanded state of the block.
      * @default false
      */
-    expanded: PropTypes.boolean,
+    expanded: PropTypes.bool,
 };

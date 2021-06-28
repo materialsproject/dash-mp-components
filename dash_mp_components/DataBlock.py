@@ -14,7 +14,7 @@ Keyword arguments:
 - data (dict; optional): Object (i.e. dictionary) of data to be displayed in the block
 - columns (list; optional): Optional configuration for the columns in the data object.
 Follows the same format as the columns prop in the SearchUI component.
-- expanded (optional): Control the initial expanded state of the block.
+- expanded (boolean; optional): Control the initial expanded state of the block.
 @default false"""
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, data=Component.UNDEFINED, columns=Component.UNDEFINED, expanded=Component.UNDEFINED, **kwargs):
