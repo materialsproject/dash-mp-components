@@ -13,6 +13,13 @@ Keyword arguments:
 - id (string; optional): The ID used to identify this component in Dash callbacks
 - doi (string; optional): The DOI (Digital Object Identifier) of the publication
 Will be used to generate a doi.org link and to fetch an open access PDF link.
+- className (string; optional): Class name(s) to append to the component's default class (mpc-open-access-button).
+Note: the "tag" class is the default value for className.
+If you don't want the top-level element to have the "tag" class, add className="" or any other value.
+If you want to use a bulma tag modifier, use the tagClassName prop instead.
+@default 'tag'
+- tagClassName (string; optional): Customize the tag using bulma's tag classes
+These class names will be appended to all of the component's "tag" elements
 - url (string; optional): Directly supply the URL to the publication.
 If a doi.org url is supplied, this component will automatically
 parse the url for the doi and use that to fetch an open access link.
@@ -23,12 +30,12 @@ Note that if you supply your own openAccessUrl, this prop is not necessary.
 - target (string; optional): Value to add to the anchor tag's target attribute
 @default '_blank'"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, doi=Component.UNDEFINED, url=Component.UNDEFINED, openAccessUrl=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, target=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'doi', 'url', 'openAccessUrl', 'preventOpenAccessFetch', 'target']
+    def __init__(self, id=Component.UNDEFINED, doi=Component.UNDEFINED, className=Component.UNDEFINED, tagClassName=Component.UNDEFINED, url=Component.UNDEFINED, openAccessUrl=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, target=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'doi', 'className', 'tagClassName', 'url', 'openAccessUrl', 'preventOpenAccessFetch', 'target']
         self._type = 'PublicationButton'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'doi', 'url', 'openAccessUrl', 'preventOpenAccessFetch', 'target']
+        self.available_properties = ['id', 'doi', 'className', 'tagClassName', 'url', 'openAccessUrl', 'preventOpenAccessFetch', 'target']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

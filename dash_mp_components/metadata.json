@@ -1553,6 +1553,20 @@
                 "required": false,
                 "description": "The DOI (Digital Object Identifier) of the publication\nWill be used to generate a doi.org link and to fetch an open access PDF link."
             },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-open-access-button).\nNote: the \"tag\" class is the default value for className.\nIf you don't want the top-level element to have the \"tag\" class, add className=\"\" or any other value.\nIf you want to use a bulma tag modifier, use the tagClassName prop instead.\n@default 'tag'"
+            },
+            "tagClassName": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Customize the tag using bulma's tag classes\nThese class names will be appended to all of the component's \"tag\" elements"
+            },
             "url": {
                 "type": {
                     "name": "string"

@@ -28,6 +28,21 @@ PublicationButton.propTypes = {
     doi: PropTypes.string,
 
     /**
+     * Class name(s) to append to the component's default class (mpc-open-access-button).
+     * Note: the "tag" class is the default value for className.
+     * If you don't want the top-level element to have the "tag" class, add className="" or any other value.
+     * If you want to use a bulma tag modifier, use the tagClassName prop instead.
+     * @default 'tag'
+     */
+    className: PropTypes.string,
+
+    /**
+     * Customize the tag using bulma's tag classes
+     * These class names will be appended to all of the component's "tag" elements
+     */
+    tagClassName: PropTypes.string,
+
+    /**
      * Directly supply the URL to the publication.
      * If a doi.org url is supplied, this component will automatically
      * parse the url for the doi and use that to fetch an open access link.
