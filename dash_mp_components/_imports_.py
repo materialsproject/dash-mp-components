@@ -4,6 +4,7 @@ from .CameraContextProvider import CameraContextProvider
 from .CrystalToolkitScene import CrystalToolkitScene
 from .Download import Download
 from .GraphComponent import GraphComponent
+from .Markdown import Markdown
 from .NavbarDropdown import NavbarDropdown
 from .Scrollspy import Scrollspy
 from .PeriodicContext import PeriodicContext
@@ -35,6 +36,7 @@ __all__ = [
     "CrystalToolkitScene",
     "Download",
     "GraphComponent",
+    "Markdown",
     "NavbarDropdown",
     "Scrollspy",
     "PeriodicContext",

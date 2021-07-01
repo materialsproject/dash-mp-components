@@ -461,6 +461,83 @@
             }
         }
     },
+    "src/lib/components/data-display/Markdown.react.js": {
+        "description": "A custom re-worked version of dcc.Markdown.\nUses v6 of react-markdown and applies four plugins\nto the markdown component by default:\n- remark-slug\n- remark-highlight.js\n- remark-math\n- rehype-katex",
+        "displayName": "Markdown",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name of the container element"
+            },
+            "children": {
+                "type": {
+                    "name": "union",
+                    "value": [
+                        {
+                            "name": "string"
+                        },
+                        {
+                            "name": "arrayOf",
+                            "value": {
+                                "name": "string"
+                            }
+                        }
+                    ]
+                },
+                "required": false,
+                "description": "A markdown string (or array of strings) that adhreres to the CommonMark spec"
+            },
+            "dedent": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Remove matching leading whitespace from all lines.\nLines that are empty, or contain *only* whitespace, are ignored.\nBoth spaces and tab characters are removed, but only if they match;\nwe will not convert tabs to spaces or vice versa."
+            },
+            "loading_state": {
+                "type": {
+                    "name": "shape",
+                    "value": {
+                        "is_loading": {
+                            "name": "bool",
+                            "description": "Determines if the component is loading or not",
+                            "required": false
+                        },
+                        "prop_name": {
+                            "name": "string",
+                            "description": "Holds which property is loading",
+                            "required": false
+                        },
+                        "component_name": {
+                            "name": "string",
+                            "description": "Holds the name of the component that is loading",
+                            "required": false
+                        }
+                    }
+                },
+                "required": false,
+                "description": "Object that holds the loading state object coming from dash-renderer"
+            },
+            "style": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "User-defined inline styles for the rendered Markdown"
+            }
+        }
+    },
     "src/lib/components/navigation/NavbarDropdown.react.js": {
         "description": "Component for including dropdown menus inside a bulma navbar\nIncludes all of the default bulma classes for a navbar-dropdown",
         "displayName": "NavbarDropdown",

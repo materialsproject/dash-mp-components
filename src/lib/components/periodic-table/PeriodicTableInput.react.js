@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {SelectableTable} from '@materialsproject/mp-react-components';
-import '@materialsproject/mp-react-components/index.css';
 
 /**
  * MpPeriodicTableInput is a component that allows user to select
@@ -25,7 +24,7 @@ export default class MpPeriodicTableInput extends Component {
 }
 
 MpPeriodicTableInput.defaultProps = {
-    maxElementSelectable: 10
+    maxElementSelectable: 10,
 };
 
 //Note(chab) dash-generate-components will break if this object is {}/null. You must provide at least id

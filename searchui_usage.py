@@ -102,6 +102,23 @@ filterGroups = [
 ]
 
 app.layout = html.Div(children=[
+  dash_mp_components.Markdown(
+    """
+    # Heading 1
+    ## Heading 2
+    
+    This is a [link](https://github.com/materialsproject/api).
+    
+    ~~~python
+    from mp_api.matproj import MPRester
+    ~~~
+
+    $$
+    L = \\frac{1}{2} \\rho v^2 S C_L
+    $$
+    """,
+    id='markdown'
+  ),
   html.Div(id="selected-rows"),
   html.Div(
     dash_mp_components.GlobalSearchBar(
