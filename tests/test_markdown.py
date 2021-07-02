@@ -23,6 +23,8 @@ def test_markdown(dash_duo):
         from mp_api.matproj import MPRester
         ~~~
 
+        ~strike~
+
         $$
         L = \\frac{1}{2} \\rho v^2 S C_L
         $$
@@ -35,4 +37,5 @@ def test_markdown(dash_duo):
     assert len(dash_duo.find_elements('#heading-1')) == 1
     assert len(dash_duo.find_elements('a')) == 1
     assert len(dash_duo.find_elements('.hljs.language-python')) == 1
+    assert len(dash_duo.find_elements('del')) == 1
     assert len(dash_duo.find_elements('.math.math-display')) == 1

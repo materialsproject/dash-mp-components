@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 
 /**
  * A custom re-worked version of dcc.Markdown.
- * Uses v6 of react-markdown and applies four plugins
+ * Uses v6 of react-markdown and applies five plugins
  * to the markdown component by default:
+ * - remark-gfm
  * - remark-slug
  * - remark-highlight.js
  * - remark-math
