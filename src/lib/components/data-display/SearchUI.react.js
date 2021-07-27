@@ -357,4 +357,11 @@ SearchUI.propTypes = {
       }
     */
     cardOptions: PropTypes.object,
+
+    /**
+     * Set to true if displaying data from the MPContribs API.
+     * This is a temporary solution to use until mp-api and contribs API have
+     * consistent naming standards.
+     */
+    isContribs: PropTypes.bool,
 };

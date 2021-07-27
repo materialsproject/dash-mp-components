@@ -47,4 +47,27 @@ DataBlock.propTypes = {
      * @default false
      */
     expanded: PropTypes.bool,
+
+    /**
+     * Content to display in the bottom section of the card.
+     * If you want to put a component in the footer, add it to the children prop instead.
+     */
+    footer: PropTypes.node,
+
+    /**
+     * Content to display in the bottom section of the card.
+     * AlternativeWill take precedent
+     */
+    children: PropTypes.node,
+
+    /**
+     * Class name(s) to use for the icon in the top right.
+     * If no class is supplied, there will not be an icon.
+     */
+    iconClassName: PropTypes.string,
+
+    /**
+     * Optional tooltip to show when hovering over the icon
+     */
+    iconTooltip: PropTypes.string,
 };
