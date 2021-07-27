@@ -11,27 +11,27 @@ import Download from './components/crystal-toolkit/Download.react';
 // other ct components
 import GraphComponent from './components/crystal-toolkit/GraphComponent.react';
 import JsonView from './components/JsonView.react';
-import Select from './components/search/Select.react';
+import Select from './components/data-entry/Select.react';
 // navbar
 import MatSidebar from './components/MatSidebar.react';
 import Scrollspy from './components/navigation/Scrollspy.react';
 // new search component
-import SearchUI from './components/search/SearchUI.react';
-import GlobalSearchBar from './components/search/GlobalSearchBar.react';
+import SearchUI from './components/data-display/SearchUI.react';
+import GlobalSearchBar from './components/data-entry/GlobalSearchBar.react';
 import NavbarDropdown from './components/navigation/NavbarDropdown.react';
-import CrossrefCard from './components/search/CrossrefCard.react';
-import BibjsonCard from './components/search/BibjsonCard.react';
-import BibFilter from './components/search/BibFilter.react';
-import BibCard from './components/search/BibCard.react';
-import BibtexButton from './components/search/BibtexButton.react';
-import PublicationButton from './components/search/PublicationButton.react';
-import DownloadButton from './components/search/DownloadButton.react';
-import DownloadDropdown from './components/search/DownloadDropdown.react';
-import MaterialsInput from './components/search/MaterialsInput.react';
-import DataBlock from './components/search/DataBlock.react';
-import Tooltip from './components/search/Tooltip.react';
-import Formula from './components/search/Formula.react';
-import SynthesisRecipeCard from './components/search/SynthesisRecipeCard.react';
+import CrossrefCard from './components/publications/CrossrefCard.react';
+import BibjsonCard from './components/publications/BibjsonCard.react';
+import BibFilter from './components/publications/BibFilter.react';
+import BibCard from './components/publications/BibCard.react';
+import BibtexButton from './components/publications/BibtexButton.react';
+import PublicationButton from './components/publications/PublicationButton.react';
+import DownloadButton from './components/data-display/DownloadButton.react';
+import DownloadDropdown from './components/data-display/DownloadDropdown.react';
+import MaterialsInput from './components/data-entry/MaterialsInput.react';
+import DataBlock from './components/data-display/DataBlock.react';
+import Tooltip from './components/data-display/Tooltip.react';
+import Formula from './components/data-display/Formula.react';
+import SynthesisRecipeCard from './components/data-display/SynthesisRecipeCard.react';
 import Markdown from './components/data-display/Markdown.react';
 
 export {
