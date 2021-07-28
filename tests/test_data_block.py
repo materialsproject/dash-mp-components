@@ -22,13 +22,13 @@ def test_data_block(dash_duo):
               'baseUrl': 'https://lbl.gov',
               'target': '_blank',
             },
-            'hiddenBottom': True,
+            'isTop': True,
           },
           {
             'name': 'Formula',
             'selector': 'formula_pretty',
             'format': 'FORMULA',
-            'hiddenBottom': True,
+            'isTop': True,
           },
           {
             'name': 'Data',
@@ -47,11 +47,13 @@ def test_data_block(dash_duo):
               'arrayLinksKey': 'tablesLinks',
               'arrayLinksDownload': True,
             },
+            'isTop': True,
+            'isBottom': True,
           },
           {
             'name': 'Description',
             'selector': 'description',
-            'hiddenTop': True,
+            'isBottom': True,
           },
         ],
         data={
@@ -69,6 +71,6 @@ def test_data_block(dash_duo):
     ])
     dash_duo.start_server(app)
     dash_duo.driver.implicitly_wait(10)
-    assert len(dash_duo.find_elements('.mpc-data-block-item')) == 4
-    dash_duo.find_element('.mpc-data-block-top').click()
-    assert len(dash_duo.find_elements('.mpc-data-block-bottom')) == 1
+    assert len(dash_duo.find_elements('.mpc-data-block-header .mpc-data-block-item')) == 4
+    dash_duo.find_element('.mpc-data-block-caret').click()
+    assert len(dash_duo.find_elements('.Collapsible__trigger.is-open')) == 1
