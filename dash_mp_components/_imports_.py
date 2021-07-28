@@ -4,7 +4,17 @@ from .CameraContextProvider import CameraContextProvider
 from .CrystalToolkitScene import CrystalToolkitScene
 from .Download import Download
 from .GraphComponent import GraphComponent
+from .DataBlock import DataBlock
+from .DownloadButton import DownloadButton
+from .DownloadDropdown import DownloadDropdown
+from .Formula import Formula
 from .Markdown import Markdown
+from .SearchUI import SearchUI
+from .SynthesisRecipeCard import SynthesisRecipeCard
+from .Tooltip import Tooltip
+from .GlobalSearchBar import GlobalSearchBar
+from .MaterialsInput import MaterialsInput
+from .Select import Select
 from .NavbarDropdown import NavbarDropdown
 from .Scrollspy import Scrollspy
 from .PeriodicContext import PeriodicContext
@@ -17,17 +27,7 @@ from .BibFilter import BibFilter
 from .BibjsonCard import BibjsonCard
 from .BibtexButton import BibtexButton
 from .CrossrefCard import CrossrefCard
-from .DataBlock import DataBlock
-from .DownloadButton import DownloadButton
-from .DownloadDropdown import DownloadDropdown
-from .Formula import Formula
-from .GlobalSearchBar import GlobalSearchBar
-from .MaterialsInput import MaterialsInput
 from .PublicationButton import PublicationButton
-from .SearchUI import SearchUI
-from .Select import Select
-from .SynthesisRecipeCard import SynthesisRecipeCard
-from .Tooltip import Tooltip
 
 __all__ = [
     "JsonView",
@@ -36,7 +36,17 @@ __all__ = [
     "CrystalToolkitScene",
     "Download",
     "GraphComponent",
+    "DataBlock",
+    "DownloadButton",
+    "DownloadDropdown",
+    "Formula",
     "Markdown",
+    "SearchUI",
+    "SynthesisRecipeCard",
+    "Tooltip",
+    "GlobalSearchBar",
+    "MaterialsInput",
+    "Select",
     "NavbarDropdown",
     "Scrollspy",
     "PeriodicContext",
@@ -49,15 +59,5 @@ __all__ = [
     "BibjsonCard",
     "BibtexButton",
     "CrossrefCard",
-    "DataBlock",
-    "DownloadButton",
-    "DownloadDropdown",
-    "Formula",
-    "GlobalSearchBar",
-    "MaterialsInput",
-    "PublicationButton",
-    "SearchUI",
-    "Select",
-    "SynthesisRecipeCard",
-    "Tooltip"
+    "PublicationButton"
 ]

@@ -251,14 +251,17 @@ Must be an object with the following properties:
           { key: 'energy_above_hull', label: 'Energy Above Hull' },
           { key: 'formation_energy_per_atom', label: 'Formation Energy' },
         ],
-      }"""
+      }
+- isContribs (boolean; optional): Set to true if displaying data from the MPContribs API.
+This is a temporary solution to use until mp-api and contribs API have
+consistent naming standards."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, searchBarErrorMessage=Component.UNDEFINED, searchBarAllowedInputTypesMap=Component.UNDEFINED, searchBarPeriodicTableMode=Component.UNDEFINED, hasSortMenu=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, view=Component.UNDEFINED, allowViewSwitching=Component.UNDEFINED, cardOptions=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'hasSortMenu', 'sortField', 'sortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'allowViewSwitching', 'cardOptions']
+    def __init__(self, id=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, searchBarErrorMessage=Component.UNDEFINED, searchBarAllowedInputTypesMap=Component.UNDEFINED, searchBarPeriodicTableMode=Component.UNDEFINED, hasSortMenu=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, view=Component.UNDEFINED, allowViewSwitching=Component.UNDEFINED, cardOptions=Component.UNDEFINED, isContribs=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'hasSortMenu', 'sortField', 'sortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'allowViewSwitching', 'cardOptions', 'isContribs']
         self._type = 'SearchUI'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'hasSortMenu', 'sortField', 'sortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'allowViewSwitching', 'cardOptions']
+        self.available_properties = ['id', 'columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'hasSortMenu', 'sortField', 'sortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'allowViewSwitching', 'cardOptions', 'isContribs']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
