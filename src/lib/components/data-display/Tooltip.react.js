@@ -35,9 +35,9 @@ Tooltip.propTypes = {
      */
     children: PropTypes.node,
 
-    place: PropTypes.Place,
+    place: PropTypes.string,
 
-    type: PropTypes.Type,
+    type: PropTypes.string,
 
     effect: PropTypes.Effect,
 
