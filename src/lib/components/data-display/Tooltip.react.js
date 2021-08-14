@@ -39,7 +39,7 @@ Tooltip.propTypes = {
 
     type: PropTypes.string,
 
-    effect: PropTypes.Effect,
+    effect: PropTypes.string,
 
     event: PropTypes.string,
 
