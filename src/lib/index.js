@@ -12,13 +12,14 @@ import Download from './components/crystal-toolkit/Download.react';
 import GraphComponent from './components/crystal-toolkit/GraphComponent.react';
 import JsonView from './components/JsonView.react';
 import Select from './components/data-entry/Select.react';
-// navbar
+// navigation
 import MatSidebar from './components/MatSidebar.react';
 import Scrollspy from './components/navigation/Scrollspy.react';
+import NavbarDropdown from './components/navigation/NavbarDropdown.react';
+import Dropdown from './components/navigation/Dropdown.react';
 // new search component
 import SearchUI from './components/data-display/SearchUI.react';
 import GlobalSearchBar from './components/data-entry/GlobalSearchBar.react';
-import NavbarDropdown from './components/navigation/NavbarDropdown.react';
 import CrossrefCard from './components/publications/CrossrefCard.react';
 import BibjsonCard from './components/publications/BibjsonCard.react';
 import BibFilter from './components/publications/BibFilter.react';
@@ -49,6 +50,7 @@ export {
     SearchUI,
     GlobalSearchBar,
     NavbarDropdown,
+    Dropdown,
     Download,
     Select,
     BibjsonCard,
