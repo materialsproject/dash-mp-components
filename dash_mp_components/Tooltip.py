@@ -17,9 +17,9 @@ This can be simple text or a component
 - id (string; optional): The ID used to identify this component in Dash callbacks
 - setProps (optional): Dash-assigned callback that should be called whenever any of the
 properties change
-- place (optional)
-- type (optional)
-- effect (optional)
+- place (string; optional)
+- type (string; optional)
+- effect (string; optional)
 - event (string; optional)
 - eventOff (string; optional)
 - globalEventOff (string; optional)

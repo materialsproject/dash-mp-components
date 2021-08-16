@@ -1060,24 +1060,21 @@
             },
             "place": {
                 "type": {
-                    "name": "custom",
-                    "raw": "PropTypes.Place"
+                    "name": "string"
                 },
                 "required": false,
                 "description": ""
             },
             "type": {
                 "type": {
-                    "name": "custom",
-                    "raw": "PropTypes.Type"
+                    "name": "string"
                 },
                 "required": false,
                 "description": ""
             },
             "effect": {
                 "type": {
-                    "name": "custom",
-                    "raw": "PropTypes.Effect"
+                    "name": "string"
                 },
                 "required": false,
                 "description": ""
@@ -1453,6 +1450,93 @@
                 },
                 "required": false,
                 "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            }
+        }
+    },
+    "src/lib/components/navigation/Dropdown.react.js": {
+        "description": "Generic dropdown menu that can render arbitrary items for display\nand navigation purposes only (i.e. not for selecting options or performing actions that are not links)",
+        "displayName": "Dropdown",
+        "methods": [],
+        "props": {
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Use the children prop to set the dropdown items.\nThis should usually be a list of <div> components with the class \"dropdown-item\".\nThe content of each item can be anything from simple text to a component."
+            },
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "triggerLabel": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Text to display in the button that triggers the dropdown to open"
+            },
+            "triggerClassName": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name(s) to apply to button that opens the dropdown menu\n@default 'button'"
+            },
+            "triggerIcon": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name(s) for the icon to display to the left of the trigger label (optional)"
+            },
+            "items": {
+                "type": {
+                    "name": "arrayOf",
+                    "value": {
+                        "name": "string"
+                    }
+                },
+                "required": false,
+                "description": "List of strings to display inside the dropdown menu.\nOmit this and use the children prop instead if you want supply components as dropdown items."
+            },
+            "isArrowless": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true to remove the arrow to the right of the trigger label"
+            },
+            "isUp": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true to make the dropdown menu open upwards"
+            },
+            "isRight": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true to align the dropdown menu with the right of the trigger"
+            },
+            "closeOnSelection": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to false to keep the menu open when an item is clicked\n@default true"
             }
         }
     },
