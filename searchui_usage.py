@@ -133,7 +133,7 @@ app.layout = html.Div(children=[
     id="search-ui-demo",
     columns=columns,
     filterGroups=filterGroups,
-    baseURL="https://api.materialsproject.org/search/",
+    baseUrl="https://api.materialsproject.org/search/",
     autocompleteFormulaUrl="https://api.materialsproject.org/materials/formula_autocomplete/",
     apiKey=os.environ['MP_API_KEY'],
     resultLabel="material",

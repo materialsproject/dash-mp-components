@@ -189,7 +189,19 @@ SearchUI.propTypes = {
      * The base URL to the API that this search UI should query
      * e.g. "https://api.materialsproject.org/search/"
      */
-    baseURL: PropTypes.string,
+    baseUrl: PropTypes.string,
+
+    /**
+     * Query params that will be automatically added for every search.
+     * This can be used to scope down a SearchUI to a specific subset of a larger endpoint.
+     * 
+     * e.g.
+      
+      {
+        project: 'open_catalyst_project'
+      }
+     */
+    baseUrlParams: PropTypes.object,
 
     /**
      * Optional URL endpoint for fetching formula autocompletion results

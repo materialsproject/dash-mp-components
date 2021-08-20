@@ -161,8 +161,16 @@ e.g.
           ]
         }
       ]
-- baseURL (string; optional): The base URL to the API that this search UI should query
+- baseUrl (string; optional): The base URL to the API that this search UI should query
 e.g. "https://api.materialsproject.org/search/"
+- baseUrlParams (dict; optional): Query params that will be automatically added for every search.
+This can be used to scope down a SearchUI to a specific subset of a larger endpoint.
+
+e.g.
+      
+      {
+        project: 'open_catalyst_project'
+      }
 - autocompleteFormulaUrl (string; optional): Optional URL endpoint for fetching formula autocompletion results
 e.g. "https://api.materialsproject.org/materials/formula_autocomplete/"
 - apiKey (string; optional): API key (if needed) that will be used when making queries
@@ -256,12 +264,12 @@ Must be an object with the following properties:
 This is a temporary solution to use until mp-api and contribs API have
 consistent naming standards."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseURL=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, searchBarErrorMessage=Component.UNDEFINED, searchBarAllowedInputTypesMap=Component.UNDEFINED, searchBarPeriodicTableMode=Component.UNDEFINED, hasSortMenu=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, view=Component.UNDEFINED, allowViewSwitching=Component.UNDEFINED, cardOptions=Component.UNDEFINED, isContribs=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'hasSortMenu', 'sortField', 'sortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'allowViewSwitching', 'cardOptions', 'isContribs']
+    def __init__(self, id=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseUrl=Component.UNDEFINED, baseUrlParams=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, searchBarErrorMessage=Component.UNDEFINED, searchBarAllowedInputTypesMap=Component.UNDEFINED, searchBarPeriodicTableMode=Component.UNDEFINED, hasSortMenu=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, view=Component.UNDEFINED, allowViewSwitching=Component.UNDEFINED, cardOptions=Component.UNDEFINED, isContribs=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'columns', 'filterGroups', 'baseUrl', 'baseUrlParams', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'hasSortMenu', 'sortField', 'sortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'allowViewSwitching', 'cardOptions', 'isContribs']
         self._type = 'SearchUI'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'columns', 'filterGroups', 'baseURL', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'hasSortMenu', 'sortField', 'sortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'allowViewSwitching', 'cardOptions', 'isContribs']
+        self.available_properties = ['id', 'columns', 'filterGroups', 'baseUrl', 'baseUrlParams', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'hasSortMenu', 'sortField', 'sortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'allowViewSwitching', 'cardOptions', 'isContribs']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
