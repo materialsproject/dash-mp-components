@@ -15,6 +15,7 @@ import Select from './components/data-entry/Select.react';
 // navigation
 import MatSidebar from './components/MatSidebar.react';
 import Scrollspy from './components/navigation/Scrollspy.react';
+import Navbar from './components/navigation/Navbar.react';
 import NavbarDropdown from './components/navigation/NavbarDropdown.react';
 import Dropdown from './components/navigation/Dropdown.react';
 // new search component
@@ -49,6 +50,7 @@ export {
     Scrollspy,
     SearchUI,
     GlobalSearchBar,
+    Navbar,
     NavbarDropdown,
     Dropdown,
     Download,

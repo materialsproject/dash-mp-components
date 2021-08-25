@@ -1547,6 +1547,48 @@
             }
         }
     },
+    "src/lib/components/navigation/Navbar.react.js": {
+        "description": "Component for including dropdown menus inside a bulma navbar\nIncludes all of the default bulma classes for a navbar-dropdown",
+        "displayName": "Navbar",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Extra class name applied to top level navbar-item.\nThe \"navbar\" class is added automatically"
+            },
+            "items": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "An array of navbar-items to show on the right side of the navbar.\nAn item can be a link, a menu label, or a divider.\nEach item can support the following properties:\n   className: string;\n   label: string (the text to show in the item);\n   href: string (the href value for link items, ignored if item is menu label);\n   target: string (target value to be added to the link);\n   icon: string (class name(s) for an icon to display in the navbar-item);\n   image: string (src attribute of an image to display in the navbar-item);\n   items: array (items to render underneath this item as a dropdown)\n\n     items of items (i.e. dropdown items) can have all the above properties plus the following:\n\n     isDivider: boolean (sets this item as just a horizontal rule with the \"navbar-divider\" class);\n     isMenuLabel: boolean (sets this item as a label with the \"menu-label\" class);\n     items: NavbarItem[];\n\n   isRight: boolean (applies bulma's \"is-right\" class to the navbar-dropdown\n   isArrowless: boolean (Set to true to hide the default angle down arrow created by bulma);\ne.g.\n        [\n          {\n            label: \"API\",\n            href: \"/api\"\n          },\n          {\n            label: \"Help\",\n            href: \"/help\"\n          },\n          {\n            label: \"Apps\",\n            isRight: true,\n            items: [\n              {\n                label: \"Materials\",\n                href: \"/materials\"\n              },\n              {\n                label: \"Molecules\",\n                href: \"/molecules\"\n              },\n              {\n                isDivider: true\n              },\n              {\n                isMenuLabel: true,\n                label: \"Other\"\n              },\n              {\n                label: \"External Site\",\n                href: \"https://externalsite.com\",\n                target: \"_blank\"\n              }\n            ]\n          }\n        ]"
+            },
+            "brandItem": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "Single navbar-item to display on the left of the navbar in the \"navbar-brand\" element.\nExpects an object that can support all the same properties of a navbar-item.\ne.g.\n        {\n          label: \"The Materials Project\",\n          href: \"/\",\n          image: \"/images/brand.png\"\n        },"
+            }
+        }
+    },
     "src/lib/components/navigation/NavbarDropdown.react.js": {
         "description": "Component for including dropdown menus inside a bulma navbar\nIncludes all of the default bulma classes for a navbar-dropdown",
         "displayName": "NavbarDropdown",

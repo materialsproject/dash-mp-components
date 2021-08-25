@@ -16,6 +16,7 @@ from .GlobalSearchBar import GlobalSearchBar
 from .MaterialsInput import MaterialsInput
 from .Select import Select
 from .Dropdown import Dropdown
+from .Navbar import Navbar
 from .NavbarDropdown import NavbarDropdown
 from .Scrollspy import Scrollspy
 from .PeriodicContext import PeriodicContext
@@ -49,6 +50,7 @@ __all__ = [
     "MaterialsInput",
     "Select",
     "Dropdown",
+    "Navbar",
     "NavbarDropdown",
     "Scrollspy",
     "PeriodicContext",
