@@ -27,7 +27,7 @@ Tooltip.propTypes = {
      * Dash-assigned callback that should be called whenever any of the
      * properties change
      */
-    setProps: PropTypes.function,
+    setProps: PropTypes.func,
 
     /**
      * Use the children prop to set the content of the tooltip.

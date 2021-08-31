@@ -1052,8 +1052,7 @@
             },
             "setProps": {
                 "type": {
-                    "name": "custom",
-                    "raw": "PropTypes.function"
+                    "name": "func"
                 },
                 "required": false,
                 "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"

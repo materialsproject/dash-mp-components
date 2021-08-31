@@ -15,8 +15,6 @@ Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Use the children prop to set the content of the tooltip.
 This can be simple text or a component
 - id (string; optional): The ID used to identify this component in Dash callbacks
-- setProps (optional): Dash-assigned callback that should be called whenever any of the
-properties change
 - place (string; optional)
 - type (string; optional)
 - effect (string; optional)
@@ -37,11 +35,11 @@ properties change
 - clickable (boolean; optional)"""
     @_explicitize_args
     def __init__(self, children=None, id=Component.UNDEFINED, place=Component.UNDEFINED, type=Component.UNDEFINED, effect=Component.UNDEFINED, event=Component.UNDEFINED, eventOff=Component.UNDEFINED, globalEventOff=Component.UNDEFINED, isCapture=Component.UNDEFINED, offset=Component.UNDEFINED, multiline=Component.UNDEFINED, className=Component.UNDEFINED, html=Component.UNDEFINED, delayHide=Component.UNDEFINED, delayShow=Component.UNDEFINED, delayUpdate=Component.UNDEFINED, border=Component.UNDEFINED, disable=Component.UNDEFINED, scrollHide=Component.UNDEFINED, clickable=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'setProps', 'place', 'type', 'effect', 'event', 'eventOff', 'globalEventOff', 'isCapture', 'offset', 'multiline', 'className', 'html', 'delayHide', 'delayShow', 'delayUpdate', 'border', 'disable', 'scrollHide', 'clickable']
+        self._prop_names = ['children', 'id', 'place', 'type', 'effect', 'event', 'eventOff', 'globalEventOff', 'isCapture', 'offset', 'multiline', 'className', 'html', 'delayHide', 'delayShow', 'delayUpdate', 'border', 'disable', 'scrollHide', 'clickable']
         self._type = 'Tooltip'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'setProps', 'place', 'type', 'effect', 'event', 'eventOff', 'globalEventOff', 'isCapture', 'offset', 'multiline', 'className', 'html', 'delayHide', 'delayShow', 'delayUpdate', 'border', 'disable', 'scrollHide', 'clickable']
+        self.available_properties = ['children', 'id', 'place', 'type', 'effect', 'event', 'eventOff', 'globalEventOff', 'isCapture', 'offset', 'multiline', 'className', 'html', 'delayHide', 'delayShow', 'delayUpdate', 'border', 'disable', 'scrollHide', 'clickable']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

@@ -102,6 +102,20 @@ filterGroups = [
 ]
 
 app.layout = html.Div(children=[
+  html.Div([
+    html.Span(
+      'Hover me',
+      id='trigger',
+      **{
+        'data-tip': True,
+        'data-for': 'tooltip-1'
+      }
+    ),
+    dash_mp_components.Tooltip(
+      'test tooltip',
+      id='tooltip-1'
+    )
+  ]),
   dash_mp_components.Markdown(
     """
     # Heading 1
