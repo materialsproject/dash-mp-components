@@ -9,6 +9,7 @@ from .DownloadButton import DownloadButton
 from .DownloadDropdown import DownloadDropdown
 from .Formula import Formula
 from .Markdown import Markdown
+from .Modal import Modal
 from .SearchUI import SearchUI
 from .SynthesisRecipeCard import SynthesisRecipeCard
 from .Tooltip import Tooltip
@@ -19,6 +20,7 @@ from .Dropdown import Dropdown
 from .Navbar import Navbar
 from .NavbarDropdown import NavbarDropdown
 from .Scrollspy import Scrollspy
+from .Tabs import Tabs
 from .PeriodicContext import PeriodicContext
 from .PeriodicContextTable import PeriodicContextTable
 from .PeriodicElement import PeriodicElement
@@ -43,6 +45,7 @@ __all__ = [
     "DownloadDropdown",
     "Formula",
     "Markdown",
+    "Modal",
     "SearchUI",
     "SynthesisRecipeCard",
     "Tooltip",
@@ -53,6 +56,7 @@ __all__ = [
     "Navbar",
     "NavbarDropdown",
     "Scrollspy",
+    "Tabs",
     "PeriodicContext",
     "PeriodicContextTable",
     "PeriodicElement",

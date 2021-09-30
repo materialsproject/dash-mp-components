@@ -793,6 +793,48 @@
             }
         }
     },
+    "src/lib/components/data-display/Modal.react.js": {
+        "description": "Render a trigger that opens a modal with the specified modal content",
+        "displayName": "Modal",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Use the children prop to set the trigger element and modal content.\nThe first element in the children array will be used as the trigger\nand the second element will be rendered inside the modal-content div."
+            },
+            "trigger": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Element to be used to open the modal.\nCan also be supplied as the first of two children (necessary in Dash)."
+            },
+            "modalContent": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Element to render inside the modal-content div.\nCan also be supplied as the second of two children (necessary in Dash)."
+            }
+        }
+    },
     "src/lib/components/data-display/SearchUI.react.js": {
         "description": "Component for rendering advanced search interfaces for data in an API\nRenders results in a data table alongside a set of filters that map to properties in the data.",
         "displayName": "SearchUI",
@@ -1683,6 +1725,65 @@
                 },
                 "required": false,
                 "description": "An integer to determine the scroll offset from an item that will trigger it active (default: -20)"
+            }
+        }
+    },
+    "src/lib/components/navigation/Tabs.react.js": {
+        "description": "Custom wrapper for the react-tabs component.\nSee https://github.com/reactjs/react-tabs",
+        "displayName": "Tabs",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name applied to top level wrapper for tabs and tab content.\nThe \"mpc-tabs\" class is added automatically"
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Use the children prop to set the separate tab contents.\nChildren must be a list of elements that is the same length as the list\nof labels in the labels prop.\nThe element's order in the children array determines which label it\nis associated with."
+            },
+            "labels": {
+                "type": {
+                    "name": "arrayOf",
+                    "value": {
+                        "name": "string"
+                    }
+                },
+                "required": false,
+                "description": "List of strings to use as labels for the tabs.\nThe number of labels must equal the number of children (i.e. tab content items)."
+            },
+            "tabIndex": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": "The current or default tabIndex to be active.\nThis value can be watched and changed from outside the component (e.g. via dash callback)."
+            },
+            "arbitraryProps": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "Object for placing all other props that\nare supported by react-select but are not\nexplicitly defined here.\nSee https://github.com/reactjs/react-tabs\n\nThis is a workaround because Dash components\ncannot accept props that aren't explicitly defined.\ne.g.\n        {\n          'defaultFocus': True,\n          'selectedTabClassName': 'active-tab' \n        }"
             }
         }
     },

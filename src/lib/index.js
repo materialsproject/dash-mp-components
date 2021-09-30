@@ -11,30 +11,34 @@ import Download from './components/crystal-toolkit/Download.react';
 // other ct components
 import GraphComponent from './components/crystal-toolkit/GraphComponent.react';
 import JsonView from './components/JsonView.react';
-import Select from './components/data-entry/Select.react';
 // navigation
 import MatSidebar from './components/MatSidebar.react';
 import Scrollspy from './components/navigation/Scrollspy.react';
 import Navbar from './components/navigation/Navbar.react';
 import NavbarDropdown from './components/navigation/NavbarDropdown.react';
 import Dropdown from './components/navigation/Dropdown.react';
-// new search component
-import SearchUI from './components/data-display/SearchUI.react';
-import GlobalSearchBar from './components/data-entry/GlobalSearchBar.react';
+import Tabs from './components/navigation/Tabs.react';
+// publications
 import CrossrefCard from './components/publications/CrossrefCard.react';
 import BibjsonCard from './components/publications/BibjsonCard.react';
 import BibFilter from './components/publications/BibFilter.react';
 import BibCard from './components/publications/BibCard.react';
 import BibtexButton from './components/publications/BibtexButton.react';
 import PublicationButton from './components/publications/PublicationButton.react';
+// data-entry
+import MaterialsInput from './components/data-entry/MaterialsInput.react';
+import GlobalSearchBar from './components/data-entry/GlobalSearchBar.react';
+import Select from './components/data-entry/Select.react';
+// data-display
+import SearchUI from './components/data-display/SearchUI.react';
 import DownloadButton from './components/data-display/DownloadButton.react';
 import DownloadDropdown from './components/data-display/DownloadDropdown.react';
-import MaterialsInput from './components/data-entry/MaterialsInput.react';
 import DataBlock from './components/data-display/DataBlock.react';
 import Tooltip from './components/data-display/Tooltip.react';
 import Formula from './components/data-display/Formula.react';
 import SynthesisRecipeCard from './components/data-display/SynthesisRecipeCard.react';
 import Markdown from './components/data-display/Markdown.react';
+import Modal from './components/data-display/Modal.react';
 
 export {
     PeriodicTableInput,
@@ -69,4 +73,6 @@ export {
     Formula,
     SynthesisRecipeCard,
     Markdown,
+    Tabs,
+    Modal,
 };
