@@ -38,7 +38,9 @@ import Tooltip from './components/data-display/Tooltip.react';
 import Formula from './components/data-display/Formula.react';
 import SynthesisRecipeCard from './components/data-display/SynthesisRecipeCard.react';
 import Markdown from './components/data-display/Markdown.react';
+import ModalContextProvider from './components/data-display/ModalContextProvider.react';
 import Modal from './components/data-display/Modal.react';
+import ModalTrigger from './components/data-display/ModalTrigger.react';
 
 export {
     PeriodicTableInput,
@@ -74,5 +76,7 @@ export {
     SynthesisRecipeCard,
     Markdown,
     Tabs,
+    ModalContextProvider,
     Modal,
+    ModalTrigger,
 };

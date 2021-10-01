@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /**
- * Render a trigger that opens a modal with the specified modal content
+ * Render modal that can be opened by a ModalTrigger within its same ModalContextProvider
  */
 
 export default class Modal extends Component {
@@ -26,21 +26,13 @@ Modal.propTypes = {
     setProps: PropTypes.func,
 
     /**
-     * Use the children prop to set the trigger element and modal content.
-     * The first element in the children array will be used as the trigger
-     * and the second element will be rendered inside the modal-content div.
+     * Class name applied to the top-level modal div.
+     * The "mpc-modal" and "modal" classes are added automatically
+     */
+    className: PropTypes.string,
+
+    /**
+     * Children will be rendered as the modal content
      */
     children: PropTypes.node,
-
-    /**
-     * Element to be used to open the modal.
-     * Can also be supplied as the first of two children (necessary in Dash).
-     */
-    trigger: PropTypes.string,
-
-    /**
-     * Element to render inside the modal-content div.
-     * Can also be supplied as the second of two children (necessary in Dash).
-     */
-    modalContent: PropTypes.string,
 };

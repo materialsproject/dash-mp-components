@@ -794,7 +794,7 @@
         }
     },
     "src/lib/components/data-display/Modal.react.js": {
-        "description": "Render a trigger that opens a modal with the specified modal content",
+        "description": "Render modal that can be opened by a ModalTrigger within its same ModalContextProvider",
         "displayName": "Modal",
         "methods": [],
         "props": {
@@ -812,26 +812,75 @@
                 "required": false,
                 "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
             },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name applied to the top-level modal div.\nThe \"mpc-modal\" and \"modal\" classes are added automatically"
+            },
             "children": {
                 "type": {
                     "name": "node"
                 },
                 "required": false,
-                "description": "Use the children prop to set the trigger element and modal content.\nThe first element in the children array will be used as the trigger\nand the second element will be rendered inside the modal-content div."
-            },
-            "trigger": {
+                "description": "Children will be rendered as the modal content"
+            }
+        }
+    },
+    "src/lib/components/data-display/ModalContextProvider.react.js": {
+        "description": "Use ModalContextProvider to coordinate modal trigger and modal content",
+        "displayName": "ModalContextProvider",
+        "methods": [],
+        "props": {
+            "id": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
-                "description": "Element to be used to open the modal.\nCan also be supplied as the first of two children (necessary in Dash)."
+                "description": "The ID used to identify this component in Dash callbacks"
             },
-            "modalContent": {
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Children will be rendered within the ModalContext.\nShould contain at least a ModalTrigger component and a Modal component."
+            }
+        }
+    },
+    "src/lib/components/data-display/ModalTrigger.react.js": {
+        "description": "Render a trigger that opens a ModalContent that is within the same ModalContextProvider",
+        "displayName": "ModalTrigger",
+        "methods": [],
+        "props": {
+            "id": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
-                "description": "Element to render inside the modal-content div.\nCan also be supplied as the second of two children (necessary in Dash)."
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name applied to the modal trigger span.\nThe \"mpc-modal-trigger\" class is added automatically"
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Children will be rendered as the trigger content"
             }
         }
     },

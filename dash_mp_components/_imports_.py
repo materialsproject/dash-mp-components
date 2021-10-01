@@ -10,6 +10,8 @@ from .DownloadDropdown import DownloadDropdown
 from .Formula import Formula
 from .Markdown import Markdown
 from .Modal import Modal
+from .ModalContextProvider import ModalContextProvider
+from .ModalTrigger import ModalTrigger
 from .SearchUI import SearchUI
 from .SynthesisRecipeCard import SynthesisRecipeCard
 from .Tooltip import Tooltip
@@ -46,6 +48,8 @@ __all__ = [
     "Formula",
     "Markdown",
     "Modal",
+    "ModalContextProvider",
+    "ModalTrigger",
     "SearchUI",
     "SynthesisRecipeCard",
     "Tooltip",
