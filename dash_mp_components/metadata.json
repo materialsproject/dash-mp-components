@@ -846,6 +846,20 @@
                 },
                 "required": false,
                 "description": "Children will be rendered within the ModalContext.\nShould contain at least a ModalTrigger component and a Modal component."
+            },
+            "active": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "The current or default state of the modal. If true, the \"is-active\" class is added to <Modal/>.\nThis value can be watched and changed from outside the component (e.g. via dash callback)."
+            },
+            "forceAction": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Prevent modal from being closed without completion of a specific action.\nIf set, there must be a button within the modal that updates the \"active\"\nstate using the ModalContext or a dash callback on the active prop."
             }
         }
     },

@@ -24,4 +24,17 @@ ModalContextProvider.propTypes = {
      * Should contain at least a ModalTrigger component and a Modal component.
      */
     children: PropTypes.node,
+
+    /**
+     * The current or default state of the modal. If true, the "is-active" class is added to <Modal/>.
+     * This value can be watched and changed from outside the component (e.g. via dash callback).
+     */
+    active: PropTypes.bool,
+
+    /**
+     * Prevent modal from being closed without completion of a specific action.
+     * If set, there must be a button within the modal that updates the "active"
+     * state using the ModalContext or a dash callback on the active prop.
+     */
+    forceAction: PropTypes.bool,
 };
