@@ -25,14 +25,15 @@ Keyword arguments:
 - hidePeriodicTable (boolean; optional)
 - autocompleteFormulaUrl (string; optional)
 - autocompleteApiKey (string; optional)
-- tooltip (string; optional)"""
+- tooltip (string; optional)
+- helpItems (list; optional)"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, value=Component.UNDEFINED, inputType=Component.UNDEFINED, allowedInputTypes=Component.UNDEFINED, showInputTypeDropdown=Component.UNDEFINED, isChemSys=Component.UNDEFINED, allowSmiles=Component.UNDEFINED, placeholder=Component.UNDEFINED, errorMessage=Component.UNDEFINED, debounce=Component.UNDEFINED, periodicTableMode=Component.UNDEFINED, hidePeriodicTable=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, autocompleteApiKey=Component.UNDEFINED, tooltip=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'value', 'inputType', 'allowedInputTypes', 'showInputTypeDropdown', 'isChemSys', 'allowSmiles', 'placeholder', 'errorMessage', 'debounce', 'periodicTableMode', 'hidePeriodicTable', 'autocompleteFormulaUrl', 'autocompleteApiKey', 'tooltip']
+    def __init__(self, id=Component.UNDEFINED, value=Component.UNDEFINED, inputType=Component.UNDEFINED, allowedInputTypes=Component.UNDEFINED, showInputTypeDropdown=Component.UNDEFINED, isChemSys=Component.UNDEFINED, allowSmiles=Component.UNDEFINED, placeholder=Component.UNDEFINED, errorMessage=Component.UNDEFINED, debounce=Component.UNDEFINED, periodicTableMode=Component.UNDEFINED, hidePeriodicTable=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, autocompleteApiKey=Component.UNDEFINED, tooltip=Component.UNDEFINED, helpItems=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'value', 'inputType', 'allowedInputTypes', 'showInputTypeDropdown', 'isChemSys', 'allowSmiles', 'placeholder', 'errorMessage', 'debounce', 'periodicTableMode', 'hidePeriodicTable', 'autocompleteFormulaUrl', 'autocompleteApiKey', 'tooltip', 'helpItems']
         self._type = 'MaterialsInput'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'value', 'inputType', 'allowedInputTypes', 'showInputTypeDropdown', 'isChemSys', 'allowSmiles', 'placeholder', 'errorMessage', 'debounce', 'periodicTableMode', 'hidePeriodicTable', 'autocompleteFormulaUrl', 'autocompleteApiKey', 'tooltip']
+        self.available_properties = ['id', 'value', 'inputType', 'allowedInputTypes', 'showInputTypeDropdown', 'isChemSys', 'allowSmiles', 'placeholder', 'errorMessage', 'debounce', 'periodicTableMode', 'hidePeriodicTable', 'autocompleteFormulaUrl', 'autocompleteApiKey', 'tooltip', 'helpItems']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

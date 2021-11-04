@@ -279,6 +279,25 @@ SearchUI.propTypes = {
     searchBarPeriodicTableMode: PropTypes.oneOf(['toggle', 'focus', 'none']),
 
     /**
+     * Search examples to include below the search bar input.
+     * This will display when input is in focus and empty, or when the help button is clicked.
+     * Expects an array of items with the following properties:
+     * "label": text to display before examples. If only "label" and no "examples", text will render as small.
+     * "examples": array of input examples. These will become clickable and will update the input value. 
+     * e.g.
+      [
+        {
+          label: 'Search Examples'
+        },
+        {
+          label: 'Include at least elements',
+          examples: ['Li,Fe', 'Si,O,K']
+        }
+      ]
+    */
+    searchBarHelpItems: PropTypes.array,
+
+    /**
      * Optionally include/exclude the menu for dynamically controlling sort options
      * @default true
      */

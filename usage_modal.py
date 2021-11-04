@@ -9,7 +9,7 @@ app.layout = html.Div([
   mpc.ModalContextProvider(
     [
         mpc.ModalTrigger(
-            "Open Modal"
+            html.Button("Open Modal")
         ),
         mpc.Modal(
             html.Div("Modal content")

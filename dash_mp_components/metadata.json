@@ -1022,6 +1022,13 @@
                 "required": false,
                 "description": "Modes for showing the periodic table with the top search bar\n\"toggle\": render a button for toggling visibility of periodic table\n\"focus\": show periodic table when input is focuses, hide on blur\n\"none\": never show the periodic table for this input\n@default 'toggle'"
             },
+            "searchBarHelpItems": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "Search examples to include below the search bar input.\nThis will display when input is in focus and empty, or when the help button is clicked.\nExpects an array of items with the following properties:\n\"label\": text to display before examples. If only \"label\" and no \"examples\", text will render as small.\n\"examples\": array of input examples. These will become clickable and will update the input value. \ne.g.\n      [\n        {\n          label: 'Search Examples'\n        },\n        {\n          label: 'Include at least elements',\n          examples: ['Li,Fe', 'Si,O,K']\n        }\n      ]"
+            },
             "hasSortMenu": {
                 "type": {
                     "name": "bool"
@@ -1495,6 +1502,13 @@
             "tooltip": {
                 "type": {
                     "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "helpItems": {
+                "type": {
+                    "name": "array"
                 },
                 "required": false,
                 "description": ""

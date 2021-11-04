@@ -47,4 +47,5 @@ MaterialsInput.propTypes = {
     autocompleteFormulaUrl: PropTypes.string,
     autocompleteApiKey: PropTypes.string,
     tooltip: PropTypes.string,
+    helpItems: PropTypes.array,
 };
