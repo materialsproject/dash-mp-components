@@ -14,7 +14,7 @@ Keyword arguments:
 Column properties are based on the react-data-table column settings (https://github.com/jbetancur/react-data-table-component#columns)
 The "format" property must match one of these pre-defined strings: 
    "FIXED_DECIMAL", "SIGNIFICANT_FIGURES", "FORMULA", "LINK", "BOOLEAN", "SPACEGROUP_SYMBOL", "POINTGROUP"
-The "formatArg" is a special property that is used to make certain formats more specific (e.g. SIGNIFICANT_FIGURES or FIXED_DECIMAL)
+The "formatOptions" is a special property that is used to make certain formats more specific (e.g. SIGNIFICANT_FIGURES or FIXED_DECIMAL)
 The "omit" property lets you hide certain columns by default
 Read more about columns here: https://github.com/jbetancur/react-data-table-component#columns
 e.g.
@@ -23,7 +23,9 @@ e.g.
             name: 'Material Id',
             selector: 'task_ids',
             format: 'LINK', // creates a link using the value in this column
-            formatArg: '/materials/' // prepends this string to the column value in the links href (e.g. href="/materials/mp-100")
+            formatOptions: {
+              baseUrl: "/materials/" // prepends this string to the column value in the links href (e.g. href="/materials/mp-100")
+            }
           },
           {
             name: 'Formula',
@@ -35,26 +37,35 @@ e.g.
             name: 'Volume',
             selector: 'volume',
             format: 'FIXED_DECIMAL',
-            formatArg: 3 // number of decimals to fix to
+            formatOptions: {
+              decimals: 3 // number of decimals to fix to
+            },
             omit: true // hide this column initially
           },
           {
             name: 'Density',
             selector: 'density',
             format: 'SIGNIFICANT_FIGURES',
-            formatArg: 4 // number of significant figures to use
+            formatOptions: {
+              sigFigs: 4 // number of significant figures to use
+            }
           },
           {
             name: 'Is Stable',
             selector: 'is_stable',
             format: 'BOOLEAN',
-            formatArg: ['yes', 'no'] // sets display values for truthy and falsy values
+            formatOptions: {
+              truthyLabel: "yes", // sets display values for truthy and falsy values
+              falsyLabel: "no"
+            }
           },
           {
             name: 'Energy Above Hull',
             selector: 'e_above_hull',
             format: 'FIXED_DECIMAL',
-            formatArg: 2,
+            formatOptions: {
+              decimals: 2 // number of decimals to fix to
+            },
             units: 'meV/atom', // unit label string to show under column header
             conversionFactor: 1000, // number by which to multiply result values in this columm
           },
