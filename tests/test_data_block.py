@@ -15,9 +15,9 @@ def test_data_block(dash_duo):
         className="box",
         columns=[
           {
-            'name': 'Material ID',
+            'title': 'Material ID',
             'selector': 'material_id',
-            'format': 'LINK',
+            'formatType': 'LINK',
             'formatOptions': {
               'baseUrl': 'https://lbl.gov',
               'target': '_blank',
@@ -25,23 +25,23 @@ def test_data_block(dash_duo):
             'isTop': True,
           },
           {
-            'name': 'Formula',
+            'title': 'Formula',
             'selector': 'formula_pretty',
-            'format': 'FORMULA',
+            'formatType': 'FORMULA',
             'isTop': True,
           },
           {
-            'name': 'Data',
+            'title': 'Data',
             'selector': 'data',
-            'format': 'ARRAY',
+            'formatType': 'ARRAY',
             'formatOptions': {
               'arrayTooltipsKey': 'dataTooltips',
             },
           },
           {
-            'name': 'Tables',
+            'title': 'Tables',
             'selector': 'tables',
-            'format': 'ARRAY',
+            'formatType': 'ARRAY',
             'formatOptions': {
               'arrayTooltipsKey': 'tablesTooltips',
               'arrayLinksKey': 'tablesLinks',
@@ -51,7 +51,7 @@ def test_data_block(dash_duo):
             'isBottom': True,
           },
           {
-            'name': 'Description',
+            'title': 'Description',
             'selector': 'description',
             'isBottom': True,
           },

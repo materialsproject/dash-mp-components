@@ -11,40 +11,40 @@ app = dash.Dash(__name__)
 
 columns = [
   {
-    'name': 'Material Id',
+    'title': 'Material Id',
     'selector': 'material_id',
     'sortable': True
   },
   {
-    'name': 'Formula',
+    'title': 'Formula',
     'selector': 'formula_pretty',
     'sortable': True,
-    'format': 'FORMULA'
+    'formatType': 'FORMULA'
   },
   {
-    'name': 'Volume',
+    'title': 'Volume',
     'selector': 'volume',
     'sortable': True,
-    'format': 'SIGNIFICANT_FIGURES',
+    'formatType': 'SIGNIFICANT_FIGURES',
     "formatOptions": {
       "sigFigs": 5
     },
     'units': 'units'
   },
   {
-    'name': 'Density',
+    'title': 'Density',
     'selector': 'density',
     'sortable': True,
-    'format': 'FIXED_DECIMAL',
+    'formatType': 'FIXED_DECIMAL',
     "formatOptions": {
       "decimals": 2
     },
   },
   {
-    'name': 'Is Stable',
+    'title': 'Is Stable',
     'selector': 'is_stable',
     'sortable': True,
-    'format': 'BOOLEAN'
+    'formatType': 'BOOLEAN'
   }
 ]
 
@@ -147,7 +147,7 @@ app.layout = html.Div(children=[
     id="search-ui-demo",
     columns=columns,
     filterGroups=filterGroups,
-    baseUrl="https://api.materialsproject.org/search/",
+    apiEndpoint="https://api.materialsproject.org/search/",
     autocompleteFormulaUrl="https://api.materialsproject.org/materials/formula_autocomplete/",
     apiKey=os.environ['MP_API_KEY'],
     resultLabel="material",

@@ -931,14 +931,14 @@
                 "required": false,
                 "description": "An array of filter groups and their respective array of filters.\nA filter group is a collapsible section of the filters panel that contains one or more filters.\nA filter is a type of input element that filters the data based on its value.\nFilter \"type\" must be one of the all-caps strings used in the example below.\nFilter \"id\" must be a queryable field\nFilter \"props\" defines how that filter should be rendered. See example for props format based on filter type.\ne.g.\n      [\n        {\n          name: 'Material Definition',\n          collapsed: false,\n          filters: [\n            {\n              name: 'ID',\n              id: 'task_ids',\n              type: 'TEXT_INPUT' // a standard text input box for string values\n            },\n            {\n              name: 'Elements',\n              id: 'elements',\n              type: 'MATERIALS_INPUT', // a text input box and a periodic table synced together for selecting selements\n              props: {\n                field: 'elements' // sets which field the input controls ('elements' or 'formula')\n              }\n            }\n          ]\n        },\n        {\n          name: 'General',\n          collapsed: false,\n          filters: [\n            {\n              name: 'Volume',\n              id: 'volume',\n              type: 'SLIDER', // a dual range slider for setting a min and max value (must have two query params equal to <id>_min and <id>_max)\n              units: 'kg', // (optional) unit label string to show next to filter label\n              conversionFactor: 0.001, // (optional) number by which to multiply filter values for api queries\n              props: {\n                domain: [0, 200] // sets the min and max values of the slider\n              }\n            },\n            {\n              name: 'Stability',\n              id: 'is_stable',\n              type: 'THREE_STATE_BOOLEAN_SELECT', // a dropdown with three values: true, false, or undefined\n              props: {\n                options: [ // a list of options for the dropdwon (must supply only two options, the undefined option is added automatically)\n                  {\n                    label: 'Is stable',\n                    value: true\n                  },\n                  {\n                    label: 'Is not stable',\n                    value: false\n                  }\n                ]\n              }\n            },\n            {\n              name: 'Spacegroup Symbol',\n              id: 'spacegroup_symbol',\n              type: 'SELECT_SPACEGROUP_SYMBOL' // a special dropdown for selecting a space group symbol (options are auto-generated)\n            },\n            {\n              name: 'Spacegroup Number',\n              id: 'spacegroup_number',\n              type: 'SELECT_SPACEGROUP_NUMBER' // a special dropdown for selecting a space group number (options are auto-generated)\n            },\n            {\n              name: 'Crystal System',\n              id: 'crystal_system',\n              type: 'SELECT_CRYSTAL_SYSTEM' // a special dropdown for selecting a crystal system (options are auto-generated)\n            },\n            {\n              name: 'Point Group',\n              id: 'pointgroup',\n              type: 'SELECT_POINTGROUP' // a special dropdown for selecting a point group (options are auto-generated)\n            },\n            {\n              name: 'Color',\n              id: 'color',\n              type: 'SELECT', // a custom single select dropdown with any number of options\n              props: {\n                options: [ // a list of options for the dropdwon\n                  {\n                    label: 'Blue',\n                    value: 'blue'\n                  },\n                  {\n                    label: 'Red',\n                    value: 'red'\n                  },\n                  {\n                    label: 'Yellow',\n                    value: 'yellow'\n                  }\n                ]\n              }\n            },\n          ]\n        }\n      ]"
             },
-            "baseUrl": {
+            "apiEndpoint": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
                 "description": "The base URL to the API that this search UI should query\ne.g. \"https://api.materialsproject.org/search/\""
             },
-            "baseUrlParams": {
+            "apiEndpointParams": {
                 "type": {
                     "name": "object"
                 },
@@ -1050,6 +1050,20 @@
                 "required": false,
                 "description": "If including a sortField, set whether it should ascend by default\nTrue for ascending, False for descending"
             },
+            "secondarySortField": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "secondarySortAscending": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
             "conditionalRowStyles": {
                 "type": {
                     "name": "array"
@@ -1080,10 +1094,6 @@
                             "computed": false
                         },
                         {
-                            "value": "'cards'",
-                            "computed": false
-                        },
-                        {
                             "value": "'synthesis'",
                             "computed": false
                         }
@@ -1092,26 +1102,19 @@
                 "required": false,
                 "description": "Set the initial results view to one of the preset\nSearchUI views: 'table', 'cards', or 'synthesis'\n\nTo add a new view type, head to SearchUI/types and add the name of the type to the\nSearchUIViewType enum, then add a property in searchUIViewsMap using the same name\nyou used for the type, then provide your custom view component as the value.\nThe view component should consume the SearchUIContext state using the useSearchUIContext hook.\nSee SearchUIDataTable or SearchUIDataCards for example view components.\n@default 'table'"
             },
-            "allowViewSwitching": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": "Optionally enable/disable switching between SearchUI result views"
-            },
-            "cardOptions": {
-                "type": {
-                    "name": "object"
-                },
-                "required": false,
-                "description": "Set of options for configuring what is displayed in the result cards\nwhen in the cards view.\nMust be an object with the following properties:\n      {\n        imageBaseURL: '', // Base of the URL to use to get images for the left side of the card\n        imageKey: 'material_id', // Data key to use to append value to the base URL (i.e. the name of the image file). The .png extension is added automatically.\n        levelOneKey: 'material_id', // Data key to use for the first line of text on the card\n        levelTwoKey: 'formula_pretty', // Data key to use for the second line of text on the card\n        levelThreeKeys: [ // List of data keys and labels to display under the first and second line of text\n          { key: 'energy_above_hull', label: 'Energy Above Hull' },\n          { key: 'formation_energy_per_atom', label: 'Formation Energy' },\n        ],\n      }"
-            },
             "isContribs": {
                 "type": {
                     "name": "bool"
                 },
                 "required": false,
                 "description": "Set to true if displaying data from the MPContribs API.\nThis is a temporary solution to use until mp-api and contribs API have\nconsistent naming standards."
+            },
+            "disableRichColumnHeaders": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
             }
         }
     },

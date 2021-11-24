@@ -172,9 +172,9 @@ e.g.
           ]
         }
       ]
-- baseUrl (string; optional): The base URL to the API that this search UI should query
+- apiEndpoint (string; optional): The base URL to the API that this search UI should query
 e.g. "https://api.materialsproject.org/search/"
-- baseUrlParams (dict; optional): Query params that will be automatically added for every search.
+- apiEndpointParams (dict; optional): Query params that will be automatically added for every search.
 This can be used to scope down a SearchUI to a specific subset of a larger endpoint.
 
 e.g.
@@ -242,6 +242,8 @@ e.g.
 Must be a valid field and included in your list of columns
 - sortAscending (boolean; optional): If including a sortField, set whether it should ascend by default
 True for ascending, False for descending
+- secondarySortField (string; optional)
+- secondarySortAscending (boolean; optional)
 - conditionalRowStyles (list; optional): List of conditions for styling rows based on a property (selector) and a value
 Accepts a list of "condition" objects which must specify a...
  selector: the name of the data property to use for the condition
@@ -263,7 +265,7 @@ example:
 - selectedRows (list; optional): Array of selected rows.
 This prop is dynamically updated using setProps
 and can be accessed via dash callback
-- view (a value equal to: 'table', 'cards', 'synthesis'; optional): Set the initial results view to one of the preset
+- view (a value equal to: 'table', 'synthesis'; optional): Set the initial results view to one of the preset
 SearchUI views: 'table', 'cards', or 'synthesis'
 
 To add a new view type, head to SearchUI/types and add the name of the type to the
@@ -272,30 +274,17 @@ you used for the type, then provide your custom view component as the value.
 The view component should consume the SearchUIContext state using the useSearchUIContext hook.
 See SearchUIDataTable or SearchUIDataCards for example view components.
 @default 'table'
-- allowViewSwitching (boolean; optional): Optionally enable/disable switching between SearchUI result views
-- cardOptions (dict; optional): Set of options for configuring what is displayed in the result cards
-when in the cards view.
-Must be an object with the following properties:
-      {
-        imageBaseURL: '', // Base of the URL to use to get images for the left side of the card
-        imageKey: 'material_id', // Data key to use to append value to the base URL (i.e. the name of the image file). The .png extension is added automatically.
-        levelOneKey: 'material_id', // Data key to use for the first line of text on the card
-        levelTwoKey: 'formula_pretty', // Data key to use for the second line of text on the card
-        levelThreeKeys: [ // List of data keys and labels to display under the first and second line of text
-          { key: 'energy_above_hull', label: 'Energy Above Hull' },
-          { key: 'formation_energy_per_atom', label: 'Formation Energy' },
-        ],
-      }
 - isContribs (boolean; optional): Set to true if displaying data from the MPContribs API.
 This is a temporary solution to use until mp-api and contribs API have
-consistent naming standards."""
+consistent naming standards.
+- disableRichColumnHeaders (boolean; optional)"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, baseUrl=Component.UNDEFINED, baseUrlParams=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, searchBarErrorMessage=Component.UNDEFINED, searchBarAllowedInputTypesMap=Component.UNDEFINED, searchBarPeriodicTableMode=Component.UNDEFINED, searchBarHelpItems=Component.UNDEFINED, hasSortMenu=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, view=Component.UNDEFINED, allowViewSwitching=Component.UNDEFINED, cardOptions=Component.UNDEFINED, isContribs=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'columns', 'filterGroups', 'baseUrl', 'baseUrlParams', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'searchBarHelpItems', 'hasSortMenu', 'sortField', 'sortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'allowViewSwitching', 'cardOptions', 'isContribs']
+    def __init__(self, id=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, apiEndpoint=Component.UNDEFINED, apiEndpointParams=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, searchBarErrorMessage=Component.UNDEFINED, searchBarAllowedInputTypesMap=Component.UNDEFINED, searchBarPeriodicTableMode=Component.UNDEFINED, searchBarHelpItems=Component.UNDEFINED, hasSortMenu=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, secondarySortField=Component.UNDEFINED, secondarySortAscending=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, view=Component.UNDEFINED, isContribs=Component.UNDEFINED, disableRichColumnHeaders=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'columns', 'filterGroups', 'apiEndpoint', 'apiEndpointParams', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'searchBarHelpItems', 'hasSortMenu', 'sortField', 'sortAscending', 'secondarySortField', 'secondarySortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'isContribs', 'disableRichColumnHeaders']
         self._type = 'SearchUI'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'columns', 'filterGroups', 'baseUrl', 'baseUrlParams', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'searchBarHelpItems', 'hasSortMenu', 'sortField', 'sortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'allowViewSwitching', 'cardOptions', 'isContribs']
+        self.available_properties = ['id', 'columns', 'filterGroups', 'apiEndpoint', 'apiEndpointParams', 'autocompleteFormulaUrl', 'apiKey', 'resultLabel', 'hasSearchBar', 'searchBarTooltip', 'searchBarPlaceholder', 'searchBarErrorMessage', 'searchBarAllowedInputTypesMap', 'searchBarPeriodicTableMode', 'searchBarHelpItems', 'hasSortMenu', 'sortField', 'sortAscending', 'secondarySortField', 'secondarySortAscending', 'conditionalRowStyles', 'selectableRows', 'selectedRows', 'view', 'isContribs', 'disableRichColumnHeaders']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

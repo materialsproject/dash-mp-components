@@ -200,7 +200,7 @@ SearchUI.propTypes = {
      * The base URL to the API that this search UI should query
      * e.g. "https://api.materialsproject.org/search/"
      */
-    baseUrl: PropTypes.string,
+    apiEndpoint: PropTypes.string,
 
     /**
      * Query params that will be automatically added for every search.
@@ -212,7 +212,7 @@ SearchUI.propTypes = {
         project: 'open_catalyst_project'
       }
      */
-    baseUrlParams: PropTypes.object,
+    apiEndpointParams: PropTypes.object,
 
     /**
      * Optional URL endpoint for fetching formula autocompletion results
@@ -326,6 +326,10 @@ SearchUI.propTypes = {
      */
     sortAscending: PropTypes.bool,
 
+    secondarySortField: PropTypes.string,
+
+    secondarySortAscending: PropTypes.bool,
+
     /**
      * Optionally include/exclude the top search bar
      * Defaults to true (i.e. include search bar)
@@ -376,29 +380,7 @@ SearchUI.propTypes = {
      * See SearchUIDataTable or SearchUIDataCards for example view components.
      * @default 'table'
      */
-    view: PropTypes.oneOf(['table', 'cards', 'synthesis']),
-
-    /**
-     * Optionally enable/disable switching between SearchUI result views
-     */
-    allowViewSwitching: PropTypes.bool,
-
-    /**
-     * Set of options for configuring what is displayed in the result cards
-     * when in the cards view.
-     * Must be an object with the following properties:
-      {
-        imageBaseURL: '', // Base of the URL to use to get images for the left side of the card
-        imageKey: 'material_id', // Data key to use to append value to the base URL (i.e. the name of the image file). The .png extension is added automatically.
-        levelOneKey: 'material_id', // Data key to use for the first line of text on the card
-        levelTwoKey: 'formula_pretty', // Data key to use for the second line of text on the card
-        levelThreeKeys: [ // List of data keys and labels to display under the first and second line of text
-          { key: 'energy_above_hull', label: 'Energy Above Hull' },
-          { key: 'formation_energy_per_atom', label: 'Formation Energy' },
-        ],
-      }
-    */
-    cardOptions: PropTypes.object,
+    view: PropTypes.oneOf(['table', 'synthesis']),
 
     /**
      * Set to true if displaying data from the MPContribs API.
@@ -406,4 +388,6 @@ SearchUI.propTypes = {
      * consistent naming standards.
      */
     isContribs: PropTypes.bool,
+
+    disableRichColumnHeaders: PropTypes.bool,
 };
