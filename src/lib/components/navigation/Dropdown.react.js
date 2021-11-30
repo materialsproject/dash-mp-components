@@ -33,6 +33,11 @@ Dropdown.propTypes = {
     setProps: PropTypes.func,
 
     /**
+     * Class name(s) to append to the component's default class (dropdown)
+     */
+    className: PropTypes.string,
+
+    /**
      * Text to display in the button that triggers the dropdown to open
      */
     triggerLabel: PropTypes.string,

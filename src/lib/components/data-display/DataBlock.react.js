@@ -70,4 +70,5 @@ DataBlock.propTypes = {
      * Optional tooltip to show when hovering over the icon
      */
     iconTooltip: PropTypes.string,
+    disableRichColumnHeaders: PropTypes.bool,
 };

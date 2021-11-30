@@ -47,8 +47,6 @@ Tooltip.propTypes = {
 
     globalEventOff: PropTypes.string,
 
-    isCapture: PropTypes.bool,
-
     offset: PropTypes.object,
 
     multiline: PropTypes.bool,
@@ -60,8 +58,6 @@ Tooltip.propTypes = {
     delayHide: PropTypes.number,
 
     delayShow: PropTypes.number,
-
-    delayUpdate: PropTypes.number,
 
     border: PropTypes.bool,
 

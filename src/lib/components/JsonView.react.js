@@ -1,11 +1,11 @@
 import React from 'react';
 import {Component} from 'react';
-import {JSONViewComponent} from '@materialsproject/mp-react-components';
+import * as mpc from '@materialsproject/mp-react-components';
 import PropTypes from 'prop-types';
 
 export default class JsonView extends Component {
     render() {
-        return <JSONViewComponent {...this.props} />;
+        return <mpc.JsonView {...this.props} />;
     }
 }
 
