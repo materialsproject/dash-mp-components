@@ -535,6 +535,13 @@
                 },
                 "required": false,
                 "description": "Optional tooltip to show when hovering over the icon"
+            },
+            "disableRichColumnHeaders": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
             }
         }
     },
@@ -1221,13 +1228,6 @@
                 "required": false,
                 "description": ""
             },
-            "isCapture": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": ""
-            },
             "offset": {
                 "type": {
                     "name": "object"
@@ -1264,13 +1264,6 @@
                 "description": ""
             },
             "delayShow": {
-                "type": {
-                    "name": "number"
-                },
-                "required": false,
-                "description": ""
-            },
-            "delayUpdate": {
                 "type": {
                     "name": "number"
                 },
@@ -1606,6 +1599,13 @@
                 },
                 "required": false,
                 "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (dropdown)"
             },
             "triggerLabel": {
                 "type": {

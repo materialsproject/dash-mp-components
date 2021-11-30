@@ -13,6 +13,7 @@ Keyword arguments:
 This should usually be a list of <div> components with the class "dropdown-item".
 The content of each item can be anything from simple text to a component.
 - id (string; optional): The ID used to identify this component in Dash callbacks
+- className (string; optional): Class name(s) to append to the component's default class (dropdown)
 - triggerLabel (string; optional): Text to display in the button that triggers the dropdown to open
 - triggerClassName (string; optional): Class name(s) to apply to button that opens the dropdown menu
 @default 'button'
@@ -25,12 +26,12 @@ Omit this and use the children prop instead if you want supply components as dro
 - closeOnSelection (boolean; optional): Set to false to keep the menu open when an item is clicked
 @default true"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, triggerLabel=Component.UNDEFINED, triggerClassName=Component.UNDEFINED, triggerIcon=Component.UNDEFINED, items=Component.UNDEFINED, isArrowless=Component.UNDEFINED, isUp=Component.UNDEFINED, isRight=Component.UNDEFINED, closeOnSelection=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'triggerLabel', 'triggerClassName', 'triggerIcon', 'items', 'isArrowless', 'isUp', 'isRight', 'closeOnSelection']
+    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, triggerLabel=Component.UNDEFINED, triggerClassName=Component.UNDEFINED, triggerIcon=Component.UNDEFINED, items=Component.UNDEFINED, isArrowless=Component.UNDEFINED, isUp=Component.UNDEFINED, isRight=Component.UNDEFINED, closeOnSelection=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'className', 'triggerLabel', 'triggerClassName', 'triggerIcon', 'items', 'isArrowless', 'isUp', 'isRight', 'closeOnSelection']
         self._type = 'Dropdown'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'triggerLabel', 'triggerClassName', 'triggerIcon', 'items', 'isArrowless', 'isUp', 'isRight', 'closeOnSelection']
+        self.available_properties = ['children', 'id', 'className', 'triggerLabel', 'triggerClassName', 'triggerIcon', 'items', 'isArrowless', 'isUp', 'isRight', 'closeOnSelection']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

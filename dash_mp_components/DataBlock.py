@@ -22,14 +22,15 @@ Follows the same format as the columns prop in the SearchUI component.
 If you want to put a component in the footer, add it to the children prop instead.
 - iconClassName (string; optional): Class name(s) to use for the icon in the top right.
 If no class is supplied, there will not be an icon.
-- iconTooltip (string; optional): Optional tooltip to show when hovering over the icon"""
+- iconTooltip (string; optional): Optional tooltip to show when hovering over the icon
+- disableRichColumnHeaders (boolean; optional)"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, data=Component.UNDEFINED, columns=Component.UNDEFINED, expanded=Component.UNDEFINED, footer=Component.UNDEFINED, iconClassName=Component.UNDEFINED, iconTooltip=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'className', 'data', 'columns', 'expanded', 'footer', 'iconClassName', 'iconTooltip']
+    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, data=Component.UNDEFINED, columns=Component.UNDEFINED, expanded=Component.UNDEFINED, footer=Component.UNDEFINED, iconClassName=Component.UNDEFINED, iconTooltip=Component.UNDEFINED, disableRichColumnHeaders=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'className', 'data', 'columns', 'expanded', 'footer', 'iconClassName', 'iconTooltip', 'disableRichColumnHeaders']
         self._type = 'DataBlock'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'className', 'data', 'columns', 'expanded', 'footer', 'iconClassName', 'iconTooltip']
+        self.available_properties = ['children', 'id', 'className', 'data', 'columns', 'expanded', 'footer', 'iconClassName', 'iconTooltip', 'disableRichColumnHeaders']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

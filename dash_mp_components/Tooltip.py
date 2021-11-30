@@ -21,25 +21,23 @@ This can be simple text or a component
 - event (string; optional)
 - eventOff (string; optional)
 - globalEventOff (string; optional)
-- isCapture (boolean; optional)
 - offset (dict; optional)
 - multiline (boolean; optional)
 - className (string; optional)
 - html (boolean; optional)
 - delayHide (number; optional)
 - delayShow (number; optional)
-- delayUpdate (number; optional)
 - border (boolean; optional)
 - disable (boolean; optional)
 - scrollHide (boolean; optional)
 - clickable (boolean; optional)"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, place=Component.UNDEFINED, type=Component.UNDEFINED, effect=Component.UNDEFINED, event=Component.UNDEFINED, eventOff=Component.UNDEFINED, globalEventOff=Component.UNDEFINED, isCapture=Component.UNDEFINED, offset=Component.UNDEFINED, multiline=Component.UNDEFINED, className=Component.UNDEFINED, html=Component.UNDEFINED, delayHide=Component.UNDEFINED, delayShow=Component.UNDEFINED, delayUpdate=Component.UNDEFINED, border=Component.UNDEFINED, disable=Component.UNDEFINED, scrollHide=Component.UNDEFINED, clickable=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'place', 'type', 'effect', 'event', 'eventOff', 'globalEventOff', 'isCapture', 'offset', 'multiline', 'className', 'html', 'delayHide', 'delayShow', 'delayUpdate', 'border', 'disable', 'scrollHide', 'clickable']
+    def __init__(self, children=None, id=Component.UNDEFINED, place=Component.UNDEFINED, type=Component.UNDEFINED, effect=Component.UNDEFINED, event=Component.UNDEFINED, eventOff=Component.UNDEFINED, globalEventOff=Component.UNDEFINED, offset=Component.UNDEFINED, multiline=Component.UNDEFINED, className=Component.UNDEFINED, html=Component.UNDEFINED, delayHide=Component.UNDEFINED, delayShow=Component.UNDEFINED, border=Component.UNDEFINED, disable=Component.UNDEFINED, scrollHide=Component.UNDEFINED, clickable=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'place', 'type', 'effect', 'event', 'eventOff', 'globalEventOff', 'offset', 'multiline', 'className', 'html', 'delayHide', 'delayShow', 'border', 'disable', 'scrollHide', 'clickable']
         self._type = 'Tooltip'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'place', 'type', 'effect', 'event', 'eventOff', 'globalEventOff', 'isCapture', 'offset', 'multiline', 'className', 'html', 'delayHide', 'delayShow', 'delayUpdate', 'border', 'disable', 'scrollHide', 'clickable']
+        self.available_properties = ['children', 'id', 'place', 'type', 'effect', 'event', 'eventOff', 'globalEventOff', 'offset', 'multiline', 'className', 'html', 'delayHide', 'delayShow', 'border', 'disable', 'scrollHide', 'clickable']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
