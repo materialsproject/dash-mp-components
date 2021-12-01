@@ -9,8 +9,6 @@ export default class JsonView extends Component {
     }
 }
 
-JsonView.defaultProps = JSONViewComponent.defaultProps;
-
 JsonView.propTypes = {
     /**
      * The ID used to identify this component in Dash callbacks
