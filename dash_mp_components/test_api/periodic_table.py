@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 import dash_mp_components
-import dash_html_components as html
+from dash import dcc, html
 from enum import Enum, unique
 from .utils import wait_for_element_having_class
 

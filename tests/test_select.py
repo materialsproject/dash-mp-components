@@ -1,6 +1,6 @@
 import dash
 from dash.dependencies import Input, Output, State
-import dash_html_components as html
+from dash import dcc, html
 import dash_mp_components
 
 """

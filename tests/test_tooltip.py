@@ -1,5 +1,5 @@
 import dash
-import dash_html_components as html
+from dash import dcc, html
 import dash_mp_components
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC

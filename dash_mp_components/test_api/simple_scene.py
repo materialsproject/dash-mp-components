@@ -1,6 +1,6 @@
 import dash_mp_components
 import time
-import dash_html_components as html
+from dash import dcc, html
 from enum import Enum, unique
 from .utils import click_with_offset, hover_with_offset
 from .periodic_table import BasePage

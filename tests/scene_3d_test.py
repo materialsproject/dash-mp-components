@@ -1,7 +1,7 @@
 import dash_mp_components
 import dash
-import dash_html_components as html
-import dash_core_components as dcc
+from dash import dcc, html
+
 from dash_mp_components.test_api import resize_browser_window, SimpleScene
 from dash.dependencies import Input, Output, State
 import time

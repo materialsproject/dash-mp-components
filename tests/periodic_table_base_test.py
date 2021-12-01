@@ -1,6 +1,6 @@
 import dash
 from dash.dependencies import Input, Output
-import dash_html_components as html
+from dash import dcc, html
 from dash_mp_components.test_api import PeriodicTable, DEFAULT_CONTAINER_SELECTOR
 from dash_mp_components.test_api import resize_browser_window
 

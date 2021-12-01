@@ -1,6 +1,6 @@
 import pytest
 import dash
-import dash_html_components as html
+from dash import dcc, html
 
 from dash_mp_components.test_api import PeriodicTable
 from \

@@ -1,7 +1,7 @@
 import dash_mp_components as mpc
 import dash
-import dash_html_components as html
-import dash_core_components as dcc
+from dash import dcc, html
+
 
 app = dash.Dash(__name__)
 

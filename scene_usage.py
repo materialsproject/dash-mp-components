@@ -1,8 +1,8 @@
 import dash_mp_components
 import dash
 from dash.dependencies import Input, Output, State
-import dash_html_components as html
-import dash_core_components as dcc
+from dash import dcc, html
+
 from tests.grid import grid
 import functools
 from dash.exceptions import PreventUpdate
