@@ -10,14 +10,15 @@ Renders a text input and a periodic table within a PeriodicContext to support tw
 i.e. when elements are typed into the field, they are selected in the table,
 and when elements are selected in the table, they are appended to the field's input.
 
+Documentation: https://materialsproject.github.io/mp-react-components/?path=/docs/data-entry-materialsinput--multi-type
+
 Keyword arguments:
-- id (string; optional): The ID used to identify this component in Dash callbacks
+- id (string; optional)
+- className (string; optional)
 - value (string; optional)
-- inputType (a value equal to: 'elements', 'formula', 'mpid', 'smiles', 'text'; optional)
+- type (a value equal to: 'elements', 'chemical_system', 'formula', 'mpid', 'smiles', 'text'; optional)
 - allowedInputTypes (list; optional)
-- showInputTypeDropdown (boolean; optional)
-- isChemSys (boolean; optional)
-- allowSmiles (boolean; optional)
+- showTypeDropdown (boolean; optional)
 - placeholder (string; optional)
 - errorMessage (string; optional)
 - debounce (number; optional)
@@ -26,14 +27,21 @@ Keyword arguments:
 - autocompleteFormulaUrl (string; optional)
 - autocompleteApiKey (string; optional)
 - tooltip (string; optional)
-- helpItems (list; optional)"""
+- helpItems (list; optional)
+- showSubmitButton (boolean; optional)
+- submitButtonId (string; optional)
+- label (string; optional)
+- hideWildcardButton (boolean; optional)
+- chemicalSystemSelectHelpText (string; optional)
+- elementsSelectHelpText (string; optional)
+- maxElementSelectable (number; optional)"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, value=Component.UNDEFINED, inputType=Component.UNDEFINED, allowedInputTypes=Component.UNDEFINED, showInputTypeDropdown=Component.UNDEFINED, isChemSys=Component.UNDEFINED, allowSmiles=Component.UNDEFINED, placeholder=Component.UNDEFINED, errorMessage=Component.UNDEFINED, debounce=Component.UNDEFINED, periodicTableMode=Component.UNDEFINED, hidePeriodicTable=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, autocompleteApiKey=Component.UNDEFINED, tooltip=Component.UNDEFINED, helpItems=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'value', 'inputType', 'allowedInputTypes', 'showInputTypeDropdown', 'isChemSys', 'allowSmiles', 'placeholder', 'errorMessage', 'debounce', 'periodicTableMode', 'hidePeriodicTable', 'autocompleteFormulaUrl', 'autocompleteApiKey', 'tooltip', 'helpItems']
+    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, value=Component.UNDEFINED, type=Component.UNDEFINED, allowedInputTypes=Component.UNDEFINED, showTypeDropdown=Component.UNDEFINED, placeholder=Component.UNDEFINED, errorMessage=Component.UNDEFINED, debounce=Component.UNDEFINED, periodicTableMode=Component.UNDEFINED, hidePeriodicTable=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, autocompleteApiKey=Component.UNDEFINED, tooltip=Component.UNDEFINED, helpItems=Component.UNDEFINED, showSubmitButton=Component.UNDEFINED, submitButtonId=Component.UNDEFINED, label=Component.UNDEFINED, hideWildcardButton=Component.UNDEFINED, chemicalSystemSelectHelpText=Component.UNDEFINED, elementsSelectHelpText=Component.UNDEFINED, maxElementSelectable=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'className', 'value', 'type', 'allowedInputTypes', 'showTypeDropdown', 'placeholder', 'errorMessage', 'debounce', 'periodicTableMode', 'hidePeriodicTable', 'autocompleteFormulaUrl', 'autocompleteApiKey', 'tooltip', 'helpItems', 'showSubmitButton', 'submitButtonId', 'label', 'hideWildcardButton', 'chemicalSystemSelectHelpText', 'elementsSelectHelpText', 'maxElementSelectable']
         self._type = 'MaterialsInput'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'value', 'inputType', 'allowedInputTypes', 'showInputTypeDropdown', 'isChemSys', 'allowSmiles', 'placeholder', 'errorMessage', 'debounce', 'periodicTableMode', 'hidePeriodicTable', 'autocompleteFormulaUrl', 'autocompleteApiKey', 'tooltip', 'helpItems']
+        self.available_properties = ['id', 'className', 'value', 'type', 'allowedInputTypes', 'showTypeDropdown', 'placeholder', 'errorMessage', 'debounce', 'periodicTableMode', 'hidePeriodicTable', 'autocompleteFormulaUrl', 'autocompleteApiKey', 'tooltip', 'helpItems', 'showSubmitButton', 'submitButtonId', 'label', 'hideWildcardButton', 'chemicalSystemSelectHelpText', 'elementsSelectHelpText', 'maxElementSelectable']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
