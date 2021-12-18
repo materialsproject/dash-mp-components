@@ -8,6 +8,8 @@ import PropTypes from 'prop-types';
  * Renders a text input and a periodic table within a PeriodicContext to support two-way binding between the input and periodic table.
  * i.e. when elements are typed into the field, they are selected in the table,
  * and when elements are selected in the table, they are appended to the field's input.
+ *
+ * Documentation: https://materialsproject.github.io/mp-react-components/?path=/docs/data-entry-materialsinput--multi-type
  */
 
 export default class MaterialsInput extends Component {
@@ -17,28 +19,20 @@ export default class MaterialsInput extends Component {
 }
 
 MaterialsInput.propTypes = {
-    /**
-     * The ID used to identify this component in Dash callbacks
-     */
     id: PropTypes.string,
-
-    /**
-     * Dash-assigned callback that should be called whenever any of the
-     * properties change
-     */
     setProps: PropTypes.func,
+    className: PropTypes.string,
     value: PropTypes.string,
-    inputType: PropTypes.oneOf([
+    type: PropTypes.oneOf([
         'elements',
+        'chemical_system',
         'formula',
         'mpid',
         'smiles',
         'text',
     ]),
     allowedInputTypes: PropTypes.array,
-    showInputTypeDropdown: PropTypes.bool,
-    isChemSys: PropTypes.bool,
-    allowSmiles: PropTypes.bool,
+    showTypeDropdown: PropTypes.bool,
     placeholder: PropTypes.string,
     errorMessage: PropTypes.string,
     debounce: PropTypes.number,
@@ -48,4 +42,11 @@ MaterialsInput.propTypes = {
     autocompleteApiKey: PropTypes.string,
     tooltip: PropTypes.string,
     helpItems: PropTypes.array,
+    showSubmitButton: PropTypes.bool,
+    submitButtonId: PropTypes.string,
+    label: PropTypes.string,
+    hideWildcardButton: PropTypes.bool,
+    chemicalSystemSelectHelpText: PropTypes.string,
+    elementsSelectHelpText: PropTypes.string,
+    maxElementSelectable: PropTypes.number,
 };
