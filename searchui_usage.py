@@ -134,14 +134,10 @@ app.layout = html.Div(children=[
     id='markdown'
   ),
   html.Div(id="selected-rows"),
-  html.Div(
-    dash_mp_components.GlobalSearchBar(
-        redirectRoute="/materials",
-        hidePeriodicTable=False,
-        autocompleteFormulaUrl="https://api.materialsproject.org/materials/formula_autocomplete/",
-        tooltip="Type in a comma-separated list of element symbols (e.g. Ga, N), a chemical formula (e.g. C3N), or a material id (e.g. mp-10152). You can also click elements on the periodic table to add them to your search."
-    ),
-    className="mp-home"
+  html.Div(id="clicked-filter-groups"),
+  dash_mp_components.MaterialsInput(
+    id="materials-input",
+    showSubmitButton=True
   ),
   dash_mp_components.SearchUI(
     id="search-ui-demo",
@@ -175,6 +171,14 @@ def showNumberOfSelectedRows(selectedRows):
     if not selectedRows:
       raise PreventUpdate
     return f"Selected rows: {str(len(selectedRows))}"
+
+@app.callback(
+    Output('clicked-filter-groups', 'children'),
+    Input('materials-input', 'submitButtonClicks')
+)
+def click_filter_group(n_clicks):
+    print(n_clicks)
+    return n_clicks
 
 # use True to load a dev build of react
 if __name__ == '__main__':

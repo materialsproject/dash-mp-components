@@ -43,7 +43,7 @@ MaterialsInput.propTypes = {
     tooltip: PropTypes.string,
     helpItems: PropTypes.array,
     showSubmitButton: PropTypes.bool,
-    submitButtonId: PropTypes.string,
+    submitButtonClicks: PropTypes.number,
     label: PropTypes.string,
     hideWildcardButton: PropTypes.bool,
     chemicalSystemSelectHelpText: PropTypes.string,

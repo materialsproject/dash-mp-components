@@ -50,7 +50,7 @@ Keyword arguments:
 
 - showTypeDropdown (boolean; optional)
 
-- submitButtonId (string; optional)
+- submitButtonClicks (number; optional)
 
 - tooltip (string; optional)
 
@@ -58,12 +58,12 @@ Keyword arguments:
 
 - value (string; optional)"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, value=Component.UNDEFINED, type=Component.UNDEFINED, allowedInputTypes=Component.UNDEFINED, showTypeDropdown=Component.UNDEFINED, placeholder=Component.UNDEFINED, errorMessage=Component.UNDEFINED, debounce=Component.UNDEFINED, periodicTableMode=Component.UNDEFINED, hidePeriodicTable=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, autocompleteApiKey=Component.UNDEFINED, tooltip=Component.UNDEFINED, helpItems=Component.UNDEFINED, showSubmitButton=Component.UNDEFINED, submitButtonId=Component.UNDEFINED, label=Component.UNDEFINED, hideWildcardButton=Component.UNDEFINED, chemicalSystemSelectHelpText=Component.UNDEFINED, elementsSelectHelpText=Component.UNDEFINED, maxElementSelectable=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'allowedInputTypes', 'autocompleteApiKey', 'autocompleteFormulaUrl', 'chemicalSystemSelectHelpText', 'className', 'debounce', 'elementsSelectHelpText', 'errorMessage', 'helpItems', 'hidePeriodicTable', 'hideWildcardButton', 'label', 'maxElementSelectable', 'periodicTableMode', 'placeholder', 'showSubmitButton', 'showTypeDropdown', 'submitButtonId', 'tooltip', 'type', 'value']
+    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, value=Component.UNDEFINED, type=Component.UNDEFINED, allowedInputTypes=Component.UNDEFINED, showTypeDropdown=Component.UNDEFINED, placeholder=Component.UNDEFINED, errorMessage=Component.UNDEFINED, debounce=Component.UNDEFINED, periodicTableMode=Component.UNDEFINED, hidePeriodicTable=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, autocompleteApiKey=Component.UNDEFINED, tooltip=Component.UNDEFINED, helpItems=Component.UNDEFINED, showSubmitButton=Component.UNDEFINED, submitButtonClicks=Component.UNDEFINED, label=Component.UNDEFINED, hideWildcardButton=Component.UNDEFINED, chemicalSystemSelectHelpText=Component.UNDEFINED, elementsSelectHelpText=Component.UNDEFINED, maxElementSelectable=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'allowedInputTypes', 'autocompleteApiKey', 'autocompleteFormulaUrl', 'chemicalSystemSelectHelpText', 'className', 'debounce', 'elementsSelectHelpText', 'errorMessage', 'helpItems', 'hidePeriodicTable', 'hideWildcardButton', 'label', 'maxElementSelectable', 'periodicTableMode', 'placeholder', 'showSubmitButton', 'showTypeDropdown', 'submitButtonClicks', 'tooltip', 'type', 'value']
         self._type = 'MaterialsInput'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'allowedInputTypes', 'autocompleteApiKey', 'autocompleteFormulaUrl', 'chemicalSystemSelectHelpText', 'className', 'debounce', 'elementsSelectHelpText', 'errorMessage', 'helpItems', 'hidePeriodicTable', 'hideWildcardButton', 'label', 'maxElementSelectable', 'periodicTableMode', 'placeholder', 'showSubmitButton', 'showTypeDropdown', 'submitButtonId', 'tooltip', 'type', 'value']
+        self.available_properties = ['id', 'allowedInputTypes', 'autocompleteApiKey', 'autocompleteFormulaUrl', 'chemicalSystemSelectHelpText', 'className', 'debounce', 'elementsSelectHelpText', 'errorMessage', 'helpItems', 'hidePeriodicTable', 'hideWildcardButton', 'label', 'maxElementSelectable', 'periodicTableMode', 'placeholder', 'showSubmitButton', 'showTypeDropdown', 'submitButtonClicks', 'tooltip', 'type', 'value']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

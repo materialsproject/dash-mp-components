@@ -1534,9 +1534,9 @@
                 "required": false,
                 "description": ""
             },
-            "submitButtonId": {
+            "submitButtonClicks": {
                 "type": {
-                    "name": "string"
+                    "name": "number"
                 },
                 "required": false,
                 "description": ""
