@@ -8,6 +8,7 @@ class PeriodicFilter(Component):
 This component filter an associated periodic table
 
 Keyword arguments:
+
 - id (string; optional)"""
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, **kwargs):
@@ -17,12 +18,10 @@ Keyword arguments:
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id']
         self.available_wildcard_properties =            []
-
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-
         for k in []:
             if k not in args:
                 raise TypeError(
