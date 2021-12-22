@@ -9,6 +9,8 @@ Common wrapper for filters/inputs and their labels
 
 Keyword arguments:
 
+- children (a list of or a singular dash component, string or number; optional)
+
 - id (string; optional)
 
 - active (boolean; optional)
@@ -21,12 +23,12 @@ Keyword arguments:
 
 - units (string; optional)"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, label=Component.UNDEFINED, tooltip=Component.UNDEFINED, units=Component.UNDEFINED, active=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'active', 'className', 'label', 'tooltip', 'units']
+    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, label=Component.UNDEFINED, tooltip=Component.UNDEFINED, units=Component.UNDEFINED, active=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'active', 'className', 'label', 'tooltip', 'units']
         self._type = 'FilterField'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'active', 'className', 'label', 'tooltip', 'units']
+        self.available_properties = ['children', 'id', 'active', 'className', 'label', 'tooltip', 'units']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
@@ -36,4 +38,4 @@ Keyword arguments:
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')
-        super(FilterField, self).__init__(**args)
+        super(FilterField, self).__init__(children=children, **args)

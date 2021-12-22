@@ -1340,6 +1340,13 @@
                 "required": false,
                 "description": ""
             },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": ""
+            },
             "label": {
                 "type": {
                     "name": "string"

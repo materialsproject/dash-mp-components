@@ -16,6 +16,7 @@ export default class FilterField extends Component {
 FilterField.propTypes = {
     id: PropTypes.string,
     className: PropTypes.string,
+    children: PropTypes.node,
     label: PropTypes.string,
     tooltip: PropTypes.string,
     units: PropTypes.string,
