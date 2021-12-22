@@ -15,6 +15,7 @@ from .ModalTrigger import ModalTrigger
 from .SearchUI import SearchUI
 from .SynthesisRecipeCard import SynthesisRecipeCard
 from .Tooltip import Tooltip
+from .FilterField import FilterField
 from .GlobalSearchBar import GlobalSearchBar
 from .MaterialsInput import MaterialsInput
 from .Select import Select
@@ -53,6 +54,7 @@ __all__ = [
     "SearchUI",
     "SynthesisRecipeCard",
     "Tooltip",
+    "FilterField",
     "GlobalSearchBar",
     "MaterialsInput",
     "Select",

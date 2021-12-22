@@ -22,6 +22,7 @@ MaterialsInput.propTypes = {
     id: PropTypes.string,
     setProps: PropTypes.func,
     className: PropTypes.string,
+    inputClassName: PropTypes.string,
     value: PropTypes.string,
     type: PropTypes.oneOf([
         'elements',
@@ -44,9 +45,11 @@ MaterialsInput.propTypes = {
     helpItems: PropTypes.array,
     showSubmitButton: PropTypes.bool,
     submitButtonClicks: PropTypes.number,
+    submitButtonText: PropTypes.string,
     label: PropTypes.string,
     hideWildcardButton: PropTypes.bool,
     chemicalSystemSelectHelpText: PropTypes.string,
     elementsSelectHelpText: PropTypes.string,
     maxElementSelectable: PropTypes.number,
+    loading: PropTypes.bool,
 };

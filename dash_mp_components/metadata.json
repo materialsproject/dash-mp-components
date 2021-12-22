@@ -1321,6 +1321,55 @@
             }
         }
     },
+    "src/lib/components/data-entry/FilterField.react.js": {
+        "description": "Common wrapper for filters/inputs and their labels",
+        "displayName": "FilterField",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "label": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "tooltip": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "units": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "active": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
     "src/lib/components/data-entry/GlobalSearchBar.react.js": {
         "description": "Component for rendering advanced search interfaces for data in an API\nRenders results in a data table alongside a set of filters that map to properties in the data.",
         "displayName": "GlobalSearchBar",
@@ -1390,6 +1439,13 @@
                 "description": ""
             },
             "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "inputClassName": {
                 "type": {
                     "name": "string"
                 },
@@ -1541,6 +1597,13 @@
                 "required": false,
                 "description": ""
             },
+            "submitButtonText": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
             "label": {
                 "type": {
                     "name": "string"
@@ -1572,6 +1635,13 @@
             "maxElementSelectable": {
                 "type": {
                     "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "loading": {
+                "type": {
+                    "name": "bool"
                 },
                 "required": false,
                 "description": ""
