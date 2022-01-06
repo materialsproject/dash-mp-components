@@ -629,8 +629,7 @@
             },
             "selectedRows": {
                 "type": {
-                    "name": "custom",
-                    "raw": "any"
+                    "name": "any"
                 },
                 "required": false,
                 "description": "Property to maintain the state of selected rows so that\nthey are accessible via Dash callback"

@@ -72,7 +72,7 @@ Keyword arguments:
 - selectableRows (boolean; optional):
     Optionally include/exclude checkboxes next to rows for selecting.
 
-- selectedRows (optional):
+- selectedRows (boolean | number | string | dict | list; optional):
     Property to maintain the state of selected rows so that they are
     accessible via Dash callback.
 

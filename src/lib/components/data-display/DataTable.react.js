@@ -72,7 +72,7 @@ DataTable.propTypes = {
      * Property to maintain the state of selected rows so that
      * they are accessible via Dash callback
      */
-    selectedRows: any,
+    selectedRows: PropTypes.any,
     /**
      * Set to true to show a header with total number of rows and a columns selector
      */
