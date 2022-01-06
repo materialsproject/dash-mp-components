@@ -5,6 +5,7 @@ from .CrystalToolkitScene import CrystalToolkitScene
 from .Download import Download
 from .GraphComponent import GraphComponent
 from .DataBlock import DataBlock
+from .DataTable import DataTable
 from .DownloadButton import DownloadButton
 from .DownloadDropdown import DownloadDropdown
 from .Formula import Formula
@@ -44,6 +45,7 @@ __all__ = [
     "Download",
     "GraphComponent",
     "DataBlock",
+    "DataTable",
     "DownloadButton",
     "DownloadDropdown",
     "Formula",

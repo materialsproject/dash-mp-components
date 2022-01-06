@@ -545,6 +545,147 @@
             }
         }
     },
+    "src/lib/components/data-display/DataTable.react.js": {
+        "description": "Common wrapper for filters/inputs and their labels",
+        "displayName": "DataTable",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name(s) to append to the component's default class"
+            },
+            "data": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "Array of data objects to display in the table"
+            },
+            "columns": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "An array of column definition objects to control what is rendered in the table.\nSee `Column` documentation for specifics on how to construct `Column` objects."
+            },
+            "sortField": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Optionally include a field to sort by on initial load\nMust be a valid field and included in your list of columns"
+            },
+            "sortAscending": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "If including a sortField, set whether it should ascend by default\nTrue for ascending, False for descending"
+            },
+            "secondarySortField": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Optionally include a secondary sort field. If the sortField ever becomes the same as\nthe secondarySortField, the secondary field is removed.\nMust be a valid field and included in your list of columns."
+            },
+            "secondarySortAscending": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "If including a secondarySortField, set whether it should ascend by default.\nTrue for ascending, False for descending."
+            },
+            "conditionalRowStyles": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": "List of conditions for styling rows based on a property (selector) and a value.\nNote that this prop currently only supports checking for\nvalue equivalence (i.e. row[selector] === value).\nSee `ConditionalRowStyle` documentation for how to construct `ConditionalRowStyle` conditions."
+            },
+            "selectableRows": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Optionally include/exclude checkboxes next to rows for selecting"
+            },
+            "selectedRows": {
+                "type": {
+                    "name": "custom",
+                    "raw": "any"
+                },
+                "required": false,
+                "description": "Property to maintain the state of selected rows so that\nthey are accessible via Dash callback"
+            },
+            "hasHeader": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true to show a header with total number of rows and a columns selector"
+            },
+            "headerClassName": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Optional class name to apply to the table header"
+            },
+            "resultLabel": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "A noun in singular form to describe what a result represents (e.g. \"material\").\nThis is displayed in the table header."
+            },
+            "resultLabelPlural": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Plural form of the result label. If none supplied, it will automatically be the result label plus an \"s\""
+            },
+            "pagination": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Set to true to paginate the table records"
+            },
+            "paginationIsExpanded": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "If true, an expanded component will be used for pagination (same as in `SearchUI`).\nIf false, a compact version will be used."
+            },
+            "disableRichColumnHeaders": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "This is a temporary solution to allow SearchUI's to render in Storybook.\nThere is an issue with the dynamic column header components that causes\nStorybook to crash. Rendering column headers as plain PropTypes.strings fixes the problem.\nNote that this will disable column tooltips and unit labels."
+            }
+        }
+    },
     "src/lib/components/data-display/DownloadButton.react.js": {
         "description": "Button for exporting arrays or objects to files",
         "displayName": "DownloadButton",

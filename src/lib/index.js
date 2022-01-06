@@ -35,6 +35,7 @@ import SearchUI from './components/data-display/SearchUI.react';
 import DownloadButton from './components/data-display/DownloadButton.react';
 import DownloadDropdown from './components/data-display/DownloadDropdown.react';
 import DataBlock from './components/data-display/DataBlock.react';
+import DataTable from './components/data-display/DataTable.react';
 import Tooltip from './components/data-display/Tooltip.react';
 import Formula from './components/data-display/Formula.react';
 import SynthesisRecipeCard from './components/data-display/SynthesisRecipeCard.react';
@@ -81,4 +82,5 @@ export {
     Modal,
     ModalTrigger,
     FilterField,
+    DataTable,
 };
