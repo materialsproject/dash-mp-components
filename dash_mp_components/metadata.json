@@ -676,6 +676,13 @@
                 "required": false,
                 "description": "If true, an expanded component will be used for pagination (same as in `SearchUI`).\nIf false, a compact version will be used."
             },
+            "footer": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Content to display below the table but inside the table's box wrapper.\nAccepts markdown."
+            },
             "disableRichColumnHeaders": {
                 "type": {
                     "name": "bool"

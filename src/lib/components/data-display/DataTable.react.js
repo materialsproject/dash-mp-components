@@ -100,6 +100,11 @@ DataTable.propTypes = {
      */
     paginationIsExpanded: PropTypes.bool,
     /**
+     * Content to display below the table but inside the table's box wrapper.
+     * Accepts markdown.
+     */
+    footer: PropTypes.string,
+    /**
      * This is a temporary solution to allow SearchUI's to render in Storybook.
      * There is an issue with the dynamic column header components that causes
      * Storybook to crash. Rendering column headers as plain PropTypes.strings fixes the problem.
