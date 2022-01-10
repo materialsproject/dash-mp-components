@@ -634,6 +634,13 @@
                 "required": false,
                 "description": "Property to maintain the state of selected rows so that\nthey are accessible via Dash callback"
             },
+            "singleSelectableRows": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Combine with selectableRows prop to only allow one row to be selected at a time."
+            },
             "hasHeader": {
                 "type": {
                     "name": "bool"

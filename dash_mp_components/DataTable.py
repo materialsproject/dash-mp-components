@@ -80,6 +80,10 @@ Keyword arguments:
     Property to maintain the state of selected rows so that they are
     accessible via Dash callback.
 
+- singleSelectableRows (boolean; optional):
+    Combine with selectableRows prop to only allow one row to be
+    selected at a time.
+
 - sortAscending (boolean; optional):
     If including a sortField, set whether it should ascend by default
     True for ascending, False for descending.
@@ -88,12 +92,12 @@ Keyword arguments:
     Optionally include a field to sort by on initial load Must be a
     valid field and included in your list of columns."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, data=Component.UNDEFINED, columns=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, secondarySortField=Component.UNDEFINED, secondarySortAscending=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, hasHeader=Component.UNDEFINED, headerClassName=Component.UNDEFINED, resultLabel=Component.UNDEFINED, resultLabelPlural=Component.UNDEFINED, pagination=Component.UNDEFINED, paginationIsExpanded=Component.UNDEFINED, footer=Component.UNDEFINED, disableRichColumnHeaders=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'className', 'columns', 'conditionalRowStyles', 'data', 'disableRichColumnHeaders', 'footer', 'hasHeader', 'headerClassName', 'pagination', 'paginationIsExpanded', 'resultLabel', 'resultLabelPlural', 'secondarySortAscending', 'secondarySortField', 'selectableRows', 'selectedRows', 'sortAscending', 'sortField']
+    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, data=Component.UNDEFINED, columns=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, secondarySortField=Component.UNDEFINED, secondarySortAscending=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, singleSelectableRows=Component.UNDEFINED, hasHeader=Component.UNDEFINED, headerClassName=Component.UNDEFINED, resultLabel=Component.UNDEFINED, resultLabelPlural=Component.UNDEFINED, pagination=Component.UNDEFINED, paginationIsExpanded=Component.UNDEFINED, footer=Component.UNDEFINED, disableRichColumnHeaders=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'className', 'columns', 'conditionalRowStyles', 'data', 'disableRichColumnHeaders', 'footer', 'hasHeader', 'headerClassName', 'pagination', 'paginationIsExpanded', 'resultLabel', 'resultLabelPlural', 'secondarySortAscending', 'secondarySortField', 'selectableRows', 'selectedRows', 'singleSelectableRows', 'sortAscending', 'sortField']
         self._type = 'DataTable'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'className', 'columns', 'conditionalRowStyles', 'data', 'disableRichColumnHeaders', 'footer', 'hasHeader', 'headerClassName', 'pagination', 'paginationIsExpanded', 'resultLabel', 'resultLabelPlural', 'secondarySortAscending', 'secondarySortField', 'selectableRows', 'selectedRows', 'sortAscending', 'sortField']
+        self.available_properties = ['id', 'className', 'columns', 'conditionalRowStyles', 'data', 'disableRichColumnHeaders', 'footer', 'hasHeader', 'headerClassName', 'pagination', 'paginationIsExpanded', 'resultLabel', 'resultLabelPlural', 'secondarySortAscending', 'secondarySortField', 'selectableRows', 'selectedRows', 'singleSelectableRows', 'sortAscending', 'sortField']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

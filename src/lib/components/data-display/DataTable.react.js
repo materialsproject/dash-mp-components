@@ -74,6 +74,10 @@ DataTable.propTypes = {
      */
     selectedRows: PropTypes.any,
     /**
+     * Combine with selectableRows prop to only allow one row to be selected at a time.
+     */
+    singleSelectableRows: PropTypes.bool,
+    /**
      * Set to true to show a header with total number of rows and a columns selector
      */
     hasHeader: PropTypes.bool,
