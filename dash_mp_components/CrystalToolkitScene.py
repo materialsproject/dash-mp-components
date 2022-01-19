@@ -38,21 +38,29 @@ Keyword arguments:
 - debug (optional):
     Display a debug view.
 
+- fileOptions (optional):
+    List of options to show in file download dropdown.
+
+- fileTimestamp (optional):
+    THIS PROP IS SET AUTOMATICALLY Date string that represents the
+    time fileType was set. Use this prop in dash callbacks to trigger
+    file downloads.
+
+- fileType (optional):
+    THIS PROP IS SET AUTOMATICALLY The last file type clicked in the
+    file download menu.
+
 - imageData (optional):
     THIS PROP IS SET AUTOMATICALLY Data string for the image generated
-    by imageRequest This string can be downloaded as the filetype
-    specified in your imageRequest object.
+    on image button click.
 
 - imageDataTimestamp (optional):
     THIS PROP IS SET AUTOMATICALLY Date string that represents the
-    time imageData was set. This is to prevent race conditions between
-    imageRequest and imageData when being used in dash callbacks.
+    time imageData was set. Use this prop in dash callbacks to trigger
+    downloads of imageData.
 
-- imageRequest (optional):
-    Set to trigger a screenshot or scene download. Must be an object
-    with the following structure: {    \"filetype\": \"png\" // the
-    image format (\"png\", \"dae\") } Passing this prop as an object
-    ensures that new requests are triggered any time the prop is set.
+- imageType (optional):
+    File type to be downloaded as an image. Either png or dae.
 
 - inletPadding (optional):
     Padding of the axis view.
@@ -96,12 +104,12 @@ Keyword arguments:
     Hide/show nodes in scene by its name (key), value is 1 to show the
     node and 0 to hide it."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, imageRequest=Component.UNDEFINED, imageData=Component.UNDEFINED, imageDataTimestamp=Component.UNDEFINED, selectedObject=Component.UNDEFINED, sceneSize=Component.UNDEFINED, axisView=Component.UNDEFINED, inletSize=Component.UNDEFINED, inletPadding=Component.UNDEFINED, debug=Component.UNDEFINED, animation=Component.UNDEFINED, currentCameraState=Component.UNDEFINED, customCameraState=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'animation', 'axisView', 'currentCameraState', 'customCameraState', 'data', 'debug', 'imageData', 'imageDataTimestamp', 'imageRequest', 'inletPadding', 'inletSize', 'sceneSize', 'selectedObject', 'setProps', 'settings', 'toggleVisibility']
+    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, imageType=Component.UNDEFINED, imageData=Component.UNDEFINED, imageDataTimestamp=Component.UNDEFINED, fileOptions=Component.UNDEFINED, fileType=Component.UNDEFINED, fileTimestamp=Component.UNDEFINED, selectedObject=Component.UNDEFINED, sceneSize=Component.UNDEFINED, axisView=Component.UNDEFINED, inletSize=Component.UNDEFINED, inletPadding=Component.UNDEFINED, debug=Component.UNDEFINED, animation=Component.UNDEFINED, currentCameraState=Component.UNDEFINED, customCameraState=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'animation', 'axisView', 'currentCameraState', 'customCameraState', 'data', 'debug', 'fileOptions', 'fileTimestamp', 'fileType', 'imageData', 'imageDataTimestamp', 'imageType', 'inletPadding', 'inletSize', 'sceneSize', 'selectedObject', 'setProps', 'settings', 'toggleVisibility']
         self._type = 'CrystalToolkitScene'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'animation', 'axisView', 'currentCameraState', 'customCameraState', 'data', 'debug', 'imageData', 'imageDataTimestamp', 'imageRequest', 'inletPadding', 'inletSize', 'sceneSize', 'selectedObject', 'setProps', 'settings', 'toggleVisibility']
+        self.available_properties = ['id', 'animation', 'axisView', 'currentCameraState', 'customCameraState', 'data', 'debug', 'fileOptions', 'fileTimestamp', 'fileType', 'imageData', 'imageDataTimestamp', 'imageType', 'inletPadding', 'inletSize', 'sceneSize', 'selectedObject', 'setProps', 'settings', 'toggleVisibility']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

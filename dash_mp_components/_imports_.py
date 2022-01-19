@@ -8,6 +8,7 @@ from .DataBlock import DataBlock
 from .DataTable import DataTable
 from .DownloadButton import DownloadButton
 from .DownloadDropdown import DownloadDropdown
+from .Enlargeable import Enlargeable
 from .Formula import Formula
 from .Markdown import Markdown
 from .Modal import Modal
@@ -48,6 +49,7 @@ __all__ = [
     "DataTable",
     "DownloadButton",
     "DownloadDropdown",
+    "Enlargeable",
     "Formula",
     "Markdown",
     "Modal",

@@ -43,6 +43,7 @@ import Markdown from './components/data-display/Markdown.react';
 import ModalContextProvider from './components/data-display/ModalContextProvider.react';
 import Modal from './components/data-display/Modal.react';
 import ModalTrigger from './components/data-display/ModalTrigger.react';
+import Enlargeable from './components/data-display/Enlargeable.react';
 
 export {
     PeriodicTableInput,
@@ -83,4 +84,5 @@ export {
     ModalTrigger,
     FilterField,
     DataTable,
+    Enlargeable,
 };
