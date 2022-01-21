@@ -10,7 +10,7 @@ app = dash.Dash(__name__)
 app.layout = html.Div(children=[
   dash_mp_components.CrystalToolkitScene(
     children=[
-      html.Div('settings'),
+      None,
       html.Div('legend')
     ],
     id="scene",
