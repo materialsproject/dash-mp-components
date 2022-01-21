@@ -9,6 +9,10 @@ class CrystalToolkitScene(Component):
 
 Keyword arguments:
 
+- children (optional):
+    First child will be rendered as the settings panel. Second child
+    will be rendered as the bottom panel (legend).
+
 - id (optional):
     The ID used to identify this component in Dash callbacks.
 
@@ -104,12 +108,12 @@ Keyword arguments:
     Hide/show nodes in scene by its name (key), value is 1 to show the
     node and 0 to hide it."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, imageType=Component.UNDEFINED, imageData=Component.UNDEFINED, imageDataTimestamp=Component.UNDEFINED, fileOptions=Component.UNDEFINED, fileType=Component.UNDEFINED, fileTimestamp=Component.UNDEFINED, selectedObject=Component.UNDEFINED, sceneSize=Component.UNDEFINED, axisView=Component.UNDEFINED, inletSize=Component.UNDEFINED, inletPadding=Component.UNDEFINED, debug=Component.UNDEFINED, animation=Component.UNDEFINED, currentCameraState=Component.UNDEFINED, customCameraState=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'animation', 'axisView', 'currentCameraState', 'customCameraState', 'data', 'debug', 'fileOptions', 'fileTimestamp', 'fileType', 'imageData', 'imageDataTimestamp', 'imageType', 'inletPadding', 'inletSize', 'sceneSize', 'selectedObject', 'setProps', 'settings', 'toggleVisibility']
+    def __init__(self, children=None, id=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, imageType=Component.UNDEFINED, imageData=Component.UNDEFINED, imageDataTimestamp=Component.UNDEFINED, fileOptions=Component.UNDEFINED, fileType=Component.UNDEFINED, fileTimestamp=Component.UNDEFINED, selectedObject=Component.UNDEFINED, sceneSize=Component.UNDEFINED, axisView=Component.UNDEFINED, inletSize=Component.UNDEFINED, inletPadding=Component.UNDEFINED, debug=Component.UNDEFINED, animation=Component.UNDEFINED, currentCameraState=Component.UNDEFINED, customCameraState=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'animation', 'axisView', 'currentCameraState', 'customCameraState', 'data', 'debug', 'fileOptions', 'fileTimestamp', 'fileType', 'imageData', 'imageDataTimestamp', 'imageType', 'inletPadding', 'inletSize', 'sceneSize', 'selectedObject', 'setProps', 'settings', 'toggleVisibility']
         self._type = 'CrystalToolkitScene'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'animation', 'axisView', 'currentCameraState', 'customCameraState', 'data', 'debug', 'fileOptions', 'fileTimestamp', 'fileType', 'imageData', 'imageDataTimestamp', 'imageType', 'inletPadding', 'inletSize', 'sceneSize', 'selectedObject', 'setProps', 'settings', 'toggleVisibility']
+        self.available_properties = ['children', 'id', 'animation', 'axisView', 'currentCameraState', 'customCameraState', 'data', 'debug', 'fileOptions', 'fileTimestamp', 'fileType', 'imageData', 'imageDataTimestamp', 'imageType', 'inletPadding', 'inletSize', 'sceneSize', 'selectedObject', 'setProps', 'settings', 'toggleVisibility']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
@@ -119,4 +123,4 @@ Keyword arguments:
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')
-        super(CrystalToolkitScene, self).__init__(**args)
+        super(CrystalToolkitScene, self).__init__(children=children, **args)

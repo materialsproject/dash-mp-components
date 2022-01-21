@@ -20,6 +20,11 @@ CrystalToolkitScene.propTypes = {
      */
     id: PropTypes.string,
     /**
+     * First child will be rendered as the settings panel.
+     * Second child will be rendered as the bottom panel (legend).
+     */
+    children: PropTypes.node,
+    /**
      * Simple3DScene JSON, the easiest way to generate this is to use the Scene class
      * in crystal_toolkit.core.scene and its to_json method.
      */
@@ -65,7 +70,7 @@ CrystalToolkitScene.propTypes = {
      * Date string that represents the time imageData was set.
      * Use this prop in dash callbacks to trigger downloads of imageData.
      */
-    imageDataTimestamp: PropTypes.string,
+    imageDataTimestamp: PropTypes.any,
     /**
      * List of options to show in file download dropdown
      */
@@ -80,7 +85,7 @@ CrystalToolkitScene.propTypes = {
      * Date string that represents the time fileType was set.
      * Use this prop in dash callbacks to trigger file downloads.
      */
-    fileTimestamp: PropTypes.string,
+    fileTimestamp: PropTypes.any,
     /**
      * Dash-assigned callback that should be called whenever any of the
      * properties change

@@ -237,6 +237,14 @@
                 "required": false,
                 "description": "The ID used to identify this component in Dash callbacks"
             },
+            "children": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.node"
+                },
+                "required": false,
+                "description": "First child will be rendered as the settings panel.\nSecond child will be rendered as the bottom panel (legend)."
+            },
             "data": {
                 "type": {
                     "name": "custom",
@@ -280,7 +288,7 @@
             "imageDataTimestamp": {
                 "type": {
                     "name": "custom",
-                    "raw": "PropTypes.string"
+                    "raw": "PropTypes.any"
                 },
                 "required": false,
                 "description": "THIS PROP IS SET AUTOMATICALLY\nDate string that represents the time imageData was set.\nUse this prop in dash callbacks to trigger downloads of imageData."
@@ -304,7 +312,7 @@
             "fileTimestamp": {
                 "type": {
                     "name": "custom",
-                    "raw": "PropTypes.string"
+                    "raw": "PropTypes.any"
                 },
                 "required": false,
                 "description": "THIS PROP IS SET AUTOMATICALLY\nDate string that represents the time fileType was set.\nUse this prop in dash callbacks to trigger file downloads."
