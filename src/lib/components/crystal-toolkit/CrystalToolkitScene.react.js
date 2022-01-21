@@ -145,4 +145,6 @@ CrystalToolkitScene.propTypes = {
      * }
      */
     customCameraState: PropTypes.object,
+    hideControls: PropTypes.bool,
+    showPositionButton: PropTypes.bool,
 };
