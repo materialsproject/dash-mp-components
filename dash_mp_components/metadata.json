@@ -237,6 +237,14 @@
                 "required": false,
                 "description": "The ID used to identify this component in Dash callbacks"
             },
+            "setProps": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
             "children": {
                 "type": {
                     "name": "custom",
@@ -244,6 +252,14 @@
                 },
                 "required": false,
                 "description": "First child will be rendered as the settings panel.\nSecond child will be rendered as the bottom panel (legend)."
+            },
+            "className": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.string"
+                },
+                "required": false,
+                "description": "Class name that will wrap around the whole scene component.\nWhen enlarged, this class name is applied to the modal-content element."
             },
             "data": {
                 "type": {
@@ -317,14 +333,6 @@
                 "required": false,
                 "description": "THIS PROP IS SET AUTOMATICALLY\nDate string that represents the time fileType was set.\nUse this prop in dash callbacks to trigger file downloads."
             },
-            "setProps": {
-                "type": {
-                    "name": "custom",
-                    "raw": "PropTypes.func"
-                },
-                "required": false,
-                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
-            },
             "selectedObject": {
                 "type": {
                     "name": "custom",
@@ -397,7 +405,31 @@
                 "required": false,
                 "description": "Object for setting the scene to a custom camera state.\nWhen modified, the camera will update to new custom state.\ne.g.\n{\n  position: {x: 0, y: 0, z: 0},\n  quarternion: {x: 0, y: 0, z: 0, w: 0}, (optional)\n  zoom: 1 (optional)\n}"
             },
-            "hideControls": {
+            "showControls": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "showExpandButton": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "showImageButton": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "showExportButton": {
                 "type": {
                     "name": "custom",
                     "raw": "PropTypes.bool"

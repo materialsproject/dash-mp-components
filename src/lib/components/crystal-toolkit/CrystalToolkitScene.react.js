@@ -20,10 +20,20 @@ CrystalToolkitScene.propTypes = {
      */
     id: PropTypes.string,
     /**
+     * Dash-assigned callback that should be called whenever any of the
+     * properties change
+     */
+    setProps: PropTypes.func,
+    /**
      * First child will be rendered as the settings panel.
      * Second child will be rendered as the bottom panel (legend).
      */
     children: PropTypes.node,
+    /**
+     * Class name that will wrap around the whole scene component.
+     * When enlarged, this class name is applied to the modal-content element.
+     */
+    className: PropTypes.string,
     /**
      * Simple3DScene JSON, the easiest way to generate this is to use the Scene class
      * in crystal_toolkit.core.scene and its to_json method.
@@ -87,11 +97,6 @@ CrystalToolkitScene.propTypes = {
      */
     fileTimestamp: PropTypes.any,
     /**
-     * Dash-assigned callback that should be called whenever any of the
-     * properties change
-     */
-    setProps: PropTypes.func,
-    /**
      * This points to the last clicked objects. Use it in your dash callback
      * to know which objects are currently selected in the scene
      *
@@ -145,6 +150,9 @@ CrystalToolkitScene.propTypes = {
      * }
      */
     customCameraState: PropTypes.object,
-    hideControls: PropTypes.bool,
+    showControls: PropTypes.bool,
+    showExpandButton: PropTypes.bool,
+    showImageButton: PropTypes.bool,
+    showExportButton: PropTypes.bool,
     showPositionButton: PropTypes.bool,
 };
