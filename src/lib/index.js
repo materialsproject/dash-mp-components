@@ -30,6 +30,7 @@ import MaterialsInput from './components/data-entry/MaterialsInput.react';
 import GlobalSearchBar from './components/data-entry/GlobalSearchBar.react';
 import Select from './components/data-entry/Select.react';
 import FilterField from './components/data-entry/FilterField.react';
+import Switch from './components/data-entry/Switch.react';
 // data-display
 import SearchUI from './components/data-display/SearchUI.react';
 import DownloadButton from './components/data-display/DownloadButton.react';
@@ -85,4 +86,5 @@ export {
     FilterField,
     DataTable,
     Enlargeable,
+    Switch,
 };

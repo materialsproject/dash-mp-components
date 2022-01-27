@@ -8,26 +8,20 @@ import os
 app = dash.Dash(__name__)
 
 app.layout = html.Div(children=[
-  dash_mp_components.CrystalToolkitScene(
-    children=[
-      None,
-      html.Div('legend')
-    ],
-    id="scene",
-    settings={'renderer': 'svg', 'defaultZoom': 0.8},
-    data=scene,
-    sceneSize=500
+  dash_mp_components.Switch(
+    id="switch",
+    value=False
   ),
   html.Div(id='image-output')
 ])
 
-@app.callback(
-    Output('image-output', 'children'),
-    Input('scene', 'imageDataTimestamp')
-)
-def get_image_data(image_data_timestamp):
-    print(image_data_timestamp)
-    return image_data_timestamp
+# @app.callback(
+#     Output('image-output', 'children'),
+#     Input('scene', 'imageDataTimestamp')
+# )
+# def get_image_data(image_data_timestamp):
+#     print(image_data_timestamp)
+#     return image_data_timestamp
 
 # use True to load a dev build of react
 if __name__ == '__main__':

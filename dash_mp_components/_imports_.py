@@ -21,6 +21,7 @@ from .FilterField import FilterField
 from .GlobalSearchBar import GlobalSearchBar
 from .MaterialsInput import MaterialsInput
 from .Select import Select
+from .Switch import Switch
 from .Dropdown import Dropdown
 from .Navbar import Navbar
 from .NavbarDropdown import NavbarDropdown
@@ -62,6 +63,7 @@ __all__ = [
     "GlobalSearchBar",
     "MaterialsInput",
     "Select",
+    "Switch",
     "Dropdown",
     "Navbar",
     "NavbarDropdown",

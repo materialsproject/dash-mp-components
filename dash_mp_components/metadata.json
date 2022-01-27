@@ -1987,6 +1987,41 @@
             }
         }
     },
+    "src/lib/components/data-entry/Switch.react.js": {
+        "description": "Common wrapper for filters/inputs and their labels",
+        "displayName": "Switch",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": ""
+            },
+            "value": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
     "src/lib/components/navigation/Dropdown.react.js": {
         "description": "Generic dropdown menu that can render arbitrary items for display\nand navigation purposes only (i.e. not for selecting options or performing actions that are not links)",
         "displayName": "Dropdown",
