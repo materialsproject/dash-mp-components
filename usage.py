@@ -12,6 +12,13 @@ app.layout = html.Div(children=[
     id="switch",
     value=False
   ),
+  dash_mp_components.RangeSlider(
+      id="temperature",
+      domain=[300, 1800],
+      value=300,
+      step=1,
+      ticks=2
+  ),
   html.Div(id='image-output')
 ])
 
