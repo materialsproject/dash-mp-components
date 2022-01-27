@@ -20,6 +20,7 @@ from .Tooltip import Tooltip
 from .FilterField import FilterField
 from .GlobalSearchBar import GlobalSearchBar
 from .MaterialsInput import MaterialsInput
+from .RangeSlider import RangeSlider
 from .Select import Select
 from .Switch import Switch
 from .Dropdown import Dropdown
@@ -62,6 +63,7 @@ __all__ = [
     "FilterField",
     "GlobalSearchBar",
     "MaterialsInput",
+    "RangeSlider",
     "Select",
     "Switch",
     "Dropdown",

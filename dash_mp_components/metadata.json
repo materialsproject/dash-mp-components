@@ -1924,6 +1924,79 @@
             }
         }
     },
+    "src/lib/components/data-entry/RangeSlider.react.js": {
+        "description": "Common wrapper for filters/inputs and their labels",
+        "displayName": "RangeSlider",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": ""
+            },
+            "value": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "domain": {
+                "type": {
+                    "name": "arrayOf",
+                    "value": {
+                        "name": "number"
+                    }
+                },
+                "required": false,
+                "description": ""
+            },
+            "step": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "ticks": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "inclusiveTickBounds": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "debounce": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
     "src/lib/components/data-entry/Select.react.js": {
         "description": "Wrapper component for react-select\nThis can be used as an alternative to dcc.Dropdown\nAutomatically adds the wrapper class \"react-select-container\"\nand the class prefix \"react-select-\" to all the elements created by react-select",
         "displayName": "Select",
