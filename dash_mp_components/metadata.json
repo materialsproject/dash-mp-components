@@ -2092,6 +2092,27 @@
                 },
                 "required": false,
                 "description": ""
+            },
+            "hasLabel": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "truthyLabel": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "falsyLabel": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
             }
         }
     },

@@ -18,4 +18,7 @@ Switch.propTypes = {
     className: PropTypes.string,
     setProps: PropTypes.func,
     value: PropTypes.bool,
+    hasLabel: PropTypes.bool,
+    truthyLabel: PropTypes.string,
+    falsyLabel: PropTypes.string,
 };
