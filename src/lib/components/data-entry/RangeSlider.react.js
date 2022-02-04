@@ -19,6 +19,7 @@ RangeSlider.propTypes = {
     setProps: PropTypes.func,
     value: PropTypes.number,
     domain: PropTypes.arrayOf(PropTypes.number),
+    isLogScale: PropTypes.bool,
     step: PropTypes.number,
     ticks: PropTypes.number,
     inclusiveTickBounds: PropTypes.bool,

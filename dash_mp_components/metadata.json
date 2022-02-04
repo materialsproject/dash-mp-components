@@ -1967,6 +1967,13 @@
                 "required": false,
                 "description": ""
             },
+            "isLogScale": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
             "step": {
                 "type": {
                     "name": "number"
