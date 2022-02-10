@@ -32,6 +32,7 @@ import Select from './components/data-entry/Select.react';
 import FilterField from './components/data-entry/FilterField.react';
 import Switch from './components/data-entry/Switch.react';
 import RangeSlider from './components/data-entry/RangeSlider.react';
+import DualRangeSlider from './components/data-entry/DualRangeSlider.react';
 // data-display
 import SearchUI from './components/data-display/SearchUI.react';
 import DownloadButton from './components/data-display/DownloadButton.react';
@@ -89,4 +90,5 @@ export {
     Enlargeable,
     Switch,
     RangeSlider,
+    DualRangeSlider,
 };

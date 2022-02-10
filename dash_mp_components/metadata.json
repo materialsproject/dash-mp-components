@@ -1590,6 +1590,89 @@
             }
         }
     },
+    "src/lib/components/data-entry/DualRangeSlider.react.js": {
+        "description": "Slider input with controls for both the minimum and maximum bounds.",
+        "displayName": "DualRangeSlider",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": ""
+            },
+            "value": {
+                "type": {
+                    "name": "arrayOf",
+                    "value": {
+                        "name": "number"
+                    }
+                },
+                "required": false,
+                "description": ""
+            },
+            "domain": {
+                "type": {
+                    "name": "arrayOf",
+                    "value": {
+                        "name": "number"
+                    }
+                },
+                "required": false,
+                "description": ""
+            },
+            "isLogScale": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "step": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "ticks": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "inclusiveTickBounds": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "debounce": {
+                "type": {
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
     "src/lib/components/data-entry/FilterField.react.js": {
         "description": "Common wrapper for filters/inputs and their labels",
         "displayName": "FilterField",
@@ -1925,7 +2008,7 @@
         }
     },
     "src/lib/components/data-entry/RangeSlider.react.js": {
-        "description": "Common wrapper for filters/inputs and their labels",
+        "description": "Slider input for selecting a single value in a range",
         "displayName": "RangeSlider",
         "methods": [],
         "props": {
@@ -1952,7 +2035,15 @@
             },
             "value": {
                 "type": {
-                    "name": "number"
+                    "name": "union",
+                    "value": [
+                        {
+                            "name": "number"
+                        },
+                        {
+                            "name": "string"
+                        }
+                    ]
                 },
                 "required": false,
                 "description": ""

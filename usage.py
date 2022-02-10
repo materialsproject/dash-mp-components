@@ -13,23 +13,35 @@ app.layout = html.Div(children=[
     value=False
   ),
   dash_mp_components.RangeSlider(
-      id="temperature",
-      domain=[300, 1800],
-      value=300,
-      step=1,
-      ticks=2
+      id="one",
+      domain=[-1, 2],
+      value=1,
+      step=0.1,
+      isLogScale=True
   ),
-  html.Div(id='image-output')
+  dash_mp_components.DualRangeSlider(
+      id="two",
+      domain=[-10, 20],
+      value=[1, 5],
+      step=0.1
+  ),
+  dash_mp_components.DualRangeSlider(
+      id="three",
+      domain=[-3, 2],
+      value=[1, 2],
+      step=0.001,
+      isLogScale=True
+  ),
+  html.Div(id='slider-output')
 ])
 
-# @app.callback(
-#     Output('image-output', 'children'),
-#     Input('scene', 'imageDataTimestamp')
-# )
-# def get_image_data(image_data_timestamp):
-#     print(image_data_timestamp)
-#     return image_data_timestamp
+@app.callback(
+    Output('slider-output', 'children'),
+    Input('one', 'value')
+)
+def get_slider_value(value):
+    return value
 
 # use True to load a dev build of react
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True, port=8051)

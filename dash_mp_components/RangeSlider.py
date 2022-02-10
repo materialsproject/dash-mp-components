@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class RangeSlider(Component):
     """A RangeSlider component.
-Common wrapper for filters/inputs and their labels
+Slider input for selecting a single value in a range
 
 Keyword arguments:
 
@@ -25,7 +25,7 @@ Keyword arguments:
 
 - ticks (number; optional)
 
-- value (number; optional)"""
+- value (number | string; optional)"""
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, value=Component.UNDEFINED, domain=Component.UNDEFINED, isLogScale=Component.UNDEFINED, step=Component.UNDEFINED, ticks=Component.UNDEFINED, inclusiveTickBounds=Component.UNDEFINED, debounce=Component.UNDEFINED, **kwargs):
         self._prop_names = ['id', 'className', 'debounce', 'domain', 'inclusiveTickBounds', 'isLogScale', 'step', 'ticks', 'value']

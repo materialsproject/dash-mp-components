@@ -17,6 +17,7 @@ from .ModalTrigger import ModalTrigger
 from .SearchUI import SearchUI
 from .SynthesisRecipeCard import SynthesisRecipeCard
 from .Tooltip import Tooltip
+from .DualRangeSlider import DualRangeSlider
 from .FilterField import FilterField
 from .GlobalSearchBar import GlobalSearchBar
 from .MaterialsInput import MaterialsInput
@@ -60,6 +61,7 @@ __all__ = [
     "SearchUI",
     "SynthesisRecipeCard",
     "Tooltip",
+    "DualRangeSlider",
     "FilterField",
     "GlobalSearchBar",
     "MaterialsInput",
