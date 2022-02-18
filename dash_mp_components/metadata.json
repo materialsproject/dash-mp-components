@@ -1434,6 +1434,20 @@
                 "required": false,
                 "description": ""
             },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": ""
+            },
             "columns": {
                 "type": {
                     "name": "array"

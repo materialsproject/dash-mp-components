@@ -19,6 +19,8 @@ export default class SearchUIContainer extends Component {
 SearchUIContainer.propTypes = {
     id: PropTypes.string,
     setProps: PropTypes.func,
+    className: PropTypes.string,
+    children: PropTypes.node,
     columns: PropTypes.array,
     filterGroups: PropTypes.array,
     apiEndpoint: PropTypes.string,
