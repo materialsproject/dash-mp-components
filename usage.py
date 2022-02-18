@@ -21,7 +21,7 @@ app.layout = html.Div(children=[
   ),
   dash_mp_components.DualRangeSlider(
       id="two",
-      domain=[-10, 20],
+      domain=[-97, 88],
       value=[1, 5],
       step=0.1
   ),

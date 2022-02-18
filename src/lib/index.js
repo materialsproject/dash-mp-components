@@ -35,6 +35,11 @@ import RangeSlider from './components/data-entry/RangeSlider.react';
 import DualRangeSlider from './components/data-entry/DualRangeSlider.react';
 // data-display
 import SearchUI from './components/data-display/SearchUI.react';
+import SearchUIContainer from './components/data-display/SearchUIContainer.react';
+import SearchUISearchBar from './components/data-display/SearchUISearchBar.react';
+import SearchUIGrid from './components/data-display/SearchUIGrid.react';
+import SearchUIDataHeader from './components/data-display/SearchUIDataHeader.react';
+import SearchUIDataView from './components/data-display/SearchUIDataView.react';
 import DownloadButton from './components/data-display/DownloadButton.react';
 import DownloadDropdown from './components/data-display/DownloadDropdown.react';
 import DataBlock from './components/data-display/DataBlock.react';
@@ -61,6 +66,11 @@ export {
     MatSidebar,
     Scrollspy,
     SearchUI,
+    SearchUIContainer,
+    SearchUISearchBar,
+    SearchUIGrid,
+    SearchUIDataHeader,
+    SearchUIDataView,
     GlobalSearchBar,
     Navbar,
     NavbarDropdown,

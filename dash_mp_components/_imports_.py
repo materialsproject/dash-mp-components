@@ -15,6 +15,11 @@ from .Modal import Modal
 from .ModalContextProvider import ModalContextProvider
 from .ModalTrigger import ModalTrigger
 from .SearchUI import SearchUI
+from .SearchUIContainer import SearchUIContainer
+from .SearchUIDataHeader import SearchUIDataHeader
+from .SearchUIDataView import SearchUIDataView
+from .SearchUIGrid import SearchUIGrid
+from .SearchUISearchBar import SearchUISearchBar
 from .SynthesisRecipeCard import SynthesisRecipeCard
 from .Tooltip import Tooltip
 from .DualRangeSlider import DualRangeSlider
@@ -59,6 +64,11 @@ __all__ = [
     "ModalContextProvider",
     "ModalTrigger",
     "SearchUI",
+    "SearchUIContainer",
+    "SearchUIDataHeader",
+    "SearchUIDataView",
+    "SearchUIGrid",
+    "SearchUISearchBar",
     "SynthesisRecipeCard",
     "Tooltip",
     "DualRangeSlider",

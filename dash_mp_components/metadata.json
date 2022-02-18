@@ -1415,6 +1415,331 @@
             }
         }
     },
+    "src/lib/components/data-display/SearchUIContainer.react.js": {
+        "description": "A component that can wrap around sub-components of `SearchUI` and ensure they are\nall hooked up to the same context.\nThis allows you to use the state management functionality of `SearchUI` with the ability\nto customize the inner layout and components.",
+        "displayName": "SearchUIContainer",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": ""
+            },
+            "columns": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": ""
+            },
+            "filterGroups": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": ""
+            },
+            "apiEndpoint": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "apiEndpointParams": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": ""
+            },
+            "autocompleteFormulaUrl": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "apiKey": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "resultLabel": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "hasSearchBar": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "searchBarTooltip": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "searchBarPlaceholder": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "searchBarErrorMessage": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "searchBarAllowedInputTypesMap": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": ""
+            },
+            "searchBarPeriodicTableMode": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'toggle'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'focus'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'none'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": ""
+            },
+            "searchBarHelpItems": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": ""
+            },
+            "searchBarChemicalSystemSelectHelpText": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "searchBarElementsSelectHelpText": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "hasSortMenu": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "sortField": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "sortAscending": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "secondarySortField": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "secondarySortAscending": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "conditionalRowStyles": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": ""
+            },
+            "selectableRows": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "selectedRows": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": ""
+            },
+            "view": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'table'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'synthesis'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": ""
+            },
+            "isContribs": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "disableRichColumnHeaders": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "results": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/SearchUIDataHeader.react.js": {
+        "description": "Data header to be used within a `SearchUIContainer`.",
+        "displayName": "SearchUIDataHeader",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/SearchUIDataView.react.js": {
+        "description": "Data view to be used within a `SearchUIContainer`.\nThe view type is determined by the prop passed to `SearchUIContainer`.",
+        "displayName": "SearchUIDataView",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/SearchUIGrid.react.js": {
+        "description": "A component that combines the filters, data header, and data view\nof a `SearchUI` into a common grid layout.\nNote that this must be used within a `SearchUIContainer`.",
+        "displayName": "SearchUIGrid",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/SearchUISearchBar.react.js": {
+        "description": "Search bar to be used within a `SearchUIContainer`.",
+        "displayName": "SearchUISearchBar",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
     "src/lib/components/data-display/SynthesisRecipeCard.react.js": {
         "description": "Display synthesis recipe data in a standardized card view.",
         "displayName": "SynthesisRecipeCard",
