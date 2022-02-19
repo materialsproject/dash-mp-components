@@ -16,4 +16,12 @@ export default class SearchUISearchBar extends Component {
 SearchUISearchBar.propTypes = {
     id: PropTypes.string,
     setProps: PropTypes.func,
+    className: PropTypes.string,
+    placeholder: PropTypes.string,
+    errorMessage: PropTypes.string,
+    allowedInputTypesMap: PropTypes.object,
+    periodicTableMode: PropTypes.oneOf(['toggle', 'focus', 'none']),
+    helpItems: PropTypes.array,
+    chemicalSystemSelectHelpText: PropTypes.string,
+    elementsSelectHelpText: PropTypes.string,
 };

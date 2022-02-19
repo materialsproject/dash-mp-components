@@ -44,22 +44,6 @@ Keyword arguments:
 
 - results (list; optional)
 
-- searchBarAllowedInputTypesMap (dict; optional)
-
-- searchBarChemicalSystemSelectHelpText (string; optional)
-
-- searchBarElementsSelectHelpText (string; optional)
-
-- searchBarErrorMessage (string; optional)
-
-- searchBarHelpItems (list; optional)
-
-- searchBarPeriodicTableMode (a value equal to: 'toggle', 'focus', 'none'; optional)
-
-- searchBarPlaceholder (string; optional)
-
-- searchBarTooltip (string; optional)
-
 - secondarySortAscending (boolean; optional)
 
 - secondarySortField (string; optional)
@@ -74,12 +58,12 @@ Keyword arguments:
 
 - view (a value equal to: 'table', 'synthesis'; optional)"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, apiEndpoint=Component.UNDEFINED, apiEndpointParams=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, searchBarTooltip=Component.UNDEFINED, searchBarPlaceholder=Component.UNDEFINED, searchBarErrorMessage=Component.UNDEFINED, searchBarAllowedInputTypesMap=Component.UNDEFINED, searchBarPeriodicTableMode=Component.UNDEFINED, searchBarHelpItems=Component.UNDEFINED, searchBarChemicalSystemSelectHelpText=Component.UNDEFINED, searchBarElementsSelectHelpText=Component.UNDEFINED, hasSortMenu=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, secondarySortField=Component.UNDEFINED, secondarySortAscending=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, view=Component.UNDEFINED, isContribs=Component.UNDEFINED, disableRichColumnHeaders=Component.UNDEFINED, results=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'filterGroups', 'hasSearchBar', 'hasSortMenu', 'isContribs', 'resultLabel', 'results', 'searchBarAllowedInputTypesMap', 'searchBarChemicalSystemSelectHelpText', 'searchBarElementsSelectHelpText', 'searchBarErrorMessage', 'searchBarHelpItems', 'searchBarPeriodicTableMode', 'searchBarPlaceholder', 'searchBarTooltip', 'secondarySortAscending', 'secondarySortField', 'selectableRows', 'selectedRows', 'sortAscending', 'sortField', 'view']
+    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, apiEndpoint=Component.UNDEFINED, apiEndpointParams=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, hasSortMenu=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, secondarySortField=Component.UNDEFINED, secondarySortAscending=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, view=Component.UNDEFINED, isContribs=Component.UNDEFINED, disableRichColumnHeaders=Component.UNDEFINED, results=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'filterGroups', 'hasSearchBar', 'hasSortMenu', 'isContribs', 'resultLabel', 'results', 'secondarySortAscending', 'secondarySortField', 'selectableRows', 'selectedRows', 'sortAscending', 'sortField', 'view']
         self._type = 'SearchUIContainer'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'filterGroups', 'hasSearchBar', 'hasSortMenu', 'isContribs', 'resultLabel', 'results', 'searchBarAllowedInputTypesMap', 'searchBarChemicalSystemSelectHelpText', 'searchBarElementsSelectHelpText', 'searchBarErrorMessage', 'searchBarHelpItems', 'searchBarPeriodicTableMode', 'searchBarPlaceholder', 'searchBarTooltip', 'secondarySortAscending', 'secondarySortField', 'selectableRows', 'selectedRows', 'sortAscending', 'sortField', 'view']
+        self.available_properties = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'filterGroups', 'hasSearchBar', 'hasSortMenu', 'isContribs', 'resultLabel', 'results', 'secondarySortAscending', 'secondarySortField', 'selectableRows', 'selectedRows', 'sortAscending', 'sortField', 'view']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

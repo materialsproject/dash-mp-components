@@ -1497,83 +1497,6 @@
                 "required": false,
                 "description": ""
             },
-            "hasSearchBar": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarTooltip": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarPlaceholder": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarErrorMessage": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarAllowedInputTypesMap": {
-                "type": {
-                    "name": "object"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarPeriodicTableMode": {
-                "type": {
-                    "name": "enum",
-                    "value": [
-                        {
-                            "value": "'toggle'",
-                            "computed": false
-                        },
-                        {
-                            "value": "'focus'",
-                            "computed": false
-                        },
-                        {
-                            "value": "'none'",
-                            "computed": false
-                        }
-                    ]
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarHelpItems": {
-                "type": {
-                    "name": "array"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarChemicalSystemSelectHelpText": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarElementsSelectHelpText": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
             "hasSortMenu": {
                 "type": {
                     "name": "bool"
@@ -1603,6 +1526,13 @@
                 "description": ""
             },
             "secondarySortAscending": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "hasSearchBar": {
                 "type": {
                     "name": "bool"
                 },
@@ -1748,6 +1678,76 @@
             "setProps": {
                 "type": {
                     "name": "func"
+                },
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "placeholder": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "errorMessage": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "allowedInputTypesMap": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": ""
+            },
+            "periodicTableMode": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {
+                            "value": "'toggle'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'focus'",
+                            "computed": false
+                        },
+                        {
+                            "value": "'none'",
+                            "computed": false
+                        }
+                    ]
+                },
+                "required": false,
+                "description": ""
+            },
+            "helpItems": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": ""
+            },
+            "chemicalSystemSelectHelpText": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "elementsSelectHelpText": {
+                "type": {
+                    "name": "string"
                 },
                 "required": false,
                 "description": ""
