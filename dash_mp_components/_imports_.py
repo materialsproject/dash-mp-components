@@ -8,13 +8,13 @@ from .DataBlock import DataBlock
 from .DataTable import DataTable
 from .DownloadButton import DownloadButton
 from .DownloadDropdown import DownloadDropdown
+from .Drawer import Drawer
 from .Enlargeable import Enlargeable
 from .Formula import Formula
 from .Markdown import Markdown
 from .Modal import Modal
 from .ModalContextProvider import ModalContextProvider
 from .ModalTrigger import ModalTrigger
-from .SearchUI import SearchUI
 from .SearchUIContainer import SearchUIContainer
 from .SearchUIDataHeader import SearchUIDataHeader
 from .SearchUIDataView import SearchUIDataView
@@ -57,13 +57,13 @@ __all__ = [
     "DataTable",
     "DownloadButton",
     "DownloadDropdown",
+    "Drawer",
     "Enlargeable",
     "Formula",
     "Markdown",
     "Modal",
     "ModalContextProvider",
     "ModalTrigger",
-    "SearchUI",
     "SearchUIContainer",
     "SearchUIDataHeader",
     "SearchUIDataView",

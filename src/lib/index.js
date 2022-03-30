@@ -34,7 +34,6 @@ import Switch from './components/data-entry/Switch.react';
 import RangeSlider from './components/data-entry/RangeSlider.react';
 import DualRangeSlider from './components/data-entry/DualRangeSlider.react';
 // data-display
-import SearchUI from './components/data-display/SearchUI.react';
 import SearchUIContainer from './components/data-display/SearchUIContainer.react';
 import SearchUISearchBar from './components/data-display/SearchUISearchBar.react';
 import SearchUIGrid from './components/data-display/SearchUIGrid.react';
@@ -52,6 +51,7 @@ import ModalContextProvider from './components/data-display/ModalContextProvider
 import Modal from './components/data-display/Modal.react';
 import ModalTrigger from './components/data-display/ModalTrigger.react';
 import Enlargeable from './components/data-display/Enlargeable.react';
+import Drawer from './components/data-display/Drawer.react';
 
 export {
     PeriodicTableInput,
@@ -65,7 +65,6 @@ export {
     CameraContextProvider,
     MatSidebar,
     Scrollspy,
-    SearchUI,
     SearchUIContainer,
     SearchUISearchBar,
     SearchUIGrid,
@@ -101,4 +100,5 @@ export {
     Switch,
     RangeSlider,
     DualRangeSlider,
+    Drawer,
 };

@@ -921,6 +921,41 @@
             }
         }
     },
+    "src/lib/components/data-display/Drawer.react.js": {
+        "description": "Render drawer that can be opened by a ModalTrigger within a ModalContextProvider",
+        "displayName": "Drawer",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name applied to the top-level drawer div.\nThe \"mpc-drawer\" and \"modal\" classes are added automatically"
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Children will be rendered as the drawer content"
+            }
+        }
+    },
     "src/lib/components/data-display/Enlargeable.react.js": {
         "description": "Wrap content within this component to allow it to be enlarged into a full screen modal",
         "displayName": "Enlargeable",
@@ -1174,247 +1209,6 @@
             }
         }
     },
-    "src/lib/components/data-display/SearchUI.react.js": {
-        "description": "Component for rendering advanced search interfaces for data in an API\nRenders results in a data table alongside a set of filters that map to properties in the data.\n\nDocumentation: https://materialsproject.github.io/mp-react-components/?path=/docs/search-ui-searchui-component--fully-featured",
-        "displayName": "SearchUI",
-        "methods": [],
-        "props": {
-            "id": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "setProps": {
-                "type": {
-                    "name": "func"
-                },
-                "required": false,
-                "description": ""
-            },
-            "columns": {
-                "type": {
-                    "name": "array"
-                },
-                "required": false,
-                "description": ""
-            },
-            "filterGroups": {
-                "type": {
-                    "name": "array"
-                },
-                "required": false,
-                "description": ""
-            },
-            "apiEndpoint": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "apiEndpointParams": {
-                "type": {
-                    "name": "object"
-                },
-                "required": false,
-                "description": ""
-            },
-            "autocompleteFormulaUrl": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "apiKey": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "resultLabel": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "hasSearchBar": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarTooltip": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarPlaceholder": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarErrorMessage": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarAllowedInputTypesMap": {
-                "type": {
-                    "name": "object"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarPeriodicTableMode": {
-                "type": {
-                    "name": "enum",
-                    "value": [
-                        {
-                            "value": "'toggle'",
-                            "computed": false
-                        },
-                        {
-                            "value": "'focus'",
-                            "computed": false
-                        },
-                        {
-                            "value": "'none'",
-                            "computed": false
-                        }
-                    ]
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarHelpItems": {
-                "type": {
-                    "name": "array"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarChemicalSystemSelectHelpText": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "searchBarElementsSelectHelpText": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "hasSortMenu": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": ""
-            },
-            "sortField": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "sortAscending": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": ""
-            },
-            "secondarySortField": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "secondarySortAscending": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": ""
-            },
-            "conditionalRowStyles": {
-                "type": {
-                    "name": "array"
-                },
-                "required": false,
-                "description": ""
-            },
-            "selectableRows": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": ""
-            },
-            "selectedRows": {
-                "type": {
-                    "name": "array"
-                },
-                "required": false,
-                "description": ""
-            },
-            "view": {
-                "type": {
-                    "name": "enum",
-                    "value": [
-                        {
-                            "value": "'table'",
-                            "computed": false
-                        },
-                        {
-                            "value": "'synthesis'",
-                            "computed": false
-                        }
-                    ]
-                },
-                "required": false,
-                "description": ""
-            },
-            "isContribs": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": ""
-            },
-            "disableRichColumnHeaders": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": ""
-            },
-            "results": {
-                "type": {
-                    "name": "array"
-                },
-                "required": false,
-                "description": ""
-            }
-        }
-    },
     "src/lib/components/data-display/SearchUIContainer.react.js": {
         "description": "A component that can wrap around sub-components of `SearchUI` and ensure they are\nall hooked up to the same context.\nThis allows you to use the state management functionality of `SearchUI` with the ability\nto customize the inner layout and components.",
         "displayName": "SearchUIContainer",
@@ -1504,37 +1298,47 @@
                 "required": false,
                 "description": ""
             },
-            "sortField": {
+            "sortFields": {
+                "type": {
+                    "name": "arrayOf",
+                    "value": {
+                        "name": "string"
+                    }
+                },
+                "required": false,
+                "description": ""
+            },
+            "sortKey": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
                 "description": ""
             },
-            "sortAscending": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": ""
-            },
-            "secondarySortField": {
+            "skipKey": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
                 "description": ""
             },
-            "secondarySortAscending": {
+            "limitKey": {
                 "type": {
-                    "name": "bool"
+                    "name": "string"
                 },
                 "required": false,
                 "description": ""
             },
-            "hasSearchBar": {
+            "totalKey": {
                 "type": {
-                    "name": "bool"
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "fieldsKey": {
+                "type": {
+                    "name": "string"
                 },
                 "required": false,
                 "description": ""
@@ -1955,12 +1759,16 @@
                 "required": false,
                 "description": ""
             },
-            "value": {
+            "valueMin": {
                 "type": {
-                    "name": "arrayOf",
-                    "value": {
-                        "name": "number"
-                    }
+                    "name": "number"
+                },
+                "required": false,
+                "description": ""
+            },
+            "valueMax": {
+                "type": {
+                    "name": "number"
                 },
                 "required": false,
                 "description": ""

@@ -32,38 +32,40 @@ Keyword arguments:
 
 - disableRichColumnHeaders (boolean; optional)
 
-- filterGroups (list; optional)
+- fieldsKey (string; optional)
 
-- hasSearchBar (boolean; optional)
+- filterGroups (list; optional)
 
 - hasSortMenu (boolean; optional)
 
 - isContribs (boolean; optional)
 
+- limitKey (string; optional)
+
 - resultLabel (string; optional)
 
 - results (list; optional)
-
-- secondarySortAscending (boolean; optional)
-
-- secondarySortField (string; optional)
 
 - selectableRows (boolean; optional)
 
 - selectedRows (list; optional)
 
-- sortAscending (boolean; optional)
+- skipKey (string; optional)
 
-- sortField (string; optional)
+- sortFields (list of strings; optional)
+
+- sortKey (string; optional)
+
+- totalKey (string; optional)
 
 - view (a value equal to: 'table', 'synthesis'; optional)"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, apiEndpoint=Component.UNDEFINED, apiEndpointParams=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, hasSortMenu=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, secondarySortField=Component.UNDEFINED, secondarySortAscending=Component.UNDEFINED, hasSearchBar=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, view=Component.UNDEFINED, isContribs=Component.UNDEFINED, disableRichColumnHeaders=Component.UNDEFINED, results=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'filterGroups', 'hasSearchBar', 'hasSortMenu', 'isContribs', 'resultLabel', 'results', 'secondarySortAscending', 'secondarySortField', 'selectableRows', 'selectedRows', 'sortAscending', 'sortField', 'view']
+    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, apiEndpoint=Component.UNDEFINED, apiEndpointParams=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, hasSortMenu=Component.UNDEFINED, sortFields=Component.UNDEFINED, sortKey=Component.UNDEFINED, skipKey=Component.UNDEFINED, limitKey=Component.UNDEFINED, totalKey=Component.UNDEFINED, fieldsKey=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, view=Component.UNDEFINED, isContribs=Component.UNDEFINED, disableRichColumnHeaders=Component.UNDEFINED, results=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'fieldsKey', 'filterGroups', 'hasSortMenu', 'isContribs', 'limitKey', 'resultLabel', 'results', 'selectableRows', 'selectedRows', 'skipKey', 'sortFields', 'sortKey', 'totalKey', 'view']
         self._type = 'SearchUIContainer'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'filterGroups', 'hasSearchBar', 'hasSortMenu', 'isContribs', 'resultLabel', 'results', 'secondarySortAscending', 'secondarySortField', 'selectableRows', 'selectedRows', 'sortAscending', 'sortField', 'view']
+        self.available_properties = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'fieldsKey', 'filterGroups', 'hasSortMenu', 'isContribs', 'limitKey', 'resultLabel', 'results', 'selectableRows', 'selectedRows', 'skipKey', 'sortFields', 'sortKey', 'totalKey', 'view']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

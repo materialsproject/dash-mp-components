@@ -55,24 +55,27 @@ filterGroups = [
     'filters': [
       {
         'name': 'ID',
-        'id': 'material_ids',
-        'type': 'TEXT_INPUT',
+        'params': ['material_ids'],
+        'type': 'MATERIALS_INPUT',
+        'props': {
+          'type': 'mpid',
+        }
       },
       {
         'name': 'Elements',
-        'id': 'elements',
+        'params': ['elements'],
         'tooltip': 'test',
         'type': 'MATERIALS_INPUT',
         'props': {
-          'inputType': 'elements',
+          'type': 'elements',
         }
       },
       {
         'name': 'Formula',
-        'id': 'formula',
+        'params': ['formula'],
         'type': 'MATERIALS_INPUT',
         'props': {
-          'inputType': 'formula',
+          'type': 'formula',
         }
       }
     ]
@@ -83,7 +86,7 @@ filterGroups = [
     'filters': [
       {
         'name': 'Volume',
-        'id': 'volume',
+        'params': ['volume_min', 'volume_max'],
         'type': 'SLIDER',
         'props': {
           'domain': [0, 200]
@@ -91,7 +94,7 @@ filterGroups = [
       },
       {
         'name': 'Density',
-        'id': 'density',
+        'params': ['density_min', 'density_max'],
         'type': 'SLIDER',
         'props': {
           'domain': [0, 200]
@@ -139,16 +142,15 @@ app.layout = html.Div(children=[
     id="materials-input",
     showSubmitButton=True
   ),
-  dash_mp_components.SearchUI(
+  dash_mp_components.SearchUIContainer(
+    dash_mp_components.SearchUIGrid(),
     id="search-ui-demo",
     columns=columns,
     filterGroups=filterGroups,
-    apiEndpoint="https://api.materialsproject.org/search/",
+    apiEndpoint="https://api.materialsproject.org/summary/",
     autocompleteFormulaUrl="https://api.materialsproject.org/materials/formula_autocomplete/",
     apiKey=os.environ['MP_API_KEY'],
     resultLabel="material",
-    searchBarTooltip="Test",
-    hasSearchBar=False,
     selectableRows=True,
     conditionalRowStyles=[
       {
