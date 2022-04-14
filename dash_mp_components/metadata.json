@@ -2448,6 +2448,62 @@
             }
         }
     },
+    "src/lib/components/navigation/Link.react.js": {
+        "description": "Custom Link component that can handle both internal and external URLs.\nYou can also use this component if you need to preserve the url query parameters\nwhen following a link.",
+        "displayName": "Link",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": ""
+            },
+            "href": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "target": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "preserveQuery": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
     "src/lib/components/navigation/Navbar.react.js": {
         "description": "Component for including dropdown menus inside a bulma navbar\nIncludes all of the default bulma classes for a navbar-dropdown",
         "displayName": "Navbar",

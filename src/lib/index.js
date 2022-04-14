@@ -18,6 +18,7 @@ import Navbar from './components/navigation/Navbar.react';
 import NavbarDropdown from './components/navigation/NavbarDropdown.react';
 import Dropdown from './components/navigation/Dropdown.react';
 import Tabs from './components/navigation/Tabs.react';
+import Link from './components/navigation/Link.react';
 // publications
 import CrossrefCard from './components/publications/CrossrefCard.react';
 import BibjsonCard from './components/publications/BibjsonCard.react';
@@ -101,4 +102,5 @@ export {
     RangeSlider,
     DualRangeSlider,
     Drawer,
+    Link,
 };

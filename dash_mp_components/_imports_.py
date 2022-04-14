@@ -30,6 +30,7 @@ from .RangeSlider import RangeSlider
 from .Select import Select
 from .Switch import Switch
 from .Dropdown import Dropdown
+from .Link import Link
 from .Navbar import Navbar
 from .NavbarDropdown import NavbarDropdown
 from .Scrollspy import Scrollspy
@@ -79,6 +80,7 @@ __all__ = [
     "Select",
     "Switch",
     "Dropdown",
+    "Link",
     "Navbar",
     "NavbarDropdown",
     "Scrollspy",
