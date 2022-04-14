@@ -37,4 +37,5 @@ ModalContextProvider.propTypes = {
      * state using the ModalContext or a dash callback on the active prop.
      */
     forceAction: PropTypes.bool,
+    isDrawer: PropTypes.bool,
 };

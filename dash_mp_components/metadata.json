@@ -1171,6 +1171,13 @@
                 },
                 "required": false,
                 "description": "Prevent modal from being closed without completion of a specific action.\nIf set, there must be a button within the modal that updates the \"active\"\nstate using the ModalContext or a dash callback on the active prop."
+            },
+            "isDrawer": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
             }
         }
     },

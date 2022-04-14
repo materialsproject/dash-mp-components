@@ -26,14 +26,16 @@ Keyword arguments:
     Prevent modal from being closed without completion of a specific
     action. If set, there must be a button within the modal that
     updates the \"active\" state using the ModalContext or a dash
-    callback on the active prop."""
+    callback on the active prop.
+
+- isDrawer (boolean; optional)"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, active=Component.UNDEFINED, forceAction=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'active', 'forceAction']
+    def __init__(self, children=None, id=Component.UNDEFINED, active=Component.UNDEFINED, forceAction=Component.UNDEFINED, isDrawer=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'active', 'forceAction', 'isDrawer']
         self._type = 'ModalContextProvider'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'active', 'forceAction']
+        self.available_properties = ['children', 'id', 'active', 'forceAction', 'isDrawer']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
