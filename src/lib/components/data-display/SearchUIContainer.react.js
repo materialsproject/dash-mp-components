@@ -39,7 +39,6 @@ SearchUIContainer.propTypes = {
     selectableRows: PropTypes.bool,
     selectedRows: PropTypes.array,
     view: PropTypes.oneOf(['table', 'synthesis']),
-    isContribs: PropTypes.bool,
     disableRichColumnHeaders: PropTypes.bool,
     results: PropTypes.array,
 };

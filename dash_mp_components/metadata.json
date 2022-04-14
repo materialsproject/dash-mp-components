@@ -1381,13 +1381,6 @@
                 "required": false,
                 "description": ""
             },
-            "isContribs": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": ""
-            },
             "disableRichColumnHeaders": {
                 "type": {
                     "name": "bool"
