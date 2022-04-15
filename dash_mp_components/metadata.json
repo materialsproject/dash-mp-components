@@ -957,7 +957,7 @@
         }
     },
     "src/lib/components/data-display/DrawerContextProvider.react.js": {
-        "description": "Use DrawerContextProvider to render drawers that will automatically \nclose when another drawer in the context is opened.",
+        "description": "Use DrawerContextProvider to render drawers that will automatically\nclose when another drawer in the context is opened.",
         "displayName": "DrawerContextProvider",
         "methods": [],
         "props": {
@@ -1003,7 +1003,7 @@
                 "required": false,
                 "description": "Children will be rendered as the trigger content"
             },
-            "for": {
+            "forDrawerId": {
                 "type": {
                     "name": "string"
                 },

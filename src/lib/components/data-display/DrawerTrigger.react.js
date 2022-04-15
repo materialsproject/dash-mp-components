@@ -39,5 +39,5 @@ ModalTrigger.propTypes = {
     /**
      * The ID of the drawer that this trigger should open.
      */
-    for: PropTypes.string,
+    forDrawerId: PropTypes.string,
 };

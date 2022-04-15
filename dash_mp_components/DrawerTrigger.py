@@ -19,15 +19,15 @@ Keyword arguments:
     Class name applied to the modal trigger span. The
     \"mpc-modal-trigger\" class is added automatically.
 
-- for (string; optional):
+- forDrawerId (string; optional):
     The ID of the drawer that this trigger should open."""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'className', 'for']
+    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, forDrawerId=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'className', 'forDrawerId']
         self._type = 'DrawerTrigger'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'className', 'for']
+        self.available_properties = ['children', 'id', 'className', 'forDrawerId']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

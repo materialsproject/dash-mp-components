@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class DrawerContextProvider(Component):
     """A DrawerContextProvider component.
-Use DrawerContextProvider to render drawers that will automatically 
+Use DrawerContextProvider to render drawers that will automatically
 close when another drawer in the context is opened.
 
 Keyword arguments:
