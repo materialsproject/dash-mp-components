@@ -53,6 +53,8 @@ import Modal from './components/data-display/Modal.react';
 import ModalTrigger from './components/data-display/ModalTrigger.react';
 import Enlargeable from './components/data-display/Enlargeable.react';
 import Drawer from './components/data-display/Drawer.react';
+import DrawerContextProvider from './components/data-display/DrawerContextProvider.react';
+import DrawerTrigger from './components/data-display/DrawerTrigger.react';
 
 export {
     PeriodicTableInput,
@@ -102,5 +104,7 @@ export {
     RangeSlider,
     DualRangeSlider,
     Drawer,
+    DrawerContextProvider,
+    DrawerTrigger,
     Link,
 };

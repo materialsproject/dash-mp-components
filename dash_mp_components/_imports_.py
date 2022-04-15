@@ -9,6 +9,8 @@ from .DataTable import DataTable
 from .DownloadButton import DownloadButton
 from .DownloadDropdown import DownloadDropdown
 from .Drawer import Drawer
+from .DrawerContextProvider import DrawerContextProvider
+from .DrawerTrigger import DrawerTrigger
 from .Enlargeable import Enlargeable
 from .Formula import Formula
 from .Markdown import Markdown
@@ -59,6 +61,8 @@ __all__ = [
     "DownloadButton",
     "DownloadDropdown",
     "Drawer",
+    "DrawerContextProvider",
+    "DrawerTrigger",
     "Enlargeable",
     "Formula",
     "Markdown",

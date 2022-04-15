@@ -956,6 +956,62 @@
             }
         }
     },
+    "src/lib/components/data-display/DrawerContextProvider.react.js": {
+        "description": "Use DrawerContextProvider to render drawers that will automatically \nclose when another drawer in the context is opened.",
+        "displayName": "DrawerContextProvider",
+        "methods": [],
+        "props": {
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Children will be rendered within the DrawerContext.\nShould contain at least a DrawerTrigger component and a Drawer component."
+            }
+        }
+    },
+    "src/lib/components/data-display/DrawerTrigger.react.js": {
+        "description": "Render a trigger that opens a ModalContent that is within the same ModalContextProvider",
+        "displayName": "ModalTrigger",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name applied to the modal trigger span.\nThe \"mpc-modal-trigger\" class is added automatically"
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": "Children will be rendered as the trigger content"
+            },
+            "for": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID of the drawer that this trigger should open."
+            }
+        }
+    },
     "src/lib/components/data-display/Enlargeable.react.js": {
         "description": "Wrap content within this component to allow it to be enlarged into a full screen modal",
         "displayName": "Enlargeable",
