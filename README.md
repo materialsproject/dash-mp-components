@@ -5,7 +5,9 @@
 
 # Materials Project Dash Components
 
-Materials Project Dash Components is a Dash component library.
+Materials Project Dash Components is a Dash component library that ports components from [mp-react-components](https://github.com/materialsproject/mp-react-components).
+
+[See examples and documentation](https://materialsproject.github.io/mp-react-components/?path=/story/introduction-mp-react-components--page)
 
 Get started with:
 
