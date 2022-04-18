@@ -19,10 +19,20 @@ app.layout = html.Div([
   mpc.DrawerContextProvider(
     [
         mpc.DrawerTrigger(
-            html.Button("Open Drawer")
+            html.Button("Open Drawer 1"),
+            forDrawerId="drawer-1"
+        ),
+        mpc.DrawerTrigger(
+            html.Button("Open Drawer 2"),
+            forDrawerId="drawer-2"
         ),
         mpc.Drawer(
-            html.Div("Drawer content")
+            html.Div("Drawer content"),
+            id="drawer-1"
+        ),
+        mpc.Drawer(
+            html.Div("Other drawer content"),
+            id="drawer-2"
         )
     ]
   )
