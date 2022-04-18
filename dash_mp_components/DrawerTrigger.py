@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class DrawerTrigger(Component):
     """A DrawerTrigger component.
-Render a trigger that opens a ModalContent that is within the same ModalContextProvider
+Render a trigger that opens a Drawer that is within the same DrawerContextProvider
 
 Keyword arguments:
 

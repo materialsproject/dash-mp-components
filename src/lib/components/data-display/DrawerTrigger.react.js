@@ -4,16 +4,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /**
- * Render a trigger that opens a ModalContent that is within the same ModalContextProvider
+ * Render a trigger that opens a Drawer that is within the same DrawerContextProvider
  */
 
-export default class ModalTrigger extends Component {
+export default class DrawerTrigger extends Component {
     render() {
-        return <mpc.ModalTrigger {...this.props} />;
+        return <mpc.DrawerTrigger {...this.props} />;
     }
 }
 
-ModalTrigger.propTypes = {
+DrawerTrigger.propTypes = {
     /**
      * The ID used to identify this component in Dash callbacks
      */

@@ -971,8 +971,8 @@
         }
     },
     "src/lib/components/data-display/DrawerTrigger.react.js": {
-        "description": "Render a trigger that opens a ModalContent that is within the same ModalContextProvider",
-        "displayName": "ModalTrigger",
+        "description": "Render a trigger that opens a Drawer that is within the same DrawerContextProvider",
+        "displayName": "DrawerTrigger",
         "methods": [],
         "props": {
             "id": {

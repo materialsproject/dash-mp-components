@@ -15,9 +15,19 @@ app.layout = html.Div([
             html.Div("Modal content")
         )
     ]
+  ),
+  mpc.DrawerContextProvider(
+    [
+        mpc.DrawerTrigger(
+            html.Button("Open Drawer")
+        ),
+        mpc.Drawer(
+            html.Div("Drawer content")
+        )
+    ]
   )
 ])
 
 # use True to load a dev build of react
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True, port=8051)
