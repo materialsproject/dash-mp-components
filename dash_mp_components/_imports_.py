@@ -20,6 +20,7 @@ from .ModalTrigger import ModalTrigger
 from .SearchUIContainer import SearchUIContainer
 from .SearchUIDataHeader import SearchUIDataHeader
 from .SearchUIDataView import SearchUIDataView
+from .SearchUIFilters import SearchUIFilters
 from .SearchUIGrid import SearchUIGrid
 from .SearchUISearchBar import SearchUISearchBar
 from .SynthesisRecipeCard import SynthesisRecipeCard
@@ -72,6 +73,7 @@ __all__ = [
     "SearchUIContainer",
     "SearchUIDataHeader",
     "SearchUIDataView",
+    "SearchUIFilters",
     "SearchUIGrid",
     "SearchUISearchBar",
     "SynthesisRecipeCard",

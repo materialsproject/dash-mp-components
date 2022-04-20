@@ -40,6 +40,7 @@ import SearchUISearchBar from './components/data-display/SearchUISearchBar.react
 import SearchUIGrid from './components/data-display/SearchUIGrid.react';
 import SearchUIDataHeader from './components/data-display/SearchUIDataHeader.react';
 import SearchUIDataView from './components/data-display/SearchUIDataView.react';
+import SearchUIFilters from './components/data-display/SearchUIFilters.react';
 import DownloadButton from './components/data-display/DownloadButton.react';
 import DownloadDropdown from './components/data-display/DownloadDropdown.react';
 import DataBlock from './components/data-display/DataBlock.react';
@@ -73,6 +74,7 @@ export {
     SearchUIGrid,
     SearchUIDataHeader,
     SearchUIDataView,
+    SearchUIFilters,
     GlobalSearchBar,
     Navbar,
     NavbarDropdown,

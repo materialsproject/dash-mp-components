@@ -1502,6 +1502,27 @@
             }
         }
     },
+    "src/lib/components/data-display/SearchUIFilters.react.js": {
+        "description": "Filters panel to be used within a `SearchUIContainer`.",
+        "displayName": "SearchUIFilters",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {
+                    "name": "func"
+                },
+                "required": false,
+                "description": ""
+            }
+        }
+    },
     "src/lib/components/data-display/SearchUIGrid.react.js": {
         "description": "A component that combines the filters, data header, and data view\nof a `SearchUI` into a common grid layout.\nNote that this must be used within a `SearchUIContainer`.",
         "displayName": "SearchUIGrid",
