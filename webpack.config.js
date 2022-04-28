@@ -65,7 +65,7 @@ module.exports = (env, argv) => {
         module: {
             rules: [
                 {
-                    test: /\.jsx?$/,
+                    test: /\.(js|jsx)$/,
                     exclude: /node_modules/,
                     use: {
                         loader: 'babel-loader',
@@ -87,16 +87,18 @@ module.exports = (env, argv) => {
                 },
                 {
                     test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-                    loader: 'url-loader?limit=100000',
+                    loader: 'url-loader',
+                    options: {
+                        limit: 100000,
+                    },
                 },
             ],
         },
         optimization: {
+            minimize: true,
             minimizer: [
                 new TerserPlugin({
-                    sourceMap: true,
                     parallel: true,
-                    cache: './.build_cache/terser',
                     terserOptions: {
                         warnings: false,
                         ie8: false,
@@ -104,7 +106,7 @@ module.exports = (env, argv) => {
                 }),
             ],
             splitChunks: {
-                name: true,
+                name: false,
                 cacheGroups: {
                     shared: {
                         chunks: 'all',
