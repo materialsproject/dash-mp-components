@@ -16,11 +16,61 @@ export default class Link extends Component {
 }
 
 Link.propTypes = {
-    id: PropTypes.string,
-    setProps: PropTypes.func,
-    className: PropTypes.string,
+    /**
+     * The children of this component
+     */
     children: PropTypes.node,
-    href: PropTypes.string,
+    /**
+     * The URL of a linked resource.
+     */
+    href: PropTypes.string.isRequired,
+    /**
+     * Specifies where to open the link reference.
+     */
     target: PropTypes.string,
+    /**
+     * Controls whether or not the page will refresh when the link is clicked
+     */
+    refresh: PropTypes.bool,
+    /**
+     * Adds the title attribute to your link, which can contain supplementary
+     * information.
+     */
+    title: PropTypes.string,
+    /**
+     * Often used with CSS to style elements with common properties.
+     */
+    className: PropTypes.string,
+    /**
+     * Defines CSS styles which will override styles previously set.
+     */
+    style: PropTypes.object,
+    /**
+     * The ID of this component, used to identify dash components
+     * in callbacks. The ID needs to be unique across all of the
+     * components in an app.
+     */
+    id: PropTypes.string,
+    /**
+     * Object that holds the loading state object coming from dash-renderer
+     */
+    loading_state: PropTypes.shape({
+        /**
+         * Determines if the component is loading or not
+         */
+        is_loading: PropTypes.bool,
+        /**
+         * Holds which property is loading
+         */
+        prop_name: PropTypes.string,
+        /**
+         * Holds the name of the component that is loading
+         */
+        component_name: PropTypes.string,
+    }),
+    /**
+     * If true, the current query parameters will not be removed from the url
+     * when following the link.
+     */
     preserveQuery: PropTypes.bool,
 };

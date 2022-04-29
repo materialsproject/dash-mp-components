@@ -2537,54 +2537,92 @@
         "displayName": "Link",
         "methods": [],
         "props": {
-            "id": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
-            "setProps": {
-                "type": {
-                    "name": "func"
-                },
-                "required": false,
-                "description": ""
-            },
-            "className": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": ""
-            },
             "children": {
                 "type": {
                     "name": "node"
                 },
                 "required": false,
-                "description": ""
+                "description": "The children of this component"
             },
             "href": {
                 "type": {
                     "name": "string"
                 },
-                "required": false,
-                "description": ""
+                "required": true,
+                "description": "The URL of a linked resource."
             },
             "target": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
-                "description": ""
+                "description": "Specifies where to open the link reference."
+            },
+            "refresh": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Controls whether or not the page will refresh when the link is clicked"
+            },
+            "title": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Adds the title attribute to your link, which can contain supplementary\ninformation."
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Often used with CSS to style elements with common properties."
+            },
+            "style": {
+                "type": {
+                    "name": "object"
+                },
+                "required": false,
+                "description": "Defines CSS styles which will override styles previously set."
+            },
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
+            },
+            "loading_state": {
+                "type": {
+                    "name": "shape",
+                    "value": {
+                        "is_loading": {
+                            "name": "bool",
+                            "description": "Determines if the component is loading or not",
+                            "required": false
+                        },
+                        "prop_name": {
+                            "name": "string",
+                            "description": "Holds which property is loading",
+                            "required": false
+                        },
+                        "component_name": {
+                            "name": "string",
+                            "description": "Holds the name of the component that is loading",
+                            "required": false
+                        }
+                    }
+                },
+                "required": false,
+                "description": "Object that holds the loading state object coming from dash-renderer"
             },
             "preserveQuery": {
                 "type": {
                     "name": "bool"
                 },
                 "required": false,
-                "description": ""
+                "description": "If true, the current query parameters will not be removed from the url\nwhen following the link."
             }
         }
     },
