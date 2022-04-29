@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const packagejson = require('./package.json');
 const TerserPlugin = require('terser-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
@@ -52,6 +53,11 @@ module.exports = (env, argv) => {
 
     return {
         //plugins: [new BundleAnalyzerPlugin()], uncomment to see treemap of bundle
+        plugins: [
+            new webpack.ProvidePlugin({
+                process: 'process/browser',
+            }),
+        ],
         mode,
         entry,
         output: {
