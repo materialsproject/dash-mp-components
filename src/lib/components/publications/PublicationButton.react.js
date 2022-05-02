@@ -66,4 +66,10 @@ PublicationButton.propTypes = {
      * @default '_blank'
      */
     target: PropTypes.string,
+
+    /**
+     * Only display the publication icon and hide the link label and OAB.
+     * Author names will display in a tooltip on hover.
+     */
+    compact: PropTypes.bool,
 };

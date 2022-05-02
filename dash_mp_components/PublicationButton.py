@@ -22,6 +22,10 @@ Keyword arguments:
     you want to use a bulma tag modifier, use the tagClassName prop
     instead. @default 'tag'.
 
+- compact (boolean; optional):
+    Only display the publication icon and hide the link label and OAB.
+    Author names will display in a tooltip on hover.
+
 - doi (string; optional):
     The DOI (Digital Object Identifier) of the publication Will be
     used to generate a doi.org link and to fetch an open access PDF
@@ -50,12 +54,12 @@ Keyword arguments:
     supplied, this component will automatically parse the url for the
     doi and use that to fetch an open access link."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, doi=Component.UNDEFINED, className=Component.UNDEFINED, tagClassName=Component.UNDEFINED, url=Component.UNDEFINED, openAccessUrl=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, target=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'className', 'doi', 'openAccessUrl', 'preventOpenAccessFetch', 'tagClassName', 'target', 'url']
+    def __init__(self, id=Component.UNDEFINED, doi=Component.UNDEFINED, className=Component.UNDEFINED, tagClassName=Component.UNDEFINED, url=Component.UNDEFINED, openAccessUrl=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, target=Component.UNDEFINED, compact=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'className', 'compact', 'doi', 'openAccessUrl', 'preventOpenAccessFetch', 'tagClassName', 'target', 'url']
         self._type = 'PublicationButton'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'className', 'doi', 'openAccessUrl', 'preventOpenAccessFetch', 'tagClassName', 'target', 'url']
+        self.available_properties = ['id', 'className', 'compact', 'doi', 'openAccessUrl', 'preventOpenAccessFetch', 'tagClassName', 'target', 'url']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

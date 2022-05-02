@@ -3429,6 +3429,13 @@
                 },
                 "required": false,
                 "description": "Value to add to the anchor tag's target attribute\n@default '_blank'"
+            },
+            "compact": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Only display the publication icon and hide the link label and OAB.\nAuthor names will display in a tooltip on hover."
             }
         }
     }
