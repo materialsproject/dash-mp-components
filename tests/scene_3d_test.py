@@ -195,20 +195,21 @@ class SVG3DScene(unittest.TestCase):
     def test_color_rendering(self):
         # the order of the SVG element does not match the order of the spheres defined in
         # the JSON
+        container = self.scene.get_container()
         self.scene.check_path_color(
-            self.dash_duo.find_elements('path')[0], 'rgb(255, 170, 170)')
+            container.find_elements_by_tag_name('path')[0], 'rgb(255, 170, 170)')
         self.scene.check_path_color(
-            self.dash_duo.find_elements('path')[1], 'rgb(17, 17, 17)')
+            container.find_elements_by_tag_name('path')[1], 'rgb(17, 17, 17)')
         self.scene.check_path_color(
-            self.dash_duo.find_elements('path')[2], 'rgb(255, 170, 170)')
+            container.find_elements_by_tag_name('path')[2], 'rgb(255, 170, 170)')
         self.scene.check_path_color(
-            self.dash_duo.find_elements('path')[3], 'rgb(0, 255, 221)')
+            container.find_elements_by_tag_name('path')[3], 'rgb(0, 255, 221)')
         self.scene.check_path_color(
-            self.dash_duo.find_elements('path')[4], 'rgb(255, 170, 170)')
+            container.find_elements_by_tag_name('path')[4], 'rgb(255, 170, 170)')
         self.scene.check_path_color(
-            self.dash_duo.find_elements('path')[5], 'rgb(17, 17, 17)')
+            container.find_elements_by_tag_name('path')[5], 'rgb(17, 17, 17)')
         self.scene.check_path_color(
-            self.dash_duo.find_elements('path')[6], 'rgb(255, 170, 170)')
+            container.find_elements_by_tag_name('path')[6], 'rgb(255, 170, 170)')
 
     def test_scene_switcher(self):
         # check if adding a new scene clean the old one

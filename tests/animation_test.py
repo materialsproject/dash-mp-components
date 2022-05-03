@@ -44,7 +44,8 @@ class SVG3DScene(unittest.TestCase):
     # immediatly, but timeout
     def test_animation(self):
         # quite miserable, but it's a proof that it works
-        path = self.dash_duo.find_elements('path')[0].get_attribute('d')
-        time.sleep(1)
-        path2 = self.dash_duo.find_elements('path')[0].get_attribute('d')
+        container = self.scene.get_container()
+        path = container.find_elements_by_tag_name('path')[0].get_attribute('d')
+        time.sleep(2)
+        path2 = container.find_elements_by_tag_name('path')[0].get_attribute('d')
         assert path != path2

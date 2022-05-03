@@ -61,9 +61,10 @@ class SimpleScene(BasePage):
 
     def check_path(self, number_of_path):
         # check if we can pass an ID to SVG element
-        print(len(self.dash_duo.find_elements(Selectors.path.value)),
+        container = self.get_container()
+        print(len(container.find_elements_by_tag_name(Selectors.path.value)),
               number_of_path)
-        assert len(self.dash_duo.find_elements(
+        assert len(container.find_elements_by_tag_name(
             Selectors.path.value)) == number_of_path
 
     def check_path_color(self, path_element, color):
@@ -94,8 +95,9 @@ class SimpleScene(BasePage):
         self.check_tooltip_text(text)
 
     def check_size(self, size):
-        width = self.dash_duo.find_element('svg').get_attribute('width')
-        height = self.dash_duo.find_element('svg').get_attribute('height')
+        container = self.get_container()
+        width = container.find_elements_by_tag_name('svg')[0].get_attribute('width')
+        height = container.find_elements_by_tag_name('svg')[0].get_attribute('height')
         # print('===', size, width, height)
         assert width == size
         assert height == size
