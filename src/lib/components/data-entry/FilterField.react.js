@@ -20,5 +20,6 @@ FilterField.propTypes = {
     label: PropTypes.string,
     tooltip: PropTypes.string,
     units: PropTypes.string,
+    dois: PropTypes.arrayOf(PropTypes.string),
     active: PropTypes.bool,
 };

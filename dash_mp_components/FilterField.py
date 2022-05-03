@@ -17,18 +17,20 @@ Keyword arguments:
 
 - className (string; optional)
 
+- dois (list of strings; optional)
+
 - label (string; optional)
 
 - tooltip (string; optional)
 
 - units (string; optional)"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, label=Component.UNDEFINED, tooltip=Component.UNDEFINED, units=Component.UNDEFINED, active=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'active', 'className', 'label', 'tooltip', 'units']
+    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, label=Component.UNDEFINED, tooltip=Component.UNDEFINED, units=Component.UNDEFINED, dois=Component.UNDEFINED, active=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'active', 'className', 'dois', 'label', 'tooltip', 'units']
         self._type = 'FilterField'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'active', 'className', 'label', 'tooltip', 'units']
+        self.available_properties = ['children', 'id', 'active', 'className', 'dois', 'label', 'tooltip', 'units']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

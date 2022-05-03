@@ -1944,6 +1944,16 @@
                 "required": false,
                 "description": ""
             },
+            "dois": {
+                "type": {
+                    "name": "arrayOf",
+                    "value": {
+                        "name": "string"
+                    }
+                },
+                "required": false,
+                "description": ""
+            },
             "active": {
                 "type": {
                     "name": "bool"
