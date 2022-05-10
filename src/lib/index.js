@@ -26,6 +26,7 @@ import BibFilter from './components/publications/BibFilter.react';
 import BibCard from './components/publications/BibCard.react';
 import BibtexButton from './components/publications/BibtexButton.react';
 import PublicationButton from './components/publications/PublicationButton.react';
+import OpenAccessButton from './components/publications/OpenAccessButton.react';
 // data-entry
 import MaterialsInput from './components/data-entry/MaterialsInput.react';
 import GlobalSearchBar from './components/data-entry/GlobalSearchBar.react';
@@ -86,6 +87,7 @@ export {
     BibFilter,
     BibCard,
     PublicationButton,
+    OpenAccessButton,
     BibtexButton,
     DownloadButton,
     DownloadDropdown,

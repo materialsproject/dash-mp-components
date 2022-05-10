@@ -3379,8 +3379,8 @@
             }
         }
     },
-    "src/lib/components/publications/PublicationButton.react.js": {
-        "description": "Standardized button for linking to a publication.\nIf a doi prop or doi.org link is supplied, an open access link\nwill also be generated next to the publication link.",
+    "src/lib/components/publications/OpenAccessButton.react.js": {
+        "description": "Standardized button for linking to a publication.\n\nThis component can be used in four ways:\n1. Supply just a `doi` and let the component build the url and fetch the journal name and year from crossref.\n2. Supply just a `url` to doi.org and fetch the journal name and year from crossref.\n3. Supply a `doi` and a link label in the component's `children`. In this case, there will be no fetch to crossref.\n4. Supply a `url` to any location and a link label in the component's `children`. In this case, there will be no fetch to crossref.",
         "displayName": "PublicationButton",
         "methods": [],
         "props": {
@@ -3405,33 +3405,12 @@
                 "required": false,
                 "description": "Class name(s) to append to the component's default class (mpc-open-access-button).\nNote: the \"tag\" class is the default value for className.\nIf you don't want the top-level element to have the \"tag\" class, add className=\"\" or any other value.\nIf you want to use a bulma tag modifier, use the tagClassName prop instead.\n@default 'tag'"
             },
-            "tagClassName": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": "Customize the tag using bulma's tag classes\nThese class names will be appended to all of the component's \"tag\" elements"
-            },
             "url": {
                 "type": {
                     "name": "string"
                 },
                 "required": false,
                 "description": "Directly supply the URL to the publication.\nIf a doi.org url is supplied, this component will automatically\nparse the url for the doi and use that to fetch an open access link."
-            },
-            "openAccessUrl": {
-                "type": {
-                    "name": "string"
-                },
-                "required": false,
-                "description": "Directly supply the URL to an openly accessible PDF of the reference.\nIf supplied, the component will not try to fetch an open access URL."
-            },
-            "preventOpenAccessFetch": {
-                "type": {
-                    "name": "bool"
-                },
-                "required": false,
-                "description": "Set to true to prevent any requests to the open access api.\nNote that if you supply your own openAccessUrl, this prop is not necessary."
             },
             "target": {
                 "type": {
@@ -3446,6 +3425,69 @@
                 },
                 "required": false,
                 "description": "Only display the publication icon and hide the link label and OAB.\nAuthor names will display in a tooltip on hover."
+            },
+            "showTooltip": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Show a tooltip on hover with the bibliographic citation for the publication."
+            }
+        }
+    },
+    "src/lib/components/publications/PublicationButton.react.js": {
+        "description": "Standardized button for linking to a publication.\n\nThis component can be used in four ways:\n1. Supply just a `doi` and let the component build the url and fetch the journal name and year from crossref.\n2. Supply just a `url` to doi.org and fetch the journal name and year from crossref.\n3. Supply a `doi` and a link label in the component's `children`. In this case, there will be no fetch to crossref.\n4. Supply a `url` to any location and a link label in the component's `children`. In this case, there will be no fetch to crossref.",
+        "displayName": "PublicationButton",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "doi": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "The DOI (Digital Object Identifier) of the publication\nWill be used to generate a doi.org link and to fetch an open access PDF link."
+            },
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-open-access-button).\nNote: the \"tag\" class is the default value for className.\nIf you don't want the top-level element to have the \"tag\" class, add className=\"\" or any other value.\nIf you want to use a bulma tag modifier, use the tagClassName prop instead.\n@default 'tag'"
+            },
+            "url": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Directly supply the URL to the publication.\nIf a doi.org url is supplied, this component will automatically\nparse the url for the doi and use that to fetch an open access link."
+            },
+            "target": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Value to add to the anchor tag's target attribute\n@default '_blank'"
+            },
+            "compact": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Only display the publication icon and hide the link label and OAB.\nAuthor names will display in a tooltip on hover."
+            },
+            "showTooltip": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": "Show a tooltip on hover with the bibliographic citation for the publication."
             }
         }
     }

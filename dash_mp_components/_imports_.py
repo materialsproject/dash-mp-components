@@ -48,6 +48,7 @@ from .BibFilter import BibFilter
 from .BibjsonCard import BibjsonCard
 from .BibtexButton import BibtexButton
 from .CrossrefCard import CrossrefCard
+from .OpenAccessButton import OpenAccessButton
 from .PublicationButton import PublicationButton
 
 __all__ = [
@@ -101,5 +102,6 @@ __all__ = [
     "BibjsonCard",
     "BibtexButton",
     "CrossrefCard",
+    "OpenAccessButton",
     "PublicationButton"
 ]

@@ -6,8 +6,12 @@ from dash.development.base_component import Component, _explicitize_args
 class PublicationButton(Component):
     """A PublicationButton component.
 Standardized button for linking to a publication.
-If a doi prop or doi.org link is supplied, an open access link
-will also be generated next to the publication link.
+
+This component can be used in four ways:
+1. Supply just a `doi` and let the component build the url and fetch the journal name and year from crossref.
+2. Supply just a `url` to doi.org and fetch the journal name and year from crossref.
+3. Supply a `doi` and a link label in the component's `children`. In this case, there will be no fetch to crossref.
+4. Supply a `url` to any location and a link label in the component's `children`. In this case, there will be no fetch to crossref.
 
 Keyword arguments:
 
@@ -31,19 +35,9 @@ Keyword arguments:
     used to generate a doi.org link and to fetch an open access PDF
     link.
 
-- openAccessUrl (string; optional):
-    Directly supply the URL to an openly accessible PDF of the
-    reference. If supplied, the component will not try to fetch an
-    open access URL.
-
-- preventOpenAccessFetch (boolean; optional):
-    Set to True to prevent any requests to the open access api. Note
-    that if you supply your own openAccessUrl, this prop is not
-    necessary.
-
-- tagClassName (string; optional):
-    Customize the tag using bulma's tag classes These class names will
-    be appended to all of the component's \"tag\" elements.
+- showTooltip (boolean; optional):
+    Show a tooltip on hover with the bibliographic citation for the
+    publication.
 
 - target (string; optional):
     Value to add to the anchor tag's target attribute @default
@@ -54,12 +48,12 @@ Keyword arguments:
     supplied, this component will automatically parse the url for the
     doi and use that to fetch an open access link."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, doi=Component.UNDEFINED, className=Component.UNDEFINED, tagClassName=Component.UNDEFINED, url=Component.UNDEFINED, openAccessUrl=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, target=Component.UNDEFINED, compact=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'className', 'compact', 'doi', 'openAccessUrl', 'preventOpenAccessFetch', 'tagClassName', 'target', 'url']
+    def __init__(self, id=Component.UNDEFINED, doi=Component.UNDEFINED, className=Component.UNDEFINED, url=Component.UNDEFINED, target=Component.UNDEFINED, compact=Component.UNDEFINED, showTooltip=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'className', 'compact', 'doi', 'showTooltip', 'target', 'url']
         self._type = 'PublicationButton'
         self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'className', 'compact', 'doi', 'openAccessUrl', 'preventOpenAccessFetch', 'tagClassName', 'target', 'url']
+        self.available_properties = ['id', 'className', 'compact', 'doi', 'showTooltip', 'target', 'url']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
