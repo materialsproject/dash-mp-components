@@ -52,4 +52,4 @@ def test_bibfilter(dash_duo):
     assert len(dash_duo.find_elements('.mpc-bib-card')) == 2
     dash_duo.find_element('.mpc-sort-button').click()
     first_result = dash_duo.find_elements('.mpc-bib-card')[0]
-    assert first_result.find_element_by_css_selector('.mpc-bib-card-year').text == '2015'
+    assert first_result.find_element_by_css_selector('.mpc-publication-button').text == 'Physical Review X, 2015'
