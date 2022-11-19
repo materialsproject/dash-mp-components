@@ -63,7 +63,7 @@
         "react-docgen": "^4.1.1",
         "react-dom": "^16.13.1",
         "style-loader": "^0.23.1",
-        "styled-jsx": "^3.2.5",
+        "styled-jsx": "^5.1.0",
         "terser-webpack-plugin": "^5.3.1",
         "webpack": "^5.72.0",
         "webpack-bundle-analyzer": "^3.7.0",
