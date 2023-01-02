@@ -34,12 +34,12 @@
     "license": "BSD",
     "dependencies": {
         "@materialsproject/mp-react-components": "^0.1.9-SNAPSHOT.1654201833",
-        "file-loader": "^5.1.0",
+        "file-loader": "^6.2.0",
         "prettier": "^1.19.1",
         "process": "^0.11.10",
         "ramda": "^0.26.1",
         "rimraf": "^3.0.2",
-        "url-loader": "^3.0.0"
+        "url-loader": "^4.1.1"
     },
     "devDependencies": {
         "@babel/core": "^7.9.0",
@@ -50,7 +50,7 @@
         "babel-eslint": "^10.1.0",
         "babel-loader": "^8.1.0",
         "copyfiles": "^2.2.0",
-        "css-loader": "^3.5.2",
+        "css-loader": "^6.7.3",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.11.0",
         "eslint-plugin-import": "^2.20.2",
@@ -62,8 +62,8 @@
         "react": "^16.13.1",
         "react-docgen": "^4.1.1",
         "react-dom": "^16.13.1",
-        "style-loader": "^0.23.1",
-        "styled-jsx": "^3.2.5",
+        "style-loader": "^3.3.1",
+        "styled-jsx": "^5.1.1",
         "terser-webpack-plugin": "^5.3.1",
         "webpack": "^5.72.0",
         "webpack-bundle-analyzer": "^3.7.0",
