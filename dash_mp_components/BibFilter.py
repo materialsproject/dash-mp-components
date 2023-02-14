@@ -46,20 +46,19 @@ Keyword arguments:
 
 - sortField (a value equal to: 'year', 'author', 'title'; optional):
     Name of property to initially sort entries by @default 'year'."""
+    _children_props = []
+    _base_nodes = ['children']
+    _namespace = 'dash_mp_components'
+    _type = 'BibFilter'
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, format=Component.UNDEFINED, bibEntries=Component.UNDEFINED, sortField=Component.UNDEFINED, ascending=Component.UNDEFINED, resultClassName=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, **kwargs):
         self._prop_names = ['id', 'ascending', 'bibEntries', 'className', 'format', 'preventOpenAccessFetch', 'resultClassName', 'sortField']
-        self._type = 'BibFilter'
-        self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'ascending', 'bibEntries', 'className', 'format', 'preventOpenAccessFetch', 'resultClassName', 'sortField']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
-        _locals.update(kwargs)  # For wildcard attrs
-        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+        _locals.update(kwargs)  # For wildcard attrs and excess named props
+        args = {k: _locals[k] for k in _explicit_args}
+
         super(BibFilter, self).__init__(**args)

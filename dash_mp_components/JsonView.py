@@ -41,20 +41,19 @@ Keyword arguments:
 - theme (string; optional)
 
 - validationMessage (string; optional)"""
+    _children_props = []
+    _base_nodes = ['children']
+    _namespace = 'dash_mp_components'
+    _type = 'JsonView'
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, src=Component.UNDEFINED, name=Component.UNDEFINED, theme=Component.UNDEFINED, style=Component.UNDEFINED, iconStyle=Component.UNDEFINED, indentWidth=Component.UNDEFINED, collapsed=Component.UNDEFINED, collapseStringsAfterLength=Component.UNDEFINED, groupArraysAfterLength=Component.UNDEFINED, enableClipboard=Component.UNDEFINED, displayObjectSize=Component.UNDEFINED, displayDataTypes=Component.UNDEFINED, defaultValue=Component.UNDEFINED, sortKeys=Component.UNDEFINED, validationMessage=Component.UNDEFINED, **kwargs):
         self._prop_names = ['id', 'collapseStringsAfterLength', 'collapsed', 'defaultValue', 'displayDataTypes', 'displayObjectSize', 'enableClipboard', 'groupArraysAfterLength', 'iconStyle', 'indentWidth', 'name', 'sortKeys', 'src', 'style', 'theme', 'validationMessage']
-        self._type = 'JsonView'
-        self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'collapseStringsAfterLength', 'collapsed', 'defaultValue', 'displayDataTypes', 'displayObjectSize', 'enableClipboard', 'groupArraysAfterLength', 'iconStyle', 'indentWidth', 'name', 'sortKeys', 'src', 'style', 'theme', 'validationMessage']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
-        _locals.update(kwargs)  # For wildcard attrs
-        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+        _locals.update(kwargs)  # For wildcard attrs and excess named props
+        args = {k: _locals[k] for k in _explicit_args}
+
         super(JsonView, self).__init__(**args)

@@ -41,20 +41,19 @@ Keyword arguments:
 - offset (number; optional):
     An integer to determine the scroll offset from an item that will
     trigger it active (default: -20)."""
+    _children_props = []
+    _base_nodes = ['children']
+    _namespace = 'dash_mp_components'
+    _type = 'Scrollspy'
     @_explicitize_args
     def __init__(self, menuGroups=Component.UNDEFINED, activeClassName=Component.UNDEFINED, menuClassName=Component.UNDEFINED, menuGroupLabelClassName=Component.UNDEFINED, menuItemContainerClassName=Component.UNDEFINED, menuItemClassName=Component.UNDEFINED, offset=Component.UNDEFINED, **kwargs):
         self._prop_names = ['activeClassName', 'menuClassName', 'menuGroupLabelClassName', 'menuGroups', 'menuItemClassName', 'menuItemContainerClassName', 'offset']
-        self._type = 'Scrollspy'
-        self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
         self.available_properties = ['activeClassName', 'menuClassName', 'menuGroupLabelClassName', 'menuGroups', 'menuItemClassName', 'menuItemContainerClassName', 'offset']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
-        _locals.update(kwargs)  # For wildcard attrs
-        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+        _locals.update(kwargs)  # For wildcard attrs and excess named props
+        args = {k: _locals[k] for k in _explicit_args}
+
         super(Scrollspy, self).__init__(**args)

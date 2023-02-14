@@ -51,20 +51,19 @@ Keyword arguments:
 
 - style (dict; optional):
     User-defined inline styles for the rendered Markdown."""
+    _children_props = []
+    _base_nodes = ['children']
+    _namespace = 'dash_mp_components'
+    _type = 'Markdown'
     @_explicitize_args
     def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, dedent=Component.UNDEFINED, loading_state=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'id', 'className', 'dedent', 'loading_state', 'style']
-        self._type = 'Markdown'
-        self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
         self.available_properties = ['children', 'id', 'className', 'dedent', 'loading_state', 'style']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
-        _locals.update(kwargs)  # For wildcard attrs
+        _locals.update(kwargs)  # For wildcard attrs and excess named props
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+
         super(Markdown, self).__init__(children=children, **args)

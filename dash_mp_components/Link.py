@@ -57,20 +57,24 @@ Keyword arguments:
 - title (string; optional):
     Adds the title attribute to your link, which can contain
     supplementary information."""
+    _children_props = []
+    _base_nodes = ['children']
+    _namespace = 'dash_mp_components'
+    _type = 'Link'
     @_explicitize_args
     def __init__(self, children=None, href=Component.REQUIRED, target=Component.UNDEFINED, refresh=Component.UNDEFINED, title=Component.UNDEFINED, className=Component.UNDEFINED, style=Component.UNDEFINED, id=Component.UNDEFINED, loading_state=Component.UNDEFINED, preserveQuery=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'id', 'className', 'href', 'loading_state', 'preserveQuery', 'refresh', 'style', 'target', 'title']
-        self._type = 'Link'
-        self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
         self.available_properties = ['children', 'id', 'className', 'href', 'loading_state', 'preserveQuery', 'refresh', 'style', 'target', 'title']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
-        _locals.update(kwargs)  # For wildcard attrs
+        _locals.update(kwargs)  # For wildcard attrs and excess named props
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
+
         for k in ['href']:
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')
+
         super(Link, self).__init__(children=children, **args)

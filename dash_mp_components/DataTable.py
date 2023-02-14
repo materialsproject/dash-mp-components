@@ -91,20 +91,19 @@ Keyword arguments:
 - sortField (string; optional):
     Optionally include a field to sort by on initial load Must be a
     valid field and included in your list of columns."""
+    _children_props = []
+    _base_nodes = ['children']
+    _namespace = 'dash_mp_components'
+    _type = 'DataTable'
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, data=Component.UNDEFINED, columns=Component.UNDEFINED, sortField=Component.UNDEFINED, sortAscending=Component.UNDEFINED, secondarySortField=Component.UNDEFINED, secondarySortAscending=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, singleSelectableRows=Component.UNDEFINED, hasHeader=Component.UNDEFINED, headerClassName=Component.UNDEFINED, resultLabel=Component.UNDEFINED, resultLabelPlural=Component.UNDEFINED, pagination=Component.UNDEFINED, paginationIsExpanded=Component.UNDEFINED, footer=Component.UNDEFINED, disableRichColumnHeaders=Component.UNDEFINED, **kwargs):
         self._prop_names = ['id', 'className', 'columns', 'conditionalRowStyles', 'data', 'disableRichColumnHeaders', 'footer', 'hasHeader', 'headerClassName', 'pagination', 'paginationIsExpanded', 'resultLabel', 'resultLabelPlural', 'secondarySortAscending', 'secondarySortField', 'selectableRows', 'selectedRows', 'singleSelectableRows', 'sortAscending', 'sortField']
-        self._type = 'DataTable'
-        self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'className', 'columns', 'conditionalRowStyles', 'data', 'disableRichColumnHeaders', 'footer', 'hasHeader', 'headerClassName', 'pagination', 'paginationIsExpanded', 'resultLabel', 'resultLabelPlural', 'secondarySortAscending', 'secondarySortField', 'selectableRows', 'selectedRows', 'singleSelectableRows', 'sortAscending', 'sortField']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
-        _locals.update(kwargs)  # For wildcard attrs
-        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+        _locals.update(kwargs)  # For wildcard attrs and excess named props
+        args = {k: _locals[k] for k in _explicit_args}
+
         super(DataTable, self).__init__(**args)

@@ -52,20 +52,19 @@ Keyword arguments:
 
 - triggerLabel (string; optional):
     Text to display in the button that triggers the dropdown to open."""
+    _children_props = []
+    _base_nodes = ['children']
+    _namespace = 'dash_mp_components'
+    _type = 'Dropdown'
     @_explicitize_args
     def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, triggerLabel=Component.UNDEFINED, triggerClassName=Component.UNDEFINED, triggerIcon=Component.UNDEFINED, items=Component.UNDEFINED, isArrowless=Component.UNDEFINED, isUp=Component.UNDEFINED, isRight=Component.UNDEFINED, closeOnSelection=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'id', 'className', 'closeOnSelection', 'isArrowless', 'isRight', 'isUp', 'items', 'triggerClassName', 'triggerIcon', 'triggerLabel']
-        self._type = 'Dropdown'
-        self._namespace = 'dash_mp_components'
         self._valid_wildcard_attributes =            []
         self.available_properties = ['children', 'id', 'className', 'closeOnSelection', 'isArrowless', 'isRight', 'isUp', 'items', 'triggerClassName', 'triggerIcon', 'triggerLabel']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
-        _locals.update(kwargs)  # For wildcard attrs
+        _locals.update(kwargs)  # For wildcard attrs and excess named props
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+
         super(Dropdown, self).__init__(children=children, **args)
