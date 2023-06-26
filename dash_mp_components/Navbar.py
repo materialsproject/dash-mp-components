@@ -10,6 +10,8 @@ Includes all of the default bulma classes for a navbar-dropdown
 
 Keyword arguments:
 
+- children (a list of or a singular dash component, string or number; optional)
+
 - id (string; optional):
     The ID used to identify this component in Dash callbacks.
 
@@ -60,10 +62,10 @@ Keyword arguments:
     _namespace = 'dash_mp_components'
     _type = 'Navbar'
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, items=Component.UNDEFINED, brandItem=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'brandItem', 'className', 'items']
+    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, items=Component.UNDEFINED, brandItem=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'brandItem', 'className', 'items']
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'brandItem', 'className', 'items']
+        self.available_properties = ['children', 'id', 'brandItem', 'className', 'items']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
@@ -73,4 +75,4 @@ Keyword arguments:
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')
-        super(Navbar, self).__init__(**args)
+        super(Navbar, self).__init__(children=children, **args)

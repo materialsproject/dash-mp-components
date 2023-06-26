@@ -102,4 +102,6 @@ Navbar.propTypes = {
         },
      */
     brandItem: PropTypes.object,
+    /* pass a component to the navbar, e.g. a notification button */
+    children: PropTypes.node,
 };

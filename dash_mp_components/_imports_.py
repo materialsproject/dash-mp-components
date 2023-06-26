@@ -36,6 +36,7 @@ from .Dropdown import Dropdown
 from .Link import Link
 from .Navbar import Navbar
 from .NavbarDropdown import NavbarDropdown
+from .NotificationDropdown import NotificationDropdown
 from .Scrollspy import Scrollspy
 from .Tabs import Tabs
 from .PeriodicContext import PeriodicContext
@@ -90,6 +91,7 @@ __all__ = [
     "Link",
     "Navbar",
     "NavbarDropdown",
+    "NotificationDropdown",
     "Scrollspy",
     "Tabs",
     "PeriodicContext",

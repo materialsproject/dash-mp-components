@@ -2675,6 +2675,13 @@
                 },
                 "required": false,
                 "description": "Single navbar-item to display on the left of the navbar in the \"navbar-brand\" element.\nExpects an object that can support all the same properties of a navbar-item.\ne.g.\n        {\n          label: \"The Materials Project\",\n          href: \"/\",\n          image: \"/images/brand.png\"\n        },"
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": ""
             }
         }
     },
@@ -2717,6 +2724,69 @@
                 },
                 "required": false,
                 "description": "An array of navbar-items to show in the dropdown when hovering over the label.\nAn item can be a link, a menu label, or a divider\nEach item can support the following properties:\n-- text: string (the text to show in the item)\n-- href: string (the href value for link items, ignored if item is menu label)\n-- isMenuLabel: boolean (sets this item as a label with the \"menu-label\" class)\n-- isDivider: boolean (sets this item as just a horizontal rule with the \"navbar-divider\" class)\n-- openInNewTab: boolean (will open link in a new tab, only works if href is a full url)\ne.g.\n        [\n          {\n            text: \"Materials\",\n            href: \"/materials\"\n          },\n          {\n            text: \"Molecules\",\n            href: \"/molecules\"\n          },\n          {\n            isDivider: true\n          },\n          {\n            isMenuLabel: true,\n            text: \"Other\"\n          },\n          {\n            text: \"External Site\",\n            href: \"https://externalsite.com\",\n            openInNewTab: true\n          }\n        ]"
+            }
+        }
+    },
+    "src/lib/components/navigation/NotificationDropdown.react.js": {
+        "description": "",
+        "displayName": "NotificationDropdown",
+        "methods": [],
+        "props": {
+            "className": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
+            },
+            "items": {
+                "type": {
+                    "name": "array"
+                },
+                "required": false,
+                "description": ""
+            },
+            "isRight": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "isModal": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "isHidden": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "hasUnread": {
+                "type": {
+                    "name": "bool"
+                },
+                "required": false,
+                "description": ""
+            },
+            "children": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": ""
+            },
+            "id": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
             }
         }
     },

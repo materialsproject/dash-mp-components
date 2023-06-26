@@ -16,6 +16,7 @@ import MatSidebar from './components/MatSidebar.react';
 import Scrollspy from './components/navigation/Scrollspy.react';
 import Navbar from './components/navigation/Navbar.react';
 import NavbarDropdown from './components/navigation/NavbarDropdown.react';
+import NotificationDropdown from './components/navigation/NotificationDropdown.react';
 import Dropdown from './components/navigation/Dropdown.react';
 import Tabs from './components/navigation/Tabs.react';
 import Link from './components/navigation/Link.react';
@@ -79,6 +80,7 @@ export {
     GlobalSearchBar,
     Navbar,
     NavbarDropdown,
+    NotificationDropdown,
     Dropdown,
     Download,
     Select,
