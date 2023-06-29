@@ -2787,6 +2787,13 @@
                 },
                 "required": false,
                 "description": ""
+            },
+            "link": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": ""
             }
         }
     },

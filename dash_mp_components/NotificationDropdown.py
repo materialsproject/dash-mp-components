@@ -23,16 +23,18 @@ Keyword arguments:
 
 - isRight (boolean; optional)
 
-- items (list; optional)"""
+- items (list; optional)
+
+- link (string; optional)"""
     _children_props = []
     _base_nodes = ['children']
     _namespace = 'dash_mp_components'
     _type = 'NotificationDropdown'
     @_explicitize_args
-    def __init__(self, children=None, className=Component.UNDEFINED, items=Component.UNDEFINED, isRight=Component.UNDEFINED, isModal=Component.UNDEFINED, isHidden=Component.UNDEFINED, hasUnread=Component.UNDEFINED, id=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'className', 'hasUnread', 'isHidden', 'isModal', 'isRight', 'items']
+    def __init__(self, children=None, className=Component.UNDEFINED, items=Component.UNDEFINED, isRight=Component.UNDEFINED, isModal=Component.UNDEFINED, isHidden=Component.UNDEFINED, hasUnread=Component.UNDEFINED, id=Component.UNDEFINED, link=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'className', 'hasUnread', 'isHidden', 'isModal', 'isRight', 'items', 'link']
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'className', 'hasUnread', 'isHidden', 'isModal', 'isRight', 'items']
+        self.available_properties = ['children', 'id', 'className', 'hasUnread', 'isHidden', 'isModal', 'isRight', 'items', 'link']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

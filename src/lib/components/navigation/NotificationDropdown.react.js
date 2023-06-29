@@ -18,4 +18,5 @@ NotificationDropdown.propTypes = {
     hasUnread: PropTypes.bool,
     children: PropTypes.node,
     id: PropTypes.string,
+    link: PropTypes.string,
 };
