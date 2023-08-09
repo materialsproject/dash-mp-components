@@ -31,6 +31,7 @@ MaterialsInput.propTypes = {
         'mpid',
         'smiles',
         'text',
+        'molecule_formula',
     ]),
     allowedInputTypes: PropTypes.array,
     showTypeDropdown: PropTypes.bool,

@@ -60,7 +60,7 @@ Keyword arguments:
 
 - tooltip (string; optional)
 
-- type (a value equal to: 'elements', 'chemical_system', 'formula', 'mpid', 'smiles', 'text'; optional)
+- type (a value equal to: 'elements', 'chemical_system', 'formula', 'mpid', 'smiles', 'text', 'molecule_formula'; optional)
 
 - value (string; optional)"""
     _children_props = []

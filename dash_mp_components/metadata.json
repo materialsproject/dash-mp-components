@@ -2079,6 +2079,10 @@
                         {
                             "value": "'text'",
                             "computed": false
+                        },
+                        {
+                            "value": "'molecule_formula'",
+                            "computed": false
                         }
                     ]
                 },
