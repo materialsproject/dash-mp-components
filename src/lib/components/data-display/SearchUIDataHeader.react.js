@@ -16,4 +16,5 @@ export default class SearchUIDataHeader extends Component {
 SearchUIDataHeader.propTypes = {
     id: PropTypes.string,
     setProps: PropTypes.func,
+    exportDataButton: PropTypes.node,
 };

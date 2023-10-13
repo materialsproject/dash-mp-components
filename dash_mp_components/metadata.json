@@ -1478,6 +1478,13 @@
                 },
                 "required": false,
                 "description": ""
+            },
+            "exportDataButton": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": ""
             }
         }
     },
@@ -1538,6 +1545,13 @@
             "setProps": {
                 "type": {
                     "name": "func"
+                },
+                "required": false,
+                "description": ""
+            },
+            "exportDataButton": {
+                "type": {
+                    "name": "node"
                 },
                 "required": false,
                 "description": ""
