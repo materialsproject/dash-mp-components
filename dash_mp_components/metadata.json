@@ -285,6 +285,14 @@
                 "required": false,
                 "description": "Hide/show nodes in scene by its name (key), value is 1 to show the node\nand 0 to hide it."
             },
+            "imageRequest": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.object"
+                },
+                "required": false,
+                "description": "Set to trigger a screenshot or scene download.\nMust be an object with the following structure:\n{\n   \"filetype\": \"png\" // the image format (\"png\", \"dae\")\n}\nPassing this prop as an object ensures that\nnew requests are triggered any time the prop\nis set."
+            },
             "imageType": {
                 "type": {
                     "name": "custom",
@@ -1478,6 +1486,13 @@
                 },
                 "required": false,
                 "description": ""
+            },
+            "exportDataButton": {
+                "type": {
+                    "name": "node"
+                },
+                "required": false,
+                "description": ""
             }
         }
     },
@@ -1538,6 +1553,13 @@
             "setProps": {
                 "type": {
                     "name": "func"
+                },
+                "required": false,
+                "description": ""
+            },
+            "exportDataButton": {
+                "type": {
+                    "name": "node"
                 },
                 "required": false,
                 "description": ""
