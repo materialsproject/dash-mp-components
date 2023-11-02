@@ -18,4 +18,5 @@ export default class SearchUIGrid extends Component {
 SearchUIGrid.propTypes = {
     id: PropTypes.string,
     setProps: PropTypes.func,
+    exportDataButton: PropTypes.node,
 };
