@@ -45,7 +45,7 @@ BibCard.propTypes = {
     /**
      * Year of the reference as either a string or number
      */
-    year: PropTypes.oneOfType[(PropTypes.string, PropTypes.number)],
+    year: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
     /**
      * Name of the journal or publisher of the reference

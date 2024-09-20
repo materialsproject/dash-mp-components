@@ -3212,8 +3212,15 @@
             },
             "year": {
                 "type": {
-                    "name": "custom",
-                    "raw": "PropTypes.oneOfType[(PropTypes.string, PropTypes.number)]"
+                    "name": "union",
+                    "value": [
+                        {
+                            "name": "string"
+                        },
+                        {
+                            "name": "number"
+                        }
+                    ]
                 },
                 "required": false,
                 "description": "Year of the reference as either a string or number"

@@ -46,7 +46,7 @@ Keyword arguments:
 - title (string; optional):
     Title of the reference Will render as a link if doi is supplied.
 
-- year (optional):
+- year (string | number; optional):
     Year of the reference as either a string or number."""
     _children_props = []
     _base_nodes = ['children']
