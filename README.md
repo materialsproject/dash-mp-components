@@ -77,6 +77,14 @@ First, make sure that you have pulled in the latest changes from mp-react-compon
 npm install @materialsproject/mp-react-components@next
 ```
 
+Make sure to use node v18 to correctly run build
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install 18
+nvm use 18
+```
+
 After updating the JavaScript component files and the mp-react-components dependency, you need to run the build process to generate the Dash versions of the components:
 
 ```
