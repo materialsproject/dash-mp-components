@@ -1,6 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class Tooltip(Component):
@@ -55,8 +70,30 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'dash_mp_components'
     _type = 'Tooltip'
-    @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, place=Component.UNDEFINED, type=Component.UNDEFINED, effect=Component.UNDEFINED, event=Component.UNDEFINED, eventOff=Component.UNDEFINED, globalEventOff=Component.UNDEFINED, offset=Component.UNDEFINED, multiline=Component.UNDEFINED, className=Component.UNDEFINED, html=Component.UNDEFINED, delayHide=Component.UNDEFINED, delayShow=Component.UNDEFINED, border=Component.UNDEFINED, disable=Component.UNDEFINED, scrollHide=Component.UNDEFINED, clickable=Component.UNDEFINED, **kwargs):
+
+
+    def __init__(
+        self,
+        children: typing.Optional[ComponentType] = None,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        place: typing.Optional[str] = None,
+        type: typing.Optional[str] = None,
+        effect: typing.Optional[str] = None,
+        event: typing.Optional[str] = None,
+        eventOff: typing.Optional[str] = None,
+        globalEventOff: typing.Optional[str] = None,
+        offset: typing.Optional[dict] = None,
+        multiline: typing.Optional[bool] = None,
+        className: typing.Optional[str] = None,
+        html: typing.Optional[bool] = None,
+        delayHide: typing.Optional[NumberType] = None,
+        delayShow: typing.Optional[NumberType] = None,
+        border: typing.Optional[bool] = None,
+        disable: typing.Optional[bool] = None,
+        scrollHide: typing.Optional[bool] = None,
+        clickable: typing.Optional[bool] = None,
+        **kwargs
+    ):
         self._prop_names = ['children', 'id', 'border', 'className', 'clickable', 'delayHide', 'delayShow', 'disable', 'effect', 'event', 'eventOff', 'globalEventOff', 'html', 'multiline', 'offset', 'place', 'scrollHide', 'type']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['children', 'id', 'border', 'className', 'clickable', 'delayHide', 'delayShow', 'disable', 'effect', 'event', 'eventOff', 'globalEventOff', 'html', 'multiline', 'offset', 'place', 'scrollHide', 'type']
@@ -65,8 +102,7 @@ Keyword arguments:
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+
         super(Tooltip, self).__init__(children=children, **args)
+
+setattr(Tooltip, "__init__", _explicitize_args(Tooltip.__init__))

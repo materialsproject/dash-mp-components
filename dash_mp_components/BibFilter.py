@@ -1,6 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class BibFilter(Component):
@@ -50,8 +65,20 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'dash_mp_components'
     _type = 'BibFilter'
-    @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, format=Component.UNDEFINED, bibEntries=Component.UNDEFINED, sortField=Component.UNDEFINED, ascending=Component.UNDEFINED, resultClassName=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, **kwargs):
+
+
+    def __init__(
+        self,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        className: typing.Optional[str] = None,
+        format: typing.Optional[Literal["bibjson", "crossref"]] = None,
+        bibEntries: typing.Optional[typing.Sequence] = None,
+        sortField: typing.Optional[Literal["year", "author", "title"]] = None,
+        ascending: typing.Optional[bool] = None,
+        resultClassName: typing.Optional[str] = None,
+        preventOpenAccessFetch: typing.Optional[bool] = None,
+        **kwargs
+    ):
         self._prop_names = ['id', 'ascending', 'bibEntries', 'className', 'format', 'preventOpenAccessFetch', 'resultClassName', 'sortField']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'ascending', 'bibEntries', 'className', 'format', 'preventOpenAccessFetch', 'resultClassName', 'sortField']
@@ -59,9 +86,8 @@ Keyword arguments:
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
-        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+        args = {k: _locals[k] for k in _explicit_args}
+
         super(BibFilter, self).__init__(**args)
+
+setattr(BibFilter, "__init__", _explicitize_args(BibFilter.__init__))

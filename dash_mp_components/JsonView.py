@@ -1,6 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class JsonView(Component):
@@ -36,8 +51,6 @@ Keyword arguments:
 
 - src (dict; optional)
 
-- style (dict; optional)
-
 - theme (string; optional)
 
 - validationMessage (string; optional)"""
@@ -45,8 +58,28 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'dash_mp_components'
     _type = 'JsonView'
-    @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, src=Component.UNDEFINED, name=Component.UNDEFINED, theme=Component.UNDEFINED, style=Component.UNDEFINED, iconStyle=Component.UNDEFINED, indentWidth=Component.UNDEFINED, collapsed=Component.UNDEFINED, collapseStringsAfterLength=Component.UNDEFINED, groupArraysAfterLength=Component.UNDEFINED, enableClipboard=Component.UNDEFINED, displayObjectSize=Component.UNDEFINED, displayDataTypes=Component.UNDEFINED, defaultValue=Component.UNDEFINED, sortKeys=Component.UNDEFINED, validationMessage=Component.UNDEFINED, **kwargs):
+
+
+    def __init__(
+        self,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        src: typing.Optional[dict] = None,
+        name: typing.Optional[typing.Union[bool, str]] = None,
+        theme: typing.Optional[str] = None,
+        style: typing.Optional[typing.Any] = None,
+        iconStyle: typing.Optional[str] = None,
+        indentWidth: typing.Optional[NumberType] = None,
+        collapsed: typing.Optional[typing.Union[bool, NumberType]] = None,
+        collapseStringsAfterLength: typing.Optional[typing.Union[bool, NumberType]] = None,
+        groupArraysAfterLength: typing.Optional[NumberType] = None,
+        enableClipboard: typing.Optional[bool] = None,
+        displayObjectSize: typing.Optional[bool] = None,
+        displayDataTypes: typing.Optional[bool] = None,
+        defaultValue: typing.Optional[dict] = None,
+        sortKeys: typing.Optional[bool] = None,
+        validationMessage: typing.Optional[str] = None,
+        **kwargs
+    ):
         self._prop_names = ['id', 'collapseStringsAfterLength', 'collapsed', 'defaultValue', 'displayDataTypes', 'displayObjectSize', 'enableClipboard', 'groupArraysAfterLength', 'iconStyle', 'indentWidth', 'name', 'sortKeys', 'src', 'style', 'theme', 'validationMessage']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'collapseStringsAfterLength', 'collapsed', 'defaultValue', 'displayDataTypes', 'displayObjectSize', 'enableClipboard', 'groupArraysAfterLength', 'iconStyle', 'indentWidth', 'name', 'sortKeys', 'src', 'style', 'theme', 'validationMessage']
@@ -54,9 +87,8 @@ Keyword arguments:
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
-        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+        args = {k: _locals[k] for k in _explicit_args}
+
         super(JsonView, self).__init__(**args)
+
+setattr(JsonView, "__init__", _explicitize_args(JsonView.__init__))
