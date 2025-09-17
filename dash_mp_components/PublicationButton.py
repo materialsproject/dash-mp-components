@@ -1,6 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class PublicationButton(Component):
@@ -51,8 +66,19 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'dash_mp_components'
     _type = 'PublicationButton'
-    @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, doi=Component.UNDEFINED, className=Component.UNDEFINED, url=Component.UNDEFINED, target=Component.UNDEFINED, compact=Component.UNDEFINED, showTooltip=Component.UNDEFINED, **kwargs):
+
+
+    def __init__(
+        self,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        doi: typing.Optional[str] = None,
+        className: typing.Optional[str] = None,
+        url: typing.Optional[str] = None,
+        target: typing.Optional[str] = None,
+        compact: typing.Optional[bool] = None,
+        showTooltip: typing.Optional[bool] = None,
+        **kwargs
+    ):
         self._prop_names = ['id', 'className', 'compact', 'doi', 'showTooltip', 'target', 'url']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'className', 'compact', 'doi', 'showTooltip', 'target', 'url']
@@ -60,9 +86,8 @@ Keyword arguments:
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
-        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+        args = {k: _locals[k] for k in _explicit_args}
+
         super(PublicationButton, self).__init__(**args)
+
+setattr(PublicationButton, "__init__", _explicitize_args(PublicationButton.__init__))

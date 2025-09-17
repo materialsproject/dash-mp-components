@@ -1,6 +1,7 @@
 from .JsonView import JsonView
 from .MatSidebar import MatSidebar
 from .CameraContextProvider import CameraContextProvider
+from .CrystalToolkitAnimationScene import CrystalToolkitAnimationScene
 from .CrystalToolkitScene import CrystalToolkitScene
 from .Download import Download
 from .GraphComponent import GraphComponent
@@ -56,6 +57,7 @@ __all__ = [
     "JsonView",
     "MatSidebar",
     "CameraContextProvider",
+    "CrystalToolkitAnimationScene",
     "CrystalToolkitScene",
     "Download",
     "GraphComponent",

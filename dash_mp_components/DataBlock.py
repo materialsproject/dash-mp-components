@@ -1,6 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class DataBlock(Component):
@@ -48,8 +63,22 @@ Keyword arguments:
     _base_nodes = ['footer', 'children']
     _namespace = 'dash_mp_components'
     _type = 'DataBlock'
-    @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, data=Component.UNDEFINED, columns=Component.UNDEFINED, expanded=Component.UNDEFINED, footer=Component.UNDEFINED, iconClassName=Component.UNDEFINED, iconTooltip=Component.UNDEFINED, disableRichColumnHeaders=Component.UNDEFINED, **kwargs):
+
+
+    def __init__(
+        self,
+        children: typing.Optional[ComponentType] = None,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        className: typing.Optional[str] = None,
+        data: typing.Optional[dict] = None,
+        columns: typing.Optional[typing.Sequence] = None,
+        expanded: typing.Optional[bool] = None,
+        footer: typing.Optional[ComponentType] = None,
+        iconClassName: typing.Optional[str] = None,
+        iconTooltip: typing.Optional[str] = None,
+        disableRichColumnHeaders: typing.Optional[bool] = None,
+        **kwargs
+    ):
         self._prop_names = ['children', 'id', 'className', 'columns', 'data', 'disableRichColumnHeaders', 'expanded', 'footer', 'iconClassName', 'iconTooltip']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['children', 'id', 'className', 'columns', 'data', 'disableRichColumnHeaders', 'expanded', 'footer', 'iconClassName', 'iconTooltip']
@@ -58,8 +87,7 @@ Keyword arguments:
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+
         super(DataBlock, self).__init__(children=children, **args)
+
+setattr(DataBlock, "__init__", _explicitize_args(DataBlock.__init__))
