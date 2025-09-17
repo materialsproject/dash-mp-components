@@ -45,7 +45,7 @@ BibCard.propTypes = {
     /**
      * Year of the reference as either a string or number
      */
-    year: PropTypes.oneOfType[(PropTypes.string, PropTypes.number)],
+    year: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
     /**
      * Name of the journal or publisher of the reference
@@ -58,6 +58,10 @@ BibCard.propTypes = {
      * online publication, open access PDF, and bibtex
      */
     doi: PropTypes.string,
+    /**
+     * Shortened title of the article
+     */
+    shortName: PropTypes.string,
 
     /**
      * Set to true to prevent dynamically fetching a link to a free PDF of

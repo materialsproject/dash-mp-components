@@ -40,20 +40,23 @@ Keyword arguments:
     entry in the \"openAccessUrl\" property. If set, the URL will not
     be fetched. @default False.
 
+- shortName (string; optional):
+    Shortened title of the article.
+
 - title (string; optional):
     Title of the reference Will render as a link if doi is supplied.
 
-- year (optional):
+- year (string | number; optional):
     Year of the reference as either a string or number."""
     _children_props = []
     _base_nodes = ['children']
     _namespace = 'dash_mp_components'
     _type = 'BibCard'
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, title=Component.UNDEFINED, author=Component.UNDEFINED, year=Component.UNDEFINED, journal=Component.UNDEFINED, doi=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, openAccessUrl=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'author', 'className', 'doi', 'journal', 'openAccessUrl', 'preventOpenAccessFetch', 'title', 'year']
+    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, title=Component.UNDEFINED, author=Component.UNDEFINED, year=Component.UNDEFINED, journal=Component.UNDEFINED, doi=Component.UNDEFINED, shortName=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, openAccessUrl=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'author', 'className', 'doi', 'journal', 'openAccessUrl', 'preventOpenAccessFetch', 'shortName', 'title', 'year']
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'author', 'className', 'doi', 'journal', 'openAccessUrl', 'preventOpenAccessFetch', 'title', 'year']
+        self.available_properties = ['id', 'author', 'className', 'doi', 'journal', 'openAccessUrl', 'preventOpenAccessFetch', 'shortName', 'title', 'year']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

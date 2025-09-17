@@ -3212,8 +3212,15 @@
             },
             "year": {
                 "type": {
-                    "name": "custom",
-                    "raw": "PropTypes.oneOfType[(PropTypes.string, PropTypes.number)]"
+                    "name": "union",
+                    "value": [
+                        {
+                            "name": "string"
+                        },
+                        {
+                            "name": "number"
+                        }
+                    ]
                 },
                 "required": false,
                 "description": "Year of the reference as either a string or number"
@@ -3231,6 +3238,13 @@
                 },
                 "required": false,
                 "description": "The DOI (Digital Object Identifier) of the reference\nThis identifier is used to generate links to the reference's\nonline publication, open access PDF, and bibtex"
+            },
+            "shortName": {
+                "type": {
+                    "name": "string"
+                },
+                "required": false,
+                "description": "Shortened title of the article"
             },
             "preventOpenAccessFetch": {
                 "type": {
