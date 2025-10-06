@@ -12,11 +12,11 @@ jobs:
             - run: |
                   echo Checking integration test with latest react components
                   echo ${{ github.event.client_payload.sha }}
-            - name: Set up Python 3.7
+            - name: Set up Python 3.11
               uses: actions/setup-python@v1
               with:
-                  python-version: 3.7
-            - uses: actions/cache@v1
+                  python-version: 3.11
+            - uses: actions/cache@v4
               with:
                   path: ~/.cache/pip
                   key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
