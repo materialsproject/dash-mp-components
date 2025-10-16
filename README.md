@@ -43,7 +43,7 @@ If you have selected install_dependencies during the prompt, you can skip this p
 
 ## Adding a Component
 
-Add a new component file inside of one of the directories in `src/lib/components` and name the file `MyComponent.react.js` (where "MyComponent" is replaced with the name of the new component).
+Add a new component file inside of one of the directories in `src/lib/components` and name the file `MyComponent.react.js` (where "MyComponent" is replaced with the name of the new component). Also, remember to add "MyComponent" into `src/lib/index.js` for importing/exporting.
 
 The components in this library are all ported from [mp-react-components](https://github.com/materialsproject/mp-react-components) so the component files should simply wrap the component from mp-react-components and redefine the prop types for the component.
 
