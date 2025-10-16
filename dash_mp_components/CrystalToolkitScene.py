@@ -1,6 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class CrystalToolkitScene(Component):
@@ -131,8 +146,39 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'dash_mp_components'
     _type = 'CrystalToolkitScene'
-    @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, data=Component.UNDEFINED, settings=Component.UNDEFINED, toggleVisibility=Component.UNDEFINED, imageRequest=Component.UNDEFINED, imageType=Component.UNDEFINED, imageData=Component.UNDEFINED, imageDataTimestamp=Component.UNDEFINED, fileOptions=Component.UNDEFINED, fileType=Component.UNDEFINED, fileTimestamp=Component.UNDEFINED, selectedObject=Component.UNDEFINED, sceneSize=Component.UNDEFINED, axisView=Component.UNDEFINED, inletSize=Component.UNDEFINED, inletPadding=Component.UNDEFINED, debug=Component.UNDEFINED, animation=Component.UNDEFINED, currentCameraState=Component.UNDEFINED, customCameraState=Component.UNDEFINED, showControls=Component.UNDEFINED, showExpandButton=Component.UNDEFINED, showImageButton=Component.UNDEFINED, showExportButton=Component.UNDEFINED, showPositionButton=Component.UNDEFINED, **kwargs):
+
+
+    def __init__(
+        self,
+        children: typing.Optional[ComponentType] = None,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        className: typing.Optional[typing.Any] = None,
+        data: typing.Optional[typing.Any] = None,
+        settings: typing.Optional[typing.Any] = None,
+        toggleVisibility: typing.Optional[typing.Any] = None,
+        imageRequest: typing.Optional[typing.Any] = None,
+        imageType: typing.Optional[typing.Any] = None,
+        imageData: typing.Optional[typing.Any] = None,
+        imageDataTimestamp: typing.Optional[typing.Any] = None,
+        fileOptions: typing.Optional[typing.Any] = None,
+        fileType: typing.Optional[typing.Any] = None,
+        fileTimestamp: typing.Optional[typing.Any] = None,
+        selectedObject: typing.Optional[typing.Any] = None,
+        sceneSize: typing.Optional[typing.Any] = None,
+        axisView: typing.Optional[typing.Any] = None,
+        inletSize: typing.Optional[typing.Any] = None,
+        inletPadding: typing.Optional[typing.Any] = None,
+        debug: typing.Optional[typing.Any] = None,
+        animation: typing.Optional[typing.Any] = None,
+        currentCameraState: typing.Optional[typing.Any] = None,
+        customCameraState: typing.Optional[typing.Any] = None,
+        showControls: typing.Optional[typing.Any] = None,
+        showExpandButton: typing.Optional[typing.Any] = None,
+        showImageButton: typing.Optional[typing.Any] = None,
+        showExportButton: typing.Optional[typing.Any] = None,
+        showPositionButton: typing.Optional[typing.Any] = None,
+        **kwargs
+    ):
         self._prop_names = ['children', 'id', 'animation', 'axisView', 'className', 'currentCameraState', 'customCameraState', 'data', 'debug', 'fileOptions', 'fileTimestamp', 'fileType', 'imageData', 'imageDataTimestamp', 'imageRequest', 'imageType', 'inletPadding', 'inletSize', 'sceneSize', 'selectedObject', 'setProps', 'settings', 'showControls', 'showExpandButton', 'showExportButton', 'showImageButton', 'showPositionButton', 'toggleVisibility']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['children', 'id', 'animation', 'axisView', 'className', 'currentCameraState', 'customCameraState', 'data', 'debug', 'fileOptions', 'fileTimestamp', 'fileType', 'imageData', 'imageDataTimestamp', 'imageRequest', 'imageType', 'inletPadding', 'inletSize', 'sceneSize', 'selectedObject', 'setProps', 'settings', 'showControls', 'showExpandButton', 'showExportButton', 'showImageButton', 'showPositionButton', 'toggleVisibility']
@@ -141,8 +187,7 @@ Keyword arguments:
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+
         super(CrystalToolkitScene, self).__init__(children=children, **args)
+
+setattr(CrystalToolkitScene, "__init__", _explicitize_args(CrystalToolkitScene.__init__))

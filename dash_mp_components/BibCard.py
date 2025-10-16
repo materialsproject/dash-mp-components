@@ -1,6 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class BibCard(Component):
@@ -52,8 +67,22 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'dash_mp_components'
     _type = 'BibCard'
-    @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, title=Component.UNDEFINED, author=Component.UNDEFINED, year=Component.UNDEFINED, journal=Component.UNDEFINED, doi=Component.UNDEFINED, shortName=Component.UNDEFINED, preventOpenAccessFetch=Component.UNDEFINED, openAccessUrl=Component.UNDEFINED, **kwargs):
+
+
+    def __init__(
+        self,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        className: typing.Optional[str] = None,
+        title: typing.Optional[str] = None,
+        author: typing.Optional[str] = None,
+        year: typing.Optional[typing.Union[str, NumberType]] = None,
+        journal: typing.Optional[str] = None,
+        doi: typing.Optional[str] = None,
+        shortName: typing.Optional[str] = None,
+        preventOpenAccessFetch: typing.Optional[bool] = None,
+        openAccessUrl: typing.Optional[str] = None,
+        **kwargs
+    ):
         self._prop_names = ['id', 'author', 'className', 'doi', 'journal', 'openAccessUrl', 'preventOpenAccessFetch', 'shortName', 'title', 'year']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'author', 'className', 'doi', 'journal', 'openAccessUrl', 'preventOpenAccessFetch', 'shortName', 'title', 'year']
@@ -61,9 +90,8 @@ Keyword arguments:
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
-        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+        args = {k: _locals[k] for k in _explicit_args}
+
         super(BibCard, self).__init__(**args)
+
+setattr(BibCard, "__init__", _explicitize_args(BibCard.__init__))

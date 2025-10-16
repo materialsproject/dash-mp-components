@@ -283,3 +283,7 @@ GitHub.sublime-settings
 R/
 inst/
 /.build_cache/
+
+
+
+.DS_Store

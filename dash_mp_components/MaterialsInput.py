@@ -1,6 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class MaterialsInput(Component):
@@ -67,8 +82,37 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'dash_mp_components'
     _type = 'MaterialsInput'
-    @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, inputClassName=Component.UNDEFINED, value=Component.UNDEFINED, type=Component.UNDEFINED, allowedInputTypes=Component.UNDEFINED, showTypeDropdown=Component.UNDEFINED, placeholder=Component.UNDEFINED, errorMessage=Component.UNDEFINED, debounce=Component.UNDEFINED, periodicTableMode=Component.UNDEFINED, hidePeriodicTable=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, autocompleteApiKey=Component.UNDEFINED, tooltip=Component.UNDEFINED, helpItems=Component.UNDEFINED, showSubmitButton=Component.UNDEFINED, submitButtonClicks=Component.UNDEFINED, submitButtonText=Component.UNDEFINED, label=Component.UNDEFINED, hideWildcardButton=Component.UNDEFINED, chemicalSystemSelectHelpText=Component.UNDEFINED, elementsSelectHelpText=Component.UNDEFINED, maxElementSelectable=Component.UNDEFINED, loading=Component.UNDEFINED, **kwargs):
+
+
+    def __init__(
+        self,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        className: typing.Optional[str] = None,
+        inputClassName: typing.Optional[str] = None,
+        value: typing.Optional[str] = None,
+        type: typing.Optional[Literal["elements", "chemical_system", "formula", "mpid", "smiles", "text", "molecule_formula"]] = None,
+        allowedInputTypes: typing.Optional[typing.Sequence] = None,
+        showTypeDropdown: typing.Optional[bool] = None,
+        placeholder: typing.Optional[str] = None,
+        errorMessage: typing.Optional[str] = None,
+        debounce: typing.Optional[NumberType] = None,
+        periodicTableMode: typing.Optional[Literal["toggle", "focus", "none"]] = None,
+        hidePeriodicTable: typing.Optional[bool] = None,
+        autocompleteFormulaUrl: typing.Optional[str] = None,
+        autocompleteApiKey: typing.Optional[str] = None,
+        tooltip: typing.Optional[str] = None,
+        helpItems: typing.Optional[typing.Sequence] = None,
+        showSubmitButton: typing.Optional[bool] = None,
+        submitButtonClicks: typing.Optional[NumberType] = None,
+        submitButtonText: typing.Optional[str] = None,
+        label: typing.Optional[str] = None,
+        hideWildcardButton: typing.Optional[bool] = None,
+        chemicalSystemSelectHelpText: typing.Optional[str] = None,
+        elementsSelectHelpText: typing.Optional[str] = None,
+        maxElementSelectable: typing.Optional[NumberType] = None,
+        loading: typing.Optional[bool] = None,
+        **kwargs
+    ):
         self._prop_names = ['id', 'allowedInputTypes', 'autocompleteApiKey', 'autocompleteFormulaUrl', 'chemicalSystemSelectHelpText', 'className', 'debounce', 'elementsSelectHelpText', 'errorMessage', 'helpItems', 'hidePeriodicTable', 'hideWildcardButton', 'inputClassName', 'label', 'loading', 'maxElementSelectable', 'periodicTableMode', 'placeholder', 'showSubmitButton', 'showTypeDropdown', 'submitButtonClicks', 'submitButtonText', 'tooltip', 'type', 'value']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'allowedInputTypes', 'autocompleteApiKey', 'autocompleteFormulaUrl', 'chemicalSystemSelectHelpText', 'className', 'debounce', 'elementsSelectHelpText', 'errorMessage', 'helpItems', 'hidePeriodicTable', 'hideWildcardButton', 'inputClassName', 'label', 'loading', 'maxElementSelectable', 'periodicTableMode', 'placeholder', 'showSubmitButton', 'showTypeDropdown', 'submitButtonClicks', 'submitButtonText', 'tooltip', 'type', 'value']
@@ -76,9 +120,8 @@ Keyword arguments:
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
-        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+        args = {k: _locals[k] for k in _explicit_args}
+
         super(MaterialsInput, self).__init__(**args)
+
+setattr(MaterialsInput, "__init__", _explicitize_args(MaterialsInput.__init__))

@@ -1,6 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class SearchUIContainer(Component):
@@ -61,8 +76,35 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'dash_mp_components'
     _type = 'SearchUIContainer'
-    @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, columns=Component.UNDEFINED, filterGroups=Component.UNDEFINED, apiEndpoint=Component.UNDEFINED, apiEndpointParams=Component.UNDEFINED, autocompleteFormulaUrl=Component.UNDEFINED, apiKey=Component.UNDEFINED, resultLabel=Component.UNDEFINED, hasSortMenu=Component.UNDEFINED, sortFields=Component.UNDEFINED, sortKey=Component.UNDEFINED, skipKey=Component.UNDEFINED, limitKey=Component.UNDEFINED, totalKey=Component.UNDEFINED, fieldsKey=Component.UNDEFINED, conditionalRowStyles=Component.UNDEFINED, selectableRows=Component.UNDEFINED, selectedRows=Component.UNDEFINED, view=Component.UNDEFINED, disableRichColumnHeaders=Component.UNDEFINED, results=Component.UNDEFINED, **kwargs):
+
+
+    def __init__(
+        self,
+        children: typing.Optional[ComponentType] = None,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        className: typing.Optional[str] = None,
+        columns: typing.Optional[typing.Sequence] = None,
+        filterGroups: typing.Optional[typing.Sequence] = None,
+        apiEndpoint: typing.Optional[str] = None,
+        apiEndpointParams: typing.Optional[dict] = None,
+        autocompleteFormulaUrl: typing.Optional[str] = None,
+        apiKey: typing.Optional[str] = None,
+        resultLabel: typing.Optional[str] = None,
+        hasSortMenu: typing.Optional[bool] = None,
+        sortFields: typing.Optional[typing.Sequence[str]] = None,
+        sortKey: typing.Optional[str] = None,
+        skipKey: typing.Optional[str] = None,
+        limitKey: typing.Optional[str] = None,
+        totalKey: typing.Optional[str] = None,
+        fieldsKey: typing.Optional[str] = None,
+        conditionalRowStyles: typing.Optional[typing.Sequence] = None,
+        selectableRows: typing.Optional[bool] = None,
+        selectedRows: typing.Optional[typing.Sequence] = None,
+        view: typing.Optional[Literal["table", "synthesis"]] = None,
+        disableRichColumnHeaders: typing.Optional[bool] = None,
+        results: typing.Optional[typing.Sequence] = None,
+        **kwargs
+    ):
         self._prop_names = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'fieldsKey', 'filterGroups', 'hasSortMenu', 'limitKey', 'resultLabel', 'results', 'selectableRows', 'selectedRows', 'skipKey', 'sortFields', 'sortKey', 'totalKey', 'view']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'fieldsKey', 'filterGroups', 'hasSortMenu', 'limitKey', 'resultLabel', 'results', 'selectableRows', 'selectedRows', 'skipKey', 'sortFields', 'sortKey', 'totalKey', 'view']
@@ -71,8 +113,7 @@ Keyword arguments:
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+
         super(SearchUIContainer, self).__init__(children=children, **args)
+
+setattr(SearchUIContainer, "__init__", _explicitize_args(SearchUIContainer.__init__))
