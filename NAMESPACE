@@ -3,6 +3,7 @@
 export(JsonView)
 export(MatSidebar)
 export(CameraContextProvider)
+export(CrystalToolkitAnimationScene)
 export(CrystalToolkitScene)
 export(Download)
 export(GraphComponent)
