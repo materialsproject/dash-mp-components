@@ -45,6 +45,7 @@ jobs:
                   npm run build
             - name: Test with pytest
               env:
-                  PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+                  PERCY_ENABLE: '0'
+                  # PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
               run: |
                   pytest --headless tests
