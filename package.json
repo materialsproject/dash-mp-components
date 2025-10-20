@@ -56,7 +56,7 @@
         "eslint-config-prettier": "^6.11.0",
         "eslint-plugin-import": "^2.20.2",
         "eslint-plugin-react": "^7.19.0",
-        "husky": "^4.2.5",
+        "husky": "^9.1.7",
         "npm": "^10.0.0",
         "pretty-quick": "^2.0.1",
         "prop-types": "^15.7.2",
