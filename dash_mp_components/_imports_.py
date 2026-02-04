@@ -5,6 +5,7 @@ from .CrystalToolkitAnimationScene import CrystalToolkitAnimationScene
 from .CrystalToolkitScene import CrystalToolkitScene
 from .Download import Download
 from .GraphComponent import GraphComponent
+from .PhononAnimationScene import PhononAnimationScene
 from .DataBlock import DataBlock
 from .DataTable import DataTable
 from .DownloadButton import DownloadButton
@@ -61,6 +62,7 @@ __all__ = [
     "CrystalToolkitScene",
     "Download",
     "GraphComponent",
+    "PhononAnimationScene",
     "DataBlock",
     "DataTable",
     "DownloadButton",
