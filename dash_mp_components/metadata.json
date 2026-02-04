@@ -1,0 +1,2931 @@
+{
+    "src/lib/components/JsonView.react.js": {
+        "description": "",
+        "displayName": "JsonView",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "src": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": ""
+            },
+            "name": {
+                "type": {
+                    "name": "union",
+                    "value": [{"name": "bool"}, {"name": "string"}]
+                },
+                "required": false,
+                "description": ""
+            },
+            "theme": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "style": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": ""
+            },
+            "iconStyle": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "indentWidth": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "collapsed": {
+                "type": {
+                    "name": "union",
+                    "value": [{"name": "bool"}, {"name": "number"}]
+                },
+                "required": false,
+                "description": ""
+            },
+            "collapseStringsAfterLength": {
+                "type": {
+                    "name": "union",
+                    "value": [{"name": "bool"}, {"name": "number"}]
+                },
+                "required": false,
+                "description": ""
+            },
+            "groupArraysAfterLength": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "enableClipboard": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "displayObjectSize": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "displayDataTypes": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "defaultValue": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": ""
+            },
+            "sortKeys": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "validationMessage": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            }
+        }
+    },
+    "src/lib/components/MatSidebar.react.js": {
+        "description": "Material navigation bar",
+        "displayName": "MatSidebar",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks."
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+            },
+            "currentApp": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID of the current selected app"
+            },
+            "appId": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "This is a read-only prop that dash callback can subscribe to"
+            },
+            "layout": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {"value": "'vertical'", "computed": false},
+                        {"value": "'horizontal'", "computed": false}
+                    ]
+                },
+                "required": false,
+                "description": "The layout of the sidebar"
+            }
+        }
+    },
+    "src/lib/components/crystal-toolkit/CameraContextProvider.react.js": {
+        "description": "Use this component to synchronize the camera of multiple\n SimpleSceneComponent",
+        "displayName": "CameraContextProvider",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "children": {
+                "type": {"name": "custom", "raw": "PropTypes.any"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/crystal-toolkit/CrystalToolkitAnimationScene.react.js": {
+        "description": "",
+        "displayName": "CrystalToolkitAnimationScene",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "custom", "raw": "PropTypes.func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "children": {
+                "type": {"name": "custom", "raw": "PropTypes.node"},
+                "required": false,
+                "description": "First child will be rendered as the settings panel.\nSecond child will be rendered as the bottom panel (legend)."
+            },
+            "className": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "Class name that will wrap around the whole scene component.\nWhen enlarged, this class name is applied to the modal-content element."
+            },
+            "data": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Simple3DScene JSON, the easiest way to generate this is to use the Scene class\nin crystal_toolkit.core.scene and its to_json method."
+            },
+            "settings": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Options used for generating scene.\nSupported options and their defaults are given as follows:\n{\n   antialias: true, // set to false to improve performance\n   renderer: 'webgl', // 'svg' also an option, used for unit testing\n   transparentBackground: false, // transparent background\n   background: '#ffffff', // background color if not transparent,\n   sphereSegments: 32, // decrease to improve performance\n   cylinderSegments: 16, // decrease to improve performance\n   staticScene: true, // disable if animation required\n   defaultZoom: 1, // 1 will zoom to fit object exactly, <1 will add padding between object and box bounds\n   zoomToFit2D: false // if true, will zoom to fit object only along the X and Y axes (not Z)\n   extractAxis: false // will remove the axis from the main scene\n   isMultiSelectionEnabled: false // allow to use shift to select,\n   secondaryObjectView: true // show the selected object in a detail view\n   animation: 'play' | 'slider' | 'none' // choose which style of animation is use\n}\nThere are several additional options used for debugging and testing,\nplease consult the source code directly for these."
+            },
+            "toggleVisibility": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Hide/show nodes in scene by its name (key), value is 1 to show the node\nand 0 to hide it."
+            },
+            "imageRequest": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Set to trigger a screenshot or scene download.\nMust be an object with the following structure:\n{\n   \"filetype\": \"png\" // the image format (\"png\", \"dae\")\n}\nPassing this prop as an object ensures that\nnew requests are triggered any time the prop\nis set."
+            },
+            "imageType": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.oneOf(['png', 'dae'])"
+                },
+                "required": false,
+                "description": "File type to be downloaded as an image. Either png or dae"
+            },
+            "imageData": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nData string for the image generated on image button click"
+            },
+            "imageDataTimestamp": {
+                "type": {"name": "custom", "raw": "PropTypes.any"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nDate string that represents the time imageData was set.\nUse this prop in dash callbacks to trigger downloads of imageData."
+            },
+            "fileOptions": {
+                "type": {"name": "custom", "raw": "PropTypes.array"},
+                "required": false,
+                "description": "List of options to show in file download dropdown"
+            },
+            "fileType": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nThe last file type clicked in the file download menu"
+            },
+            "fileTimestamp": {
+                "type": {"name": "custom", "raw": "PropTypes.any"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nDate string that represents the time fileType was set.\nUse this prop in dash callbacks to trigger file downloads."
+            },
+            "selectedObject": {
+                "type": {"name": "custom", "raw": "PropTypes.array"},
+                "required": false,
+                "description": "This points to the last clicked objects. Use it in your dash callback\nto know which objects are currently selected in the scene"
+            },
+            "sceneSize": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.oneOfType([PropTypes.number, PropTypes.string])"
+                },
+                "required": false,
+                "description": "Width / Height of the displayed component"
+            },
+            "axisView": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "Where is the axis displayed ( 'NW' / 'NE' / 'SE' / 'SW' / 'HIDDEN' )"
+            },
+            "inletSize": {
+                "type": {"name": "custom", "raw": "PropTypes.number"},
+                "required": false,
+                "description": "Size of the axis view"
+            },
+            "inletPadding": {
+                "type": {"name": "custom", "raw": "PropTypes.number"},
+                "required": false,
+                "description": "Padding of the axis view"
+            },
+            "debug": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": "Display a debug view"
+            },
+            "animation": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "Animation type"
+            },
+            "currentCameraState": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nObject that maintains the current state of the camera.\ne.g.\n{\n  position: {x: 0, y: 0, z: 0},\n  quarternion: {x: 0, y: 0, z: 0, w: 0},\n  zoom: 1,\n  setByComponentId: \"1\",\n  following: true\n}"
+            },
+            "customCameraState": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Object for setting the scene to a custom camera state.\nWhen modified, the camera will update to new custom state.\ne.g.\n{\n  position: {x: 0, y: 0, z: 0},\n  quarternion: {x: 0, y: 0, z: 0, w: 0}, (optional)\n  zoom: 1 (optional)\n}"
+            },
+            "showControls": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            },
+            "showExpandButton": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            },
+            "showImageButton": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            },
+            "showExportButton": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            },
+            "showPositionButton": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/crystal-toolkit/CrystalToolkitScene.react.js": {
+        "description": "",
+        "displayName": "CrystalToolkitScene",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "custom", "raw": "PropTypes.func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "children": {
+                "type": {"name": "custom", "raw": "PropTypes.node"},
+                "required": false,
+                "description": "First child will be rendered as the settings panel.\nSecond child will be rendered as the bottom panel (legend)."
+            },
+            "className": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "Class name that will wrap around the whole scene component.\nWhen enlarged, this class name is applied to the modal-content element."
+            },
+            "data": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Simple3DScene JSON, the easiest way to generate this is to use the Scene class\nin crystal_toolkit.core.scene and its to_json method."
+            },
+            "settings": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Options used for generating scene.\nSupported options and their defaults are given as follows:\n{\n   antialias: true, // set to false to improve performance\n   renderer: 'webgl', // 'svg' also an option, used for unit testing\n   transparentBackground: false, // transparent background\n   background: '#ffffff', // background color if not transparent,\n   sphereSegments: 32, // decrease to improve performance\n   cylinderSegments: 16, // decrease to improve performance\n   staticScene: true, // disable if animation required\n   defaultZoom: 1, // 1 will zoom to fit object exactly, <1 will add padding between object and box bounds\n   zoomToFit2D: false // if true, will zoom to fit object only along the X and Y axes (not Z)\n   extractAxis: false // will remove the axis from the main scene\n   isMultiSelectionEnabled: false // allow to use shift to select,\n   secondaryObjectView: true // show the selected object in a detail view\n   animation: 'play' | 'slider' | 'none' // choose which style of animation is use\n}\nThere are several additional options used for debugging and testing,\nplease consult the source code directly for these."
+            },
+            "toggleVisibility": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Hide/show nodes in scene by its name (key), value is 1 to show the node\nand 0 to hide it."
+            },
+            "imageRequest": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Set to trigger a screenshot or scene download.\nMust be an object with the following structure:\n{\n   \"filetype\": \"png\" // the image format (\"png\", \"dae\")\n}\nPassing this prop as an object ensures that\nnew requests are triggered any time the prop\nis set."
+            },
+            "imageType": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.oneOf(['png', 'dae'])"
+                },
+                "required": false,
+                "description": "File type to be downloaded as an image. Either png or dae"
+            },
+            "imageData": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nData string for the image generated on image button click"
+            },
+            "imageDataTimestamp": {
+                "type": {"name": "custom", "raw": "PropTypes.any"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nDate string that represents the time imageData was set.\nUse this prop in dash callbacks to trigger downloads of imageData."
+            },
+            "fileOptions": {
+                "type": {"name": "custom", "raw": "PropTypes.array"},
+                "required": false,
+                "description": "List of options to show in file download dropdown"
+            },
+            "fileType": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nThe last file type clicked in the file download menu"
+            },
+            "fileTimestamp": {
+                "type": {"name": "custom", "raw": "PropTypes.any"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nDate string that represents the time fileType was set.\nUse this prop in dash callbacks to trigger file downloads."
+            },
+            "selectedObject": {
+                "type": {"name": "custom", "raw": "PropTypes.array"},
+                "required": false,
+                "description": "This points to the last clicked objects. Use it in your dash callback\nto know which objects are currently selected in the scene"
+            },
+            "sceneSize": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.oneOfType([PropTypes.number, PropTypes.string])"
+                },
+                "required": false,
+                "description": "Width / Height of the displayed component"
+            },
+            "axisView": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "Where is the axis displayed ( 'NW' / 'NE' / 'SE' / 'SW' / 'HIDDEN' )"
+            },
+            "inletSize": {
+                "type": {"name": "custom", "raw": "PropTypes.number"},
+                "required": false,
+                "description": "Size of the axis view"
+            },
+            "inletPadding": {
+                "type": {"name": "custom", "raw": "PropTypes.number"},
+                "required": false,
+                "description": "Padding of the axis view"
+            },
+            "debug": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": "Display a debug view"
+            },
+            "animation": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "Animation type"
+            },
+            "currentCameraState": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nObject that maintains the current state of the camera.\ne.g.\n{\n  position: {x: 0, y: 0, z: 0},\n  quarternion: {x: 0, y: 0, z: 0, w: 0},\n  zoom: 1,\n  setByComponentId: \"1\",\n  following: true\n}"
+            },
+            "customCameraState": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Object for setting the scene to a custom camera state.\nWhen modified, the camera will update to new custom state.\ne.g.\n{\n  position: {x: 0, y: 0, z: 0},\n  quarternion: {x: 0, y: 0, z: 0, w: 0}, (optional)\n  zoom: 1 (optional)\n}"
+            },
+            "showControls": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            },
+            "showExpandButton": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            },
+            "showImageButton": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            },
+            "showExportButton": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            },
+            "showPositionButton": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/crystal-toolkit/Download.react.js": {
+        "description": "",
+        "displayName": "Download",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks."
+            },
+            "data": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "When set, a download is invoked using a Blob.\nAccepts an object with the following structure:\n      {\n        filename: string;\n        content: any;\n        isBase64: boolean (optional);\n        isDataURL: boolean (optional);\n        mimeType: string (optional, default: 'text/plan');\n      }\nProperties in data object take precedent over component props"
+            },
+            "isBase64": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": "Set to true if data.content is a base64 string"
+            },
+            "isDataURL": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": "Set to true if data.content is a data url"
+            },
+            "mimeType": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "Default value for mimeType."
+            },
+            "setProps": {
+                "type": {"name": "custom", "raw": "PropTypes.func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+            }
+        }
+    },
+    "src/lib/components/crystal-toolkit/GraphComponent.react.js": {
+        "description": "",
+        "displayName": "GraphComponent",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "graph": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "A graph that will be displayed when this component is rendered"
+            },
+            "options": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Display options for the graph"
+            },
+            "setProps": {
+                "type": {"name": "custom", "raw": "PropTypes.func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            }
+        }
+    },
+    "src/lib/components/crystal-toolkit/PhononAnimationScene.react.js": {
+        "description": "",
+        "displayName": "PhononAnimationScene",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "custom", "raw": "PropTypes.func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "children": {
+                "type": {"name": "custom", "raw": "PropTypes.node"},
+                "required": false,
+                "description": "First child will be rendered as the settings panel.\nSecond child will be rendered as the bottom panel (legend)."
+            },
+            "className": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "Class name that will wrap around the whole scene component.\nWhen enlarged, this class name is applied to the modal-content element."
+            },
+            "data": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Simple3DScene JSON, the easiest way to generate this is to use the Scene class\nin crystal_toolkit.core.scene and its to_json method."
+            },
+            "settings": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Options used for generating scene.\nSupported options and their defaults are given as follows:\n{\n   antialias: true, // set to false to improve performance\n   renderer: 'webgl', // 'svg' also an option, used for unit testing\n   transparentBackground: false, // transparent background\n   background: '#ffffff', // background color if not transparent,\n   sphereSegments: 32, // decrease to improve performance\n   cylinderSegments: 16, // decrease to improve performance\n   staticScene: true, // disable if animation required\n   defaultZoom: 1, // 1 will zoom to fit object exactly, <1 will add padding between object and box bounds\n   zoomToFit2D: false // if true, will zoom to fit object only along the X and Y axes (not Z)\n   extractAxis: false // will remove the axis from the main scene\n   isMultiSelectionEnabled: false // allow to use shift to select,\n   secondaryObjectView: true // show the selected object in a detail view\n   animation: 'play' | 'slider' | 'none' // choose which style of animation is use\n}\nThere are several additional options used for debugging and testing,\nplease consult the source code directly for these."
+            },
+            "toggleVisibility": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Hide/show nodes in scene by its name (key), value is 1 to show the node\nand 0 to hide it."
+            },
+            "imageRequest": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Set to trigger a screenshot or scene download.\nMust be an object with the following structure:\n{\n   \"filetype\": \"png\" // the image format (\"png\", \"dae\")\n}\nPassing this prop as an object ensures that\nnew requests are triggered any time the prop\nis set."
+            },
+            "imageType": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.oneOf(['png', 'dae'])"
+                },
+                "required": false,
+                "description": "File type to be downloaded as an image. Either png or dae"
+            },
+            "imageData": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nData string for the image generated on image button click"
+            },
+            "imageDataTimestamp": {
+                "type": {"name": "custom", "raw": "PropTypes.any"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nDate string that represents the time imageData was set.\nUse this prop in dash callbacks to trigger downloads of imageData."
+            },
+            "fileOptions": {
+                "type": {"name": "custom", "raw": "PropTypes.array"},
+                "required": false,
+                "description": "List of options to show in file download dropdown"
+            },
+            "fileType": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nThe last file type clicked in the file download menu"
+            },
+            "fileTimestamp": {
+                "type": {"name": "custom", "raw": "PropTypes.any"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nDate string that represents the time fileType was set.\nUse this prop in dash callbacks to trigger file downloads."
+            },
+            "selectedObject": {
+                "type": {"name": "custom", "raw": "PropTypes.array"},
+                "required": false,
+                "description": "This points to the last clicked objects. Use it in your dash callback\nto know which objects are currently selected in the scene"
+            },
+            "sceneSize": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.oneOfType([PropTypes.number, PropTypes.string])"
+                },
+                "required": false,
+                "description": "Width / Height of the displayed component"
+            },
+            "axisView": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "Where is the axis displayed ( 'NW' / 'NE' / 'SE' / 'SW' / 'HIDDEN' )"
+            },
+            "inletSize": {
+                "type": {"name": "custom", "raw": "PropTypes.number"},
+                "required": false,
+                "description": "Size of the axis view"
+            },
+            "inletPadding": {
+                "type": {"name": "custom", "raw": "PropTypes.number"},
+                "required": false,
+                "description": "Padding of the axis view"
+            },
+            "debug": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": "Display a debug view"
+            },
+            "animation": {
+                "type": {"name": "custom", "raw": "PropTypes.string"},
+                "required": false,
+                "description": "Animation type"
+            },
+            "currentCameraState": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "THIS PROP IS SET AUTOMATICALLY\nObject that maintains the current state of the camera.\ne.g.\n{\n  position: {x: 0, y: 0, z: 0},\n  quarternion: {x: 0, y: 0, z: 0, w: 0},\n  zoom: 1,\n  setByComponentId: \"1\",\n  following: true\n}"
+            },
+            "customCameraState": {
+                "type": {"name": "custom", "raw": "PropTypes.object"},
+                "required": false,
+                "description": "Object for setting the scene to a custom camera state.\nWhen modified, the camera will update to new custom state.\ne.g.\n{\n  position: {x: 0, y: 0, z: 0},\n  quarternion: {x: 0, y: 0, z: 0, w: 0}, (optional)\n  zoom: 1 (optional)\n}"
+            },
+            "showControls": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            },
+            "showExpandButton": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            },
+            "showImageButton": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            },
+            "showExportButton": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            },
+            "showPositionButton": {
+                "type": {"name": "custom", "raw": "PropTypes.bool"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/DataBlock.react.js": {
+        "description": "Display a single record of data in a horizontal block element\nwith an optional expanded view to show additional data columns.",
+        "displayName": "DataBlock",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-data-block)"
+            },
+            "data": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": "Object (i.e. dictionary) of data to be displayed in the block"
+            },
+            "columns": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "Optional configuration for the columns in the data object.\nFollows the same format as the columns prop in the SearchUI component."
+            },
+            "expanded": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Control the initial expanded state of the block.\n@default false"
+            },
+            "footer": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Content to display in the bottom section of the card.\nIf you want to put a component in the footer, add it to the children prop instead."
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Content to display in the bottom section of the card.\nAlternativeWill take precedent"
+            },
+            "iconClassName": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to use for the icon in the top right.\nIf no class is supplied, there will not be an icon."
+            },
+            "iconTooltip": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Optional tooltip to show when hovering over the icon"
+            },
+            "disableRichColumnHeaders": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/DataTable.react.js": {
+        "description": "Common wrapper for filters/inputs and their labels",
+        "displayName": "DataTable",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to the component's default class"
+            },
+            "data": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "Array of data objects to display in the table"
+            },
+            "columns": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "An array of column definition objects to control what is rendered in the table.\nSee `Column` documentation for specifics on how to construct `Column` objects."
+            },
+            "sortField": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Optionally include a field to sort by on initial load\nMust be a valid field and included in your list of columns"
+            },
+            "sortAscending": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "If including a sortField, set whether it should ascend by default\nTrue for ascending, False for descending"
+            },
+            "secondarySortField": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Optionally include a secondary sort field. If the sortField ever becomes the same as\nthe secondarySortField, the secondary field is removed.\nMust be a valid field and included in your list of columns."
+            },
+            "secondarySortAscending": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "If including a secondarySortField, set whether it should ascend by default.\nTrue for ascending, False for descending."
+            },
+            "conditionalRowStyles": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "List of conditions for styling rows based on a property (selector) and a value.\nNote that this prop currently only supports checking for\nvalue equivalence (i.e. row[selector] === value).\nSee `ConditionalRowStyle` documentation for how to construct `ConditionalRowStyle` conditions."
+            },
+            "selectableRows": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Optionally include/exclude checkboxes next to rows for selecting"
+            },
+            "selectedRows": {
+                "type": {"name": "any"},
+                "required": false,
+                "description": "Property to maintain the state of selected rows so that\nthey are accessible via Dash callback"
+            },
+            "singleSelectableRows": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Combine with selectableRows prop to only allow one row to be selected at a time."
+            },
+            "hasHeader": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true to show a header with total number of rows and a columns selector"
+            },
+            "headerClassName": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Optional class name to apply to the table header"
+            },
+            "resultLabel": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "A noun in singular form to describe what a result represents (e.g. \"material\").\nThis is displayed in the table header."
+            },
+            "resultLabelPlural": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Plural form of the result label. If none supplied, it will automatically be the result label plus an \"s\""
+            },
+            "pagination": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true to paginate the table records"
+            },
+            "paginationIsExpanded": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "If true, an expanded component will be used for pagination (same as in `SearchUI`).\nIf false, a compact version will be used."
+            },
+            "footer": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Content to display below the table but inside the table's box wrapper.\nAccepts markdown."
+            },
+            "disableRichColumnHeaders": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "This is a temporary solution to allow SearchUI's to render in Storybook.\nThere is an issue with the dynamic column header components that causes\nStorybook to crash. Rendering column headers as plain PropTypes.strings fixes the problem.\nNote that this will disable column tooltips and unit labels."
+            }
+        }
+    },
+    "src/lib/components/data-display/DownloadButton.react.js": {
+        "description": "Button for exporting arrays or objects to files",
+        "displayName": "DownloadButton",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Use the children prop to set the button content\nThis can be simple text or a component"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class(es) to add to the top-level element of the component\nNote: the class \"mpc-download-button\" is always added"
+            },
+            "data": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.array | PropTypes.object"
+                },
+                "required": false,
+                "description": "Array or object (list or dictionary) to be downloaded\nIf downloading as csv or xlsx, data must be an array/list"
+            },
+            "filename": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Name of the file WITHOUT the extension\n(default: \"export\")"
+            },
+            "filetype": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {"value": "'json'", "computed": false},
+                        {"value": "'csv'", "computed": false},
+                        {"value": "'xlsx'", "computed": false}
+                    ]
+                },
+                "required": false,
+                "description": "File type to be downloaded\nThis is also the extension that will be appended to the filename\n(default: \"json\")"
+            },
+            "tooltip": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Optional tooltip to display above the button on hover"
+            }
+        }
+    },
+    "src/lib/components/data-display/DownloadDropdown.react.js": {
+        "description": "Dropdown for exporting arrays/lists to json, csv, or xlsx files\nThe dropdown options are prepopulated as JSON, CSV, EXCEL\nThis dropdown contains all the classes used in bulma dropdown",
+        "displayName": "DownloadButton",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Use the children prop to set the content for the dropdown button label\nThis can be simple text or a component"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class(es) to add to the top-level element of the component\nNote: the classes \"mpc-download-dropdown dropdown is-active\" are already added by default"
+            },
+            "buttonClassName": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class(es) to add to the button element of the component\nNote: the class \"button\" is already added by default"
+            },
+            "data": {
+                "type": {
+                    "name": "custom",
+                    "raw": "PropTypes.array | PropTypes.object"
+                },
+                "required": false,
+                "description": "Array/list to be downloaded"
+            },
+            "filename": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Name of the file WITHOUT the extension\n(default: \"export\")"
+            },
+            "tooltip": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Optional tooltip to display above the button on hover"
+            }
+        }
+    },
+    "src/lib/components/data-display/Drawer.react.js": {
+        "description": "Render drawer that can be opened by a ModalTrigger within a ModalContextProvider",
+        "displayName": "Drawer",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name applied to the top-level drawer div.\nThe \"mpc-drawer\" and \"modal\" classes are added automatically"
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Children will be rendered as the drawer content"
+            }
+        }
+    },
+    "src/lib/components/data-display/DrawerContextProvider.react.js": {
+        "description": "Use DrawerContextProvider to render drawers that will automatically\nclose when another drawer in the context is opened.",
+        "displayName": "DrawerContextProvider",
+        "methods": [],
+        "props": {
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Children will be rendered within the DrawerContext.\nShould contain at least a DrawerTrigger component and a Drawer component."
+            }
+        }
+    },
+    "src/lib/components/data-display/DrawerTrigger.react.js": {
+        "description": "Render a trigger that opens a Drawer that is within the same DrawerContextProvider",
+        "displayName": "DrawerTrigger",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name applied to the modal trigger span.\nThe \"mpc-modal-trigger\" class is added automatically"
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Children will be rendered as the trigger content"
+            },
+            "forDrawerId": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID of the drawer that this trigger should open."
+            }
+        }
+    },
+    "src/lib/components/data-display/Enlargeable.react.js": {
+        "description": "Wrap content within this component to allow it to be enlarged into a full screen modal",
+        "displayName": "Enlargeable",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Additional class to apply to the modal-content element when enlarged"
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Children will be rendered as the modal content"
+            }
+        }
+    },
+    "src/lib/components/data-display/Formula.react.js": {
+        "description": "Render formula strings with proper subscripts.\nNote that this component expects the string to be\na valid formula.",
+        "displayName": "Formula",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "custom", "raw": "PropTypes.function"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-formula)"
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Use the children prop to set the content of the formula.\nMust be a simple string."
+            }
+        }
+    },
+    "src/lib/components/data-display/Markdown.react.js": {
+        "description": "A custom re-worked version of dcc.Markdown.\nUses v6 of react-markdown and applies five plugins\nto the markdown component by default:\n- remark-gfm\n- remark-slug\n- remark-highlight.js\n- remark-math\n- rehype-katex",
+        "displayName": "Markdown",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name of the container element"
+            },
+            "children": {
+                "type": {
+                    "name": "union",
+                    "value": [
+                        {"name": "string"},
+                        {"name": "arrayOf", "value": {"name": "string"}}
+                    ]
+                },
+                "required": false,
+                "description": "A markdown string (or array of strings) that adhreres to the CommonMark spec"
+            },
+            "dedent": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Remove matching leading whitespace from all lines.\nLines that are empty, or contain *only* whitespace, are ignored.\nBoth spaces and tab characters are removed, but only if they match;\nwe will not convert tabs to spaces or vice versa."
+            },
+            "loading_state": {
+                "type": {
+                    "name": "shape",
+                    "value": {
+                        "is_loading": {
+                            "name": "bool",
+                            "description": "Determines if the component is loading or not",
+                            "required": false
+                        },
+                        "prop_name": {
+                            "name": "string",
+                            "description": "Holds which property is loading",
+                            "required": false
+                        },
+                        "component_name": {
+                            "name": "string",
+                            "description": "Holds the name of the component that is loading",
+                            "required": false
+                        }
+                    }
+                },
+                "required": false,
+                "description": "Object that holds the loading state object coming from dash-renderer"
+            },
+            "style": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": "User-defined inline styles for the rendered Markdown"
+            }
+        }
+    },
+    "src/lib/components/data-display/Modal.react.js": {
+        "description": "Render modal that can be opened by a ModalTrigger within its same ModalContextProvider",
+        "displayName": "Modal",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name applied to the top-level modal div.\nThe \"mpc-modal\" and \"modal\" classes are added automatically"
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Children will be rendered as the modal content"
+            }
+        }
+    },
+    "src/lib/components/data-display/ModalContextProvider.react.js": {
+        "description": "Use ModalContextProvider to coordinate modal trigger and modal content",
+        "displayName": "ModalContextProvider",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Children will be rendered within the ModalContext.\nShould contain at least a ModalTrigger component and a Modal component."
+            },
+            "active": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "The current or default state of the modal. If true, the \"is-active\" class is added to <Modal/>.\nThis value can be watched and changed from outside the component (e.g. via dash callback)."
+            },
+            "forceAction": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Prevent modal from being closed without completion of a specific action.\nIf set, there must be a button within the modal that updates the \"active\"\nstate using the ModalContext or a dash callback on the active prop."
+            },
+            "isDrawer": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/ModalTrigger.react.js": {
+        "description": "Render a trigger that opens a ModalContent that is within the same ModalContextProvider",
+        "displayName": "ModalTrigger",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name applied to the modal trigger span.\nThe \"mpc-modal-trigger\" class is added automatically"
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Children will be rendered as the trigger content"
+            }
+        }
+    },
+    "src/lib/components/data-display/SearchUIContainer.react.js": {
+        "description": "A component that can wrap around sub-components of `SearchUI` and ensure they are\nall hooked up to the same context.\nThis allows you to use the state management functionality of `SearchUI` with the ability\nto customize the inner layout and components.",
+        "displayName": "SearchUIContainer",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": ""
+            },
+            "columns": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": ""
+            },
+            "filterGroups": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": ""
+            },
+            "apiEndpoint": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "apiEndpointParams": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": ""
+            },
+            "autocompleteFormulaUrl": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "apiKey": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "resultLabel": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "hasSortMenu": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "sortFields": {
+                "type": {"name": "arrayOf", "value": {"name": "string"}},
+                "required": false,
+                "description": ""
+            },
+            "sortKey": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "skipKey": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "limitKey": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "totalKey": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "fieldsKey": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "conditionalRowStyles": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": ""
+            },
+            "selectableRows": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "selectedRows": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": ""
+            },
+            "view": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {"value": "'table'", "computed": false},
+                        {"value": "'synthesis'", "computed": false}
+                    ]
+                },
+                "required": false,
+                "description": ""
+            },
+            "disableRichColumnHeaders": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "results": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/SearchUIDataHeader.react.js": {
+        "description": "Data header to be used within a `SearchUIContainer`.",
+        "displayName": "SearchUIDataHeader",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": ""
+            },
+            "exportDataButton": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/SearchUIDataView.react.js": {
+        "description": "Data view to be used within a `SearchUIContainer`.\nThe view type is determined by the prop passed to `SearchUIContainer`.",
+        "displayName": "SearchUIDataView",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/SearchUIFilters.react.js": {
+        "description": "Filters panel to be used within a `SearchUIContainer`.",
+        "displayName": "SearchUIFilters",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/SearchUIGrid.react.js": {
+        "description": "A component that combines the filters, data header, and data view\nof a `SearchUI` into a common grid layout.\nNote that this must be used within a `SearchUIContainer`.",
+        "displayName": "SearchUIGrid",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": ""
+            },
+            "exportDataButton": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/SearchUISearchBar.react.js": {
+        "description": "Search bar to be used within a `SearchUIContainer`.",
+        "displayName": "SearchUISearchBar",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "placeholder": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "errorMessage": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "allowedInputTypesMap": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": ""
+            },
+            "periodicTableMode": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {"value": "'toggle'", "computed": false},
+                        {"value": "'focus'", "computed": false},
+                        {"value": "'none'", "computed": false}
+                    ]
+                },
+                "required": false,
+                "description": ""
+            },
+            "helpItems": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": ""
+            },
+            "chemicalSystemSelectHelpText": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "elementsSelectHelpText": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-display/SynthesisRecipeCard.react.js": {
+        "description": "Display synthesis recipe data in a standardized card view.",
+        "displayName": "SynthesisRecipeCard",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-data-block)"
+            },
+            "data": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": "Object (i.e. dictionary) of data to be displayed in the block.\nData should be in the format returned for a single result from the synthesis API endpoint."
+            }
+        }
+    },
+    "src/lib/components/data-display/Tooltip.react.js": {
+        "description": "Tooltip component based on react-tooltip (https://github.com/wwayne/react-tooltip).\nTo attach a Tooltip component to a trigger element,\nadd the attributes \"data-tip\" and \"data-for\" to the trigger element.\nThe \"data-for\" attribute's value should be equal to the id of the Tooltip\ncomponent you want to connect it to.",
+        "displayName": "Tooltip",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Use the children prop to set the content of the tooltip.\nThis can be simple text or a component"
+            },
+            "place": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "type": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "effect": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "event": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "eventOff": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "globalEventOff": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "offset": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": ""
+            },
+            "multiline": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "html": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "delayHide": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "delayShow": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "border": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "disable": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "scrollHide": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "clickable": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-entry/DualRangeSlider.react.js": {
+        "description": "Slider input with controls for both the minimum and maximum bounds.",
+        "displayName": "DualRangeSlider",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": ""
+            },
+            "valueMin": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "valueMax": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "domain": {
+                "type": {"name": "arrayOf", "value": {"name": "number"}},
+                "required": false,
+                "description": ""
+            },
+            "isLogScale": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "step": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "ticks": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "inclusiveTickBounds": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "debounce": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-entry/FilterField.react.js": {
+        "description": "Common wrapper for filters/inputs and their labels",
+        "displayName": "FilterField",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": ""
+            },
+            "label": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "tooltip": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "units": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "dois": {
+                "type": {"name": "arrayOf", "value": {"name": "string"}},
+                "required": false,
+                "description": ""
+            },
+            "active": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-entry/GlobalSearchBar.react.js": {
+        "description": "Component for rendering advanced search interfaces for data in an API\nRenders results in a data table alongside a set of filters that map to properties in the data.",
+        "displayName": "GlobalSearchBar",
+        "methods": [],
+        "props": {
+            "redirectRoute": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The route (minus the query params) that submissions should redirect to"
+            },
+            "autocompleteFormulaUrl": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Optional URL endpoint for fetching formula autocompletion results\ne.g. \"https://api.materialsproject.org/materials/formula_autocomplete/\""
+            },
+            "apiKey": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "API key (if needed) that will be used to hit the autocomplete route"
+            },
+            "hidePeriodicTable": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Boolean flag for showing/hiding the periodic table on initial load"
+            },
+            "tooltip": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Optionally add a help icon with a tooltip in the search bar\nThis should be used to provide instructions on how to use the search bar\ne.g.\n 'Type in a comma-separated list of element symbols (e.g. Ga, N),\n a chemical formula (e.g. C3N), or a material id (e.g. mp-10152).\n You can also click elements on the periodic table to add them to your search.'"
+            },
+            "placeholder": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Optionally add a string of text to show up in the top-level search bar"
+            }
+        }
+    },
+    "src/lib/components/data-entry/MaterialsInput.react.js": {
+        "description": "An input field component for searching by mp-id, elements, formula, smiles, or text.\nRenders a text input and a periodic table within a PeriodicContext to support two-way binding between the input and periodic table.\ni.e. when elements are typed into the field, they are selected in the table,\nand when elements are selected in the table, they are appended to the field's input.\n\nDocumentation: https://materialsproject.github.io/mp-react-components/?path=/docs/data-entry-materialsinput--multi-type",
+        "displayName": "MaterialsInput",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "inputClassName": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "value": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "type": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {"value": "'elements'", "computed": false},
+                        {"value": "'chemical_system'", "computed": false},
+                        {"value": "'formula'", "computed": false},
+                        {"value": "'mpid'", "computed": false},
+                        {"value": "'smiles'", "computed": false},
+                        {"value": "'text'", "computed": false},
+                        {"value": "'molecule_formula'", "computed": false}
+                    ]
+                },
+                "required": false,
+                "description": ""
+            },
+            "allowedInputTypes": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": ""
+            },
+            "showTypeDropdown": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "placeholder": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "errorMessage": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "debounce": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "periodicTableMode": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {"value": "'toggle'", "computed": false},
+                        {"value": "'focus'", "computed": false},
+                        {"value": "'none'", "computed": false}
+                    ]
+                },
+                "required": false,
+                "description": ""
+            },
+            "hidePeriodicTable": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "autocompleteFormulaUrl": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "autocompleteApiKey": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "tooltip": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "helpItems": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": ""
+            },
+            "showSubmitButton": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "submitButtonClicks": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "submitButtonText": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "label": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "hideWildcardButton": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "chemicalSystemSelectHelpText": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "elementsSelectHelpText": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "maxElementSelectable": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "loading": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-entry/RangeSlider.react.js": {
+        "description": "Slider input for selecting a single value in a range",
+        "displayName": "RangeSlider",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": ""
+            },
+            "value": {
+                "type": {
+                    "name": "union",
+                    "value": [{"name": "number"}, {"name": "string"}]
+                },
+                "required": false,
+                "description": ""
+            },
+            "domain": {
+                "type": {"name": "arrayOf", "value": {"name": "number"}},
+                "required": false,
+                "description": ""
+            },
+            "isLogScale": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "step": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "ticks": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "inclusiveTickBounds": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "styleInput": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": ""
+            },
+            "styleSlider": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/data-entry/Select.react.js": {
+        "description": "Wrapper component for react-select\nThis can be used as an alternative to dcc.Dropdown\nAutomatically adds the wrapper class \"react-select-container\"\nand the class prefix \"react-select-\" to all the elements created by react-select",
+        "displayName": "Select",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "options": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "List of objects to be used as options in the dropdown\ne.g.\n        [\n          {\n            'label': 'One',\n            'value': 1\n          },\n          {\n            'label': 'Two',\n            'value': 2\n          }\n        ]"
+            },
+            "value": {
+                "type": {"name": "any"},
+                "required": false,
+                "description": "The value of the select dropdown.\nAccepts either the value itself or the an entire object from the options array.\ne.g. 1 or {'label': 'One', 'value': 1}"
+            },
+            "defaultValue": {
+                "type": {"name": "any"},
+                "required": false,
+                "description": "The default value assigned if no selection is made.\n(default: null)"
+            },
+            "isClearable": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Determines if dropdown has an 'x' icon for\nclearing the current value.\n(default: False)"
+            },
+            "isMulti": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true if select should allow multiple\noptions to be selected.\n(default: False)"
+            },
+            "arbitraryProps": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": "Object for placing all other props that\nare supported by react-select but are not\nexplicitly defined here.\nSee https://react-select.com/props\n\nThis is a workaround because Dash components\ncannot accept props that aren't explicitly defined.\ne.g.\n        {\n          'closeMenuOnSelect': False,\n          'escapeClearsValue': True \n        }"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            }
+        }
+    },
+    "src/lib/components/data-entry/Switch.react.js": {
+        "description": "Common wrapper for filters/inputs and their labels",
+        "displayName": "Switch",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": ""
+            },
+            "value": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "hasLabel": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "truthyLabel": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "falsyLabel": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/navigation/Dropdown.react.js": {
+        "description": "Generic dropdown menu that can render arbitrary items for display\nand navigation purposes only (i.e. not for selecting options or performing actions that are not links)",
+        "displayName": "Dropdown",
+        "methods": [],
+        "props": {
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Use the children prop to set the dropdown items.\nThis should usually be a list of <div> components with the class \"dropdown-item\".\nThe content of each item can be anything from simple text to a component."
+            },
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (dropdown)"
+            },
+            "triggerLabel": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Text to display in the button that triggers the dropdown to open"
+            },
+            "triggerClassName": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to apply to button that opens the dropdown menu\n@default 'button'"
+            },
+            "triggerIcon": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) for the icon to display to the left of the trigger label (optional)"
+            },
+            "items": {
+                "type": {"name": "arrayOf", "value": {"name": "string"}},
+                "required": false,
+                "description": "List of strings to display inside the dropdown menu.\nOmit this and use the children prop instead if you want supply components as dropdown items."
+            },
+            "isArrowless": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true to remove the arrow to the right of the trigger label"
+            },
+            "isUp": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true to make the dropdown menu open upwards"
+            },
+            "isRight": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true to align the dropdown menu with the right of the trigger"
+            },
+            "closeOnSelection": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to false to keep the menu open when an item is clicked\n@default true"
+            }
+        }
+    },
+    "src/lib/components/navigation/Link.react.js": {
+        "description": "Custom Link component that can handle both internal and external URLs.\nYou can also use this component if you need to preserve the url query parameters\nwhen following a link.",
+        "displayName": "Link",
+        "methods": [],
+        "props": {
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "The children of this component"
+            },
+            "href": {
+                "type": {"name": "string"},
+                "required": true,
+                "description": "The URL of a linked resource."
+            },
+            "target": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Specifies where to open the link reference."
+            },
+            "refresh": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Controls whether or not the page will refresh when the link is clicked"
+            },
+            "title": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Adds the title attribute to your link, which can contain supplementary\ninformation."
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Often used with CSS to style elements with common properties."
+            },
+            "style": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": "Defines CSS styles which will override styles previously set."
+            },
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
+            },
+            "loading_state": {
+                "type": {
+                    "name": "shape",
+                    "value": {
+                        "is_loading": {
+                            "name": "bool",
+                            "description": "Determines if the component is loading or not",
+                            "required": false
+                        },
+                        "prop_name": {
+                            "name": "string",
+                            "description": "Holds which property is loading",
+                            "required": false
+                        },
+                        "component_name": {
+                            "name": "string",
+                            "description": "Holds the name of the component that is loading",
+                            "required": false
+                        }
+                    }
+                },
+                "required": false,
+                "description": "Object that holds the loading state object coming from dash-renderer"
+            },
+            "preserveQuery": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "If true, the current query parameters will not be removed from the url\nwhen following the link."
+            }
+        }
+    },
+    "src/lib/components/navigation/Navbar.react.js": {
+        "description": "Component for including dropdown menus inside a bulma navbar\nIncludes all of the default bulma classes for a navbar-dropdown",
+        "displayName": "Navbar",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Extra class name applied to top level navbar-item.\nThe \"navbar\" class is added automatically"
+            },
+            "items": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "An array of navbar-items to show on the right side of the navbar.\nAn item can be a link, a menu label, or a divider.\nEach item can support the following properties:\n   className: string;\n   label: string (the text to show in the item);\n   href: string (the href value for link items, ignored if item is menu label);\n   target: string (target value to be added to the link);\n   icon: string (class name(s) for an icon to display in the navbar-item);\n   image: string (src attribute of an image to display in the navbar-item);\n   items: array (items to render underneath this item as a dropdown)\n\n     items of items (i.e. dropdown items) can have all the above properties plus the following:\n\n     isDivider: boolean (sets this item as just a horizontal rule with the \"navbar-divider\" class);\n     isMenuLabel: boolean (sets this item as a label with the \"menu-label\" class);\n     items: NavbarItem[];\n\n   isRight: boolean (applies bulma's \"is-right\" class to the navbar-dropdown\n   isArrowless: boolean (Set to true to hide the default angle down arrow created by bulma);\ne.g.\n        [\n          {\n            label: \"API\",\n            href: \"/api\"\n          },\n          {\n            label: \"Help\",\n            href: \"/help\"\n          },\n          {\n            label: \"Apps\",\n            isRight: true,\n            items: [\n              {\n                label: \"Materials\",\n                href: \"/materials\"\n              },\n              {\n                label: \"Molecules\",\n                href: \"/molecules\"\n              },\n              {\n                isDivider: true\n              },\n              {\n                isMenuLabel: true,\n                label: \"Other\"\n              },\n              {\n                label: \"External Site\",\n                href: \"https://externalsite.com\",\n                target: \"_blank\"\n              }\n            ]\n          }\n        ]"
+            },
+            "brandItem": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": "Single navbar-item to display on the left of the navbar in the \"navbar-brand\" element.\nExpects an object that can support all the same properties of a navbar-item.\ne.g.\n        {\n          label: \"The Materials Project\",\n          href: \"/\",\n          image: \"/images/brand.png\"\n        },"
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/navigation/NavbarDropdown.react.js": {
+        "description": "Component for including dropdown menus inside a bulma navbar\nIncludes all of the default bulma classes for a navbar-dropdown",
+        "displayName": "NavbarDropdown",
+        "methods": [],
+        "props": {
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Use the children prop to set the dropdown trigger content\nThis can be simple text or a component\nThe trigger will automatically be wrapped with the \"navbar-link\" class"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Extra class name applied to top level navbar-item\nThe \"navbar-item\" and \"has-dropdown\" classes are added automatically"
+            },
+            "isArrowless": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true to hide the default angle down arrow created by bulma"
+            },
+            "isRight": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true to apply bulma's \"is-right\" class to the navbar-dropdown\nThis aligns the dropdown menu with the right side of the trigger"
+            },
+            "items": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "An array of navbar-items to show in the dropdown when hovering over the label.\nAn item can be a link, a menu label, or a divider\nEach item can support the following properties:\n-- text: string (the text to show in the item)\n-- href: string (the href value for link items, ignored if item is menu label)\n-- isMenuLabel: boolean (sets this item as a label with the \"menu-label\" class)\n-- isDivider: boolean (sets this item as just a horizontal rule with the \"navbar-divider\" class)\n-- openInNewTab: boolean (will open link in a new tab, only works if href is a full url)\ne.g.\n        [\n          {\n            text: \"Materials\",\n            href: \"/materials\"\n          },\n          {\n            text: \"Molecules\",\n            href: \"/molecules\"\n          },\n          {\n            isDivider: true\n          },\n          {\n            isMenuLabel: true,\n            text: \"Other\"\n          },\n          {\n            text: \"External Site\",\n            href: \"https://externalsite.com\",\n            openInNewTab: true\n          }\n        ]"
+            }
+        }
+    },
+    "src/lib/components/navigation/NotificationDropdown.react.js": {
+        "description": "",
+        "displayName": "NotificationDropdown",
+        "methods": [],
+        "props": {
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "items": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": ""
+            },
+            "isRight": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "isModal": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "isHidden": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "hasUnread": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": ""
+            },
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "link": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/navigation/Scrollspy.react.js": {
+        "description": "Component for building in-page navigation menus with scrollspy functionality",
+        "displayName": "Scrollspy",
+        "methods": [],
+        "props": {
+            "menuGroups": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "An array of MenuGroup items that is used to build the menu and its links.\nEach MenuGroup has an optional label and a required 'items' array of MenuItems.\nEach MenuItem has a label that is rendered in the menu and a targetId that is the id of the element it should link to.\nDo not include '#' in targetId.\nexample:\n      [\n        {label: '...', items: [\n          {label: '...', targetId: '...'}, \n          {label: '...', targetId: '...', items: [\n            {label: '...', targetId: '...'}\n          }]\n        ]}\n      ]"
+            },
+            "activeClassName": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name applied to active links in the menu (default: 'is-active')"
+            },
+            "menuClassName": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name applied to the <aside> that contains the whole menu (default: 'menu')"
+            },
+            "menuGroupLabelClassName": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name applied to all menu group labels (default: 'menu-label')"
+            },
+            "menuItemContainerClassName": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name applied to each <ul> of menu items (default: 'menu-list')"
+            },
+            "menuItemClassName": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name applied to the <li> of each menu item (default: '')"
+            },
+            "offset": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": "An integer to determine the scroll offset from an item that will trigger it active (default: -20)"
+            }
+        }
+    },
+    "src/lib/components/navigation/Tabs.react.js": {
+        "description": "Custom wrapper for the react-tabs component.\nSee https://github.com/reactjs/react-tabs",
+        "displayName": "Tabs",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name applied to top level wrapper for tabs and tab content.\nThe \"mpc-tabs\" class is added automatically"
+            },
+            "children": {
+                "type": {"name": "node"},
+                "required": false,
+                "description": "Use the children prop to set the separate tab contents.\nChildren must be a list of elements that is the same length as the list\nof labels in the labels prop.\nThe element's order in the children array determines which label it\nis associated with."
+            },
+            "labels": {
+                "type": {"name": "arrayOf", "value": {"name": "string"}},
+                "required": false,
+                "description": "List of strings to use as labels for the tabs.\nThe number of labels must equal the number of children (i.e. tab content items)."
+            },
+            "tabIndex": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": "The current or default tabIndex to be active.\nThis value can be watched and changed from outside the component (e.g. via dash callback)."
+            },
+            "arbitraryProps": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": "Object for placing all other props that\nare supported by react-select but are not\nexplicitly defined here.\nSee https://github.com/reactjs/react-tabs\n\nThis is a workaround because Dash components\ncannot accept props that aren't explicitly defined.\ne.g.\n        {\n          'defaultFocus': True,\n          'selectedTabClassName': 'active-tab' \n        }"
+            }
+        }
+    },
+    "src/lib/components/periodic-table/PeriodicContext.react.js": {
+        "description": "",
+        "displayName": "MpPeriodicContext",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "children": {
+                "type": {"name": "any"},
+                "required": false,
+                "description": ""
+            },
+            "disabledElements": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "A list of symbols to grey-out as disabled"
+            },
+            "enabledElements": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "A list of selected symbols"
+            },
+            "hiddenElements": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "A list of hidden symbols"
+            },
+            "forwardOuterChange": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Forward external changes"
+            }
+        }
+    },
+    "src/lib/components/periodic-table/PeriodicContextTable.react.js": {
+        "description": "",
+        "displayName": "MpPeriodicContextTable",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "children": {
+                "type": {"name": "any"},
+                "required": false,
+                "description": ""
+            },
+            "disabledElements": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "A list of symbols to grey-out as disabled"
+            },
+            "enabledElements": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "A list of selected symbols"
+            },
+            "hiddenElements": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "A list of hidden symbols"
+            },
+            "forwardOuterChange": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Forward external changes"
+            },
+            "forceTableLayout": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Force table layout"
+            },
+            "maxElementSelectable": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": "The maximum number of selectable elements"
+            },
+            "state": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": "The state of the table, as exposed in the dash callback"
+            }
+        }
+    },
+    "src/lib/components/periodic-table/PeriodicElement.react.js": {
+        "description": "This component displays a periodic element",
+        "displayName": "MpPeriodicElement",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "size": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": ""
+            },
+            "element": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/periodic-table/PeriodicFilter.react.js": {
+        "description": "This component filter an associated periodic table",
+        "displayName": "MpPeriodicFilter",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": ""
+            }
+        }
+    },
+    "src/lib/components/periodic-table/PeriodicTableInput.react.js": {
+        "description": "MpPeriodicTableInput is a component that allows user to select\nsome components from a periodic table",
+        "displayName": "MpPeriodicTableInput",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks."
+            },
+            "state": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": "This is a read-only prop that dash callback can subscribe to"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+            },
+            "maxElementSelectable": {
+                "type": {"name": "number"},
+                "required": false,
+                "description": "Maximum number of selectable elements",
+                "defaultValue": {"value": "10", "computed": false}
+            },
+            "forceTableLayout": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {"value": "'spaced'", "computed": false},
+                        {"value": "'compact'", "computed": false},
+                        {"value": "'small'", "computed": false},
+                        {"value": "'map'", "computed": false}
+                    ]
+                },
+                "required": false,
+                "description": "Force the table to be in a specific layout"
+            }
+        }
+    },
+    "src/lib/components/publications/BibCard.react.js": {
+        "description": "Render bibliographic information in a formatted card view",
+        "displayName": "BibCard",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-bib-card)"
+            },
+            "title": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Title of the reference\nWill render as a link if doi is supplied"
+            },
+            "author": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Authors of the reference\nThis string will render as is, so any formatting must be done beforehand"
+            },
+            "year": {
+                "type": {
+                    "name": "union",
+                    "value": [{"name": "string"}, {"name": "number"}]
+                },
+                "required": false,
+                "description": "Year of the reference as either a string or number"
+            },
+            "journal": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Name of the journal or publisher of the reference"
+            },
+            "doi": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The DOI (Digital Object Identifier) of the reference\nThis identifier is used to generate links to the reference's\nonline publication, open access PDF, and bibtex"
+            },
+            "shortName": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Shortened title of the article"
+            },
+            "preventOpenAccessFetch": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true to prevent dynamically fetching a link to a free PDF of\neach reference (using the \"doi\" field for individual bib entry).\nNOTE: the open access URL can also be included in a bib entry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched.\n@default false"
+            },
+            "openAccessUrl": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Directly supply the URL to an accessible PDF of the reference\nIf supplied, the component will not try to fetch an open access URL\n@default undefined"
+            }
+        }
+    },
+    "src/lib/components/publications/BibFilter.react.js": {
+        "description": "Component for rendering and filtering a list of citations in bibjson or crossref format\nExpects bibjson in the format output by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)\nExpects crossref in the format returned by the Crossref API",
+        "displayName": "BibFilter",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-bib-filter)"
+            },
+            "format": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {"value": "'bibjson'", "computed": false},
+                        {"value": "'crossref'", "computed": false}
+                    ]
+                },
+                "required": false,
+                "description": "Format of the bibliographoc objects supplied in bibEntries\n@default 'bibjson'"
+            },
+            "bibEntries": {
+                "type": {"name": "array"},
+                "required": false,
+                "description": "List of bib objects in bibjson or crossref format\nOnly the following bib properties are used by this component:\n - title\n - author (as a list or string)\n - year\n - doi\n - journal\nIf any of those properties are missing, that property will be omitted from the bibjson result card.\nAny extra properties are simply ignored."
+            },
+            "sortField": {
+                "type": {
+                    "name": "enum",
+                    "value": [
+                        {"value": "'year'", "computed": false},
+                        {"value": "'author'", "computed": false},
+                        {"value": "'title'", "computed": false}
+                    ]
+                },
+                "required": false,
+                "description": "Name of property to initially sort entries by\n@default 'year'"
+            },
+            "ascending": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true to have the initial sorting direction be ascending\n@default false"
+            },
+            "resultClassName": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to individual result cards' default class (mpc-bib-card)"
+            },
+            "preventOpenAccessFetch": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true to prevent dynamically fetching a link to a free PDF of\neach reference (using the \"doi\" field for individual bib entry).\nNOTE: the open access URL can also be included in a bib entry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched.\n@default false"
+            }
+        }
+    },
+    "src/lib/components/publications/BibjsonCard.react.js": {
+        "description": "Parses a bibjson entry and renders a BibCard\nExpects bibjsonEntry in the format used by the bibtexparser library (https://bibtexparser.readthedocs.io/en/v1.1.0/tutorial.html#)",
+        "displayName": "BibjsonCard",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to the component's default class"
+            },
+            "bibjsonEntry": {
+                "type": {"name": "any"},
+                "required": false,
+                "description": "A single bib object in bibjson format\nOnly the following bib properties are used by this component: title, author (as a list or string), year, doi, journal.\nIf any of those properties are missing, that property will be omitted from the bibjson result card.\nAny extra properties are simply ignored.\ne.g.\n      {\n        \"journal\": \"Physical Review X\",\n        \"year\": \"2015\",\n        \"issn\": \"21603308\",\n        \"isbn\": \"2160-3308\",\n        \"doi\": \"10.1103/PhysRevX.5.011006\",\n        \"author\": [\"Agapito, Luis A.\", \"Curtarolo, Stefano\", \"Nardelli, Marco Buongiorno\"],\n        \"title\": \"Reformulation of DFT + U as a Pseudohybrid Hubbard Density Functional for Accelerated Materials Discovery\",\n        \"ENTRYTYPE\": \"article\",\n        \"ID\": \"agapito2015\"\n      }"
+            },
+            "preventOpenAccessFetch": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true to prevent dynamically fetching a link to a free PDF of\neach reference (using the \"doi\" field for individual bib entry).\nNOTE: the open access URL can also be included in a bib entry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched.\n@default false"
+            }
+        }
+    },
+    "src/lib/components/publications/BibtexButton.react.js": {
+        "description": "Standardized button for linking to BibTeX.\nIf no url prop is supplied, a link will be generated\nusing the doi prop and doi2bib.org.",
+        "displayName": "BibtexButton",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-bibtex-button)\n@default 'button is-small'"
+            },
+            "doi": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The DOI (Digital Object Identifier) of the reference\nto pass to doi2bib.org."
+            },
+            "url": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Directly supply the URL to a reference's bibtex.\nIf supplied, the component will not generate its own link using the doi prop."
+            },
+            "target": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Value to add to the anchor tag's target attribute\n@default '_blank'"
+            }
+        }
+    },
+    "src/lib/components/publications/CrossrefCard.react.js": {
+        "description": "Parses a crossref entry or fetches a reference from the crossref API and renders a BibCard.",
+        "displayName": "CrossrefCard",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "setProps": {
+                "type": {"name": "func"},
+                "required": false,
+                "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to the component's default class"
+            },
+            "crossrefEntry": {
+                "type": {"name": "any"},
+                "required": false,
+                "description": "A single bib object in crossref format.\nIf a crossEntry is supplied, a request will not be made to the crossref API.\nThe following bib values are parsed from a Crossref API response: title, authors, year, doi, journal."
+            },
+            "identifier": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Either a DOI or bibtex string to use to search against the Crossref /works endpoint.\nAn identifier must be supplied if you are not supplying the crossrefEntry directly."
+            },
+            "errorMessage": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Error message to show inside the card if the crossref request fails\n@default 'Could not find reference'"
+            },
+            "preventOpenAccessFetch": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Set to true to prevent dynamically fetching a link to a free PDF of\neach reference (using the \"doi\" field for individual bib entry).\nNOTE: the open access URL can also be included in a bib entry\nin the \"openAccessUrl\" property. If set, the URL will not be fetched.\n@default false"
+            }
+        }
+    },
+    "src/lib/components/publications/OpenAccessButton.react.js": {
+        "description": "Standardized button for linking to a publication.\n\nThis component can be used in four ways:\n1. Supply just a `doi` and let the component build the url and fetch the journal name and year from crossref.\n2. Supply just a `url` to doi.org and fetch the journal name and year from crossref.\n3. Supply a `doi` and a link label in the component's `children`. In this case, there will be no fetch to crossref.\n4. Supply a `url` to any location and a link label in the component's `children`. In this case, there will be no fetch to crossref.",
+        "displayName": "PublicationButton",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "doi": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The DOI (Digital Object Identifier) of the publication\nWill be used to generate a doi.org link and to fetch an open access PDF link."
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-open-access-button).\nNote: the \"tag\" class is the default value for className.\nIf you don't want the top-level element to have the \"tag\" class, add className=\"\" or any other value.\nIf you want to use a bulma tag modifier, use the tagClassName prop instead.\n@default 'tag'"
+            },
+            "url": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Directly supply the URL to the publication.\nIf a doi.org url is supplied, this component will automatically\nparse the url for the doi and use that to fetch an open access link."
+            },
+            "target": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Value to add to the anchor tag's target attribute\n@default '_blank'"
+            },
+            "compact": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Only display the publication icon and hide the link label and OAB.\nAuthor names will display in a tooltip on hover."
+            },
+            "showTooltip": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Show a tooltip on hover with the bibliographic citation for the publication."
+            }
+        }
+    },
+    "src/lib/components/publications/PublicationButton.react.js": {
+        "description": "Standardized button for linking to a publication.\n\nThis component can be used in four ways:\n1. Supply just a `doi` and let the component build the url and fetch the journal name and year from crossref.\n2. Supply just a `url` to doi.org and fetch the journal name and year from crossref.\n3. Supply a `doi` and a link label in the component's `children`. In this case, there will be no fetch to crossref.\n4. Supply a `url` to any location and a link label in the component's `children`. In this case, there will be no fetch to crossref.",
+        "displayName": "PublicationButton",
+        "methods": [],
+        "props": {
+            "id": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The ID used to identify this component in Dash callbacks"
+            },
+            "doi": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "The DOI (Digital Object Identifier) of the publication\nWill be used to generate a doi.org link and to fetch an open access PDF link."
+            },
+            "className": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Class name(s) to append to the component's default class (mpc-open-access-button).\nNote: the \"tag\" class is the default value for className.\nIf you don't want the top-level element to have the \"tag\" class, add className=\"\" or any other value.\nIf you want to use a bulma tag modifier, use the tagClassName prop instead.\n@default 'tag'"
+            },
+            "url": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Directly supply the URL to the publication.\nIf a doi.org url is supplied, this component will automatically\nparse the url for the doi and use that to fetch an open access link."
+            },
+            "target": {
+                "type": {"name": "string"},
+                "required": false,
+                "description": "Value to add to the anchor tag's target attribute\n@default '_blank'"
+            },
+            "compact": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Only display the publication icon and hide the link label and OAB.\nAuthor names will display in a tooltip on hover."
+            },
+            "showTooltip": {
+                "type": {"name": "bool"},
+                "required": false,
+                "description": "Show a tooltip on hover with the bibliographic citation for the publication."
+            }
+        }
+    }
+}
