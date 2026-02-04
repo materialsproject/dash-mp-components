@@ -7,6 +7,7 @@ import PeriodicContextTable from './components/periodic-table/PeriodicContextTab
 // three components
 import CrystalToolkitScene from './components/crystal-toolkit/CrystalToolkitScene.react';
 import CrystalToolkitAnimationScene from './components/crystal-toolkit/CrystalToolkitAnimationScene.react';
+import PhononAnimationScene from './components/crystal-toolkit/PhononAnimationScene.react';
 import CameraContextProvider from './components/crystal-toolkit/CameraContextProvider.react';
 import Download from './components/crystal-toolkit/Download.react';
 // other ct components
@@ -68,6 +69,7 @@ export {
     PeriodicContextTable,
     CrystalToolkitScene,
     CrystalToolkitAnimationScene,
+    PhononAnimationScene,
     GraphComponent,
     JsonView,
     CameraContextProvider,

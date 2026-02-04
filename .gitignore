@@ -283,7 +283,11 @@ GitHub.sublime-settings
 R/
 inst/
 /.build_cache/
-
+dash_mp_components/
+!dash_mp_components/__init__.py
+!dash_mp_components/_imports_.py
+!dash_mp_components/package-info.json
+!dash_mp_components/metadata.json
 
 # 
 .DS_Store
