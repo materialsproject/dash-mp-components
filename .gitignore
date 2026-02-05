@@ -288,6 +288,7 @@ dash_mp_components/
 !dash_mp_components/_imports_.py
 !dash_mp_components/package-info.json
 !dash_mp_components/metadata.json
+!dash_mp_components/test_api/*
 
 # 
 .DS_Store
