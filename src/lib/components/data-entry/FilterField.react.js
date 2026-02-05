@@ -22,4 +22,5 @@ FilterField.propTypes = {
     units: PropTypes.string,
     dois: PropTypes.arrayOf(PropTypes.string),
     active: PropTypes.bool,
+    styleLabel: PropTypes.object,
 };

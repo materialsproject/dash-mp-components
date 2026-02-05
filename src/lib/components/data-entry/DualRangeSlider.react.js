@@ -25,4 +25,6 @@ DualRangeSlider.propTypes = {
     ticks: PropTypes.number,
     inclusiveTickBounds: PropTypes.bool,
     debounce: PropTypes.number,
+    styleInput: PropTypes.object,
+    styleSlider: PropTypes.object,
 };
