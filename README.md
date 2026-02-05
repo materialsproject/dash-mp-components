@@ -121,6 +121,26 @@ git commit -am "Update mp-react-components"
 npm version patch
 ```
 
+## Release procedures
+
+Dependency Configuration: Update the `@materialsproject/mp-react-components` dependency in `package.json`. Ensure you specify whether the release should track the `rc` or `next` distribution tag.
+
+The project uses Git tags to manage versioning. To trigger a new release, follow these steps:
+
+1. Tag the commit locally:
+
+```
+git tag -a <UPDATED_VERSION> -m "<DESCRIPTION OF CHANGES>"
+```
+
+2. Push the tag to GitHub:
+
+```
+git push origin <UPDATED_VERSION>
+```
+
+3. Finalize the Release: Navigate to the "Releases" tab on GitHub and publish the release based on the new tag. This triggers the CI/CD pipeline to stamp the version into package.json and publish to NPM/PyPI.
+
 ## Manually Create a production build and publish:
 
 1. Build your code:

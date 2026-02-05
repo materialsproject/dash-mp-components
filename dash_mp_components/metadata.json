@@ -1695,6 +1695,16 @@
                 "type": {"name": "number"},
                 "required": false,
                 "description": ""
+            },
+            "styleInput": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": ""
+            },
+            "styleSlider": {
+                "type": {"name": "object"},
+                "required": false,
+                "description": ""
             }
         }
     },
@@ -1740,6 +1750,11 @@
             },
             "active": {
                 "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "styleLabel": {
+                "type": {"name": "object"},
                 "required": false,
                 "description": ""
             }
@@ -1987,6 +2002,11 @@
             },
             "inclusiveTickBounds": {
                 "type": {"name": "bool"},
+                "required": false,
+                "description": ""
+            },
+            "debounce": {
+                "type": {"name": "number"},
                 "required": false,
                 "description": ""
             },
