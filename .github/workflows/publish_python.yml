@@ -28,7 +28,7 @@ jobs:
                   python -m pip install --upgrade pip
                   pip install -r requirements.txt
                   pip install twine
-                  npm i
+                  npm install --legacy-peer-deps
             - name: Sync version from Git Tag
               run: |
                   npm version ${{ github.ref_name }} --no-git-tag-version
