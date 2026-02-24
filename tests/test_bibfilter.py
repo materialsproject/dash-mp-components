@@ -51,5 +51,12 @@ def test_bibfilter(dash_duo):
     dash_duo.find_element('.mpc-bib-filter-input').clear()
     assert len(dash_duo.find_elements('.mpc-bib-card')) == 2
     dash_duo.find_element('.mpc-sort-button').click()
-    first_result = dash_duo.find_elements('.mpc-bib-card')[0]
-    assert first_result.find_element_by_css_selector('.mpc-publication-button').text == 'Physical Review X, 2015'
+
+    # leave the old testing code here:
+    # problem: the test become flacky when there is race condition between Python script and DOM
+    # first_result = dash_duo.find_elements('.mpc-bib-card')[0]
+    # first_result = dash_duo.find_element('.mpc-bib-card .mpc-publication-button').text
+    # assert first_result == 'Physical Review X, 2015'
+
+    selector = ".mpc-bib-card:nth-of-type(1) .mpc-publication-button"
+    dash_duo.wait_for_text_to_equal(selector, 'Physical Review X, 2015', timeout=10)
