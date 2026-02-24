@@ -213,26 +213,31 @@ class SVG3DScene(unittest.TestCase):
 
     def test_scene_switcher(self):
         # check if adding a new scene clean the old one
-        dropdown = self.dash_duo.find_element('#demo-dropdown input', timeout=10)
-        dropdown.send_keys('Scene2')
-        dropdown.send_keys(Keys.ENTER)
-        time.sleep(1)
+        # dropdown = self.dash_duo.find_element('#demo-dropdown input')
+        # dropdown = self.dash_duo.wait_for_element('#demo-dropdown', timeout=10)
+        # dropdown.send_keys('Scene2')
+        # dropdown.send_keys(Keys.ENTER)
+        # time.sleep(1)
+        self.dash_duo.select_dcc_dropdown('#demo-dropdown', value='Scene2')
         # but there are 2 visible spheres, try to understand the path :/
         self.scene.check_path(1)
-        dropdown.send_keys('Scene1')
-        dropdown.send_keys(Keys.ENTER)
-        time.sleep(1)
+        # dropdown.send_keys('Scene1')
+        # dropdown.send_keys(Keys.ENTER)
+        # time.sleep(1)
+        self.dash_duo.select_dcc_dropdown('#demo-dropdown', value='Scene1')
         self.scene.check_path(7)
         # this will add new elements, as the name of the scene is different
-        dropdown.send_keys('Scene3')
-        dropdown.send_keys(Keys.ENTER)
-        time.sleep(1)
+        # dropdown.send_keys('Scene3')
+        # dropdown.send_keys(Keys.ENTER)
+        # time.sleep(1)
+        self.dash_duo.select_dcc_dropdown('#demo-dropdown', value='Scene3')
         # investigate... this seems fine with webgl and
         self.scene.check_path(343)
         # test incorrect scene
-        dropdown.send_keys('Scene4')
-        dropdown.send_keys(Keys.ENTER)
-        time.sleep(1)
+        # dropdown.send_keys('Scene4')
+        # dropdown.send_keys(Keys.ENTER)
+        # time.sleep(1)
+        self.dash_duo.select_dcc_dropdown('#demo-dropdown', value='Sceneˋ')
         self.scene.check_path(343)
 
     # def test_camera_state(self):
