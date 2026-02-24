@@ -213,7 +213,8 @@ class SVG3DScene(unittest.TestCase):
 
     def test_scene_switcher(self):
         # check if adding a new scene clean the old one
-        dropdown = self.dash_duo.find_element('#demo-dropdown input', timeout=10)
+        # dropdown = self.dash_duo.find_element('#demo-dropdown input')
+        dropdown = self.dash_duo.wait_for_element('#demo-dropdown input', timeout=10)
         dropdown.send_keys('Scene2')
         dropdown.send_keys(Keys.ENTER)
         time.sleep(1)
