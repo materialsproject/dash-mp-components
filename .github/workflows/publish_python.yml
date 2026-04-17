@@ -1,4 +1,5 @@
 name: publish_python_package
+
 on:
     release:
         types: [published]
@@ -8,13 +9,16 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v5
               with:
                   ref: main
+                  token: ${{ secrets.GH_TOKEN }}
+
             - name: Set up Python 3.11
               uses: actions/setup-python@v1
               with:
                   python-version: 3.11
+
             - uses: actions/setup-node@v1
               with:
                   node-version: 18.x
@@ -22,6 +26,7 @@ jobs:
                   scope: '@codytodonnell'
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
             - name: Install dependencies
               run: |
                   sudo apt-get update
@@ -29,23 +34,27 @@ jobs:
                   pip install -r requirements.txt
                   pip install twine
                   npm install --legacy-peer-deps
+
             - name: Sync version from Git Tag
               run: |
                   npm version ${{ github.ref_name }} --no-git-tag-version
+
             - name: Build tarball
               run: |
                   npm run build
                   python setup.py sdist
+
             - name: Publish package to NPM
               run: |
                   VERSION=$(node -p "require('./package.json').version")
                   if [[ "$VERSION" == *"-rc"* ]]; then
-                      npm publish --tag rc
+                    npm publish --tag rc
                   else
-                      npm publish
+                    npm publish
                   fi
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
             - name: Publish a Python distribution to test PyPI
               env:
                   PI_PY_SECRET: ${{ secrets.PYPI_TOKEN }}
@@ -53,3 +62,54 @@ jobs:
               run: |
                   echo Publishing to test repo $PI_PY_USERTOKEN
                   twine upload dist/* -u $PI_PY_USERTOKEN -p $PI_PY_SECRET
+
+            - name: make new branch
+              run: |
+                  git config --global user.name github-actions
+                  git config --global user.email github-actions@github.com
+                  git checkout -B auto-build-and-sync-styles
+
+            - name: detect auto-build-and-sync-styles branches
+              id: upgrade_changes
+              run: echo "count=$(git branch -r | grep auto-build-and-sync-styles- | wc -l | xargs)" >> $GITHUB_OUTPUT
+
+            - name: merge all auto-build-and-sync-styles branches
+              if: ${{ fromJSON(steps.upgrade_changes.outputs.count) > 0 }}
+              run: |
+                  git branch -r | grep auto-build-and-sync-styles- | xargs -I {} git merge {}
+                  git rebase ${GITHUB_REF##*/}
+                  git reset $(git merge-base ${GITHUB_REF##*/} HEAD)
+                  git commit -a -m "auto build and sync styles "
+                  git push -f origin auto-build-and-sync-styles
+                  git branch -r | grep auto-build-and-sync-styles- | cut -d/ -f2 | xargs -I {} git push origin :{}
+
+            - name: Detect changes
+              id: changes
+              shell: bash
+              run: |
+                  echo "count=`git diff --quiet --ignore-submodules -- . ':!docker/python'; echo $?`" >> $GITHUB_OUTPUT
+                  echo "files=$(git ls-files --exclude-standard --others | wc -l | xargs)" >> $GITHUB_OUTPUT
+
+            - name: commit & push changes
+              if: ${{ fromJSON(steps.changes.outputs.count) > 0 || fromJSON(steps.changes.outputs.files) > 0 }}
+              shell: bash
+              run: |
+                  git add .
+                  git commit --allow-empty -m "auto build and sync styles "
+                  git push origin auto-build-and-sync-styles
+
+            - name: Open pull request if needed
+              if: ${{ fromJSON(steps.changes.outputs.count) > 0 || fromJSON(steps.changes.outputs.files) > 0 }}
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+              # Only open a PR if the branch is not attached to an existing one
+              run: |
+                  PR=$(gh pr list --head auto-build-and-sync-styles --json number -q '.[0].number')
+                  if [ -z $PR ]; then
+                    gh pr create \
+                    --head auto-build-and-sync-styles \
+                    --title "Automated build and sync styles" \
+                    --body "Full log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                  else
+                    echo "Pull request already exists, won't create a new one."
+                  fi
