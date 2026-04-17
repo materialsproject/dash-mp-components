@@ -25,7 +25,6 @@
         "clean:dash": "rm -rf R && rm -rf man && rm -rf inst",
         "publish:test": "twine upload --repository-url https://test.pypi.org/legacy/ dist/*",
         "publish:prod": "echo NOT READY",
-        "postversion": "git push && git push --tags",
         "test:e2e": "pytest tests",
         "format": "prettier --write \"src/**/*.{js,css}\"\n",
         "lint:yaml": "yamllint ./.github/workflows/*.yml"
