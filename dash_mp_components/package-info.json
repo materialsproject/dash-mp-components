@@ -1,6 +1,6 @@
 {
     "name": "@materialsproject/dash-mp-components",
-    "version": "0.0.0-dev0",
+    "version": "0.5.1-rc.8",
     "description": "Dash components for the Materials Project. Version is managed by Git tags in CI/CD",
     "repository": {
         "type": "git",
@@ -25,7 +25,6 @@
         "clean:dash": "rm -rf R && rm -rf man && rm -rf inst",
         "publish:test": "twine upload --repository-url https://test.pypi.org/legacy/ dist/*",
         "publish:prod": "echo NOT READY",
-        "postversion": "git push && git push --tags",
         "test:e2e": "pytest tests",
         "format": "prettier --write \"src/**/*.{js,css}\"\n",
         "lint:yaml": "yamllint ./.github/workflows/*.yml"
@@ -33,7 +32,7 @@
     "author": "Materials Project Team <feedback@materialsproject.org>",
     "license": "BSD",
     "dependencies": {
-        "@materialsproject/mp-react-components": "rc",
+        "@materialsproject/mp-react-components": "0.5.1-rc6",
         "file-loader": "^5.1.0",
         "prettier": "^1.19.1",
         "process": "^0.11.10",
