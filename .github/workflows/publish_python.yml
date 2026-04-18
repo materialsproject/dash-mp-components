@@ -92,11 +92,11 @@ jobs:
 
             - name: commit & push changes
               if: ${{ fromJSON(steps.changes.outputs.count) > 0 || fromJSON(steps.changes.outputs.files) > 0 }}
-              shell: bash
+              shell: bashok,
               run: |
                   git add -A
                   git commit --allow-empty -m "auto build and sync styles "
-                  git push origin auto-build-and-sync-styles
+                  git push -f origin auto-build-and-sync-styles
 
             - name: Open pull request if needed
               if: ${{ fromJSON(steps.changes.outputs.count) > 0 || fromJSON(steps.changes.outputs.files) > 0 }}
