@@ -86,14 +86,15 @@ jobs:
               id: changes
               shell: bash
               run: |
-                  echo "count=`git diff --quiet --ignore-submodules -- . ':!docker/python'; echo $?`" >> $GITHUB_OUTPUT
+                  git add -f dash_mp_components/
+                  echo "count=`git diff --cached --quiet --ignore-submodules -- . ':!docker/python'; echo $?`" >> $GITHUB_OUTPUT
                   echo "files=$(git ls-files --exclude-standard --others | wc -l | xargs)" >> $GITHUB_OUTPUT
 
             - name: commit & push changes
               if: ${{ fromJSON(steps.changes.outputs.count) > 0 || fromJSON(steps.changes.outputs.files) > 0 }}
               shell: bash
               run: |
-                  git add .
+                  git add -A
                   git commit --allow-empty -m "auto build and sync styles "
                   git push origin auto-build-and-sync-styles
 
