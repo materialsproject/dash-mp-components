@@ -86,7 +86,7 @@ jobs:
               id: changes
               shell: bash
               run: |
-                  git add -f dash_mp_components/
+                  git add -f dash_mp_components/ ':!dash_mp_components/__pycache__/**'
                   echo "count=`git diff --cached --quiet --ignore-submodules -- . ':!docker/python'; echo $?`" >> $GITHUB_OUTPUT
                   echo "files=$(git ls-files --exclude-standard --others | wc -l | xargs)" >> $GITHUB_OUTPUT
 
