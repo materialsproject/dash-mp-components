@@ -31,17 +31,17 @@ jobs:
                   sudo apt-get update
                   python -m pip install --upgrade pip
                   pip install -r requirements.txt
-                  pip install twine
+                  pip install twine build
                   npm install --legacy-peer-deps
 
             - name: Sync version from Git Tag
               run: |
                   npm version ${{ github.ref_name }} --no-git-tag-version
 
-            - name: Build tarball
+            - name: Build distributions
               run: |
                   npm run build
-                  python setup.py sdist
+                  python -m build
 
             - name: Publish package to NPM
               run: |
