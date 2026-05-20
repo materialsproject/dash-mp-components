@@ -1,6 +1,6 @@
 Package: dashMpComponents
 Title: Dash components for the Materials Project. Version is managed by Git tags in CI/CD
-Version: 0.5.2-rc2
+Version: 0.5.2-rc3
 Description: Dash components for the Materials Project. Version is managed by Git tags in CI/CD
 Depends: R (>= 3.0.2)
 Imports: 
