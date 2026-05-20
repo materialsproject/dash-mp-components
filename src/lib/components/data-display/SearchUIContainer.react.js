@@ -41,4 +41,16 @@ SearchUIContainer.propTypes = {
     view: PropTypes.oneOf(['table', 'synthesis']),
     disableRichColumnHeaders: PropTypes.bool,
     results: PropTypes.array,
+    /**
+     * Set automatically by the SearchUI when a `LINK_POPOVER` cell is clicked.
+     * Shape: `{selector, value, row, ts}`. Used as a Dash callback `Input` to
+     * trigger server-side resolution that populates `popoverContent`.
+     */
+    lastClickedCell: PropTypes.object,
+    /**
+     * Renderable content (Dash component tree) shown inside the popover for
+     * the most recently clicked `LINK_POPOVER` cell. Typically set by a Dash
+     * callback responding to `lastClickedCell`.
+     */
+    popoverContent: PropTypes.node,
 };
