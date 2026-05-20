@@ -50,7 +50,18 @@ Keyword arguments:
 
 - hasSortMenu (boolean; optional)
 
+- lastClickedCell (dict; optional):
+    Set automatically by the SearchUI when a `LINK_POPOVER` cell is
+    clicked. Shape: `{selector, value, row, ts}`. Used as a Dash
+    callback `Input` to trigger server-side resolution that populates
+    `popoverContent`.
+
 - limitKey (string; optional)
+
+- popoverContent (a list of or a singular dash component, string or number; optional):
+    Renderable content (Dash component tree) shown inside the popover
+    for the most recently clicked `LINK_POPOVER` cell. Typically set
+    by a Dash callback responding to `lastClickedCell`.
 
 - resultLabel (string; optional)
 
@@ -69,8 +80,8 @@ Keyword arguments:
 - totalKey (string; optional)
 
 - view (a value equal to: 'table', 'synthesis'; optional)"""
-    _children_props: typing.List[str] = []
-    _base_nodes = ['children']
+    _children_props: typing.List[str] = ['popoverContent']
+    _base_nodes = ['popoverContent', 'children']
     _namespace = 'dash_mp_components'
     _type = 'SearchUIContainer'
 
@@ -100,11 +111,13 @@ Keyword arguments:
         view: typing.Optional[Literal["table", "synthesis"]] = None,
         disableRichColumnHeaders: typing.Optional[bool] = None,
         results: typing.Optional[typing.Sequence] = None,
+        lastClickedCell: typing.Optional[dict] = None,
+        popoverContent: typing.Optional[ComponentType] = None,
         **kwargs
     ):
-        self._prop_names = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'fieldsKey', 'filterGroups', 'hasSortMenu', 'limitKey', 'resultLabel', 'results', 'selectableRows', 'selectedRows', 'skipKey', 'sortFields', 'sortKey', 'totalKey', 'view']
+        self._prop_names = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'fieldsKey', 'filterGroups', 'hasSortMenu', 'lastClickedCell', 'limitKey', 'popoverContent', 'resultLabel', 'results', 'selectableRows', 'selectedRows', 'skipKey', 'sortFields', 'sortKey', 'totalKey', 'view']
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'fieldsKey', 'filterGroups', 'hasSortMenu', 'limitKey', 'resultLabel', 'results', 'selectableRows', 'selectedRows', 'skipKey', 'sortFields', 'sortKey', 'totalKey', 'view']
+        self.available_properties = ['children', 'id', 'apiEndpoint', 'apiEndpointParams', 'apiKey', 'autocompleteFormulaUrl', 'className', 'columns', 'conditionalRowStyles', 'disableRichColumnHeaders', 'fieldsKey', 'filterGroups', 'hasSortMenu', 'lastClickedCell', 'limitKey', 'popoverContent', 'resultLabel', 'results', 'selectableRows', 'selectedRows', 'skipKey', 'sortFields', 'sortKey', 'totalKey', 'view']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
