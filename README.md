@@ -147,13 +147,13 @@ git push origin <UPDATED_VERSION>
     ```
     $ npm run build
     ```
-2. Create a Python tarball
+2. Create a Python tarball and wheel
 
     ```
-    $ python setup.py sdist
+    $ python -m build
     ```
 
-    This distribution tarball will get generated in the `dist/` folder
+    These distribution files will get generated in the `dist/` folder
 
 3. Test your tarball by copying it into a new environment and installing it locally:
 
