@@ -1,0 +1,32 @@
+name: build_and_deploy_docs
+
+on:
+    workflow_dispatch:
+
+jobs:
+    docs:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  ref: main
+
+            - name: Set up Python 3.11
+              uses: actions/setup-python@v5
+              with:
+                  python-version: '3.11'
+
+            - name: Install package and docs deps
+              run: |
+                  pip install -e .
+                  pip install sphinx sphinx-rtd-theme setuptools_scm
+
+            - name: Build docs
+              run: sphinx-build ./docs/source ./docs/build/html
+
+            - name: Deploy docs
+              uses: peaceiris/actions-gh-pages@v4
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./docs/build/html
