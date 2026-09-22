@@ -1,0 +1,31 @@
+dash\_mp\_components.BibFilter
+==============================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: BibFilter
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BibFilter.__init__
+      ~BibFilter.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BibFilter.REQUIRED
+      ~BibFilter.UNDEFINED
+      ~BibFilter.available_wildcard_properties
+   
+   

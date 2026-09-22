@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dash_mp_components.PhononAnimationScene &#8212; dash-mp-components 0.1.dev1+g1895434cd documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=ca115f28"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dash_mp_components.PublicationButton" href="dash_mp_components.PublicationButton.html" />
+    <link rel="prev" title="dash_mp_components.PeriodicTableInput" href="dash_mp_components.PeriodicTableInput.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="dash-mp-components-phononanimationscene">
+<h1>dash_mp_components.PhononAnimationScene<a class="headerlink" href="#dash-mp-components-phononanimationscene" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="dash_mp_components.PhononAnimationScene">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dash_mp_components.</span></span><span class="sig-name descname"><span class="pre">PhononAnimationScene</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">children</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Component</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Component</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">className</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toggleVisibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imageRequest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imageType</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imageData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imageDataTimestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fileOptions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fileType</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fileTimestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selectedObject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sceneSize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axisView</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inletSize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inletPadding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currentCameraState</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customCameraState</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showControls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showExpandButton</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showImageButton</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showExportButton</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showPositionButton</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dash_mp_components/PhononAnimationScene.html#PhononAnimationScene"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dash_mp_components.PhononAnimationScene" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Component</span></code></p>
+<p>A PhononAnimationScene component.</p>
+<p>Keyword arguments:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>children (optional):</dt><dd><p>First child will be rendered as the settings panel. Second child
+will be rendered as the bottom panel (legend).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>id (optional):</dt><dd><p>The ID used to identify this component in Dash callbacks.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>animation (optional):</dt><dd><p>Animation type.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>axisView (optional):</dt><dd><p>Where is the axis displayed ( ‘NW’ / ‘NE’ / ‘SE’ / ‘SW’ / ‘HIDDEN’
+).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>className (optional):</dt><dd><p>Class name that will wrap around the whole scene component. When
+enlarged, this class name is applied to the modal-content element.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>currentCameraState (optional):</dt><dd><p>THIS PROP IS SET AUTOMATICALLY Object that maintains the current
+state of the camera. e.g. {   position: {x: 0, y: 0, z: 0},
+quarternion: {x: 0, y: 0, z: 0, w: 0},   zoom: 1,
+setByComponentId: “1”,   following: True }.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>customCameraState (optional):</dt><dd><p>Object for setting the scene to a custom camera state. When
+modified, the camera will update to new custom state. e.g. {
+position: {x: 0, y: 0, z: 0},   quarternion: {x: 0, y: 0, z: 0, w:
+0}, (optional)   zoom: 1 (optional) }.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>data (optional):</dt><dd><p>Simple3DScene JSON, the easiest way to generate this is to use the
+Scene class in crystal_toolkit.core.scene and its to_json method.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>debug (optional):</dt><dd><p>Display a debug view.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>fileOptions (optional):</dt><dd><p>List of options to show in file download dropdown.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>fileTimestamp (optional):</dt><dd><p>THIS PROP IS SET AUTOMATICALLY Date string that represents the
+time fileType was set. Use this prop in dash callbacks to trigger
+file downloads.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>fileType (optional):</dt><dd><p>THIS PROP IS SET AUTOMATICALLY The last file type clicked in the
+file download menu.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>imageData (optional):</dt><dd><p>THIS PROP IS SET AUTOMATICALLY Data string for the image generated
+on image button click.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>imageDataTimestamp (optional):</dt><dd><p>THIS PROP IS SET AUTOMATICALLY Date string that represents the
+time imageData was set. Use this prop in dash callbacks to trigger
+downloads of imageData.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>imageRequest (optional):</dt><dd><p>Set to trigger a screenshot or scene download. Must be an object
+with the following structure: {    “filetype”: “png” // the
+image format (“png”, “dae”) } Passing this prop as an object
+ensures that new requests are triggered any time the prop is set.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>imageType (optional):</dt><dd><p>File type to be downloaded as an image. Either png or dae.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>inletPadding (optional):</dt><dd><p>Padding of the axis view.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>inletSize (optional):</dt><dd><p>Size of the axis view.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>sceneSize (optional):</dt><dd><p>Width / Height of the displayed component.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>selectedObject (optional):</dt><dd><p>This points to the last clicked objects. Use it in your dash
+callback to know which objects are currently selected in the
+scene.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>setProps (optional):</dt><dd><p>Dash-assigned callback that should be called whenever any of the
+properties change.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>settings (optional):</dt><dd><p>Options used for generating scene. Supported options and their
+defaults are given as follows: {    antialias: True, // set to
+False to improve performance    renderer: ‘webgl’, // ‘svg’ also
+an option, used for unit testing    transparentBackground: False,
+// transparent background    background: ‘#ffffff’, // background
+color if not transparent,    sphereSegments: 32, // decrease to
+improve performance    cylinderSegments: 16, // decrease to
+improve performance    staticScene: True, // disable if animation
+required    defaultZoom: 1, // 1 will zoom to fit object exactly,
+&lt;1 will add padding between object and box bounds    zoomToFit2D:
+False // if True, will zoom to fit object only along the X and Y
+axes (not Z)    extractAxis: False // will remove the axis from
+the main scene    isMultiSelectionEnabled: False // allow to use
+shift to select,    secondaryObjectView: True // show the selected
+object in a detail view    animation: ‘play’ | ‘slider’ | ‘none’
+// choose which style of animation is use } There are several
+additional options used for debugging and testing, please consult
+the source code directly for these.</p>
+</dd>
+</dl>
+</li>
+<li><p>showControls (optional)</p></li>
+<li><p>showExpandButton (optional)</p></li>
+<li><p>showExportButton (optional)</p></li>
+<li><p>showImageButton (optional)</p></li>
+<li><p>showPositionButton (optional)</p></li>
+<li><dl class="simple">
+<dt>toggleVisibility (optional):</dt><dd><p>Hide/show nodes in scene by its name (key), value is 1 to show the
+node and 0 to hide it.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="dash_mp_components.PhononAnimationScene.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">children</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Component</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Component</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">className</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toggleVisibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imageRequest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imageType</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imageData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imageDataTimestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fileOptions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fileType</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fileTimestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selectedObject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sceneSize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axisView</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inletSize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inletPadding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currentCameraState</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customCameraState</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showControls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showExpandButton</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showImageButton</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showExportButton</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showPositionButton</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dash_mp_components.PhononAnimationScene.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code>([children, id, className, data, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_plotly_json</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">REQUIRED</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">UNDEFINED</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">available_wildcard_properties</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">dash-mp-components</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="dash_mp_components.html">dash_mp_components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.JsonView"><code class="docutils literal notranslate"><span class="pre">JsonView</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.MatSidebar"><code class="docutils literal notranslate"><span class="pre">MatSidebar</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.CameraContextProvider"><code class="docutils literal notranslate"><span class="pre">CameraContextProvider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.CrystalToolkitAnimationScene"><code class="docutils literal notranslate"><span class="pre">CrystalToolkitAnimationScene</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.CrystalToolkitScene"><code class="docutils literal notranslate"><span class="pre">CrystalToolkitScene</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Download"><code class="docutils literal notranslate"><span class="pre">Download</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.GraphComponent"><code class="docutils literal notranslate"><span class="pre">GraphComponent</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PhononAnimationScene"><code class="docutils literal notranslate"><span class="pre">PhononAnimationScene</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DataBlock"><code class="docutils literal notranslate"><span class="pre">DataBlock</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DataTable"><code class="docutils literal notranslate"><span class="pre">DataTable</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DownloadButton"><code class="docutils literal notranslate"><span class="pre">DownloadButton</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DownloadDropdown"><code class="docutils literal notranslate"><span class="pre">DownloadDropdown</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Drawer"><code class="docutils literal notranslate"><span class="pre">Drawer</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DrawerContextProvider"><code class="docutils literal notranslate"><span class="pre">DrawerContextProvider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DrawerTrigger"><code class="docutils literal notranslate"><span class="pre">DrawerTrigger</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Enlargeable"><code class="docutils literal notranslate"><span class="pre">Enlargeable</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Formula"><code class="docutils literal notranslate"><span class="pre">Formula</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Markdown"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Modal"><code class="docutils literal notranslate"><span class="pre">Modal</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.ModalContextProvider"><code class="docutils literal notranslate"><span class="pre">ModalContextProvider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.ModalTrigger"><code class="docutils literal notranslate"><span class="pre">ModalTrigger</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SearchUIContainer"><code class="docutils literal notranslate"><span class="pre">SearchUIContainer</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SearchUIDataHeader"><code class="docutils literal notranslate"><span class="pre">SearchUIDataHeader</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SearchUIDataView"><code class="docutils literal notranslate"><span class="pre">SearchUIDataView</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SearchUIFilters"><code class="docutils literal notranslate"><span class="pre">SearchUIFilters</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SearchUIGrid"><code class="docutils literal notranslate"><span class="pre">SearchUIGrid</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SearchUISearchBar"><code class="docutils literal notranslate"><span class="pre">SearchUISearchBar</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SynthesisRecipeCard"><code class="docutils literal notranslate"><span class="pre">SynthesisRecipeCard</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Tooltip"><code class="docutils literal notranslate"><span class="pre">Tooltip</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DualRangeSlider"><code class="docutils literal notranslate"><span class="pre">DualRangeSlider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.FilterField"><code class="docutils literal notranslate"><span class="pre">FilterField</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.GlobalSearchBar"><code class="docutils literal notranslate"><span class="pre">GlobalSearchBar</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.MaterialsInput"><code class="docutils literal notranslate"><span class="pre">MaterialsInput</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.RangeSlider"><code class="docutils literal notranslate"><span class="pre">RangeSlider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Select"><code class="docutils literal notranslate"><span class="pre">Select</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Switch"><code class="docutils literal notranslate"><span class="pre">Switch</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Dropdown"><code class="docutils literal notranslate"><span class="pre">Dropdown</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Link"><code class="docutils literal notranslate"><span class="pre">Link</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Navbar"><code class="docutils literal notranslate"><span class="pre">Navbar</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.NavbarDropdown"><code class="docutils literal notranslate"><span class="pre">NavbarDropdown</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.NotificationDropdown"><code class="docutils literal notranslate"><span class="pre">NotificationDropdown</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Scrollspy"><code class="docutils literal notranslate"><span class="pre">Scrollspy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Tabs"><code class="docutils literal notranslate"><span class="pre">Tabs</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PeriodicContext"><code class="docutils literal notranslate"><span class="pre">PeriodicContext</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PeriodicContextTable"><code class="docutils literal notranslate"><span class="pre">PeriodicContextTable</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PeriodicElement"><code class="docutils literal notranslate"><span class="pre">PeriodicElement</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PeriodicFilter"><code class="docutils literal notranslate"><span class="pre">PeriodicFilter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PeriodicTableInput"><code class="docutils literal notranslate"><span class="pre">PeriodicTableInput</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.BibCard"><code class="docutils literal notranslate"><span class="pre">BibCard</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.BibFilter"><code class="docutils literal notranslate"><span class="pre">BibFilter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.BibjsonCard"><code class="docutils literal notranslate"><span class="pre">BibjsonCard</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.BibtexButton"><code class="docutils literal notranslate"><span class="pre">BibtexButton</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.CrossrefCard"><code class="docutils literal notranslate"><span class="pre">CrossrefCard</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.OpenAccessButton"><code class="docutils literal notranslate"><span class="pre">OpenAccessButton</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PublicationButton"><code class="docutils literal notranslate"><span class="pre">PublicationButton</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.BibCard.html">dash_mp_components.BibCard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.BibFilter.html">dash_mp_components.BibFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.BibjsonCard.html">dash_mp_components.BibjsonCard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.BibtexButton.html">dash_mp_components.BibtexButton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.CameraContextProvider.html">dash_mp_components.CameraContextProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.CrossrefCard.html">dash_mp_components.CrossrefCard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.CrystalToolkitAnimationScene.html">dash_mp_components.CrystalToolkitAnimationScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.CrystalToolkitScene.html">dash_mp_components.CrystalToolkitScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DataBlock.html">dash_mp_components.DataBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DataTable.html">dash_mp_components.DataTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Download.html">dash_mp_components.Download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DownloadButton.html">dash_mp_components.DownloadButton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DownloadDropdown.html">dash_mp_components.DownloadDropdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Drawer.html">dash_mp_components.Drawer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DrawerContextProvider.html">dash_mp_components.DrawerContextProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DrawerTrigger.html">dash_mp_components.DrawerTrigger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Dropdown.html">dash_mp_components.Dropdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DualRangeSlider.html">dash_mp_components.DualRangeSlider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Enlargeable.html">dash_mp_components.Enlargeable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.FilterField.html">dash_mp_components.FilterField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Formula.html">dash_mp_components.Formula</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.GlobalSearchBar.html">dash_mp_components.GlobalSearchBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.GraphComponent.html">dash_mp_components.GraphComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.JsonView.html">dash_mp_components.JsonView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Link.html">dash_mp_components.Link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Markdown.html">dash_mp_components.Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.MatSidebar.html">dash_mp_components.MatSidebar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.MaterialsInput.html">dash_mp_components.MaterialsInput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Modal.html">dash_mp_components.Modal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.ModalContextProvider.html">dash_mp_components.ModalContextProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.ModalTrigger.html">dash_mp_components.ModalTrigger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Navbar.html">dash_mp_components.Navbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.NavbarDropdown.html">dash_mp_components.NavbarDropdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.NotificationDropdown.html">dash_mp_components.NotificationDropdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.OpenAccessButton.html">dash_mp_components.OpenAccessButton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.PeriodicContext.html">dash_mp_components.PeriodicContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.PeriodicContextTable.html">dash_mp_components.PeriodicContextTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.PeriodicElement.html">dash_mp_components.PeriodicElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.PeriodicFilter.html">dash_mp_components.PeriodicFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.PeriodicTableInput.html">dash_mp_components.PeriodicTableInput</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">dash_mp_components.PhononAnimationScene</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dash_mp_components.PhononAnimationScene"><code class="docutils literal notranslate"><span class="pre">PhononAnimationScene</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dash_mp_components.PhononAnimationScene.__init__"><code class="docutils literal notranslate"><span class="pre">PhononAnimationScene.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.PublicationButton.html">dash_mp_components.PublicationButton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.RangeSlider.html">dash_mp_components.RangeSlider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Scrollspy.html">dash_mp_components.Scrollspy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SearchUIContainer.html">dash_mp_components.SearchUIContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SearchUIDataHeader.html">dash_mp_components.SearchUIDataHeader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SearchUIDataView.html">dash_mp_components.SearchUIDataView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SearchUIFilters.html">dash_mp_components.SearchUIFilters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SearchUIGrid.html">dash_mp_components.SearchUIGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SearchUISearchBar.html">dash_mp_components.SearchUISearchBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Select.html">dash_mp_components.Select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Switch.html">dash_mp_components.Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SynthesisRecipeCard.html">dash_mp_components.SynthesisRecipeCard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Tabs.html">dash_mp_components.Tabs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Tooltip.html">dash_mp_components.Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="dash_mp_components.html">dash_mp_components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.JsonView"><code class="docutils literal notranslate"><span class="pre">JsonView</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.MatSidebar"><code class="docutils literal notranslate"><span class="pre">MatSidebar</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.CameraContextProvider"><code class="docutils literal notranslate"><span class="pre">CameraContextProvider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.CrystalToolkitAnimationScene"><code class="docutils literal notranslate"><span class="pre">CrystalToolkitAnimationScene</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.CrystalToolkitScene"><code class="docutils literal notranslate"><span class="pre">CrystalToolkitScene</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Download"><code class="docutils literal notranslate"><span class="pre">Download</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.GraphComponent"><code class="docutils literal notranslate"><span class="pre">GraphComponent</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PhononAnimationScene"><code class="docutils literal notranslate"><span class="pre">PhononAnimationScene</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DataBlock"><code class="docutils literal notranslate"><span class="pre">DataBlock</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DataTable"><code class="docutils literal notranslate"><span class="pre">DataTable</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DownloadButton"><code class="docutils literal notranslate"><span class="pre">DownloadButton</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DownloadDropdown"><code class="docutils literal notranslate"><span class="pre">DownloadDropdown</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Drawer"><code class="docutils literal notranslate"><span class="pre">Drawer</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DrawerContextProvider"><code class="docutils literal notranslate"><span class="pre">DrawerContextProvider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DrawerTrigger"><code class="docutils literal notranslate"><span class="pre">DrawerTrigger</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Enlargeable"><code class="docutils literal notranslate"><span class="pre">Enlargeable</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Formula"><code class="docutils literal notranslate"><span class="pre">Formula</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Markdown"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Modal"><code class="docutils literal notranslate"><span class="pre">Modal</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.ModalContextProvider"><code class="docutils literal notranslate"><span class="pre">ModalContextProvider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.ModalTrigger"><code class="docutils literal notranslate"><span class="pre">ModalTrigger</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SearchUIContainer"><code class="docutils literal notranslate"><span class="pre">SearchUIContainer</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SearchUIDataHeader"><code class="docutils literal notranslate"><span class="pre">SearchUIDataHeader</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SearchUIDataView"><code class="docutils literal notranslate"><span class="pre">SearchUIDataView</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SearchUIFilters"><code class="docutils literal notranslate"><span class="pre">SearchUIFilters</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SearchUIGrid"><code class="docutils literal notranslate"><span class="pre">SearchUIGrid</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SearchUISearchBar"><code class="docutils literal notranslate"><span class="pre">SearchUISearchBar</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.SynthesisRecipeCard"><code class="docutils literal notranslate"><span class="pre">SynthesisRecipeCard</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Tooltip"><code class="docutils literal notranslate"><span class="pre">Tooltip</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.DualRangeSlider"><code class="docutils literal notranslate"><span class="pre">DualRangeSlider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.FilterField"><code class="docutils literal notranslate"><span class="pre">FilterField</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.GlobalSearchBar"><code class="docutils literal notranslate"><span class="pre">GlobalSearchBar</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.MaterialsInput"><code class="docutils literal notranslate"><span class="pre">MaterialsInput</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.RangeSlider"><code class="docutils literal notranslate"><span class="pre">RangeSlider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Select"><code class="docutils literal notranslate"><span class="pre">Select</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Switch"><code class="docutils literal notranslate"><span class="pre">Switch</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Dropdown"><code class="docutils literal notranslate"><span class="pre">Dropdown</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Link"><code class="docutils literal notranslate"><span class="pre">Link</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Navbar"><code class="docutils literal notranslate"><span class="pre">Navbar</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.NavbarDropdown"><code class="docutils literal notranslate"><span class="pre">NavbarDropdown</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.NotificationDropdown"><code class="docutils literal notranslate"><span class="pre">NotificationDropdown</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Scrollspy"><code class="docutils literal notranslate"><span class="pre">Scrollspy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.Tabs"><code class="docutils literal notranslate"><span class="pre">Tabs</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PeriodicContext"><code class="docutils literal notranslate"><span class="pre">PeriodicContext</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PeriodicContextTable"><code class="docutils literal notranslate"><span class="pre">PeriodicContextTable</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PeriodicElement"><code class="docutils literal notranslate"><span class="pre">PeriodicElement</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PeriodicFilter"><code class="docutils literal notranslate"><span class="pre">PeriodicFilter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PeriodicTableInput"><code class="docutils literal notranslate"><span class="pre">PeriodicTableInput</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.BibCard"><code class="docutils literal notranslate"><span class="pre">BibCard</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.BibFilter"><code class="docutils literal notranslate"><span class="pre">BibFilter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.BibjsonCard"><code class="docutils literal notranslate"><span class="pre">BibjsonCard</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.BibtexButton"><code class="docutils literal notranslate"><span class="pre">BibtexButton</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.CrossrefCard"><code class="docutils literal notranslate"><span class="pre">CrossrefCard</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.OpenAccessButton"><code class="docutils literal notranslate"><span class="pre">OpenAccessButton</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.html#dash_mp_components.PublicationButton"><code class="docutils literal notranslate"><span class="pre">PublicationButton</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.BibCard.html">dash_mp_components.BibCard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.BibFilter.html">dash_mp_components.BibFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.BibjsonCard.html">dash_mp_components.BibjsonCard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.BibtexButton.html">dash_mp_components.BibtexButton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.CameraContextProvider.html">dash_mp_components.CameraContextProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.CrossrefCard.html">dash_mp_components.CrossrefCard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.CrystalToolkitAnimationScene.html">dash_mp_components.CrystalToolkitAnimationScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.CrystalToolkitScene.html">dash_mp_components.CrystalToolkitScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DataBlock.html">dash_mp_components.DataBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DataTable.html">dash_mp_components.DataTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Download.html">dash_mp_components.Download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DownloadButton.html">dash_mp_components.DownloadButton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DownloadDropdown.html">dash_mp_components.DownloadDropdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Drawer.html">dash_mp_components.Drawer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DrawerContextProvider.html">dash_mp_components.DrawerContextProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DrawerTrigger.html">dash_mp_components.DrawerTrigger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Dropdown.html">dash_mp_components.Dropdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.DualRangeSlider.html">dash_mp_components.DualRangeSlider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Enlargeable.html">dash_mp_components.Enlargeable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.FilterField.html">dash_mp_components.FilterField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Formula.html">dash_mp_components.Formula</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.GlobalSearchBar.html">dash_mp_components.GlobalSearchBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.GraphComponent.html">dash_mp_components.GraphComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.JsonView.html">dash_mp_components.JsonView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Link.html">dash_mp_components.Link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Markdown.html">dash_mp_components.Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.MatSidebar.html">dash_mp_components.MatSidebar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.MaterialsInput.html">dash_mp_components.MaterialsInput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Modal.html">dash_mp_components.Modal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.ModalContextProvider.html">dash_mp_components.ModalContextProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.ModalTrigger.html">dash_mp_components.ModalTrigger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Navbar.html">dash_mp_components.Navbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.NavbarDropdown.html">dash_mp_components.NavbarDropdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.NotificationDropdown.html">dash_mp_components.NotificationDropdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.OpenAccessButton.html">dash_mp_components.OpenAccessButton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.PeriodicContext.html">dash_mp_components.PeriodicContext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.PeriodicContextTable.html">dash_mp_components.PeriodicContextTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.PeriodicElement.html">dash_mp_components.PeriodicElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.PeriodicFilter.html">dash_mp_components.PeriodicFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.PeriodicTableInput.html">dash_mp_components.PeriodicTableInput</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">dash_mp_components.PhononAnimationScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.PublicationButton.html">dash_mp_components.PublicationButton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.RangeSlider.html">dash_mp_components.RangeSlider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Scrollspy.html">dash_mp_components.Scrollspy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SearchUIContainer.html">dash_mp_components.SearchUIContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SearchUIDataHeader.html">dash_mp_components.SearchUIDataHeader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SearchUIDataView.html">dash_mp_components.SearchUIDataView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SearchUIFilters.html">dash_mp_components.SearchUIFilters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SearchUIGrid.html">dash_mp_components.SearchUIGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SearchUISearchBar.html">dash_mp_components.SearchUISearchBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Select.html">dash_mp_components.Select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Switch.html">dash_mp_components.Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.SynthesisRecipeCard.html">dash_mp_components.SynthesisRecipeCard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Tabs.html">dash_mp_components.Tabs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dash_mp_components.Tooltip.html">dash_mp_components.Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="dash_mp_components.html">dash_mp_components</a><ul>
+      <li>Previous: <a href="dash_mp_components.PeriodicTableInput.html" title="previous chapter">dash_mp_components.PeriodicTableInput</a></li>
+      <li>Next: <a href="dash_mp_components.PublicationButton.html" title="next chapter">dash_mp_components.PublicationButton</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Materials Project Team.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.0.4</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/generated/dash_mp_components.PhononAnimationScene.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

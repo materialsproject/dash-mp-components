@@ -1,0 +1,31 @@
+dash\_mp\_components.PublicationButton
+======================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: PublicationButton
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PublicationButton.__init__
+      ~PublicationButton.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PublicationButton.REQUIRED
+      ~PublicationButton.UNDEFINED
+      ~PublicationButton.available_wildcard_properties
+   
+   

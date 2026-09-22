@@ -1,0 +1,31 @@
+dash\_mp\_components.SearchUIFilters
+====================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: SearchUIFilters
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SearchUIFilters.__init__
+      ~SearchUIFilters.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SearchUIFilters.REQUIRED
+      ~SearchUIFilters.UNDEFINED
+      ~SearchUIFilters.available_wildcard_properties
+   
+   

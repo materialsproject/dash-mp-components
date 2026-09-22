@@ -1,0 +1,31 @@
+dash\_mp\_components.CrossrefCard
+=================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: CrossrefCard
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CrossrefCard.__init__
+      ~CrossrefCard.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CrossrefCard.REQUIRED
+      ~CrossrefCard.UNDEFINED
+      ~CrossrefCard.available_wildcard_properties
+   
+   

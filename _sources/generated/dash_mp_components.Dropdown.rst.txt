@@ -1,0 +1,31 @@
+dash\_mp\_components.Dropdown
+=============================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: Dropdown
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Dropdown.__init__
+      ~Dropdown.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Dropdown.REQUIRED
+      ~Dropdown.UNDEFINED
+      ~Dropdown.available_wildcard_properties
+   
+   

@@ -1,0 +1,31 @@
+dash\_mp\_components.DataTable
+==============================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: DataTable
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DataTable.__init__
+      ~DataTable.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DataTable.REQUIRED
+      ~DataTable.UNDEFINED
+      ~DataTable.available_wildcard_properties
+   
+   

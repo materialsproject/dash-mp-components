@@ -1,0 +1,31 @@
+dash\_mp\_components.DualRangeSlider
+====================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: DualRangeSlider
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DualRangeSlider.__init__
+      ~DualRangeSlider.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DualRangeSlider.REQUIRED
+      ~DualRangeSlider.UNDEFINED
+      ~DualRangeSlider.available_wildcard_properties
+   
+   

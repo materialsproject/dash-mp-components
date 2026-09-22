@@ -1,0 +1,31 @@
+dash\_mp\_components.PeriodicTableInput
+=======================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: PeriodicTableInput
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PeriodicTableInput.__init__
+      ~PeriodicTableInput.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PeriodicTableInput.REQUIRED
+      ~PeriodicTableInput.UNDEFINED
+      ~PeriodicTableInput.available_wildcard_properties
+   
+   

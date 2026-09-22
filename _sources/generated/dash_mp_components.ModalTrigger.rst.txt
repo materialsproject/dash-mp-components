@@ -1,0 +1,31 @@
+dash\_mp\_components.ModalTrigger
+=================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: ModalTrigger
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ModalTrigger.__init__
+      ~ModalTrigger.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ModalTrigger.REQUIRED
+      ~ModalTrigger.UNDEFINED
+      ~ModalTrigger.available_wildcard_properties
+   
+   

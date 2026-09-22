@@ -1,0 +1,31 @@
+dash\_mp\_components.Switch
+===========================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: Switch
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Switch.__init__
+      ~Switch.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Switch.REQUIRED
+      ~Switch.UNDEFINED
+      ~Switch.available_wildcard_properties
+   
+   

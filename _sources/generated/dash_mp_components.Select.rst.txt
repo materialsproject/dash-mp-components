@@ -1,0 +1,31 @@
+dash\_mp\_components.Select
+===========================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: Select
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Select.__init__
+      ~Select.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Select.REQUIRED
+      ~Select.UNDEFINED
+      ~Select.available_wildcard_properties
+   
+   

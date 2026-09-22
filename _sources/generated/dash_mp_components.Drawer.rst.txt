@@ -1,0 +1,31 @@
+dash\_mp\_components.Drawer
+===========================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: Drawer
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Drawer.__init__
+      ~Drawer.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Drawer.REQUIRED
+      ~Drawer.UNDEFINED
+      ~Drawer.available_wildcard_properties
+   
+   

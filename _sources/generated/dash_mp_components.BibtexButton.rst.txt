@@ -1,0 +1,31 @@
+dash\_mp\_components.BibtexButton
+=================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: BibtexButton
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BibtexButton.__init__
+      ~BibtexButton.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BibtexButton.REQUIRED
+      ~BibtexButton.UNDEFINED
+      ~BibtexButton.available_wildcard_properties
+   
+   

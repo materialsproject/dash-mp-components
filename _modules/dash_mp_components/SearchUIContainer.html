@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dash_mp_components.SearchUIContainer &#8212; dash-mp-components 0.1.dev1+g1895434cd documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=ca115f28"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for dash_mp_components.SearchUIContainer</h1><div class="highlight"><pre>
+<span></span><span class="c1"># AUTO GENERATED FILE - DO NOT EDIT</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">typing</span>  <span class="c1"># noqa: F401</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing_extensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypedDict</span><span class="p">,</span> <span class="n">NotRequired</span><span class="p">,</span> <span class="n">Literal</span> <span class="c1"># noqa: F401</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dash.development.base_component</span><span class="w"> </span><span class="kn">import</span> <span class="n">Component</span><span class="p">,</span> <span class="n">_explicitize_args</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">dash.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">NumberType</span>  <span class="c1"># noqa: F401</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="c1"># Backwards compatibility for dash&lt;=4.1.0</span>
+    <span class="k">if</span> <span class="n">typing</span><span class="o">.</span><span class="n">TYPE_CHECKING</span><span class="p">:</span>
+        <span class="k">raise</span>
+    <span class="n">NumberType</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span>  <span class="c1"># noqa: F401</span>
+        <span class="n">typing</span><span class="o">.</span><span class="n">SupportsFloat</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsInt</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsComplex</span>
+    <span class="p">]</span>
+
+<span class="n">ComponentSingleType</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Component</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="n">ComponentType</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span>
+    <span class="n">ComponentSingleType</span><span class="p">,</span>
+    <span class="n">typing</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">ComponentSingleType</span><span class="p">],</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="SearchUIContainer">
+<a class="viewcode-back" href="../../generated/dash_mp_components.SearchUIContainer.html#dash_mp_components.SearchUIContainer">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SearchUIContainer</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A SearchUIContainer component.</span>
+<span class="sd">A component that can wrap around sub-components of `SearchUI` and ensure they are</span>
+<span class="sd">all hooked up to the same context.</span>
+<span class="sd">This allows you to use the state management functionality of `SearchUI` with the ability</span>
+<span class="sd">to customize the inner layout and components.</span>
+
+<span class="sd">Keyword arguments:</span>
+
+<span class="sd">- children (a list of or a singular dash component, string or number; optional)</span>
+
+<span class="sd">- id (string; optional)</span>
+
+<span class="sd">- apiEndpoint (string; optional)</span>
+
+<span class="sd">- apiEndpointParams (dict; optional)</span>
+
+<span class="sd">- apiKey (string; optional)</span>
+
+<span class="sd">- autocompleteFormulaUrl (string; optional)</span>
+
+<span class="sd">- className (string; optional)</span>
+
+<span class="sd">- columns (list; optional)</span>
+
+<span class="sd">- conditionalRowStyles (list; optional)</span>
+
+<span class="sd">- disableRichColumnHeaders (boolean; optional)</span>
+
+<span class="sd">- fieldsKey (string; optional)</span>
+
+<span class="sd">- filterGroups (list; optional)</span>
+
+<span class="sd">- hasSortMenu (boolean; optional)</span>
+
+<span class="sd">- lastClickedCell (dict; optional):</span>
+<span class="sd">    Set automatically by the SearchUI when a `LINK_POPOVER` cell is</span>
+<span class="sd">    clicked. Shape: `{selector, value, row, ts}`. Used as a Dash</span>
+<span class="sd">    callback `Input` to trigger server-side resolution that populates</span>
+<span class="sd">    `popoverContent`.</span>
+
+<span class="sd">- limitKey (string; optional)</span>
+
+<span class="sd">- popoverContent (a list of or a singular dash component, string or number; optional):</span>
+<span class="sd">    Renderable content (Dash component tree) shown inside the popover</span>
+<span class="sd">    for the most recently clicked `LINK_POPOVER` cell. Typically set</span>
+<span class="sd">    by a Dash callback responding to `lastClickedCell`.</span>
+
+<span class="sd">- resultLabel (string; optional)</span>
+
+<span class="sd">- results (list; optional)</span>
+
+<span class="sd">- selectableRows (boolean; optional)</span>
+
+<span class="sd">- selectedRows (list; optional)</span>
+
+<span class="sd">- skipKey (string; optional)</span>
+
+<span class="sd">- sortFields (list of strings; optional)</span>
+
+<span class="sd">- sortKey (string; optional)</span>
+
+<span class="sd">- totalKey (string; optional)</span>
+
+<span class="sd">- view (a value equal to: 'table', 'synthesis'; optional)"""</span>
+    <span class="n">_children_props</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'popoverContent'</span><span class="p">]</span>
+    <span class="n">_base_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'popoverContent'</span><span class="p">,</span> <span class="s1">'children'</span><span class="p">]</span>
+    <span class="n">_namespace</span> <span class="o">=</span> <span class="s1">'dash_mp_components'</span>
+    <span class="n">_type</span> <span class="o">=</span> <span class="s1">'SearchUIContainer'</span>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">children</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">ComponentType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="nb">id</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">className</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Sequence</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">filterGroups</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Sequence</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">apiEndpoint</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">apiEndpointParams</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">autocompleteFormulaUrl</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">apiKey</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">resultLabel</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">hasSortMenu</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">sortFields</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">sortKey</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">skipKey</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">limitKey</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">totalKey</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fieldsKey</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">conditionalRowStyles</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Sequence</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">selectableRows</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">selectedRows</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Sequence</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">view</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">Literal</span><span class="p">[</span><span class="s2">"table"</span><span class="p">,</span> <span class="s2">"synthesis"</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">disableRichColumnHeaders</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">results</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Sequence</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">lastClickedCell</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">popoverContent</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">ComponentType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_prop_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'children'</span><span class="p">,</span> <span class="s1">'id'</span><span class="p">,</span> <span class="s1">'apiEndpoint'</span><span class="p">,</span> <span class="s1">'apiEndpointParams'</span><span class="p">,</span> <span class="s1">'apiKey'</span><span class="p">,</span> <span class="s1">'autocompleteFormulaUrl'</span><span class="p">,</span> <span class="s1">'className'</span><span class="p">,</span> <span class="s1">'columns'</span><span class="p">,</span> <span class="s1">'conditionalRowStyles'</span><span class="p">,</span> <span class="s1">'disableRichColumnHeaders'</span><span class="p">,</span> <span class="s1">'fieldsKey'</span><span class="p">,</span> <span class="s1">'filterGroups'</span><span class="p">,</span> <span class="s1">'hasSortMenu'</span><span class="p">,</span> <span class="s1">'lastClickedCell'</span><span class="p">,</span> <span class="s1">'limitKey'</span><span class="p">,</span> <span class="s1">'popoverContent'</span><span class="p">,</span> <span class="s1">'resultLabel'</span><span class="p">,</span> <span class="s1">'results'</span><span class="p">,</span> <span class="s1">'selectableRows'</span><span class="p">,</span> <span class="s1">'selectedRows'</span><span class="p">,</span> <span class="s1">'skipKey'</span><span class="p">,</span> <span class="s1">'sortFields'</span><span class="p">,</span> <span class="s1">'sortKey'</span><span class="p">,</span> <span class="s1">'totalKey'</span><span class="p">,</span> <span class="s1">'view'</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_valid_wildcard_attributes</span> <span class="o">=</span>            <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">available_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'children'</span><span class="p">,</span> <span class="s1">'id'</span><span class="p">,</span> <span class="s1">'apiEndpoint'</span><span class="p">,</span> <span class="s1">'apiEndpointParams'</span><span class="p">,</span> <span class="s1">'apiKey'</span><span class="p">,</span> <span class="s1">'autocompleteFormulaUrl'</span><span class="p">,</span> <span class="s1">'className'</span><span class="p">,</span> <span class="s1">'columns'</span><span class="p">,</span> <span class="s1">'conditionalRowStyles'</span><span class="p">,</span> <span class="s1">'disableRichColumnHeaders'</span><span class="p">,</span> <span class="s1">'fieldsKey'</span><span class="p">,</span> <span class="s1">'filterGroups'</span><span class="p">,</span> <span class="s1">'hasSortMenu'</span><span class="p">,</span> <span class="s1">'lastClickedCell'</span><span class="p">,</span> <span class="s1">'limitKey'</span><span class="p">,</span> <span class="s1">'popoverContent'</span><span class="p">,</span> <span class="s1">'resultLabel'</span><span class="p">,</span> <span class="s1">'results'</span><span class="p">,</span> <span class="s1">'selectableRows'</span><span class="p">,</span> <span class="s1">'selectedRows'</span><span class="p">,</span> <span class="s1">'skipKey'</span><span class="p">,</span> <span class="s1">'sortFields'</span><span class="p">,</span> <span class="s1">'sortKey'</span><span class="p">,</span> <span class="s1">'totalKey'</span><span class="p">,</span> <span class="s1">'view'</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">available_wildcard_properties</span> <span class="o">=</span>            <span class="p">[]</span>
+        <span class="n">_explicit_args</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'_explicit_args'</span><span class="p">)</span>
+        <span class="n">_locals</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="n">_locals</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># For wildcard attrs and excess named props</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">_locals</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">_explicit_args</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">'children'</span><span class="p">}</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">SearchUIContainer</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="n">children</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span></div>
+
+
+<span class="nb">setattr</span><span class="p">(</span><span class="n">SearchUIContainer</span><span class="p">,</span> <span class="s2">"__init__"</span><span class="p">,</span> <span class="n">_explicitize_args</span><span class="p">(</span><span class="n">SearchUIContainer</span><span class="o">.</span><span class="fm">__init__</span><span class="p">))</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">dash-mp-components</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/dash_mp_components.html">dash_mp_components</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/dash_mp_components.html">dash_mp_components</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Materials Project Team.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.0.4</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

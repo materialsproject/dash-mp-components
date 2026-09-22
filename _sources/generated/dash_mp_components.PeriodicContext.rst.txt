@@ -1,0 +1,31 @@
+dash\_mp\_components.PeriodicContext
+====================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: PeriodicContext
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PeriodicContext.__init__
+      ~PeriodicContext.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PeriodicContext.REQUIRED
+      ~PeriodicContext.UNDEFINED
+      ~PeriodicContext.available_wildcard_properties
+   
+   

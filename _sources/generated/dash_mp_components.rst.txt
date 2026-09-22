@@ -1,0 +1,68 @@
+﻿dash\_mp\_components
+====================
+
+.. automodule:: dash_mp_components
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   BibCard
+   BibFilter
+   BibjsonCard
+   BibtexButton
+   CameraContextProvider
+   CrossrefCard
+   CrystalToolkitAnimationScene
+   CrystalToolkitScene
+   DataBlock
+   DataTable
+   Download
+   DownloadButton
+   DownloadDropdown
+   Drawer
+   DrawerContextProvider
+   DrawerTrigger
+   Dropdown
+   DualRangeSlider
+   Enlargeable
+   FilterField
+   Formula
+   GlobalSearchBar
+   GraphComponent
+   JsonView
+   Link
+   Markdown
+   MatSidebar
+   MaterialsInput
+   Modal
+   ModalContextProvider
+   ModalTrigger
+   Navbar
+   NavbarDropdown
+   NotificationDropdown
+   OpenAccessButton
+   PeriodicContext
+   PeriodicContextTable
+   PeriodicElement
+   PeriodicFilter
+   PeriodicTableInput
+   PhononAnimationScene
+   PublicationButton
+   RangeSlider
+   Scrollspy
+   SearchUIContainer
+   SearchUIDataHeader
+   SearchUIDataView
+   SearchUIFilters
+   SearchUIGrid
+   SearchUISearchBar
+   Select
+   Switch
+   SynthesisRecipeCard
+   Tabs
+   Tooltip
+   test_api

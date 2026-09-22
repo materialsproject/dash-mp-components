@@ -1,0 +1,31 @@
+dash\_mp\_components.PeriodicContextTable
+=========================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: PeriodicContextTable
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PeriodicContextTable.__init__
+      ~PeriodicContextTable.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PeriodicContextTable.REQUIRED
+      ~PeriodicContextTable.UNDEFINED
+      ~PeriodicContextTable.available_wildcard_properties
+   
+   

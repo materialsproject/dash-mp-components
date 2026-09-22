@@ -1,0 +1,31 @@
+dash\_mp\_components.BibCard
+============================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: BibCard
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BibCard.__init__
+      ~BibCard.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BibCard.REQUIRED
+      ~BibCard.UNDEFINED
+      ~BibCard.available_wildcard_properties
+   
+   

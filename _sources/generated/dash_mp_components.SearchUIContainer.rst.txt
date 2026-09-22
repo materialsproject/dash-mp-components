@@ -1,0 +1,31 @@
+dash\_mp\_components.SearchUIContainer
+======================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: SearchUIContainer
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SearchUIContainer.__init__
+      ~SearchUIContainer.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SearchUIContainer.REQUIRED
+      ~SearchUIContainer.UNDEFINED
+      ~SearchUIContainer.available_wildcard_properties
+   
+   

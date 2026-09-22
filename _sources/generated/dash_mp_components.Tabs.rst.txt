@@ -1,0 +1,31 @@
+dash\_mp\_components.Tabs
+=========================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: Tabs
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Tabs.__init__
+      ~Tabs.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Tabs.REQUIRED
+      ~Tabs.UNDEFINED
+      ~Tabs.available_wildcard_properties
+   
+   

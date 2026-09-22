@@ -1,0 +1,31 @@
+dash\_mp\_components.SearchUIDataView
+=====================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: SearchUIDataView
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SearchUIDataView.__init__
+      ~SearchUIDataView.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SearchUIDataView.REQUIRED
+      ~SearchUIDataView.UNDEFINED
+      ~SearchUIDataView.available_wildcard_properties
+   
+   

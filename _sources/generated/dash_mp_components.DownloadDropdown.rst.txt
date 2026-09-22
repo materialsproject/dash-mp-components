@@ -1,0 +1,31 @@
+dash\_mp\_components.DownloadDropdown
+=====================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: DownloadDropdown
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DownloadDropdown.__init__
+      ~DownloadDropdown.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DownloadDropdown.REQUIRED
+      ~DownloadDropdown.UNDEFINED
+      ~DownloadDropdown.available_wildcard_properties
+   
+   

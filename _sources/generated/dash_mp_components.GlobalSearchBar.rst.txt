@@ -1,0 +1,31 @@
+dash\_mp\_components.GlobalSearchBar
+====================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: GlobalSearchBar
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GlobalSearchBar.__init__
+      ~GlobalSearchBar.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~GlobalSearchBar.REQUIRED
+      ~GlobalSearchBar.UNDEFINED
+      ~GlobalSearchBar.available_wildcard_properties
+   
+   

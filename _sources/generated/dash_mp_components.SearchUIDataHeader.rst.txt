@@ -1,0 +1,31 @@
+dash\_mp\_components.SearchUIDataHeader
+=======================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: SearchUIDataHeader
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SearchUIDataHeader.__init__
+      ~SearchUIDataHeader.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SearchUIDataHeader.REQUIRED
+      ~SearchUIDataHeader.UNDEFINED
+      ~SearchUIDataHeader.available_wildcard_properties
+   
+   

@@ -1,0 +1,31 @@
+dash\_mp\_components.CameraContextProvider
+==========================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: CameraContextProvider
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CameraContextProvider.__init__
+      ~CameraContextProvider.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CameraContextProvider.REQUIRED
+      ~CameraContextProvider.UNDEFINED
+      ~CameraContextProvider.available_wildcard_properties
+   
+   

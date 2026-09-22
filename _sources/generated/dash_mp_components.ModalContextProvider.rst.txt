@@ -1,0 +1,31 @@
+dash\_mp\_components.ModalContextProvider
+=========================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: ModalContextProvider
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ModalContextProvider.__init__
+      ~ModalContextProvider.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ModalContextProvider.REQUIRED
+      ~ModalContextProvider.UNDEFINED
+      ~ModalContextProvider.available_wildcard_properties
+   
+   

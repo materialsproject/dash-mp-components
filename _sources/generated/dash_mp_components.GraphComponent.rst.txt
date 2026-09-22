@@ -1,0 +1,31 @@
+dash\_mp\_components.GraphComponent
+===================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: GraphComponent
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GraphComponent.__init__
+      ~GraphComponent.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~GraphComponent.REQUIRED
+      ~GraphComponent.UNDEFINED
+      ~GraphComponent.available_wildcard_properties
+   
+   

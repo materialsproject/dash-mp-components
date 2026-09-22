@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dash_mp_components.CrystalToolkitScene &#8212; dash-mp-components 0.1.dev1+g1895434cd documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=ca115f28"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for dash_mp_components.CrystalToolkitScene</h1><div class="highlight"><pre>
+<span></span><span class="c1"># AUTO GENERATED FILE - DO NOT EDIT</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">typing</span>  <span class="c1"># noqa: F401</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing_extensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypedDict</span><span class="p">,</span> <span class="n">NotRequired</span><span class="p">,</span> <span class="n">Literal</span> <span class="c1"># noqa: F401</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dash.development.base_component</span><span class="w"> </span><span class="kn">import</span> <span class="n">Component</span><span class="p">,</span> <span class="n">_explicitize_args</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">dash.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">NumberType</span>  <span class="c1"># noqa: F401</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="c1"># Backwards compatibility for dash&lt;=4.1.0</span>
+    <span class="k">if</span> <span class="n">typing</span><span class="o">.</span><span class="n">TYPE_CHECKING</span><span class="p">:</span>
+        <span class="k">raise</span>
+    <span class="n">NumberType</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span>  <span class="c1"># noqa: F401</span>
+        <span class="n">typing</span><span class="o">.</span><span class="n">SupportsFloat</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsInt</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">SupportsComplex</span>
+    <span class="p">]</span>
+
+<span class="n">ComponentSingleType</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Component</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="n">ComponentType</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span>
+    <span class="n">ComponentSingleType</span><span class="p">,</span>
+    <span class="n">typing</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">ComponentSingleType</span><span class="p">],</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="CrystalToolkitScene">
+<a class="viewcode-back" href="../../generated/dash_mp_components.CrystalToolkitScene.html#dash_mp_components.CrystalToolkitScene">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CrystalToolkitScene</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A CrystalToolkitScene component.</span>
+
+
+<span class="sd">Keyword arguments:</span>
+
+<span class="sd">- children (optional):</span>
+<span class="sd">    First child will be rendered as the settings panel. Second child</span>
+<span class="sd">    will be rendered as the bottom panel (legend).</span>
+
+<span class="sd">- id (optional):</span>
+<span class="sd">    The ID used to identify this component in Dash callbacks.</span>
+
+<span class="sd">- animation (optional):</span>
+<span class="sd">    Animation type.</span>
+
+<span class="sd">- axisView (optional):</span>
+<span class="sd">    Where is the axis displayed ( 'NW' / 'NE' / 'SE' / 'SW' / 'HIDDEN'</span>
+<span class="sd">    ).</span>
+
+<span class="sd">- className (optional):</span>
+<span class="sd">    Class name that will wrap around the whole scene component. When</span>
+<span class="sd">    enlarged, this class name is applied to the modal-content element.</span>
+
+<span class="sd">- currentCameraState (optional):</span>
+<span class="sd">    THIS PROP IS SET AUTOMATICALLY Object that maintains the current</span>
+<span class="sd">    state of the camera. e.g. {   position: {x: 0, y: 0, z: 0},</span>
+<span class="sd">    quarternion: {x: 0, y: 0, z: 0, w: 0},   zoom: 1,</span>
+<span class="sd">    setByComponentId: \"1\",   following: True }.</span>
+
+<span class="sd">- customCameraState (optional):</span>
+<span class="sd">    Object for setting the scene to a custom camera state. When</span>
+<span class="sd">    modified, the camera will update to new custom state. e.g. {</span>
+<span class="sd">    position: {x: 0, y: 0, z: 0},   quarternion: {x: 0, y: 0, z: 0, w:</span>
+<span class="sd">    0}, (optional)   zoom: 1 (optional) }.</span>
+
+<span class="sd">- data (optional):</span>
+<span class="sd">    Simple3DScene JSON, the easiest way to generate this is to use the</span>
+<span class="sd">    Scene class in crystal_toolkit.core.scene and its to_json method.</span>
+
+<span class="sd">- debug (optional):</span>
+<span class="sd">    Display a debug view.</span>
+
+<span class="sd">- fileOptions (optional):</span>
+<span class="sd">    List of options to show in file download dropdown.</span>
+
+<span class="sd">- fileTimestamp (optional):</span>
+<span class="sd">    THIS PROP IS SET AUTOMATICALLY Date string that represents the</span>
+<span class="sd">    time fileType was set. Use this prop in dash callbacks to trigger</span>
+<span class="sd">    file downloads.</span>
+
+<span class="sd">- fileType (optional):</span>
+<span class="sd">    THIS PROP IS SET AUTOMATICALLY The last file type clicked in the</span>
+<span class="sd">    file download menu.</span>
+
+<span class="sd">- imageData (optional):</span>
+<span class="sd">    THIS PROP IS SET AUTOMATICALLY Data string for the image generated</span>
+<span class="sd">    on image button click.</span>
+
+<span class="sd">- imageDataTimestamp (optional):</span>
+<span class="sd">    THIS PROP IS SET AUTOMATICALLY Date string that represents the</span>
+<span class="sd">    time imageData was set. Use this prop in dash callbacks to trigger</span>
+<span class="sd">    downloads of imageData.</span>
+
+<span class="sd">- imageRequest (optional):</span>
+<span class="sd">    Set to trigger a screenshot or scene download. Must be an object</span>
+<span class="sd">    with the following structure: {    \"filetype\": \"png\" // the</span>
+<span class="sd">    image format (\"png\", \"dae\") } Passing this prop as an object</span>
+<span class="sd">    ensures that new requests are triggered any time the prop is set.</span>
+
+<span class="sd">- imageType (optional):</span>
+<span class="sd">    File type to be downloaded as an image. Either png or dae.</span>
+
+<span class="sd">- inletPadding (optional):</span>
+<span class="sd">    Padding of the axis view.</span>
+
+<span class="sd">- inletSize (optional):</span>
+<span class="sd">    Size of the axis view.</span>
+
+<span class="sd">- sceneSize (optional):</span>
+<span class="sd">    Width / Height of the displayed component.</span>
+
+<span class="sd">- selectedObject (optional):</span>
+<span class="sd">    This points to the last clicked objects. Use it in your dash</span>
+<span class="sd">    callback to know which objects are currently selected in the</span>
+<span class="sd">    scene.</span>
+
+<span class="sd">- setProps (optional):</span>
+<span class="sd">    Dash-assigned callback that should be called whenever any of the</span>
+<span class="sd">    properties change.</span>
+
+<span class="sd">- settings (optional):</span>
+<span class="sd">    Options used for generating scene. Supported options and their</span>
+<span class="sd">    defaults are given as follows: {    antialias: True, // set to</span>
+<span class="sd">    False to improve performance    renderer: 'webgl', // 'svg' also</span>
+<span class="sd">    an option, used for unit testing    transparentBackground: False,</span>
+<span class="sd">    // transparent background    background: '#ffffff', // background</span>
+<span class="sd">    color if not transparent,    sphereSegments: 32, // decrease to</span>
+<span class="sd">    improve performance    cylinderSegments: 16, // decrease to</span>
+<span class="sd">    improve performance    staticScene: True, // disable if animation</span>
+<span class="sd">    required    defaultZoom: 1, // 1 will zoom to fit object exactly,</span>
+<span class="sd">    &lt;1 will add padding between object and box bounds    zoomToFit2D:</span>
+<span class="sd">    False // if True, will zoom to fit object only along the X and Y</span>
+<span class="sd">    axes (not Z)    extractAxis: False // will remove the axis from</span>
+<span class="sd">    the main scene    isMultiSelectionEnabled: False // allow to use</span>
+<span class="sd">    shift to select,    secondaryObjectView: True // show the selected</span>
+<span class="sd">    object in a detail view    animation: 'play' | 'slider' | 'none'</span>
+<span class="sd">    // choose which style of animation is use } There are several</span>
+<span class="sd">    additional options used for debugging and testing, please consult</span>
+<span class="sd">    the source code directly for these.</span>
+
+<span class="sd">- showControls (optional)</span>
+
+<span class="sd">- showExpandButton (optional)</span>
+
+<span class="sd">- showExportButton (optional)</span>
+
+<span class="sd">- showImageButton (optional)</span>
+
+<span class="sd">- showPositionButton (optional)</span>
+
+<span class="sd">- toggleVisibility (optional):</span>
+<span class="sd">    Hide/show nodes in scene by its name (key), value is 1 to show the</span>
+<span class="sd">    node and 0 to hide it."""</span>
+    <span class="n">_children_props</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">_base_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'children'</span><span class="p">]</span>
+    <span class="n">_namespace</span> <span class="o">=</span> <span class="s1">'dash_mp_components'</span>
+    <span class="n">_type</span> <span class="o">=</span> <span class="s1">'CrystalToolkitScene'</span>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">children</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">ComponentType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="nb">id</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">className</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">settings</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">toggleVisibility</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">imageRequest</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">imageType</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">imageData</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">imageDataTimestamp</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fileOptions</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fileType</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fileTimestamp</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">selectedObject</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">sceneSize</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">axisView</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">inletSize</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">inletPadding</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">debug</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">animation</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">currentCameraState</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">customCameraState</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">showControls</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">showExpandButton</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">showImageButton</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">showExportButton</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">showPositionButton</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_prop_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'children'</span><span class="p">,</span> <span class="s1">'id'</span><span class="p">,</span> <span class="s1">'animation'</span><span class="p">,</span> <span class="s1">'axisView'</span><span class="p">,</span> <span class="s1">'className'</span><span class="p">,</span> <span class="s1">'currentCameraState'</span><span class="p">,</span> <span class="s1">'customCameraState'</span><span class="p">,</span> <span class="s1">'data'</span><span class="p">,</span> <span class="s1">'debug'</span><span class="p">,</span> <span class="s1">'fileOptions'</span><span class="p">,</span> <span class="s1">'fileTimestamp'</span><span class="p">,</span> <span class="s1">'fileType'</span><span class="p">,</span> <span class="s1">'imageData'</span><span class="p">,</span> <span class="s1">'imageDataTimestamp'</span><span class="p">,</span> <span class="s1">'imageRequest'</span><span class="p">,</span> <span class="s1">'imageType'</span><span class="p">,</span> <span class="s1">'inletPadding'</span><span class="p">,</span> <span class="s1">'inletSize'</span><span class="p">,</span> <span class="s1">'sceneSize'</span><span class="p">,</span> <span class="s1">'selectedObject'</span><span class="p">,</span> <span class="s1">'setProps'</span><span class="p">,</span> <span class="s1">'settings'</span><span class="p">,</span> <span class="s1">'showControls'</span><span class="p">,</span> <span class="s1">'showExpandButton'</span><span class="p">,</span> <span class="s1">'showExportButton'</span><span class="p">,</span> <span class="s1">'showImageButton'</span><span class="p">,</span> <span class="s1">'showPositionButton'</span><span class="p">,</span> <span class="s1">'toggleVisibility'</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_valid_wildcard_attributes</span> <span class="o">=</span>            <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">available_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'children'</span><span class="p">,</span> <span class="s1">'id'</span><span class="p">,</span> <span class="s1">'animation'</span><span class="p">,</span> <span class="s1">'axisView'</span><span class="p">,</span> <span class="s1">'className'</span><span class="p">,</span> <span class="s1">'currentCameraState'</span><span class="p">,</span> <span class="s1">'customCameraState'</span><span class="p">,</span> <span class="s1">'data'</span><span class="p">,</span> <span class="s1">'debug'</span><span class="p">,</span> <span class="s1">'fileOptions'</span><span class="p">,</span> <span class="s1">'fileTimestamp'</span><span class="p">,</span> <span class="s1">'fileType'</span><span class="p">,</span> <span class="s1">'imageData'</span><span class="p">,</span> <span class="s1">'imageDataTimestamp'</span><span class="p">,</span> <span class="s1">'imageRequest'</span><span class="p">,</span> <span class="s1">'imageType'</span><span class="p">,</span> <span class="s1">'inletPadding'</span><span class="p">,</span> <span class="s1">'inletSize'</span><span class="p">,</span> <span class="s1">'sceneSize'</span><span class="p">,</span> <span class="s1">'selectedObject'</span><span class="p">,</span> <span class="s1">'setProps'</span><span class="p">,</span> <span class="s1">'settings'</span><span class="p">,</span> <span class="s1">'showControls'</span><span class="p">,</span> <span class="s1">'showExpandButton'</span><span class="p">,</span> <span class="s1">'showExportButton'</span><span class="p">,</span> <span class="s1">'showImageButton'</span><span class="p">,</span> <span class="s1">'showPositionButton'</span><span class="p">,</span> <span class="s1">'toggleVisibility'</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">available_wildcard_properties</span> <span class="o">=</span>            <span class="p">[]</span>
+        <span class="n">_explicit_args</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'_explicit_args'</span><span class="p">)</span>
+        <span class="n">_locals</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="n">_locals</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># For wildcard attrs and excess named props</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">_locals</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">_explicit_args</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">'children'</span><span class="p">}</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">CrystalToolkitScene</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="n">children</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span></div>
+
+
+<span class="nb">setattr</span><span class="p">(</span><span class="n">CrystalToolkitScene</span><span class="p">,</span> <span class="s2">"__init__"</span><span class="p">,</span> <span class="n">_explicitize_args</span><span class="p">(</span><span class="n">CrystalToolkitScene</span><span class="o">.</span><span class="fm">__init__</span><span class="p">))</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">dash-mp-components</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/dash_mp_components.html">dash_mp_components</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/dash_mp_components.html">dash_mp_components</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Materials Project Team.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.0.4</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

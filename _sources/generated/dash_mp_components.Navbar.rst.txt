@@ -1,0 +1,31 @@
+dash\_mp\_components.Navbar
+===========================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: Navbar
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Navbar.__init__
+      ~Navbar.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Navbar.REQUIRED
+      ~Navbar.UNDEFINED
+      ~Navbar.available_wildcard_properties
+   
+   

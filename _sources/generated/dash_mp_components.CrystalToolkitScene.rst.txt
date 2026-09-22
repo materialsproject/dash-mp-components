@@ -1,0 +1,31 @@
+dash\_mp\_components.CrystalToolkitScene
+========================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: CrystalToolkitScene
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CrystalToolkitScene.__init__
+      ~CrystalToolkitScene.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CrystalToolkitScene.REQUIRED
+      ~CrystalToolkitScene.UNDEFINED
+      ~CrystalToolkitScene.available_wildcard_properties
+   
+   

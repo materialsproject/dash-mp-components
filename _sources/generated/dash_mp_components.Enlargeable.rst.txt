@@ -1,0 +1,31 @@
+dash\_mp\_components.Enlargeable
+================================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: Enlargeable
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Enlargeable.__init__
+      ~Enlargeable.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Enlargeable.REQUIRED
+      ~Enlargeable.UNDEFINED
+      ~Enlargeable.available_wildcard_properties
+   
+   

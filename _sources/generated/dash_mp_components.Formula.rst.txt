@@ -1,0 +1,31 @@
+dash\_mp\_components.Formula
+============================
+
+.. currentmodule:: dash_mp_components
+
+.. autoclass:: Formula
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Formula.__init__
+      ~Formula.to_plotly_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Formula.REQUIRED
+      ~Formula.UNDEFINED
+      ~Formula.available_wildcard_properties
+   
+   
