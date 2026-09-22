@@ -20,6 +20,7 @@ jobs:
             - name: Install package and docs deps
               run: |
                   pip install -r requirements.txt
+                  pip install -e .
                   pip install sphinx sphinx-rtd-theme setuptools_scm
 
             - name: Build docs
