@@ -1,10 +1,13 @@
 name: build_and_deploy_docs
 
 on:
-    workflow_dispatch:
+    pull_request:
+        types: [closed]
+        branches: [main]
 
 jobs:
     docs:
+        if: github.event.pull_request.merged == true && github.event.pull_request.head.ref == 'auto-build-and-sync-styles'
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
