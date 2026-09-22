@@ -292,3 +292,7 @@ dash_mp_components/
 
 # 
 .DS_Store
+
+# docs
+docs/build/
+docs/source/generated/
